@@ -1,0 +1,41 @@
+"""Model configuration. Frozen. The config hash goes in every manifest.
+
+Drive time constants are declared here and written nowhere else in the
+codebase (CLAUDE.md, Amendment 1). They are read by core/drives.py and
+swept by the Phase 4 batch runner; no code path may modify them from
+circumstance.
+"""
+
+import hashlib
+import json
+from dataclasses import asdict, dataclass
+
+
+@dataclass(frozen=True)
+class Config:
+    # World
+    world_size: float = 100.0
+    n_agents: int = 200
+    n_food: int = 40
+    r_eat: float = 1.5
+    gain_eat: float = 0.25
+    food_respawn: int = 50
+    n_hazard: int = 3
+    r_hazard: float = 8.0
+    damage_rate: float = 0.02
+    # Body
+    basal_burn: float = 0.002
+    move_burn: float = 0.003
+    fatigue_rate: float = 0.004
+    rest_rate: float = 0.02
+    speed: float = 1.0
+    # Drive time constants, in ticks. Declared once, never reassigned.
+    tau_energy: float = 20.0
+    tau_safety: float = 12.0
+    tau_rest: float = 30.0
+
+    def config_hash(self) -> str:
+        # Canonical JSON with sorted keys, so the hash is stable across
+        # field declaration order and platforms.
+        payload = json.dumps(asdict(self), sort_keys=True)
+        return hashlib.sha256(payload.encode("utf-8")).hexdigest()
