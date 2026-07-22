@@ -26,7 +26,7 @@ def _cohort_metrics(cfg, seed, ticks, onset, window):
     n = cfg.n_agents
 
     fresh = Model(cfg, seed)  # deterministic re-init: traits and homes
-    tau_bond = fresh.arrays.tau[:, 3].copy()
+    bond_clock = fresh.arrays.tau[:, 3].copy()
     bond0 = fresh.arrays.bond.copy()
 
     out = {
@@ -44,8 +44,8 @@ def _cohort_metrics(cfg, seed, ticks, onset, window):
             "at_risk": int(at_risk.sum()),
             "window_deaths": int(dead_window.sum()),
             "cohort_mortality": float(dead_window.sum() / max(int(at_risk.sum()), 1)),
-            "tau_bond_median_dead": float(np.median(tau_bond[dead_window])) if dead_window.any() else None,
-            "tau_bond_median_alive": float(np.median(tau_bond[surv])) if surv.any() else None,
+            "tau_bond_median_dead": float(np.median(bond_clock[dead_window])) if dead_window.any() else None,
+            "tau_bond_median_alive": float(np.median(bond_clock[surv])) if surv.any() else None,
             "bond_init_mean_dead": float(bond0[dead_window].mean()) if dead_window.any() else None,
             "bond_init_mean_alive": float(bond0[surv].mean()) if surv.any() else None,
         })
