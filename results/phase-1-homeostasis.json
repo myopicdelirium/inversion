@@ -2,11 +2,11 @@
   "criterion": "phase-1 acceptance 2: >=95% survival at 5000 ticks, population mean energy in [0.4, 0.97] after tick 500",
   "manifest": {
     "seed": 0,
-    "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
-    "git_sha": "02c535b371220d671a47cb1cf97e3469decc8593",
+    "config_hash": "02bfaa68ef7df3328ba23f6a045ec1058a2ef52daea53a5a4f7ee4089d0a3d48",
+    "git_sha": "362acfb8295ef956071377c84d471b9cb2328567",
     "python": "3.11.13",
     "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-22T21:12:27+00:00"
+    "timestamp_utc": "2026-07-22T21:44:09+00:00"
   },
   "seeds": [
     1,
@@ -181,7 +181,8 @@
     "seek_food": 0.6096325,
     "flee": 0.0657025,
     "rest": 0.324665,
-    "wander": 0.0
+    "wander": 0.0,
+    "return_home": 0.0
   },
   "passed": true
 }

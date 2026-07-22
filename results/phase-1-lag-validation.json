@@ -3,14 +3,14 @@
   "step_protocols": {
     "safety": {
       "seed": 202607,
-      "config_hash": "6ba1dffd25b3804a5a3a66bba364ea42cd2f76fb3628a886ab33d39c1c4784af",
+      "config_hash": "af11b4f74935b2e39bdb4605f173d190cd43fbcd02ffec25604f6a95f0292113",
       "declared_tau": 12.0,
       "fitted_tau": 11.84559842613747,
       "relative_error": 0.01286679782187757
     },
     "energy": {
       "seed": 202608,
-      "config_hash": "e250f5b424403db22b748843ed33a82cf9921f5638ae5835683b435ebff1c544",
+      "config_hash": "c01cf6034eea613c0194946a244ff1b257d951a651099e69be9f950fd6ee5690",
       "declared_tau": 20.0,
       "fitted_tau": 19.999999999999982,
       "relative_error": 8.881784197001252e-16
@@ -18,7 +18,7 @@
   },
   "transition_identity": {
     "seed": 1,
-    "config_hash": "8d0d2a627090dce2e2d5c11b54c1d9a5c6e434c4895ae3278f42b15f3bccdb19",
+    "config_hash": "f1baa778159925099123fba52188630a059d24bf8091067fd53a167f4f947563",
     "per_drive": {
       "energy": {
         "declared_tau": 20.0,
@@ -42,11 +42,11 @@
   },
   "manifest": {
     "seed": 0,
-    "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
-    "git_sha": "02c535b371220d671a47cb1cf97e3469decc8593",
+    "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+    "git_sha": "362acfb8295ef956071377c84d471b9cb2328567",
     "python": "3.11.13",
     "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-22T21:12:28+00:00"
+    "timestamp_utc": "2026-07-22T21:44:09+00:00"
   },
   "passed": true,
   "curves": {

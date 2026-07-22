@@ -8,7 +8,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from .action import FLEE, REST_ACT, SEEK_FOOD, WANDER
+from .action import FLEE, REST_ACT, RETURN_HOME, SEEK_FOOD, WANDER
 
 
 @dataclass
@@ -18,15 +18,32 @@ class World:
     food_timer: np.ndarray  # (n_food,) ticks until respawn; 0 = active
     hazard_x: np.ndarray  # (n_hazard,)
     hazard_y: np.ndarray
+    nest_x: np.ndarray    # (n_nests,) static nest positions
+    nest_y: np.ndarray
 
 
 def spawn_world(config, world_rng):
+    food_x = world_rng.random(config.n_food) * config.world_size
+    food_y = world_rng.random(config.n_food) * config.world_size
+    hazard_x = world_rng.random(config.n_hazard) * config.world_size
+    hazard_y = world_rng.random(config.n_hazard) * config.world_size
+    # Nests are drawn after food and hazards; with n_nests = 0 the
+    # branch draws nothing, so the world stream is identical to a
+    # nest-free (phase 1) world.
+    if config.n_nests > 0:
+        nest_x = world_rng.random(config.n_nests) * config.world_size
+        nest_y = world_rng.random(config.n_nests) * config.world_size
+    else:
+        nest_x = np.zeros(0)
+        nest_y = np.zeros(0)
     return World(
-        food_x=world_rng.random(config.n_food) * config.world_size,
-        food_y=world_rng.random(config.n_food) * config.world_size,
+        food_x=food_x,
+        food_y=food_y,
         food_timer=np.zeros(config.n_food, dtype=np.int64),
-        hazard_x=world_rng.random(config.n_hazard) * config.world_size,
-        hazard_y=world_rng.random(config.n_hazard) * config.world_size,
+        hazard_x=hazard_x,
+        hazard_y=hazard_y,
+        nest_x=nest_x,
+        nest_y=nest_y,
     )
 
 
@@ -81,7 +98,35 @@ def perceive_food(arrays, world, config):
     )
 
 
-def apply_actions(arrays, config, actions, food_dir, away_dir, heading_draws):
+def perceive_home(arrays, config):
+    """Per agent: distance and unit direction to its own home nest;
+    infinite distance and zero direction for homeless agents."""
+    has_home = np.isfinite(arrays.home_x)
+    # Substitute the agent's own position for missing homes so the
+    # torus arithmetic stays finite, then mask the results.
+    hx = np.where(has_home, arrays.home_x, arrays.x)
+    hy = np.where(has_home, arrays.home_y, arrays.y)
+    dx = _torus_delta(hx - arrays.x, config.world_size)
+    dy = _torus_delta(hy - arrays.y, config.world_size)
+    d = np.hypot(dx, dy)
+    safe = np.maximum(d, 1e-12)
+    dir_x = np.where(has_home, dx / safe, 0.0)
+    dir_y = np.where(has_home, dy / safe, 0.0)
+    return np.where(has_home, d, np.inf), dir_x, dir_y
+
+
+def apply_bond(arrays, config, dist_home):
+    """Per agent with a home: attachment grows while at the nest and
+    fades while away. Both updates are contractions within [0, 1], so
+    no clipping is needed and the declared rates hold exactly."""
+    has_home = np.isfinite(dist_home)
+    at_home = arrays.alive & has_home & (dist_home < config.r_nest)
+    away = arrays.alive & has_home & ~(dist_home < config.r_nest)
+    arrays.bond[at_home] += config.bond_grow * (1.0 - arrays.bond[at_home])
+    arrays.bond[away] -= config.bond_decay * arrays.bond[away]
+
+
+def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir, heading_draws):
     """Per agent: redraw the wander heading with probability 0.05, then
     move one tick in the chosen action's direction at fatigue-scaled
     speed. Resting agents do not move. Movement costs energy and builds
@@ -94,23 +139,30 @@ def apply_actions(arrays, config, actions, food_dir, away_dir, heading_draws):
     head_dx, head_dy = np.cos(arrays.heading), np.sin(arrays.heading)
     food_dx, food_dy = food_dir
     away_dx, away_dy = away_dir
-    # Seeking with no active food and fleeing from the exact hazard
-    # center both fall back to the heading direction.
+    home_dx, home_dy = home_dir
+    # Seeking with no active food, fleeing from the exact hazard
+    # center, and returning with no home all fall back to the heading
+    # direction.
     no_food_target = (food_dx == 0.0) & (food_dy == 0.0)
     food_dx = np.where(no_food_target, head_dx, food_dx)
     food_dy = np.where(no_food_target, head_dy, food_dy)
     no_away = (away_dx == 0.0) & (away_dy == 0.0)
     away_dx = np.where(no_away, head_dx, away_dx)
     away_dy = np.where(no_away, head_dy, away_dy)
+    no_home = (home_dx == 0.0) & (home_dy == 0.0)
+    home_dx = np.where(no_home, head_dx, home_dx)
+    home_dy = np.where(no_home, head_dy, home_dy)
 
     dir_x = np.select(
-        [actions == SEEK_FOOD, actions == FLEE, actions == WANDER],
-        [food_dx, away_dx, head_dx],
+        [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
+         actions == RETURN_HOME],
+        [food_dx, away_dx, head_dx, home_dx],
         default=0.0,
     )
     dir_y = np.select(
-        [actions == SEEK_FOOD, actions == FLEE, actions == WANDER],
-        [food_dy, away_dy, head_dy],
+        [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
+         actions == RETURN_HOME],
+        [food_dy, away_dy, head_dy, home_dy],
         default=0.0,
     )
     moving = arrays.alive & (actions != REST_ACT)

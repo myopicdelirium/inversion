@@ -37,10 +37,18 @@ class Config:
     wander_gain: float = 0.004
     # Recording
     record_every: int = 10
+    # Nests and attachment (phase 2)
+    n_nests: int = 5
+    r_nest: float = 3.0
+    bond_init: float = 0.5
+    bond_grow: float = 0.002
+    bond_decay: float = 0.0002
+    r_bond: float = 25.0
     # Drive time constants, in ticks. Declared once, never reassigned.
     tau_energy: float = 20.0
     tau_safety: float = 12.0
     tau_rest: float = 30.0
+    tau_bond: float = 60.0
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across

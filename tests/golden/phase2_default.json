@@ -1,0 +1,26 @@
+{
+  "description": "phase 2 default-config golden run (nests present, bond_init 0.5)",
+  "seed": 42,
+  "ticks": 2000,
+  "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+  "sha256": "5f703728c597d2c190a25b3c3c07e47defc1c06318739c8d2221c7d825c7124c",
+  "array_sha256": {
+    "x": "f94cfb405de45b401166e1ae5bc0cfcd1c9cbb6a4112d58ece58bc9e42ea3ebb",
+    "y": "21681e41450ceda0dcc5fa00653f801014eb240cd00f3ba1d3ee49f1c4b227c1",
+    "energy": "473e10999abfe155cd26ccff9441cd9c4482959556379063e6489ae484c8be91",
+    "integrity": "876fa9740a8e5c66b597600ee7615140741d233791a84d00255b5bfcf07126f4",
+    "fatigue": "34d5f193f21a212578b809f4ed6f9e3ec3e6af3d83c570404b4a15c3d27d8b95",
+    "weights": "17d9d2dd024a30b56abdaafffe77cfbe6d92885f818905d488b3a39a29698c37",
+    "urgency": "087511ca387d7f54d909064d18c3a0ad74a8ce452eb98819c12047e50e02b2f3",
+    "bond": "57dd01d71ccab4918bcff7647d85a467d4c32a07673760399d5df6cbfe3dd57e",
+    "alive": "ad47923d89f9eec83e70fd9a392d01f7ba46093ac080f75932ddb9233aae2859"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+    "git_sha": "362acfb8295ef956071377c84d471b9cb2328567",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T21:43:35+00:00"
+  }
+}

@@ -19,18 +19,27 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from core.action import ACTION_NAMES  # noqa: E402
 from core.config import Config  # noqa: E402
-from core.drives import DRIVE_NAMES  # noqa: E402
 from core.manifest import build_manifest  # noqa: E402
 from core.model import Model, run  # noqa: E402
 
 RESULTS = pathlib.Path(__file__).resolve().parents[1] / "results"
 
-TAUS = {"energy": "tau_energy", "safety": "tau_safety", "rest": "tau_rest"}
+TAUS = {"energy": "tau_energy", "safety": "tau_safety", "rest": "tau_rest",
+        "bond": "tau_bond"}
+
+# Since phase 2, the default config includes nests. Phase 1 protocols
+# run in a nest-free world (n_nests=0), which is proven bit-identical
+# to the phase 1 dynamics by tests/test_golden.py.
+PHASE1_DRIVES = ("energy", "safety", "rest")
+
+
+def phase1_config(**overrides):
+    return replace(Config(), n_nests=0, **overrides)
 
 
 def homeostasis():
-    """Criterion 2: default config, 200 agents, 5000 ticks, 10 seeds."""
-    cfg = Config()
+    """Criterion 2: phase-1 world, 200 agents, 5000 ticks, 10 seeds."""
+    cfg = phase1_config()
     per_seed = []
     for seed in range(1, 11):
         traj = run(cfg, seed=seed, ticks=5000)
@@ -99,8 +108,8 @@ def _fit_discrete_decay(series, floor=1e-10):
 def lag_safety_step():
     """Criterion 3a: hazard onset under a near-uniform danger field;
     w_safety must rise as (1 - (1 - 1/tau)^t) toward the plateau."""
-    cfg = replace(
-        Config(), n_agents=50, n_hazard=1, r_hazard=10000.0, hazard_drift=0.0,
+    cfg = phase1_config(
+        n_agents=50, n_hazard=1, r_hazard=10000.0, hazard_drift=0.0,
         damage_rate=0.0, basal_burn=0.0, move_burn=0.0, hazard_onset=100,
         record_every=1,
     )
@@ -128,8 +137,8 @@ def lag_safety_step():
 def lag_energy_step():
     """Criterion 3b: with zero burn, the first bite fills energy to 1.0
     and steps u_energy to 0; w_energy must decay by (1 - 1/tau)."""
-    cfg = replace(
-        Config(), n_agents=50, n_hazard=0, basal_burn=0.0, move_burn=0.0,
+    cfg = phase1_config(
+        n_agents=50, n_hazard=0, basal_burn=0.0, move_burn=0.0,
         n_food=400, record_every=1,
     )
     seed = 202608
@@ -157,12 +166,14 @@ def lag_residual_identity():
     transition of every living agent must satisfy
     w[t] - w[t-1] = (u[t] - w[t-1]) / tau exactly, for all three
     drives. Any code path bypassing the uniform law would break this."""
-    cfg = replace(Config(), record_every=1)
+    cfg = phase1_config(record_every=1)
     seed = 1
     traj = run(cfg, seed=seed, ticks=500)
     w, u, alive = traj["weights"], traj["urgency"], traj["alive"]
     out = {}
-    for d, name in enumerate(DRIVE_NAMES):
+    # bond is identically zero in a nest-free world (no transitions to
+    # regress); its identity is validated by scripts/validate_phase2.py.
+    for d, name in enumerate(PHASE1_DRIVES):
         tau = getattr(cfg, TAUS[name])
         dw = w[1:, :, d] - w[:-1, :, d]
         gap = u[1:, :, d] - w[:-1, :, d]

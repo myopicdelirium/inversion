@@ -14,18 +14,22 @@ from .rng import spawn_streams
 from .state import allocate
 from .world import (
     apply_actions,
+    apply_bond,
     apply_damage_and_deaths,
     apply_eating,
     perceive_danger,
     perceive_food,
+    perceive_home,
     spawn_world,
     update_world,
 )
 
 # Arrays recorded for the golden trajectory, in hashing order.
 # urgency is recorded so the lag validation can check the uniform law
-# transition by transition against what the model actually computed.
-RECORDED = ("x", "y", "energy", "integrity", "fatigue", "weights", "urgency")
+# transition by transition against what the model actually computed;
+# bond likewise for the accumulation identity.
+RECORDED = ("x", "y", "energy", "integrity", "fatigue", "weights",
+            "urgency", "bond")
 
 
 class Model:
@@ -34,19 +38,33 @@ class Model:
         self.seed = seed
         self.world_rng, self.agent_rngs = spawn_streams(seed, config.n_agents)
         self.arrays = allocate(config.n_agents, config.init_energy)
+        self.world = spawn_world(config, self.world_rng)
         # Per agent: spawn position and initial heading come from the
         # agent's own stream, so adding agent n+1 never shifts another
-        # agent's spawn.
+        # agent's spawn. With nests, agents are assigned a home
+        # round-robin by index and born at it plus a small jitter; the
+        # two position draws are consumed either way, so a nest-free
+        # world spawns exactly as phase 1 did.
         for i, gen in enumerate(self.agent_rngs):
-            self.arrays.x[i] = gen.random() * config.world_size
-            self.arrays.y[i] = gen.random() * config.world_size
+            if config.n_nests > 0:
+                nest = i % config.n_nests
+                self.arrays.home_x[i] = self.world.nest_x[nest]
+                self.arrays.home_y[i] = self.world.nest_y[nest]
+                angle = gen.random() * 2.0 * np.pi
+                radius = gen.random() * config.r_nest
+                self.arrays.x[i] = (self.arrays.home_x[i] + radius * np.cos(angle)) % config.world_size
+                self.arrays.y[i] = (self.arrays.home_y[i] + radius * np.sin(angle)) % config.world_size
+                self.arrays.bond[i] = config.bond_init
+            else:
+                self.arrays.x[i] = gen.random() * config.world_size
+                self.arrays.y[i] = gen.random() * config.world_size
             self.arrays.heading[i] = gen.random() * 2.0 * np.pi
-        self.world = spawn_world(config, self.world_rng)
         self.tick = 0
         danger, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active()
         )
-        init_drive_state(self.arrays, danger)
+        dist_home, _, _ = perceive_home(self.arrays, config)
+        init_drive_state(self.arrays, config, danger, dist_home)
 
     def _hazards_active(self) -> bool:
         return self.tick >= self.config.hazard_onset
@@ -59,10 +77,11 @@ class Model:
         active = self._hazards_active()
         danger, away_dx, away_dy = perceive_danger(self.arrays, self.world, cfg, active)
         dist_food, food_dx, food_dy, _ = perceive_food(self.arrays, self.world, cfg)
+        dist_home, home_dx, home_dy = perceive_home(self.arrays, cfg)
 
-        compute_urgencies(self.arrays, danger)
+        compute_urgencies(self.arrays, cfg, danger, dist_home)
         update_weights(self.arrays, cfg)
-        actions = select_actions(self.arrays, cfg, danger, dist_food)
+        actions = select_actions(self.arrays, cfg, danger, dist_food, dist_home)
 
         # Per agent: two draws per tick from the agent's own stream,
         # consumed by every agent every tick regardless of action, so
@@ -71,11 +90,14 @@ class Model:
         redraw_angle = np.array([gen.random() for gen in self.agent_rngs])
         apply_actions(
             self.arrays, cfg, actions,
-            (food_dx, food_dy), (away_dx, away_dy), (redraw_p, redraw_angle),
+            (food_dx, food_dy), (away_dx, away_dy), (home_dx, home_dy),
+            (redraw_p, redraw_angle),
         )
-        # Eating uses post-move positions.
+        # Eating and bond accumulation use post-move positions.
         dist_after, _, _, food_id_after = perceive_food(self.arrays, self.world, cfg)
         apply_eating(self.arrays, self.world, cfg, dist_after, food_id_after)
+        dist_home_after, _, _ = perceive_home(self.arrays, cfg)
+        apply_bond(self.arrays, cfg, dist_home_after)
         apply_damage_and_deaths(self.arrays, self.world, cfg, active)
         update_world(self.world, cfg, self.world_rng)
         self.tick += 1

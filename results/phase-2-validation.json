@@ -1,0 +1,142 @@
+{
+  "spec": "specs/phase-2.md acceptance criteria 1-5",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+    "git_sha": "362acfb8295ef956071377c84d471b9cb2328567",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T21:42:59+00:00"
+  },
+  "criterion_1_preservation": {
+    "config_hash": "02bfaa68ef7df3328ba23f6a045ec1058a2ef52daea53a5a4f7ee4089d0a3d48",
+    "seed": 42,
+    "ticks": 2000,
+    "matches": {
+      "x": true,
+      "y": true,
+      "energy": true,
+      "integrity": true,
+      "fatigue": true,
+      "alive": true
+    },
+    "passed": true
+  },
+  "criterion_2_accumulation_identity": {
+    "seed": 11,
+    "config_hash": "90102f77228f56cd563f2fc84a643f46ded36d40ba993cc130617cc452aa1158",
+    "transitions_checked": 100000,
+    "max_abs_residual": 5.551115123125783e-17,
+    "passed": true
+  },
+  "criterion_3_weight_identity": {
+    "seed": 12,
+    "config_hash": "90102f77228f56cd563f2fc84a643f46ded36d40ba993cc130617cc452aa1158",
+    "per_drive": {
+      "energy": {
+        "declared_tau": 20.0,
+        "regressed_tau": 19.999999999999996,
+        "max_abs_residual": 5.551115123125783e-17,
+        "transitions_checked": 100000
+      },
+      "safety": {
+        "declared_tau": 12.0,
+        "regressed_tau": 12.0,
+        "max_abs_residual": 3.122502256758253e-17,
+        "transitions_checked": 100000
+      },
+      "rest": {
+        "declared_tau": 30.0,
+        "regressed_tau": 30.000000000000004,
+        "max_abs_residual": 2.7755575615628914e-17,
+        "transitions_checked": 100000
+      },
+      "bond": {
+        "declared_tau": 60.0,
+        "regressed_tau": 60.0,
+        "max_abs_residual": 2.7755575615628914e-17,
+        "transitions_checked": 100000
+      }
+    },
+    "passed": true
+  },
+  "criterion_4_tethering": {
+    "seeds": [
+      21,
+      22,
+      23
+    ],
+    "by_bond_init": {
+      "0.0": {
+        "per_seed_final1000_mean": [
+          35.75175762140518,
+          36.70476125898211,
+          35.782776755182255
+        ],
+        "mean": 36.07976521185652,
+        "config_hash": "b9eb8529bd0d043e382cb88f5c7bf5fddabfc07adeae387fb50e52033640424f"
+      },
+      "0.5": {
+        "per_seed_final1000_mean": [
+          12.792618857647499,
+          9.763697887454109,
+          11.630066642076084
+        ],
+        "mean": 11.39546112905923,
+        "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec"
+      },
+      "1.0": {
+        "per_seed_final1000_mean": [
+          9.971572844497192,
+          9.856886745462955,
+          8.671579190897486
+        ],
+        "mean": 9.500012926952545,
+        "config_hash": "a66ea352dabf3540df8b6b97ccc3b9caf3b595114fe8371d839442f9f74e3b1e"
+      }
+    },
+    "passed": true
+  },
+  "criterion_5_homeostasis": {
+    "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+    "per_seed": [
+      {
+        "seed": 1,
+        "survivors": 200,
+        "mean_energy_min": 0.8275699999999999,
+        "mean_energy_max": 0.9417
+      },
+      {
+        "seed": 2,
+        "survivors": 199,
+        "mean_energy_min": 0.7900199999999998,
+        "mean_energy_max": 0.939245
+      },
+      {
+        "seed": 3,
+        "survivors": 199,
+        "mean_energy_min": 0.7855929648241204,
+        "mean_energy_max": 0.9403149999999999
+      },
+      {
+        "seed": 4,
+        "survivors": 198,
+        "mean_energy_min": 0.7437749999999997,
+        "mean_energy_max": 0.9282799999999999
+      },
+      {
+        "seed": 5,
+        "survivors": 196,
+        "mean_energy_min": 0.7562448979591835,
+        "mean_energy_max": 0.9253049999999999
+      }
+    ],
+    "worst_survival_rate": 0.98,
+    "mean_energy_envelope": [
+      0.7437749999999997,
+      0.9417
+    ],
+    "passed": true
+  },
+  "passed": true
+}

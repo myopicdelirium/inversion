@@ -20,4 +20,4 @@ The inertia law ships in Phase 1, with base drives only, before any commitment m
 
 ## Current status
 
-Phase 1 complete: homeostat implemented, calibrated, and validated. All acceptance criteria met; artifacts committed under results/; golden run under tests/golden/. Next: Phase 2 spec (commitment as an ordinary drive).
+Phase 2 complete: attachment to a home place as a fourth drive of the same class, no new mechanism. Behavioural preservation proven bit for bit under a no-nest config; accumulation and weight laws exact; tethering emerged and is monotone in attachment. Next: Phase 3 spec (collision environments, threat onset speed as a controlled axis).
