@@ -1,0 +1,15 @@
+{
+  "description": "phase 1 default-config golden run",
+  "seed": 42,
+  "ticks": 2000,
+  "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
+  "sha256": "abfb63626062cafbd99fddeb652fb4a1ee094bdaef148585946aab0d0f6498e5",
+  "manifest": {
+    "seed": 42,
+    "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
+    "git_sha": "02c535b371220d671a47cb1cf97e3469decc8593",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T21:12:49+00:00"
+  }
+}

@@ -22,15 +22,15 @@ class AgentArrays:
     urgency: np.ndarray    # (n, n_drives) instant urgencies
 
 
-def allocate(n: int) -> AgentArrays:
-    # Every agent starts alive, fed to 0.8, intact, rested. Positions,
-    # headings, and initial drive state are set by the model at init.
+def allocate(n: int, init_energy: float) -> AgentArrays:
+    # Every agent starts alive, fed to init_energy, intact, rested.
+    # Positions, headings, and initial drive state are set by the model.
     d = len(DRIVE_NAMES)
     return AgentArrays(
         alive=np.ones(n, dtype=bool),
         x=np.zeros(n),
         y=np.zeros(n),
-        energy=np.full(n, 0.8),
+        energy=np.full(n, init_energy),
         integrity=np.ones(n),
         fatigue=np.zeros(n),
         heading=np.zeros(n),

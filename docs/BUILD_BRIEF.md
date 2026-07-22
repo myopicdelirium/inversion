@@ -20,4 +20,4 @@ The inertia law ships in Phase 1, with base drives only, before any commitment m
 
 ## Current status
 
-Phase 1 spec written (`specs/phase-1.md`), awaiting review. Invariant tests written before the mechanism. `core/drives.py` and `core/action.py` are stubs.
+Phase 1 complete: homeostat implemented, calibrated, and validated. All acceptance criteria met; artifacts committed under results/; golden run under tests/golden/. Next: Phase 2 spec (commitment as an ordinary drive).

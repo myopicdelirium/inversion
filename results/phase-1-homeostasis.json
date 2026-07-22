@@ -1,0 +1,187 @@
+{
+  "criterion": "phase-1 acceptance 2: >=95% survival at 5000 ticks, population mean energy in [0.4, 0.97] after tick 500",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
+    "git_sha": "02c535b371220d671a47cb1cf97e3469decc8593",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T21:12:27+00:00"
+  },
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "per_seed": [
+    {
+      "seed": 1,
+      "survivors": 193,
+      "survival_rate": 0.965,
+      "mean_energy_min": 0.8996102564102563,
+      "mean_energy_max": 0.9604507772020725,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 193,
+        "4000": 193,
+        "5000": 193
+      }
+    },
+    {
+      "seed": 2,
+      "survivors": 196,
+      "survival_rate": 0.98,
+      "mean_energy_min": 0.9013673469387755,
+      "mean_energy_max": 0.9669642857142856,
+      "alive_curve": {
+        "0": 200,
+        "1000": 196,
+        "2000": 196,
+        "3000": 196,
+        "4000": 196,
+        "5000": 196
+      }
+    },
+    {
+      "seed": 3,
+      "survivors": 198,
+      "survival_rate": 0.99,
+      "mean_energy_min": 0.8501262626262626,
+      "mean_energy_max": 0.9609040404040403,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 198,
+        "3000": 198,
+        "4000": 198,
+        "5000": 198
+      }
+    },
+    {
+      "seed": 4,
+      "survivors": 199,
+      "survival_rate": 0.995,
+      "mean_energy_min": 0.8962060301507536,
+      "mean_energy_max": 0.9673115577889447,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 199,
+        "4000": 199,
+        "5000": 199
+      }
+    },
+    {
+      "seed": 5,
+      "survivors": 200,
+      "survival_rate": 1.0,
+      "mean_energy_min": 0.901105,
+      "mean_energy_max": 0.9630350000000001,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 200,
+        "4000": 200,
+        "5000": 200
+      }
+    },
+    {
+      "seed": 6,
+      "survivors": 200,
+      "survival_rate": 1.0,
+      "mean_energy_min": 0.8878649999999999,
+      "mean_energy_max": 0.9674299999999999,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 200,
+        "4000": 200,
+        "5000": 200
+      }
+    },
+    {
+      "seed": 7,
+      "survivors": 199,
+      "survival_rate": 0.995,
+      "mean_energy_min": 0.902969849246231,
+      "mean_energy_max": 0.9664522613065327,
+      "alive_curve": {
+        "0": 200,
+        "1000": 199,
+        "2000": 199,
+        "3000": 199,
+        "4000": 199,
+        "5000": 199
+      }
+    },
+    {
+      "seed": 8,
+      "survivors": 200,
+      "survival_rate": 1.0,
+      "mean_energy_min": 0.914565,
+      "mean_energy_max": 0.9642599999999999,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 200,
+        "4000": 200,
+        "5000": 200
+      }
+    },
+    {
+      "seed": 9,
+      "survivors": 199,
+      "survival_rate": 0.995,
+      "mean_energy_min": 0.8970150753768843,
+      "mean_energy_max": 0.9673065326633165,
+      "alive_curve": {
+        "0": 200,
+        "1000": 200,
+        "2000": 200,
+        "3000": 200,
+        "4000": 199,
+        "5000": 199
+      }
+    },
+    {
+      "seed": 10,
+      "survivors": 199,
+      "survival_rate": 0.995,
+      "mean_energy_min": 0.9002060301507537,
+      "mean_energy_max": 0.9619798994974873,
+      "alive_curve": {
+        "0": 200,
+        "1000": 199,
+        "2000": 199,
+        "3000": 199,
+        "4000": 199,
+        "5000": 199
+      }
+    }
+  ],
+  "worst_survival_rate": 0.965,
+  "mean_energy_envelope": [
+    0.8501262626262626,
+    0.9674299999999999
+  ],
+  "action_profile_seed1_first2000": {
+    "seek_food": 0.6096325,
+    "flee": 0.0657025,
+    "rest": 0.324665,
+    "wander": 0.0
+  },
+  "passed": true
+}

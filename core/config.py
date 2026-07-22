@@ -16,19 +16,27 @@ class Config:
     # World
     world_size: float = 100.0
     n_agents: int = 200
-    n_food: int = 40
-    r_eat: float = 1.5
-    gain_eat: float = 0.25
-    food_respawn: int = 50
+    n_food: int = 150
+    r_eat: float = 2.0
+    gain_eat: float = 0.3
+    food_respawn: int = 10
     n_hazard: int = 3
     r_hazard: float = 8.0
     damage_rate: float = 0.02
+    regen_rate: float = 0.001
+    hazard_drift: float = 0.2
+    hazard_onset: int = 0
     # Body
     basal_burn: float = 0.002
     move_burn: float = 0.003
     fatigue_rate: float = 0.004
     rest_rate: float = 0.02
     speed: float = 1.0
+    init_energy: float = 0.8
+    # Action
+    wander_gain: float = 0.004
+    # Recording
+    record_every: int = 10
     # Drive time constants, in ticks. Declared once, never reassigned.
     tau_energy: float = 20.0
     tau_safety: float = 12.0
