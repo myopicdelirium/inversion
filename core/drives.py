@@ -30,14 +30,33 @@ def compute_urgencies(arrays, config, danger_at_agent, dist_home):
 
 def update_weights(arrays, config, dt=1.0):
     """Per agent, per drive: the weight moves a fraction dt/tau of the
-    way from where it is toward the current urgency. This one line is
-    the entire inertia mechanism; every drive obeys it and nothing
-    bypasses it."""
+    way from where it is toward the current urgency, on that agent's
+    own clock. This one line is the entire inertia mechanism; every
+    drive obeys it and nothing bypasses it."""
     live = arrays.alive
     arrays.weights[live] += (
-        dt / np.array([config.tau_energy, config.tau_safety,
-                       config.tau_rest, config.tau_bond])
+        dt / arrays.tau[live]
     ) * (arrays.urgency[live] - arrays.weights[live])
+
+
+def init_timescales(arrays, config, z_safety=None, z_bond=None):
+    """Per agent: time constants are drawn once at birth from the
+    declared population distributions and never written again
+    (CLAUDE.md Amendment 2). With zero spread every agent carries the
+    declared value exactly; the declared value is the population
+    median under spread."""
+    arrays.tau[:, ENERGY] = config.tau_energy
+    arrays.tau[:, SAFETY] = config.tau_safety
+    arrays.tau[:, REST] = config.tau_rest
+    arrays.tau[:, BOND] = config.tau_bond
+    if z_safety is not None:
+        arrays.tau[:, SAFETY] = config.tau_safety * np.exp(
+            config.tau_safety_spread * z_safety
+        )
+    if z_bond is not None:
+        arrays.tau[:, BOND] = config.tau_bond * np.exp(
+            config.tau_bond_spread * z_bond
+        )
 
 
 def init_drive_state(arrays, config, danger_at_agent, dist_home):

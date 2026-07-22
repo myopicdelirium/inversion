@@ -1,0 +1,26 @@
+{
+  "description": "heterogeneous flagship: sudden storm, all three spreads nonzero; individuals differ, the law does not",
+  "seed": 42,
+  "ticks": 3000,
+  "config_hash": "a9f4f3d28dff7e31a75f10acc1ba853474c0ace073d3c9f7f0668b700a35d802",
+  "sha256": "7b30daa3a03285417358ecd807868e90666781658315e760f664ef97c9d7a2ea",
+  "array_sha256": {
+    "x": "8cc84e827e159f5a4a0130d8f6240b1ad2a8602c2076d649e652b25e6aa71750",
+    "y": "2355cdd4962bb1f31f06c551fda53a51718e4dd6261083f448c4ef31499388bb",
+    "energy": "935a1ca747c26d2576824d44564916c1b53b853d41baaac8031d24528815b2e9",
+    "integrity": "3da5fdb90bfe68801dc85c6517070553c3781b2845dbe5d17d10069aaa0e58ae",
+    "fatigue": "09a2fbdb1197c0c633e5b32a6c9631e5ea72733dadaf5c675d1a4aac3351c48b",
+    "weights": "bdca7d2be228cce63d9e8110c8c49537764eac80210bc289dfb9ea445543005a",
+    "urgency": "602597ae25ac723498381fc42af2cd80eb290c032ce576bafaba37e063a7b603",
+    "bond": "b8a09b97e5069a923eb3dd89df0ca32435d89d3385cc3db229879e6536086520",
+    "alive": "aad3d4ab909fedbd78c689885229fae0a3add4223e1d9a17c7363c5d0faa82b8"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "a9f4f3d28dff7e31a75f10acc1ba853474c0ace073d3c9f7f0668b700a35d802",
+    "git_sha": "82c481ac7cb5b85b8e88f9f8932893ddf898b59b",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T22:50:29+00:00"
+  }
+}

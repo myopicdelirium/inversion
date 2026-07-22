@@ -60,6 +60,23 @@ def test_phase3_regime_goldens():
         )
 
 
+def test_phase4_heterogeneous_golden():
+    """Individuals differ, the law does not: the heterogeneous flagship
+    is frozen like every other regime."""
+    spec = json.loads((GOLDEN / "phase4_heterogeneous.json").read_text())
+    cfg = replace(
+        Config(), n_hazard=0, storm_nest=0, storm_onset=2000, storm_ramp=1,
+        bond_init=1.0, tau_safety_spread=0.5, tau_bond_spread=0.5,
+        bond_init_spread=0.25,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 4 heterogeneous golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

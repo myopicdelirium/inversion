@@ -39,6 +39,15 @@ Therefore the invariant protects the timescales, in both directions:
 * Commitment, when introduced, is an instance of the same drive class as every base drive, distinguished only by its accumulation dynamics. It is not a new mechanism.
 * Tuning parameters to suppress inversion where it inconveniently appears is the same sin as tuning to produce it. Null regions are findings and get golden tests too.
 
+### Amendment 2 (2026-07-23): heterogeneity is initialization, not circumstance
+
+Amendment 1 forbids reading or modifying a time constant "based on circumstance, agent identity, or commitment level." That sentence was written against scripting, not against individuality. Clarification:
+
+* Per-agent parameters (time constants, attachment depth) may differ across agents only as draws made once at spawn, from population distributions declared in config, using the agent's own stream. After spawn they are immutable for life.
+* Everything Amendment 1 forbids stays forbidden: no post-init modification, ever, for any reason. Additionally forbidden: assignment rules that reference anything beyond the declared distribution (no trait by hand-picked agent, no trait by position, no trait by outcome), and distributions chosen to make a specific run produce sacrifice.
+* Spread parameters default to zero. At zero, every agent carries the declared value exactly and all prior goldens are bit-identical.
+* Enforcement: `tests/test_invariants.py` allows time-constant writes only in `core/config.py` (declaration) and init functions of `core/drives.py` (the one sanctioned draw site), and asserts at runtime that per-agent time constants never change over a run.
+
 ## Hard rules
 
 ### Golden runs

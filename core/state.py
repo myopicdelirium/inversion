@@ -23,6 +23,8 @@ class AgentArrays:
     home_y: np.ndarray
     weights: np.ndarray    # (n, n_drives) lagged drive weights
     urgency: np.ndarray    # (n, n_drives) instant urgencies
+    tau: np.ndarray        # (n, n_drives) per-agent time constants,
+                           # written once at spawn (CLAUDE.md Amendment 2)
 
 
 def allocate(n: int, init_energy: float) -> AgentArrays:
@@ -43,4 +45,5 @@ def allocate(n: int, init_energy: float) -> AgentArrays:
         home_y=np.full(n, np.inf),
         weights=np.zeros((n, d)),
         urgency=np.zeros((n, d)),
+        tau=np.zeros((n, d)),
     )

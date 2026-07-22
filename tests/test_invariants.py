@@ -159,20 +159,55 @@ def test_no_scripted_override():
             )
 
 
-def test_tau_never_written_outside_config():
-    """Time constants are declared in core/config.py and written nowhere
-    else (Amendment 1). The mechanism reads them; nothing modifies them
-    from circumstance."""
+def test_tau_written_only_at_declaration_or_init():
+    """Time constants are declared in core/config.py and drawn once at
+    spawn inside init functions of core/drives.py, the one sanctioned
+    draw site (Amendment 2). Nothing else may write them, so nothing
+    can modify them from circumstance (Amendment 1)."""
     for path in sorted(CORE.glob("*.py")):
         if path.name == "config.py":
             continue
         tree = ast.parse(path.read_text())
+        allowed = set()
+        if path.name == "drives.py":
+            for node in ast.walk(tree):
+                if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) \
+                        and node.name.startswith("init"):
+                    for stmt in ast.walk(node):
+                        allowed.add(id(stmt))
         for target_tokens, _value, assign in _assignments(tree):
             bad = target_tokens & TAU_TOKENS
-            assert not bad, (
+            assert not bad or id(assign) in allowed, (
                 f"{path.name}:{assign.lineno}: assignment to time constant "
-                f"{bad}; taus are declared in config.py and never reassigned"
+                f"{bad} outside config.py and drives.py init functions"
             )
+
+
+def test_timescales_immutable_at_runtime():
+    """Per-agent time constants drawn at spawn never change, even under
+    a storm with every spread nonzero (Amendment 2)."""
+    from dataclasses import replace
+
+    import numpy as np
+
+    from core.config import Config
+    from core.model import Model
+
+    cfg = replace(
+        Config(), n_hazard=0, storm_nest=0, storm_onset=100, storm_ramp=1,
+        bond_init=1.0, tau_safety_spread=0.5, tau_bond_spread=0.5,
+        bond_init_spread=0.25, n_agents=60,
+    )
+    m = Model(cfg, seed=7)
+    at_spawn = m.arrays.tau.copy()
+    assert np.std(at_spawn[:, 1]) > 0 and np.std(at_spawn[:, 3]) > 0, (
+        "spreads are nonzero but the drawn time constants are uniform"
+    )
+    for _ in range(300):
+        m.step()
+    assert np.array_equal(m.arrays.tau, at_spawn), (
+        "per-agent time constants changed during a run; Amendment 2 violated"
+    )
 
 
 def test_drive_state_written_only_in_drives():

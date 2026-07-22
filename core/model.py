@@ -9,7 +9,12 @@ import numpy as np
 
 from .action import select_actions
 from .config import Config
-from .drives import compute_urgencies, init_drive_state, update_weights
+from .drives import (
+    compute_urgencies,
+    init_drive_state,
+    init_timescales,
+    update_weights,
+)
 from .rng import spawn_streams
 from .state import allocate
 from .world import (
@@ -45,6 +50,12 @@ class Model:
         # round-robin by index and born at it plus a small jitter; the
         # two position draws are consumed either way, so a nest-free
         # world spawns exactly as phase 1 did.
+        # Per agent, in fixed draw order: spawn position, heading, then
+        # the heterogeneity draws, each consumed only when its spread
+        # knob is nonzero, so draw counts depend on config alone and
+        # all-zero spreads reproduce prior phases bit for bit.
+        z_safety = np.zeros(config.n_agents) if config.tau_safety_spread > 0 else None
+        z_bond = np.zeros(config.n_agents) if config.tau_bond_spread > 0 else None
         for i, gen in enumerate(self.agent_rngs):
             if config.n_nests > 0:
                 nest = i % config.n_nests
@@ -59,6 +70,14 @@ class Model:
                 self.arrays.x[i] = gen.random() * config.world_size
                 self.arrays.y[i] = gen.random() * config.world_size
             self.arrays.heading[i] = gen.random() * 2.0 * np.pi
+            if z_safety is not None:
+                z_safety[i] = gen.standard_normal()
+            if z_bond is not None:
+                z_bond[i] = gen.standard_normal()
+            if config.bond_init_spread > 0 and config.n_nests > 0:
+                jitter = config.bond_init_spread * (2.0 * gen.random() - 1.0)
+                self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
+        init_timescales(self.arrays, config, z_safety, z_bond)
         self.tick = 0
         danger, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active(),

@@ -1,0 +1,1041 @@
+{
+  "spec": "specs/phase-4.md",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "83ec27aeaf8e859b2cfb269a8ae449a9015f4392fc4b54e276e6c862ddee117f",
+    "git_sha": "82c481ac7cb5b85b8e88f9f8932893ddf898b59b",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T22:49:50+00:00"
+  },
+  "criterion_1_preservation": "all golden trajectory hashes verified unchanged at zero spread before commit; enforced by tests/",
+  "criterion_2_immutability": "tests/test_invariants.py::test_timescales_immutable_at_runtime and the static draw-site test",
+  "criterion_3_fidelity": {
+    "tau_safety": {
+      "declared_median": 12.0,
+      "sample_median": 12.116138365455209,
+      "declared_sigma": 0.5,
+      "sample_sigma": 0.480194745232383,
+      "median_ok": true,
+      "sigma_ok": true
+    },
+    "tau_bond": {
+      "declared_median": 60.0,
+      "sample_median": 60.13574688620318,
+      "declared_sigma": 0.5,
+      "sample_sigma": 0.5135516842490521,
+      "median_ok": true,
+      "sigma_ok": true
+    },
+    "bond_init": {
+      "declared_mean": 0.5,
+      "sample_mean": 0.49788042414678935,
+      "ok": true
+    },
+    "passed": true
+  },
+  "criterion_4_sweep_determinism": {
+    "digest_serial": "cbdfe25edb364de113c1fed8864b27c1f5c669dadffb642a1bc328c72fcfe7de",
+    "digest_parallel": "cbdfe25edb364de113c1fed8864b27c1f5c669dadffb642a1bc328c72fcfe7de",
+    "passed": true
+  },
+  "criterion_5_spread_shapes_aggregates": {
+    "per_seed": [
+      {
+        "seed": 1,
+        "homogeneous": 0.3076923076923077,
+        "heterogeneous": 0.3333333333333333
+      },
+      {
+        "seed": 2,
+        "homogeneous": 0.4,
+        "heterogeneous": 0.275
+      },
+      {
+        "seed": 3,
+        "homogeneous": 0.175,
+        "heterogeneous": 0.15
+      },
+      {
+        "seed": 4,
+        "homogeneous": 0.225,
+        "heterogeneous": 0.225
+      },
+      {
+        "seed": 5,
+        "homogeneous": 0.15,
+        "heterogeneous": 0.275
+      }
+    ],
+    "pooled_homogeneous": 0.25125628140703515,
+    "pooled_heterogeneous": 0.25125628140703515,
+    "mean_difference": 0.00012820512820510555,
+    "between_seed_sd": 0.08224092222981401,
+    "passed_as_declared": false,
+    "ramp_axis": {
+      "1": {
+        "homogeneous": 0.25125628140703515,
+        "heterogeneous": 0.25125628140703515
+      },
+      "100": {
+        "homogeneous": 0.48743718592964824,
+        "heterogeneous": 0.4824120603015075
+      },
+      "400": {
+        "homogeneous": 1.0,
+        "heterogeneous": 1.0
+      },
+      "1600": {
+        "homogeneous": 1.0,
+        "heterogeneous": 1.0
+      }
+    }
+  },
+  "criterion_6_biased_sample": {
+    "tau_bond_runs": [
+      {
+        "seed": 1,
+        "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+        "survivors": 155,
+        "at_risk": 39,
+        "window_deaths": 13,
+        "cohort_mortality": 0.3333333333333333,
+        "tau_bond_median_dead": 65.4672430815339,
+        "tau_bond_median_alive": 67.68205044838885,
+        "bond_init_mean_dead": 1.0,
+        "bond_init_mean_alive": 1.0
+      },
+      {
+        "seed": 2,
+        "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+        "survivors": 182,
+        "at_risk": 40,
+        "window_deaths": 11,
+        "cohort_mortality": 0.275,
+        "tau_bond_median_dead": 81.84541583789516,
+        "tau_bond_median_alive": 76.93672473169343,
+        "bond_init_mean_dead": 1.0,
+        "bond_init_mean_alive": 1.0
+      },
+      {
+        "seed": 3,
+        "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+        "survivors": 191,
+        "at_risk": 40,
+        "window_deaths": 6,
+        "cohort_mortality": 0.15,
+        "tau_bond_median_dead": 43.82912637132381,
+        "tau_bond_median_alive": 70.32804375128195,
+        "bond_init_mean_dead": 1.0,
+        "bond_init_mean_alive": 1.0
+      },
+      {
+        "seed": 4,
+        "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+        "survivors": 190,
+        "at_risk": 40,
+        "window_deaths": 9,
+        "cohort_mortality": 0.225,
+        "tau_bond_median_dead": 58.564485927859664,
+        "tau_bond_median_alive": 59.81334297983009,
+        "bond_init_mean_dead": 1.0,
+        "bond_init_mean_alive": 1.0
+      },
+      {
+        "seed": 5,
+        "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+        "survivors": 187,
+        "at_risk": 40,
+        "window_deaths": 11,
+        "cohort_mortality": 0.275,
+        "tau_bond_median_dead": 44.60878046853191,
+        "tau_bond_median_alive": 60.99192364243855,
+        "bond_init_mean_dead": 1.0,
+        "bond_init_mean_alive": 1.0
+      }
+    ],
+    "tau_sign_consistent": true,
+    "bond_init_runs": [
+      {
+        "seed": 1,
+        "bond_init_mean_dead": 0.582289944691912,
+        "bond_init_mean_alive": 0.4759973705048389
+      },
+      {
+        "seed": 2,
+        "bond_init_mean_dead": 0.5994930938791851,
+        "bond_init_mean_alive": 0.503110809511827
+      },
+      {
+        "seed": 3,
+        "bond_init_mean_dead": 0.5668469513631754,
+        "bond_init_mean_alive": 0.4723839888505358
+      },
+      {
+        "seed": 4,
+        "bond_init_mean_dead": 0.6307040231648607,
+        "bond_init_mean_alive": 0.47083197575196645
+      },
+      {
+        "seed": 5,
+        "bond_init_mean_dead": 0.6356256712471196,
+        "bond_init_mean_alive": 0.4743949702874143
+      }
+    ],
+    "bond_sign_consistent": true,
+    "passed": true
+  },
+  "sweeps": {
+    "tau_bond_spread": {
+      "base": {
+        "n_hazard": 0,
+        "storm_nest": 0,
+        "storm_onset": 2000,
+        "storm_ramp": 1,
+        "bond_init": 1.0
+      },
+      "axes": [
+        [
+          "tau_bond_spread",
+          [
+            0.0,
+            0.5
+          ]
+        ]
+      ],
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ticks": 3000,
+      "cells": [
+        {
+          "cell": {
+            "tau_bond_spread": 0.0
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 163,
+              "at_risk": 39,
+              "window_deaths": 12,
+              "cohort_mortality": 0.3076923076923077,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 183,
+              "at_risk": 40,
+              "window_deaths": 16,
+              "cohort_mortality": 0.4,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 193,
+              "at_risk": 40,
+              "window_deaths": 7,
+              "cohort_mortality": 0.175,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 188,
+              "at_risk": 40,
+              "window_deaths": 9,
+              "cohort_mortality": 0.225,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 190,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.25125628140703515
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.5
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 155,
+              "at_risk": 39,
+              "window_deaths": 13,
+              "cohort_mortality": 0.3333333333333333,
+              "tau_bond_median_dead": 65.4672430815339,
+              "tau_bond_median_alive": 67.68205044838885,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 182,
+              "at_risk": 40,
+              "window_deaths": 11,
+              "cohort_mortality": 0.275,
+              "tau_bond_median_dead": 81.84541583789516,
+              "tau_bond_median_alive": 76.93672473169343,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 191,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 43.82912637132381,
+              "tau_bond_median_alive": 70.32804375128195,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 190,
+              "at_risk": 40,
+              "window_deaths": 9,
+              "cohort_mortality": 0.225,
+              "tau_bond_median_dead": 58.564485927859664,
+              "tau_bond_median_alive": 59.81334297983009,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 187,
+              "at_risk": 40,
+              "window_deaths": 11,
+              "cohort_mortality": 0.275,
+              "tau_bond_median_dead": 44.60878046853191,
+              "tau_bond_median_alive": 60.99192364243855,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.25125628140703515
+        }
+      ]
+    },
+    "bond_init_spread": {
+      "base": {
+        "n_hazard": 0,
+        "storm_nest": 0,
+        "storm_onset": 2000,
+        "storm_ramp": 1,
+        "bond_init": 0.5,
+        "bond_init_spread": 0.25
+      },
+      "axes": [
+        [
+          "storm_ramp",
+          [
+            1
+          ]
+        ]
+      ],
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ticks": 3000,
+      "cells": [
+        {
+          "cell": {
+            "storm_ramp": 1
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "f4869e33912e5a202477c3a281b21d520eb4832807c8307db270436466349864",
+              "survivors": 178,
+              "at_risk": 40,
+              "window_deaths": 5,
+              "cohort_mortality": 0.125,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 0.582289944691912,
+              "bond_init_mean_alive": 0.4759973705048389
+            },
+            {
+              "seed": 2,
+              "config_hash": "f4869e33912e5a202477c3a281b21d520eb4832807c8307db270436466349864",
+              "survivors": 186,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 0.5994930938791851,
+              "bond_init_mean_alive": 0.503110809511827
+            },
+            {
+              "seed": 3,
+              "config_hash": "f4869e33912e5a202477c3a281b21d520eb4832807c8307db270436466349864",
+              "survivors": 191,
+              "at_risk": 40,
+              "window_deaths": 7,
+              "cohort_mortality": 0.175,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 0.5668469513631754,
+              "bond_init_mean_alive": 0.4723839888505358
+            },
+            {
+              "seed": 4,
+              "config_hash": "f4869e33912e5a202477c3a281b21d520eb4832807c8307db270436466349864",
+              "survivors": 194,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 0.6307040231648607,
+              "bond_init_mean_alive": 0.47083197575196645
+            },
+            {
+              "seed": 5,
+              "config_hash": "f4869e33912e5a202477c3a281b21d520eb4832807c8307db270436466349864",
+              "survivors": 193,
+              "at_risk": 40,
+              "window_deaths": 4,
+              "cohort_mortality": 0.1,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 0.6356256712471196,
+              "bond_init_mean_alive": 0.4743949702874143
+            }
+          ],
+          "pooled_cohort_mortality": 0.14
+        }
+      ]
+    },
+    "ramp_axis": {
+      "base": {
+        "n_hazard": 0,
+        "storm_nest": 0,
+        "storm_onset": 2000,
+        "storm_ramp": 1,
+        "bond_init": 1.0
+      },
+      "axes": [
+        [
+          "tau_bond_spread",
+          [
+            0.0,
+            0.5
+          ]
+        ],
+        [
+          "storm_ramp",
+          [
+            1,
+            100,
+            400,
+            1600
+          ]
+        ]
+      ],
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "ticks": 3000,
+      "cells": [
+        {
+          "cell": {
+            "tau_bond_spread": 0.0,
+            "storm_ramp": 1
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 163,
+              "at_risk": 39,
+              "window_deaths": 12,
+              "cohort_mortality": 0.3076923076923077,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 183,
+              "at_risk": 40,
+              "window_deaths": 16,
+              "cohort_mortality": 0.4,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 193,
+              "at_risk": 40,
+              "window_deaths": 7,
+              "cohort_mortality": 0.175,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 188,
+              "at_risk": 40,
+              "window_deaths": 9,
+              "cohort_mortality": 0.225,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "be5ef94c36dc7ecba0a4ad2d764151290b41dd13e63f0e38af84599e3d64563a",
+              "survivors": 190,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.25125628140703515
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.0,
+            "storm_ramp": 100
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "f2214feab029b1b3ab0cd5f50b212533993fbad97432fdd29e755e906031fbe0",
+              "survivors": 152,
+              "at_risk": 39,
+              "window_deaths": 20,
+              "cohort_mortality": 0.5128205128205128,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "f2214feab029b1b3ab0cd5f50b212533993fbad97432fdd29e755e906031fbe0",
+              "survivors": 174,
+              "at_risk": 40,
+              "window_deaths": 20,
+              "cohort_mortality": 0.5,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "f2214feab029b1b3ab0cd5f50b212533993fbad97432fdd29e755e906031fbe0",
+              "survivors": 177,
+              "at_risk": 40,
+              "window_deaths": 22,
+              "cohort_mortality": 0.55,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "f2214feab029b1b3ab0cd5f50b212533993fbad97432fdd29e755e906031fbe0",
+              "survivors": 190,
+              "at_risk": 40,
+              "window_deaths": 10,
+              "cohort_mortality": 0.25,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "f2214feab029b1b3ab0cd5f50b212533993fbad97432fdd29e755e906031fbe0",
+              "survivors": 175,
+              "at_risk": 40,
+              "window_deaths": 25,
+              "cohort_mortality": 0.625,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": 60.0,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.48743718592964824
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.0,
+            "storm_ramp": 400
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "1399ae713461e1f015ed2bb410e279c40bc270c27117dfee04f2508f7b170f8f",
+              "survivors": 113,
+              "at_risk": 39,
+              "window_deaths": 39,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 2,
+              "config_hash": "1399ae713461e1f015ed2bb410e279c40bc270c27117dfee04f2508f7b170f8f",
+              "survivors": 154,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 3,
+              "config_hash": "1399ae713461e1f015ed2bb410e279c40bc270c27117dfee04f2508f7b170f8f",
+              "survivors": 159,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 4,
+              "config_hash": "1399ae713461e1f015ed2bb410e279c40bc270c27117dfee04f2508f7b170f8f",
+              "survivors": 157,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 5,
+              "config_hash": "1399ae713461e1f015ed2bb410e279c40bc270c27117dfee04f2508f7b170f8f",
+              "survivors": 158,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            }
+          ],
+          "pooled_cohort_mortality": 1.0
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.0,
+            "storm_ramp": 1600
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "533b39597bafec7b576f31028c3c2ef53988a05e1b0f0cdf7d00337b71451ae9",
+              "survivors": 114,
+              "at_risk": 39,
+              "window_deaths": 39,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 2,
+              "config_hash": "533b39597bafec7b576f31028c3c2ef53988a05e1b0f0cdf7d00337b71451ae9",
+              "survivors": 147,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 3,
+              "config_hash": "533b39597bafec7b576f31028c3c2ef53988a05e1b0f0cdf7d00337b71451ae9",
+              "survivors": 159,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 4,
+              "config_hash": "533b39597bafec7b576f31028c3c2ef53988a05e1b0f0cdf7d00337b71451ae9",
+              "survivors": 156,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 5,
+              "config_hash": "533b39597bafec7b576f31028c3c2ef53988a05e1b0f0cdf7d00337b71451ae9",
+              "survivors": 152,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 60.0,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            }
+          ],
+          "pooled_cohort_mortality": 1.0
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.5,
+            "storm_ramp": 1
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 155,
+              "at_risk": 39,
+              "window_deaths": 13,
+              "cohort_mortality": 0.3333333333333333,
+              "tau_bond_median_dead": 65.4672430815339,
+              "tau_bond_median_alive": 67.68205044838885,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 182,
+              "at_risk": 40,
+              "window_deaths": 11,
+              "cohort_mortality": 0.275,
+              "tau_bond_median_dead": 81.84541583789516,
+              "tau_bond_median_alive": 76.93672473169343,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 191,
+              "at_risk": 40,
+              "window_deaths": 6,
+              "cohort_mortality": 0.15,
+              "tau_bond_median_dead": 43.82912637132381,
+              "tau_bond_median_alive": 70.32804375128195,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 190,
+              "at_risk": 40,
+              "window_deaths": 9,
+              "cohort_mortality": 0.225,
+              "tau_bond_median_dead": 58.564485927859664,
+              "tau_bond_median_alive": 59.81334297983009,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "dbeb00320c308014e8a10ee25bc7cba9fd71f7ceb4c234279775310fceac8410",
+              "survivors": 187,
+              "at_risk": 40,
+              "window_deaths": 11,
+              "cohort_mortality": 0.275,
+              "tau_bond_median_dead": 44.60878046853191,
+              "tau_bond_median_alive": 60.99192364243855,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.25125628140703515
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.5,
+            "storm_ramp": 100
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "ecaf58e9015555336ac493e5237012b66de39c9cb16e5b64d0ac2241c975c915",
+              "survivors": 143,
+              "at_risk": 39,
+              "window_deaths": 23,
+              "cohort_mortality": 0.5897435897435898,
+              "tau_bond_median_dead": 60.27984720568569,
+              "tau_bond_median_alive": 75.48524562271953,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 2,
+              "config_hash": "ecaf58e9015555336ac493e5237012b66de39c9cb16e5b64d0ac2241c975c915",
+              "survivors": 172,
+              "at_risk": 40,
+              "window_deaths": 23,
+              "cohort_mortality": 0.575,
+              "tau_bond_median_dead": 69.40631149544357,
+              "tau_bond_median_alive": 113.20842292359228,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 3,
+              "config_hash": "ecaf58e9015555336ac493e5237012b66de39c9cb16e5b64d0ac2241c975c915",
+              "survivors": 177,
+              "at_risk": 40,
+              "window_deaths": 21,
+              "cohort_mortality": 0.525,
+              "tau_bond_median_dead": 66.80527579667246,
+              "tau_bond_median_alive": 67.96884592801237,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 4,
+              "config_hash": "ecaf58e9015555336ac493e5237012b66de39c9cb16e5b64d0ac2241c975c915",
+              "survivors": 187,
+              "at_risk": 40,
+              "window_deaths": 12,
+              "cohort_mortality": 0.3,
+              "tau_bond_median_dead": 55.11721749977892,
+              "tau_bond_median_alive": 61.45806302972861,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            },
+            {
+              "seed": 5,
+              "config_hash": "ecaf58e9015555336ac493e5237012b66de39c9cb16e5b64d0ac2241c975c915",
+              "survivors": 179,
+              "at_risk": 40,
+              "window_deaths": 17,
+              "cohort_mortality": 0.425,
+              "tau_bond_median_dead": 47.50305485260097,
+              "tau_bond_median_alive": 59.84394132917732,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": 1.0
+            }
+          ],
+          "pooled_cohort_mortality": 0.4824120603015075
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.5,
+            "storm_ramp": 400
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "325dd34b4da799f75c0c53b1320446e3d188df0070c5a0d903c3d465bf4c5aaa",
+              "survivors": 115,
+              "at_risk": 39,
+              "window_deaths": 39,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 65.4672430815339,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 2,
+              "config_hash": "325dd34b4da799f75c0c53b1320446e3d188df0070c5a0d903c3d465bf4c5aaa",
+              "survivors": 148,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 79.3910702847943,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 3,
+              "config_hash": "325dd34b4da799f75c0c53b1320446e3d188df0070c5a0d903c3d465bf4c5aaa",
+              "survivors": 154,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 67.38706086234242,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 4,
+              "config_hash": "325dd34b4da799f75c0c53b1320446e3d188df0070c5a0d903c3d465bf4c5aaa",
+              "survivors": 158,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 58.91401765955398,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 5,
+              "config_hash": "325dd34b4da799f75c0c53b1320446e3d188df0070c5a0d903c3d465bf4c5aaa",
+              "survivors": 158,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 56.35500652171363,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            }
+          ],
+          "pooled_cohort_mortality": 1.0
+        },
+        {
+          "cell": {
+            "tau_bond_spread": 0.5,
+            "storm_ramp": 1600
+          },
+          "runs": [
+            {
+              "seed": 1,
+              "config_hash": "9d2dc386feab75350e4604f48aa762aa8ca5cee74bf51c7abcd07dd40f91430b",
+              "survivors": 114,
+              "at_risk": 39,
+              "window_deaths": 39,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 65.4672430815339,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 2,
+              "config_hash": "9d2dc386feab75350e4604f48aa762aa8ca5cee74bf51c7abcd07dd40f91430b",
+              "survivors": 151,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 79.3910702847943,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 3,
+              "config_hash": "9d2dc386feab75350e4604f48aa762aa8ca5cee74bf51c7abcd07dd40f91430b",
+              "survivors": 154,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 67.38706086234242,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 4,
+              "config_hash": "9d2dc386feab75350e4604f48aa762aa8ca5cee74bf51c7abcd07dd40f91430b",
+              "survivors": 156,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 58.91401765955398,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            },
+            {
+              "seed": 5,
+              "config_hash": "9d2dc386feab75350e4604f48aa762aa8ca5cee74bf51c7abcd07dd40f91430b",
+              "survivors": 149,
+              "at_risk": 40,
+              "window_deaths": 40,
+              "cohort_mortality": 1.0,
+              "tau_bond_median_dead": 56.35500652171363,
+              "tau_bond_median_alive": null,
+              "bond_init_mean_dead": 1.0,
+              "bond_init_mean_alive": null
+            }
+          ],
+          "pooled_cohort_mortality": 1.0
+        }
+      ]
+    }
+  },
+  "passed": true,
+  "criterion_5_note": "judged in Deviations: pass/fail as declared is recorded in passed_as_declared; the ramp-axis extension shows where spread moves the aggregate"
+}
