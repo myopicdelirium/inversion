@@ -5,6 +5,7 @@ description = "Population-scale agent-based model of emergent preference inversi
 requires-python = ">=3.11"
 dependencies = [
     "numpy>=1.26",
+    "scipy>=1.17.1",
 ]
 
 [tool.uv]

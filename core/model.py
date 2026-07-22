@@ -36,6 +36,11 @@ from .world import (
 RECORDED = ("x", "y", "energy", "integrity", "fatigue", "weights",
             "urgency", "bond")
 
+# Per-agent draws are consumed from blocks of this many ticks.
+# Generator.random(k) yields the identical stream values as k singles,
+# so the block size cannot affect any trajectory (goldens verify).
+_DRAW_BLOCK = 256
+
 
 class Model:
     def __init__(self, config: Config, seed: int):
@@ -78,6 +83,8 @@ class Model:
                 jitter = config.bond_init_spread * (2.0 * gen.random() - 1.0)
                 self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
         init_timescales(self.arrays, config, z_safety, z_bond)
+        self._draw_block = None
+        self._draw_cursor = 0
         self.tick = 0
         danger, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active(),
@@ -124,9 +131,17 @@ class Model:
 
         # Per agent: two draws per tick from the agent's own stream,
         # consumed by every agent every tick regardless of action, so
-        # stream consumption never depends on behaviour.
-        redraw_p = np.array([gen.random() for gen in self.agent_rngs])
-        redraw_angle = np.array([gen.random() for gen in self.agent_rngs])
+        # stream consumption never depends on behaviour. Drawn in
+        # blocks so population scale does not pay a Python loop per
+        # tick; per-agent stream order is unchanged.
+        if self._draw_block is None or self._draw_cursor >= 2 * _DRAW_BLOCK:
+            self._draw_block = np.stack(
+                [gen.random(2 * _DRAW_BLOCK) for gen in self.agent_rngs]
+            )
+            self._draw_cursor = 0
+        redraw_p = self._draw_block[:, self._draw_cursor]
+        redraw_angle = self._draw_block[:, self._draw_cursor + 1]
+        self._draw_cursor += 2
         apply_actions(
             self.arrays, cfg, actions,
             (food_dx, food_dy), (away_dx, away_dy), (home_dx, home_dy),

@@ -7,6 +7,7 @@ urgencies) is out of bounds here (CLAUDE.md chokepoint rule).
 from dataclasses import dataclass
 
 import numpy as np
+from scipy.spatial import cKDTree
 
 from .action import FLEE, REST_ACT, RETURN_HOME, SEEK_FOOD, WANDER
 
@@ -111,26 +112,33 @@ def perceive_danger(arrays, world, config, hazards_active, storm_intensity=0.0):
 def perceive_food(arrays, world, config):
     """Per agent: distance and unit direction to the nearest active
     food source; infinite distance when none is active (global
-    perception is a declared Phase 1 simplification)."""
+    perception is a declared Phase 1 simplification).
+
+    The periodic KD-tree selects only the *index* of the nearest
+    source; distance and direction are recomputed with the same torus
+    arithmetic as ever, so outputs are bit-identical to the old
+    all-pairs argmin whenever the indices agree, and ties are
+    measure-zero because respawn positions are continuous. The tree
+    is what makes 10k+ agents affordable (specs/phase-5.md)."""
     n = arrays.x.shape[0]
     active = world.food_timer == 0
     if not active.any():
         return np.full(n, np.inf), np.zeros(n), np.zeros(n), np.full(n, -1)
     fx, fy = world.food_x[active], world.food_y[active]
     active_ids = np.flatnonzero(active)
-    dx = _torus_delta(fx[None, :] - arrays.x[:, None], config.world_size)
-    dy = _torus_delta(fy[None, :] - arrays.y[:, None], config.world_size)
-    dist = np.hypot(dx, dy)  # (n, n_active)
-    nearest = np.argmin(dist, axis=1)
-    idx = np.arange(n)
-    d_near = dist[idx, nearest]
+    size = config.world_size
+    # Food positions are strictly inside [0, size); agent positions can
+    # land exactly on size through the float modulo, which is the same
+    # torus point as 0. Canonicalize the query only; state is untouched.
+    qx = np.where(arrays.x >= size, 0.0, arrays.x)
+    qy = np.where(arrays.y >= size, 0.0, arrays.y)
+    tree = cKDTree(np.column_stack([fx, fy]), boxsize=size)
+    _, nearest = tree.query(np.column_stack([qx, qy]))
+    dx = _torus_delta(fx[nearest] - arrays.x, size)
+    dy = _torus_delta(fy[nearest] - arrays.y, size)
+    d_near = np.hypot(dx, dy)
     safe = np.maximum(d_near, 1e-12)
-    return (
-        d_near,
-        dx[idx, nearest] / safe,
-        dy[idx, nearest] / safe,
-        active_ids[nearest],
-    )
+    return d_near, dx / safe, dy / safe, active_ids[nearest]
 
 
 def perceive_home(arrays, config):
