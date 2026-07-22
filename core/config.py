@@ -44,6 +44,18 @@ class Config:
     bond_grow: float = 0.002
     bond_decay: float = 0.0002
     r_bond: float = 25.0
+    # Storm (phase 3): experimental apparatus, a hazard aimed at a nest.
+    # Disabled by default; enabling it changes nothing before onset.
+    storm_nest: int = -1
+    storm_onset: int = 2000
+    storm_ramp: int = 1
+    storm_radius: float = 10.0
+    storm_damage: float = 0.05
+    # Supplementary apparatus (phase 3 deviations): when true, the ramp
+    # is warning only. Danger signal rises as usual but damage starts
+    # only once the ramp completes. Distinguishes advance warning from
+    # gradual arrival of harm.
+    storm_ramp_harmless: bool = False
     # Drive time constants, in ticks. Declared once, never reassigned.
     tau_energy: float = 20.0
     tau_safety: float = 12.0

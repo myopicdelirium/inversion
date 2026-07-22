@@ -2,7 +2,7 @@
   "description": "phase 2 default-config golden run (nests present, bond_init 0.5)",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "037526a6904e75096471b0420f56165eb75669445c9b0f58646a4c387b397aec",
+  "config_hash": "39f2e424866dbf685d6b9a55e938d706964e9052b639b2525f796ffd8efb21ef",
   "sha256": "5f703728c597d2c190a25b3c3c07e47defc1c06318739c8d2221c7d825c7124c",
   "array_sha256": {
     "x": "f94cfb405de45b401166e1ae5bc0cfcd1c9cbb6a4112d58ece58bc9e42ea3ebb",
@@ -22,5 +22,6 @@
     "python": "3.11.13",
     "numpy": "2.4.6",
     "timestamp_utc": "2026-07-22T21:43:35+00:00"
-  }
+  },
+  "config_hash_note": "updated 2026-07-23: config gained inert storm fields (storm disabled by default); trajectory hash verified unchanged in the same run"
 }

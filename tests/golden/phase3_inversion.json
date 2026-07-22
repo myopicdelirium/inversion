@@ -1,0 +1,26 @@
+{
+  "description": "flagship collision cell: sudden storm on the nest, bond 1.0; the inversion regime",
+  "seed": 42,
+  "ticks": 3000,
+  "config_hash": "47bd7f64daea04de5b646bcbc56325f8aa609da48b8ea9a379f10004f7bfd35d",
+  "sha256": "80fafb51bb5b9fb835b2c9bec287c9732b46810d229a39c5f4f1a61ac1a986e5",
+  "array_sha256": {
+    "x": "0baf88c74e04f4d3fb6b2023552af481ea9ebe5e9655f0f2774a7b7884eb057e",
+    "y": "811d52d31272b99a4767bdde725698617da59633e070f35bd210a827b256ac5d",
+    "energy": "676bbbc2f8dd1c3dad1061733e313ad5e401529e1a5f4514cb87303714d237d6",
+    "integrity": "f243ab622b30224832e86fc05eb995c9dd6656e0ad427c13802d45be50f45d22",
+    "fatigue": "e78b4420ff10009194a86be400382462e8713f9051ca7b59eb518478c3ca8229",
+    "weights": "da4a73727215ad3a3604648a2f261d5aca34fc5fa0be0f7915fa0fb37853497f",
+    "urgency": "413aca417f8f8bf2d24ac4fc98eaafb3ccbc811a50d54703c1a4227bed13d8e5",
+    "bond": "ef7ba2d0b6049fe71f75338e2facd01d6e172df32af19ada673dc320a6734fa4",
+    "alive": "0ddefba3a7494466d9819fdcbd67bf30828bb108239f28960d8827206026b66a"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "47bd7f64daea04de5b646bcbc56325f8aa609da48b8ea9a379f10004f7bfd35d",
+    "git_sha": "7f67213e332238ad65b59b7861b29ad64ca87a2a",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T22:30:57+00:00"
+  }
+}

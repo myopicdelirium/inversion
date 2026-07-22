@@ -20,6 +20,8 @@ class World:
     hazard_y: np.ndarray
     nest_x: np.ndarray    # (n_nests,) static nest positions
     nest_y: np.ndarray
+    storm_x: float        # storm center (on a nest); nan when disabled
+    storm_y: float
 
 
 def spawn_world(config, world_rng):
@@ -36,6 +38,20 @@ def spawn_world(config, world_rng):
     else:
         nest_x = np.zeros(0)
         nest_y = np.zeros(0)
+    # The storm sits exactly on its target nest. Placement consumes no
+    # RNG draws, so the world stream is identical with the storm on or
+    # off (specs/phase-3.md).
+    if config.storm_nest >= 0:
+        if config.storm_nest >= config.n_nests:
+            raise ValueError(
+                f"storm_nest {config.storm_nest} requires n_nests > "
+                f"{config.storm_nest}, got {config.n_nests}"
+            )
+        storm_x = float(nest_x[config.storm_nest])
+        storm_y = float(nest_y[config.storm_nest])
+    else:
+        storm_x = float("nan")
+        storm_y = float("nan")
     return World(
         food_x=food_x,
         food_y=food_y,
@@ -44,6 +60,8 @@ def spawn_world(config, world_rng):
         hazard_y=hazard_y,
         nest_x=nest_x,
         nest_y=nest_y,
+        storm_x=storm_x,
+        storm_y=storm_y,
     )
 
 
@@ -52,25 +70,42 @@ def _torus_delta(dx, size):
     return (dx + size / 2.0) % size - size / 2.0
 
 
-def perceive_danger(arrays, world, config, hazards_active):
-    """Per agent: danger is exp(-distance to nearest hazard center /
-    r_hazard); the flee direction is straight away from that center.
-    Returns (danger, away_dx, away_dy), all zero before hazard onset
-    or with no hazards."""
+def perceive_danger(arrays, world, config, hazards_active, storm_intensity=0.0):
+    """Per agent: danger is the strongest contribution among drifting
+    hazards, exp(-d / r_hazard), and the storm,
+    intensity * exp(-d / storm_radius); the flee direction is straight
+    away from whichever source contributes the most. Returns
+    (danger, away_dx, away_dy), all zero with no active sources."""
     n = arrays.x.shape[0]
-    if world.hazard_x.shape[0] == 0 or not hazards_active:
-        return np.zeros(n), np.zeros(n), np.zeros(n)
-    dx = _torus_delta(arrays.x[:, None] - world.hazard_x[None, :], config.world_size)
-    dy = _torus_delta(arrays.y[:, None] - world.hazard_y[None, :], config.world_size)
-    dist = np.hypot(dx, dy)  # (n, n_hazard)
-    nearest = np.argmin(dist, axis=1)
-    idx = np.arange(n)
-    d_near = dist[idx, nearest]
-    level = np.exp(-d_near / config.r_hazard)
-    # Unit vector away from the nearest center; at the exact center the
-    # caller falls back to the agent's heading.
-    safe = np.maximum(d_near, 1e-12)
-    return level, dx[idx, nearest] / safe, dy[idx, nearest] / safe
+    level = np.zeros(n)
+    away_dx = np.zeros(n)
+    away_dy = np.zeros(n)
+    if world.hazard_x.shape[0] > 0 and hazards_active:
+        dx = _torus_delta(arrays.x[:, None] - world.hazard_x[None, :], config.world_size)
+        dy = _torus_delta(arrays.y[:, None] - world.hazard_y[None, :], config.world_size)
+        dist = np.hypot(dx, dy)  # (n, n_hazard)
+        nearest = np.argmin(dist, axis=1)
+        idx = np.arange(n)
+        d_near = dist[idx, nearest]
+        level = np.exp(-d_near / config.r_hazard)
+        # Unit vector away from the nearest center; at the exact center
+        # the caller falls back to the agent's heading.
+        safe = np.maximum(d_near, 1e-12)
+        away_dx = dx[idx, nearest] / safe
+        away_dy = dy[idx, nearest] / safe
+    if storm_intensity > 0.0:
+        sdx = _torus_delta(arrays.x - world.storm_x, config.world_size)
+        sdy = _torus_delta(arrays.y - world.storm_y, config.world_size)
+        sd = np.hypot(sdx, sdy)
+        s_level = storm_intensity * np.exp(-sd / config.storm_radius)
+        safe = np.maximum(sd, 1e-12)
+        # Per agent: the stronger source dictates both the felt danger
+        # and the direction of retreat.
+        storm_wins = s_level > level
+        away_dx = np.where(storm_wins, sdx / safe, away_dx)
+        away_dy = np.where(storm_wins, sdy / safe, away_dy)
+        level = np.maximum(level, s_level)
+    return level, away_dx, away_dy
 
 
 def perceive_food(arrays, world, config):
@@ -188,11 +223,13 @@ def apply_eating(arrays, world, config, dist_food, nearest_food_id):
     world.food_timer[consumed] = config.food_respawn
 
 
-def apply_damage_and_deaths(arrays, world, config, hazards_active):
-    """Per agent: standing inside a hazard erodes integrity; outside,
-    integrity slowly heals toward full, so damage is an equilibrium
-    rather than a one-way ratchet. An agent whose energy or integrity
-    reaches zero dies, permanently."""
+def apply_damage_and_deaths(arrays, world, config, hazards_active, storm_intensity=0.0):
+    """Per agent: standing inside a hazard erodes integrity at the
+    hazard rate, standing inside the storm erodes it at the storm rate
+    times intensity, and the two add where they overlap; outside all
+    damage zones, integrity slowly heals toward full, so damage is an
+    equilibrium rather than a one-way ratchet. An agent whose energy or
+    integrity reaches zero dies, permanently."""
     n = arrays.x.shape[0]
     if hazards_active and world.hazard_x.shape[0] > 0:
         dx = _torus_delta(arrays.x[:, None] - world.hazard_x[None, :], config.world_size)
@@ -200,9 +237,19 @@ def apply_damage_and_deaths(arrays, world, config, hazards_active):
         inside = (np.hypot(dx, dy) < config.r_hazard).any(axis=1)
     else:
         inside = np.zeros(n, dtype=bool)
+    if storm_intensity > 0.0:
+        sdx = _torus_delta(arrays.x - world.storm_x, config.world_size)
+        sdy = _torus_delta(arrays.y - world.storm_y, config.world_size)
+        inside_storm = np.hypot(sdx, sdy) < config.storm_radius
+    else:
+        inside_storm = np.zeros(n, dtype=bool)
     hit = arrays.alive & inside
     arrays.integrity[hit] = np.maximum(arrays.integrity[hit] - config.damage_rate, 0.0)
-    heal = arrays.alive & ~inside
+    hit_storm = arrays.alive & inside_storm
+    arrays.integrity[hit_storm] = np.maximum(
+        arrays.integrity[hit_storm] - config.storm_damage * storm_intensity, 0.0
+    )
+    heal = arrays.alive & ~inside & ~inside_storm
     arrays.integrity[heal] = np.minimum(arrays.integrity[heal] + config.regen_rate, 1.0)
     arrays.alive &= (arrays.energy > 0.0) & (arrays.integrity > 0.0)
 

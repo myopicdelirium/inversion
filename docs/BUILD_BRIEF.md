@@ -20,4 +20,4 @@ The inertia law ships in Phase 1, with base drives only, before any commitment m
 
 ## Current status
 
-Phase 2 complete: attachment to a home place as a fourth drive of the same class, no new mechanism. Behavioural preservation proven bit for bit under a no-nest config; accumulation and weight laws exact; tethering emerged and is monotone in attachment. Next: Phase 3 spec (collision environments, threat onset speed as a controlled axis).
+Phase 3 complete: the storm apparatus, death decomposition, and the first phase-diagram slice. Headline: the pre-registered null test failed as written and held as intended, forcing the warning versus gradual-arrival distinction. Warning collapses mortality to control (0.25 to 0.00); gradual arrival of harm kills totally (0.25 to 1.00). All commitment deaths are return deaths. Next: Phase 4 spec (sweep machinery; heterogeneous per-agent parameters as distributions, the depth-of-each-individual axis).

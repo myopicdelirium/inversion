@@ -1,0 +1,339 @@
+{
+  "spec": "specs/phase-3.md, criteria judged exactly as written",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "47bd7f64daea04de5b646bcbc56325f8aa609da48b8ea9a379f10004f7bfd35d",
+    "git_sha": "7f67213e332238ad65b59b7861b29ad64ca87a2a",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-22T22:30:19+00:00"
+  },
+  "arena_note": "n_nests 5 (cohort about 40 of 200 homed to the storm nest), n_hazard 0 so every integrity death in the window is a storm death",
+  "criterion_2_collision": {
+    "per_seed": [
+      {
+        "seed": 1,
+        "bonded": 0.3076923076923077,
+        "control": 0.0
+      },
+      {
+        "seed": 2,
+        "bonded": 0.4,
+        "control": 0.0
+      },
+      {
+        "seed": 3,
+        "bonded": 0.175,
+        "control": 0.0
+      },
+      {
+        "seed": 4,
+        "bonded": 0.225,
+        "control": 0.0
+      },
+      {
+        "seed": 5,
+        "bonded": 0.15,
+        "control": 0.0
+      },
+      {
+        "seed": 6,
+        "bonded": 0.275,
+        "control": 0.0
+      },
+      {
+        "seed": 7,
+        "bonded": 0.425,
+        "control": 0.0
+      },
+      {
+        "seed": 8,
+        "bonded": 0.25,
+        "control": 0.0
+      },
+      {
+        "seed": 9,
+        "bonded": 0.375,
+        "control": 0.0
+      },
+      {
+        "seed": 10,
+        "bonded": 0.35,
+        "control": 0.0
+      }
+    ],
+    "seeds_bonded_exceeds_control": 10,
+    "pooled_bonded": 0.2932330827067669,
+    "pooled_control": 0.0,
+    "pooled_excess_points": 29.32330827067669,
+    "passed": true
+  },
+  "criterion_3_null_test_as_written": {
+    "mortality_by_ramp_bond1": {
+      "1": 0.25125628140703515,
+      "100": 0.48743718592964824,
+      "400": 1.0,
+      "1600": 1.0
+    },
+    "control_at_1600": 0.0,
+    "non_increasing": false,
+    "strict_decrease_1_to_1600": false,
+    "within_2pts_of_control_at_1600": false,
+    "passed": false
+  },
+  "criterion_4_decomposition": {
+    "decomposition": {
+      "bond0.0_ramp1": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      },
+      "bond0.0_ramp100": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      },
+      "bond0.0_ramp400": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      },
+      "bond0.0_ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      },
+      "bond0.25_ramp1": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      },
+      "bond0.25_ramp100": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 3,
+        "mortality": 0.015,
+        "onset_deaths": 0,
+        "return_deaths": 3,
+        "other_deaths": 0
+      },
+      "bond0.25_ramp400": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 65,
+        "mortality": 0.325,
+        "onset_deaths": 13,
+        "return_deaths": 52,
+        "other_deaths": 0
+      },
+      "bond0.25_ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 101,
+        "mortality": 0.505,
+        "onset_deaths": 0,
+        "return_deaths": 101,
+        "other_deaths": 0
+      },
+      "bond0.5_ramp1": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 26,
+        "mortality": 0.13,
+        "onset_deaths": 0,
+        "return_deaths": 26,
+        "other_deaths": 0
+      },
+      "bond0.5_ramp100": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 37,
+        "mortality": 0.185,
+        "onset_deaths": 0,
+        "return_deaths": 37,
+        "other_deaths": 0
+      },
+      "bond0.5_ramp400": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 200,
+        "mortality": 1.0,
+        "onset_deaths": 3,
+        "return_deaths": 197,
+        "other_deaths": 0
+      },
+      "bond0.5_ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 200,
+        "window_deaths": 200,
+        "mortality": 1.0,
+        "onset_deaths": 1,
+        "return_deaths": 199,
+        "other_deaths": 0
+      },
+      "bond0.75_ramp1": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 39,
+        "mortality": 0.19597989949748743,
+        "onset_deaths": 0,
+        "return_deaths": 39,
+        "other_deaths": 0
+      },
+      "bond0.75_ramp100": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 82,
+        "mortality": 0.4120603015075377,
+        "onset_deaths": 0,
+        "return_deaths": 82,
+        "other_deaths": 0
+      },
+      "bond0.75_ramp400": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 199,
+        "mortality": 1.0,
+        "onset_deaths": 8,
+        "return_deaths": 191,
+        "other_deaths": 0
+      },
+      "bond0.75_ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 199,
+        "mortality": 1.0,
+        "onset_deaths": 0,
+        "return_deaths": 199,
+        "other_deaths": 0
+      },
+      "bond1.0_ramp1": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 50,
+        "mortality": 0.25125628140703515,
+        "onset_deaths": 0,
+        "return_deaths": 50,
+        "other_deaths": 0
+      },
+      "bond1.0_ramp100": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 97,
+        "mortality": 0.48743718592964824,
+        "onset_deaths": 0,
+        "return_deaths": 97,
+        "other_deaths": 0
+      },
+      "bond1.0_ramp400": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 199,
+        "mortality": 1.0,
+        "onset_deaths": 17,
+        "return_deaths": 182,
+        "other_deaths": 0
+      },
+      "bond1.0_ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 199,
+        "mortality": 1.0,
+        "onset_deaths": 0,
+        "return_deaths": 199,
+        "other_deaths": 0
+      }
+    },
+    "prediction3_flagship": {
+      "excess_deaths_vs_control": 50,
+      "return_deaths": 50,
+      "onset_deaths": 0,
+      "return_share_of_integrity_deaths": 1.0
+    }
+  },
+  "criterion_5_map": {
+    "map": {
+      "0.0|1": 0.0,
+      "0.0|100": 0.0,
+      "0.0|400": 0.0,
+      "0.0|1600": 0.0,
+      "0.25|1": 0.0,
+      "0.25|100": 0.015,
+      "0.25|400": 0.325,
+      "0.25|1600": 0.505,
+      "0.5|1": 0.13,
+      "0.5|100": 0.185,
+      "0.5|400": 1.0,
+      "0.5|1600": 1.0,
+      "0.75|1": 0.19597989949748743,
+      "0.75|100": 0.4120603015075377,
+      "0.75|400": 1.0,
+      "0.75|1600": 1.0,
+      "1.0|1": 0.25125628140703515,
+      "1.0|100": 0.48743718592964824,
+      "1.0|400": 1.0,
+      "1.0|1600": 1.0
+    },
+    "has_cell_20pts_above_control": true,
+    "has_bonded_cell_within_2pts_of_control": true,
+    "passed": true
+  },
+  "supplement_harmless_ramp": {
+    "mortality_by_ramp_bond1_harmless": {
+      "1": 0.25125628140703515,
+      "100": 0.19597989949748743,
+      "400": 0.020100502512562814,
+      "1600": 0.0
+    },
+    "decomposition": {
+      "ramp100": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 39,
+        "mortality": 0.19597989949748743,
+        "onset_deaths": 0,
+        "return_deaths": 39,
+        "other_deaths": 0
+      },
+      "ramp400": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 4,
+        "mortality": 0.020100502512562814,
+        "onset_deaths": 0,
+        "return_deaths": 4,
+        "other_deaths": 0
+      },
+      "ramp1600": {
+        "n_seeds": 5,
+        "at_risk": 199,
+        "window_deaths": 0,
+        "mortality": 0.0,
+        "onset_deaths": 0,
+        "return_deaths": 0,
+        "other_deaths": 0
+      }
+    }
+  },
+  "cells_file": "results/phase-3-cells.json"
+}

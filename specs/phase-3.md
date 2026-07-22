@@ -1,6 +1,6 @@
 # Phase 3: Collision environments
 
-Status: **draft, awaiting user review**. This phase produces the first commitment-versus-survival tradeoffs, so per the working agreement it does not proceed on delegated judgment. No mechanism code until this spec is approved.
+Status: **approved 2026-07-23**. Spec authored by the user; the go-ahead ("move forward with the next step") postdates the draft and constitutes the review this phase required. Implemented same day.
 
 ## Purpose
 
@@ -50,4 +50,12 @@ Bonds to agents, grief (the nest is never destroyed, only made dangerous), rescu
 
 ## Deviations from spec during build
 
-(To be filled at end of implementation session, after approval.)
+Recorded 2026-07-23, the implementation session. Full numbers in `results/phase-3-validation.json`; raw cells with per-run seeds and config hashes in `results/phase-3-cells.json`.
+
+1. **Criterion 3, the null test, FAILS as written, and the failure is the phase's central finding.** Storm mortality at bond 1.0 by ramp {1, 100, 400, 1600}: 0.25, 0.49, 1.00, 1.00, against controls at 0.00. Mortality rises with telegraphing instead of collapsing. Mechanism: as specced, damage ramps with the signal, so a long ramp is a gradual arrival of harm, not a warning. Under gradual harm, no single tick makes fleeing out-value the current activity, the bond cycles agents back through the warming zone, and cumulative damage crosses lethal before danger ever feels urgent. Not tuned away; reported.
+2. **Supplementary apparatus added to disambiguate: `storm_ramp_harmless`** (default false, preservation intact). The ramp becomes warning only: the danger signal rises as specced but damage starts when the ramp completes. Under this reading of "telegraphed," prediction 2 holds exactly as pre-registered: mortality 0.25, 0.20, 0.02, 0.00 across the same ramps, monotone collapse to control. The model forced a conceptual distinction the spec's vocabulary did not have: warning saves lives, gradual arrival of harm kills more than sudden arrival. Same ramps, same bond, opposite outcomes.
+3. **Prediction 3 confirmed exactly.** At the flagship cell (sudden storm, bond 1.0), onset deaths are 0 and the return share of integrity deaths is 1.00: every commitment death is an agent that escaped and went back. The bond does not pin agents down; it pulls them back. Even in the slow-cook cells, deaths classify as return deaths: agents cycle out and back through the growing storm.
+4. **Arena declarations** (the spec left them open): default 5 nests, so the cohort homed to the storm nest is about 40 of 200; drifting hazards off (`n_hazard = 0`) so every integrity death in the window is a storm death. Declared in `scripts/validate_phase3.py::cell_config`.
+5. **Criteria as judged: 2 PASS** (pooled 0.29 vs 0.00, 10/10 seeds, excess 29 points against the required 5), **3 FAIL as written / holds under the harmless-ramp reading** (deviation 2), **4 recorded** (decomposition per condition in the artifact), **5 PASS** (the map has hot cells 20+ points above control and bonded cells within 2 points of control; it is neither all death nor no death), **6 done** (two goldens, not one: the inversion cell and the null cell, since the constitution says null regions are findings and get goldens too).
+6. **Phase 2 stored config hash refreshed twice** (storm fields, then `storm_ramp_harmless`), each time after verifying in the same run that the phase 2 golden trajectory hash is bit-for-bit unchanged. The trajectory hash never moved.
+7. **Pre-onset observation, reported for the record:** in a single-nest arena at bond 1.0, tether-induced crowding starved 22 of 200 agents before any storm existed (probe run, seed 42). The 5-nest arena dilutes this; cohort at-risk counts per cell are in the raw file. Commitment has a carrying cost even in peacetime.

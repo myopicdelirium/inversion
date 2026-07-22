@@ -40,6 +40,26 @@ def test_phase1_behaviour_preserved():
         )
 
 
+def test_phase3_regime_goldens():
+    """Both regimes are findings: the inversion cell and the null cell
+    each get a frozen trajectory (CLAUDE.md Amendment 1)."""
+    from scripts.validate_phase3 import cell_config
+
+    for filename, cfg in (
+        ("phase3_inversion.json", cell_config(1.0, 1, False)),
+        ("phase3_null.json", cell_config(1.0, 1600, True)),
+    ):
+        spec = json.loads((GOLDEN / filename).read_text())
+        assert cfg.config_hash() == spec["config_hash"], (
+            f"{filename}: cell config no longer matches the golden run"
+        )
+        traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+        assert golden_hash(traj) == spec["sha256"], (
+            f"{filename}: golden trajectory hash changed: the dynamics "
+            f"changed. Report and stop (CLAUDE.md)."
+        )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

@@ -61,7 +61,8 @@ class Model:
             self.arrays.heading[i] = gen.random() * 2.0 * np.pi
         self.tick = 0
         danger, _, _ = perceive_danger(
-            self.arrays, self.world, config, self._hazards_active()
+            self.arrays, self.world, config, self._hazards_active(),
+            self._storm_intensity(),
         )
         dist_home, _, _ = perceive_home(self.arrays, config)
         init_drive_state(self.arrays, config, danger, dist_home)
@@ -69,13 +70,32 @@ class Model:
     def _hazards_active(self) -> bool:
         return self.tick >= self.config.hazard_onset
 
+    def _storm_intensity(self) -> float:
+        """Pure function of the tick: 0 before onset, then a linear
+        ramp to 1 over storm_ramp ticks (ramp 1 = a step)."""
+        cfg = self.config
+        if cfg.storm_nest < 0 or self.tick < cfg.storm_onset:
+            return 0.0
+        ramp = max(cfg.storm_ramp, 1)
+        return min(1.0, (self.tick - cfg.storm_onset + 1) / ramp)
+
+    def _storm_damage_intensity(self, signal: float) -> float:
+        """With a harmless ramp, the signal carries no damage until the
+        ramp completes; otherwise damage tracks the signal."""
+        if self.config.storm_ramp_harmless and signal < 1.0:
+            return 0.0
+        return signal
+
     def step(self):
         """One tick, in the order fixed by the spec: perceive,
         urgencies, weights, select, move, eat, damage and deaths,
         world updates."""
         cfg = self.config
         active = self._hazards_active()
-        danger, away_dx, away_dy = perceive_danger(self.arrays, self.world, cfg, active)
+        storm = self._storm_intensity()
+        danger, away_dx, away_dy = perceive_danger(
+            self.arrays, self.world, cfg, active, storm
+        )
         dist_food, food_dx, food_dy, _ = perceive_food(self.arrays, self.world, cfg)
         dist_home, home_dx, home_dy = perceive_home(self.arrays, cfg)
 
@@ -98,7 +118,10 @@ class Model:
         apply_eating(self.arrays, self.world, cfg, dist_after, food_id_after)
         dist_home_after, _, _ = perceive_home(self.arrays, cfg)
         apply_bond(self.arrays, cfg, dist_home_after)
-        apply_damage_and_deaths(self.arrays, self.world, cfg, active)
+        apply_damage_and_deaths(
+            self.arrays, self.world, cfg, active,
+            self._storm_damage_intensity(storm),
+        )
         update_world(self.world, cfg, self.world_rng)
         self.tick += 1
         return actions
