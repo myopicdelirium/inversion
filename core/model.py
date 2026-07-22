@@ -104,6 +104,21 @@ def run(config: Config, seed: int, ticks: int) -> dict:
     return {name: np.stack(values) for name, values in frames.items()}
 
 
+def array_hashes(trajectory: dict) -> dict:
+    """Per-array sha256 (same rounding as golden_hash). The behavioural
+    arrays (x, y, energy, integrity, fatigue, alive) let a later phase
+    prove bit-identical behaviour even when drive arrays change shape."""
+    out = {}
+    for name in RECORDED:
+        out[name] = hashlib.sha256(
+            np.round(trajectory[name], 8).astype(np.float64).tobytes()
+        ).hexdigest()
+    out["alive"] = hashlib.sha256(
+        trajectory["alive"].astype(np.uint8).tobytes()
+    ).hexdigest()
+    return out
+
+
 def golden_hash(trajectory: dict) -> str:
     """sha256 over the recorded arrays rounded to 8 decimals (so the
     hash survives BLAS and platform noise), in the fixed order, with
