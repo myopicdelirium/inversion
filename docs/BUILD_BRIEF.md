@@ -14,7 +14,7 @@ The inertia law ships in Phase 1, with base drives only, before any commitment m
 
 1. **Homeostat kernel.** Base drives (energy, safety, rest), uniform lagged update law, myopic argmax, deterministic harness, manifest writer. Validation artifact: empirically fitted lag time constant matches the declared parameter.
 2. **Commitment as an ordinary drive.** The same drive class with slow accumulation dynamics (attachment to a target: place, agent, activity). No new mechanism. Validation: commitment accumulates and decays on its declared timescales; no behavioural change in environments without commitment targets (golden runs from Phase 1 still pass).
-3. **Collision environments.** Environments where threat onset speed is controllable, so the timing collision becomes reachable. Validation: the null test — telegraphed threats produce collapsing sacrifice rates at fixed commitment; sudden threats do not.
+3. **Collision environments.** Environments where threat onset speed is controllable, so the timing collision becomes reachable. Validation: the null test: telegraphed threats produce collapsing sacrifice rates at fixed commitment; sudden threats do not.
 4. **Sweep machinery.** Batch runner over (accumulation rate, reversion time constant, threat onset speed, ...); manifests per run; results aggregation.
 5. **The phase diagram.** Population-scale sweeps (10k+ agents, thousands of runs). The map of where inversion lives and where it does not is the product.
 

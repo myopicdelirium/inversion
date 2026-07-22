@@ -1,4 +1,4 @@
-# CLAUDE.md — Project Constitution
+# CLAUDE.md: Project Constitution
 
 This file is loaded at the start of every session. It is binding. Read `docs/BUILD_BRIEF.md` before writing code in a new phase.
 
@@ -21,7 +21,7 @@ Concretely, the following are forbidden anywhere in the codebase:
 
 Sacrifice must be the ordinary output of `argmax` over the standard action-value function, with no term that exists to produce it. If it appears, it appears because the accumulation dynamics and the environment made it the highest-valued action.
 
-This invariant is enforced by `tests/test_invariants.py::test_no_scripted_override`, which performs static analysis of `core/drives.py` and `core/action.py`. Do not modify, weaken, skip, or exclude that test. If it fails, the code is wrong — not the test.
+This invariant is enforced by `tests/test_invariants.py::test_no_scripted_override`, which performs static analysis of `core/drives.py` and `core/action.py`. Do not modify, weaken, skip, or exclude that test. If it fails, the code is wrong, not the test.
 
 If you believe the invariant makes a requested feature impossible: stop, and say so in your response. Do not route around it.
 
@@ -52,7 +52,7 @@ Golden hashes are computed over arrays rounded to 8 decimal places, not raw floa
 ### Determinism
 
 * One RNG, owned by the model, passed explicitly. Never import or call global `random` or `np.random` module-level functions.
-* Per-agent RNG streams derived from the master seed via `np.random.SeedSequence(master).spawn(n)` — so adding an agent does not shift another agent's draws.
+* Per-agent RNG streams derived from the master seed via `np.random.SeedSequence(master).spawn(n)`, so adding an agent does not shift another agent's draws.
 * Never iterate over a `set`, or over a `dict` whose insertion order is not itself deterministic, anywhere that affects simulation state.
 * Action order is part of the model definition and is frozen: `argmax` ties resolve by index, so reordering actions changes behaviour at exactly the boundaries the phase diagram cares about.
 * Parallelism across runs only. Never within a run's state updates.

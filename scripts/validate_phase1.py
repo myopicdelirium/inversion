@@ -197,7 +197,7 @@ def make_figure(safety_curve, safety_tau_hat, energy_curve, energy_tau_hat):
                  label="weight (lagged)")
     axes[0].axvline(100, color=ink, lw=0.6, ls=":")
     axes[0].set_title(
-        f"safety: hazard onset at t=100 — fitted tau {safety_tau_hat:.2f} "
+        f"safety: hazard onset at t=100, fitted tau {safety_tau_hat:.2f} "
         f"(declared 12)", fontsize=9, color=ink)
     axes[0].set_xlabel("tick", fontsize=8, color=ink)
     axes[0].legend(frameon=False, fontsize=8)
@@ -209,7 +209,7 @@ def make_figure(safety_curve, safety_tau_hat, energy_curve, energy_tau_hat):
                  * (1 - 1 / 20.0) ** np.arange(len(ts)),
                  color=ink, lw=1.0, ls="--", label="declared-tau theory")
     axes[1].set_title(
-        f"energy: hunger satisfied at t=0 — fitted tau {energy_tau_hat:.2f} "
+        f"energy: hunger satisfied at t=0, fitted tau {energy_tau_hat:.2f} "
         f"(declared 20)", fontsize=9, color=ink)
     axes[1].set_xlabel("ticks since first bite", fontsize=8, color=ink)
     axes[1].legend(frameon=False, fontsize=8)

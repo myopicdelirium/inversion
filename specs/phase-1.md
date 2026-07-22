@@ -1,4 +1,4 @@
-# Phase 1 — Homeostat kernel
+# Phase 1: Homeostat kernel
 
 Status: **approved 2026-07-22**. User reviewed the draft and delegated final judgment; the amendments from that review are folded in below (E table specified in full, integrity coupling dropped from u_safety, per-drive validation protocols, provisional-defaults note, determinism details).
 

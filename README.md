@@ -6,11 +6,11 @@ Inversion is never scripted. Survival is the base attractor; drives respond to b
 
 ## Layout
 
-- `core/` — the model kernel. Drive state is mutated only in `core/drives.py`.
-- `specs/` — one spec per phase, with acceptance criteria, written before code.
-- `tests/` — invariant tests (static analysis), determinism tests, golden runs.
-- `results/` — committed validation artifacts, one per phase gate.
-- `docs/` — build brief and project notes.
+- `core/`: the model kernel. Drive state is mutated only in `core/drives.py`.
+- `specs/`: one spec per phase, with acceptance criteria, written before code.
+- `tests/`: invariant tests (static analysis), determinism tests, golden runs.
+- `results/`: committed validation artifacts, one per phase gate.
+- `docs/`: build brief and project notes.
 
 ## Run tests
 
