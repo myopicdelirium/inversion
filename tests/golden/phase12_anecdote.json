@@ -1,0 +1,26 @@
+{
+  "description": "the corner where clear-eyed deaths occur as individuals but never as a regime: slow fear, devoted attention, short sight",
+  "seed": 42,
+  "ticks": 3250,
+  "config_hash": "9db48392f0980f234a068a7ed3d9dc41528df17cbdfb4a601b9cdc173d81ab51",
+  "sha256": "66841777468fce2004f9e64a4df780427f69515de1296240743a007d222cb973",
+  "array_sha256": {
+    "x": "1c2aab0aa01b663cb998a3cb9be5c43432f3eaa90307cad777c80db3d0f5f6f4",
+    "y": "4795c4bd31d88e8a5fae400c6d75ce8616d4c5bac0ef0ff1f03d29b996a05473",
+    "energy": "d71469ec663f5a5f0851b9ab9f80c3a4ec5f488b8315422df31bde58c932106b",
+    "integrity": "bf755e88cb325720d745a8dbb4692ed1cf5fd85e6970229787330bc39e21e89e",
+    "fatigue": "87b1a70ae192051270a521218b615f50ea5a92e0412f7816990a59878baf23f5",
+    "weights": "141cfdcff98e80aff0da5d1a6510848324cf7ea6b1973a4db0e6e5076688117a",
+    "urgency": "9cccf4accaa34feb08f98b4adad3128429ab4c7365cc1574b5b0bf147f7793f1",
+    "bond": "840af5777d89d8c4b23d470fb56014e2e7dea6083a35b9a0dd7986809a3810e1",
+    "alive": "e43bacf6d04d93c56fd3f151d119c8a31fb71a2e10561b99a89f82a7e6368937"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "9db48392f0980f234a068a7ed3d9dc41528df17cbdfb4a601b9cdc173d81ab51",
+    "git_sha": "cd5ec44914b29a0264bffff966080285e14765c1",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T14:44:56+00:00"
+  }
+}

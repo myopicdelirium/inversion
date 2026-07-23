@@ -172,6 +172,25 @@ def test_phase11_foresight_golden():
     )
 
 
+def test_phase12_anecdote_golden():
+    """The corner where clear-eyed deaths occur as individuals but
+    never as a regime."""
+    spec = json.loads((GOLDEN / "phase12_anecdote.json").read_text())
+    cfg = replace(
+        Config(), bond_target="partner", n_agents=400, n_hazard=0,
+        storm_nest=0, storm_onset=2000, storm_ramp=1,
+        storm_snare=0.95, storm_damage=0.01, tau_safety=48.0,
+        attention_sharpness=0.75, attention_floor=0.05,
+        bond_init=0.8, prospect_horizon=20,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 12 anecdote golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()
