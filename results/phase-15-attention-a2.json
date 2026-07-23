@@ -1,0 +1,19 @@
+{
+  "spec": "specs/phase-15.md addendum 4",
+  "cut_top": 0.14691666666666664,
+  "rates": {
+    "leader": {
+      "n_top": 82,
+      "top_rate": 0.1951219512195122,
+      "uncond_rate": 0.08955223880597014
+    },
+    "partner": {
+      "n_top": 1146,
+      "top_rate": 0.4162303664921466,
+      "uncond_rate": 0.3253877082136703
+    }
+  },
+  "uncond_gap_points": 23.583546940770017,
+  "top_gap_points": 22.110841527263442,
+  "passed": false
+}
