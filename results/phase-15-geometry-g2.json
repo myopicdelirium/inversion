@@ -1,0 +1,19 @@
+{
+  "spec": "specs/phase-15.md addendum 3",
+  "cut_near": 6.3607,
+  "rates": {
+    "leader": {
+      "n_near": 48,
+      "near_rate": 0.14583333333333334,
+      "uncond_rate": 0.08955223880597014
+    },
+    "partner": {
+      "n_near": 1180,
+      "near_rate": 0.2635593220338983,
+      "uncond_rate": 0.3253877082136703
+    }
+  },
+  "uncond_gap_points": 23.583546940770017,
+  "near_gap_points": 11.772598870056497,
+  "passed": true
+}

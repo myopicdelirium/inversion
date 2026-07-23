@@ -62,3 +62,21 @@ Artifacts: `results/phase-15-distant.json` (seeds 1-24), `phase-15-distant-repli
 * **The unregistered observation worth more than either verdict**: baseline starvation among the never-bereaved is 0.000 in all four arms of both stages. In an arena of scarcity, agents who kept their bond fed themselves without exception, thousands of them; every single starvation death in this world was a mourner's. Post hoc, flagged as such.
 * **Candidate explanation for D2, post hoc and untested**: the model contains no solace mechanism, so the gap must be geometric. Leader-mode bereaved are by construction the dispersed foragers, standing at the food when the news has no distance to travel; partner-mode bereaved lived beside their dead. Mourning at the death site may be deadlier than mourning at the granary. Declared follow-up: condition neglect on distance-to-food at the moment of loss.
 * The distant golden freezes the leader arm (seed 42).
+
+## Addendum 3, pre-registered 2026-07-24 before running: grief geometry
+
+The distant-death protocol left a candidate explanation untested: the model has no solace mechanism, so D2's sub-additivity must be geometric, and the suspicion is that mourning far from food is what kills. Same arena, same seeds, new instrument: at the moment of loss, record each new mourner's distance to the nearest active food source; at the end, whether they starved. Declared before running:
+
+* **G0, manipulation check**: median distance-to-food at loss is smaller for leader-mode bereaved than partner-mode bereaved, in each stage. The candidate explanation assumed leader-mode mourners stand at the food; if this fails, the explanation dies here and the report says so.
+* **G1, the geometry effect**: within partner mode (the powered arm), mourners in the top tercile of distance-to-food at loss starve at at least 2x the rate of the bottom tercile, terciles computed within stage. Declared seeds 1-24 primary, fresh seeds 31-54 replication.
+* **G2, mediation**: pooling both stages upfront (the leader arm is thin and this is declared now, not after), within the bottom (near-food) tercile of the pooled distance distribution, the leader-vs-partner neglect gap must shrink to at most half the unconditioned pooled gap for geometry to be judged the mediator.
+* No new mechanism, no config change: the arms are byte-identical reruns of the distant cells with a live measurement added.
+
+## Grief-geometry results, recorded 2026-07-24
+
+Artifacts: `results/phase-15-geometry.json`, `phase-15-geometry-replication.json`, `phase-15-geometry-g2.json`. Judged exactly as declared:
+
+* **G0 FAILED, both stages, and the candidate explanation dies here as declared**: leader-mode mourners were not nearer food at the moment of loss. Median loss-distance 8.77 vs partner 8.43 (main), 10.24 vs 7.96 (replication): the crowd's mourners were actually farther from the granary, and starved less anyway. The assumed selection was factually wrong.
+* **G1 FAILED, both stages**: partner-mode far-tercile mourners starve at 0.348 vs near 0.306 (ratio 1.14) and 0.363 vs 0.238 (ratio 1.52), under the declared 2x. Post hoc, flagged: the terciles are monotone in the declared direction in both stages (near < mid < far), so geometry has a real but small effect, nothing like a mediator.
+* **G2 nominally passed and is NOT promoted**: near-food gap 11.77 points against a bar of 11.80 (half of 23.6), leader near-food n of 48, and a dead manipulation check upstream. A mediation verdict with a false premise, a razor margin, and a thin cell is not a verdict.
+* What stands: crowd grief's sub-additivity is replicated and now unexplained. The model has no solace mechanism and place is ruled out. The remaining named candidate, speculation until instrumented: a life of contention trains hunger's attention weight. A follower shares its food with 39 rivals and lives with hunger's voice amplified; a paired agent, with one. At the moment of loss, grief must capture the attention field to kill, and the crowded life may have trained a voice grief cannot shout down. Declared follow-up: record attention weights at the moment of loss.
