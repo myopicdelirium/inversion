@@ -49,9 +49,11 @@ def congregation(bond_init, seed):
     return float(np.mean(samples))
 
 
-def storm_cell(kappa, seed, mire=False):
+def storm_cell(kappa, seed, mire=False, overrides=None):
     ticks_total = 3500 if kappa > 0 else 3000
-    arena = MIRE_LEAD if mire else LEAD
+    arena = dict(MIRE_LEAD if mire else LEAD)
+    if overrides:
+        arena.update(overrides)
     cfg = replace(Config(), **arena, bond_init=0.8, attention_sharpness=kappa)
     traj = run(cfg, seed=seed, ticks=ticks_total)
     m0 = Model(cfg, seed)
@@ -101,6 +103,12 @@ def _cell(args):
     if kind == "cong":
         return {"kind": "cong", "bond_init": args[1], "seed": args[2],
                 "mean_dist": congregation(args[1], args[2])}
+    if kind == "distant":
+        row = storm_cell(2.0, args[2], mire=True,
+                         overrides={"bond_target": args[1], "n_food": 40,
+                                    "attention_floor": 0.01,
+                                    **({} if args[1] == "leader" else {"n_leaders": 1})})
+        return {"kind": "distant", "mode": args[1], **row}
     return {"kind": "storm", **storm_cell(args[1], args[2], mire=args[3])}
 
 
@@ -159,6 +167,34 @@ if __name__ == "__main__":
         run_stage(range(1, 25), RESULTS / "phase-15-authority.json", with_l1=True)
     elif stage == "replicate":
         run_stage(range(31, 55), RESULTS / "phase-15-replication.json", with_l1=False)
+    elif stage in ("distant_main", "distant_replicate"):
+        seeds = range(1, 25) if stage == "distant_main" else range(31, 55)
+        jobs = [("distant", m, s) for m in ("leader", "partner") for s in seeds]
+        with ProcessPoolExecutor(max_workers=6) as pool:
+            rows = list(pool.map(_cell, jobs))
+        art = {"spec": "specs/phase-15.md addendum 2",
+               "manifest": build_manifest(seed=0, config=Config()),
+               "seeds": list(seeds), "rows": rows}
+        for m in ("leader", "partner"):
+            sel = [r for r in rows if r["mode"] == m]
+            ber = sum(r["bereaved"] for r in sel)
+            neg = sum(r["neglect"] for r in sel)
+            bn = sum(r["baseline_n"] for r in sel)
+            bd = sum(r["baseline_starved"] for r in sel)
+            art[m] = {"bereaved": ber, "neglect_rate": neg / max(ber, 1),
+                      "baseline_rate": bd / max(bn, 1),
+                      "excess": neg / max(ber, 1) - bd / max(bn, 1)}
+            print(f"{m}: bereaved {ber}, neglect {neg} ({art[m]['neglect_rate']:.3f}), "
+                  f"baseline {art[m]['baseline_rate']:.3f}, excess {art[m]['excess']:+.3f}")
+        art["D1"] = {"bereaved_leader": art["leader"]["bereaved"],
+                     "passed": bool(art["leader"]["bereaved"] >= 100)}
+        art["D2"] = {"gap_points": 100 * (art["leader"]["excess"] - art["partner"]["excess"]),
+                     "passed": bool(abs(art["leader"]["excess"] - art["partner"]["excess"]) <= 0.05)}
+        print(f"D1 power: {art['D1']['passed']} | D2 additivity gap "
+              f"{art['D2']['gap_points']:+.1f} pts: {art['D2']['passed']}")
+        name = "phase-15-distant.json" if stage == "distant_main" else "phase-15-distant-replication.json"
+        (RESULTS / name).write_text(json.dumps(art, indent=2) + "\n")
+        print("written", name)
     elif stage == "mire_main":
         run_stage(range(1, 25), RESULTS / "phase-15-mire-leader.json",
                   with_l1=False, mire=True)

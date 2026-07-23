@@ -44,3 +44,21 @@ Artifacts: `results/phase-15-mire-leader.json` (seeds 1-24), `phase-15-mire-repl
 * **M1 PASSES, replicated**: follower mortality with own leader caught is 0.477 vs 0.167 free (ratio 2.9, n 193) and 0.375 vs 0.146 (ratio 2.6, n 312). The single point of failure exists once the leader can be held.
 * **M2 remains void, and the reason is the finding**: at kappa 2, followers of caught leaders died 109 of 112 (main) and 264 of 264 (replication). Bereavement cannot be observed because the congregation stands where the leader stands: capture of the center is capture of the circle, and the circle burns with it, deaf under attention's zero-trap, held by the same grip. Mass grief is unmeasurable at these coordinates not for lack of power but because there are no mourners left. The additivity question requires survivors, which requires the leader to die away from its crowd; a designed distant-death protocol is the declared follow-up, not run.
 * The circle golden freezes the kappa-2 regime (seed 42).
+
+## Addendum 2, pre-registered 2026-07-24 before running: the distant-death protocol
+
+Mass bereavement requires survivors, which requires distance at the moment of capture. Scarcity provides it with existing axes: n_food 40 disperses congregations for foraging. Arena: the mire-leader world plus scarcity, kappa 2, floor 0.01 (the faint whisper: grief can still kill, fear is acquirable), bond 0.8. Two arms in the identical arena with identical seeds: bond_target leader (10 leaders) and bond_target partner. Declared:
+
+* **D1, power floor**: at least 100 pooled bereaved followers alive after their leader's death (seeds 1-24); otherwise the protocol failed to separate and says so.
+* **D2, the additivity null, properly paired, no desired direction**: per-capita bereaved starvation excess (bereaved neglect rate minus the same arena's never-bereaved baseline rate) in leader mode within 5 points of the identical quantity in partner mode. If crowd grief exceeds pair grief with no transmission in the model, that is a discovery about topology alone; if they match, the additivity null finally lands and becomes the yardstick the transmission phase must beat.
+* Replication on fresh seeds 31-54 before packaging.
+
+## Distant-death results, recorded 2026-07-24
+
+Artifacts: `results/phase-15-distant.json` (seeds 1-24), `phase-15-distant-replication.json` (fresh seeds 31-54). Judged exactly as declared:
+
+* **D1 FAILED on the declared seeds**: 29 pooled leader-mode bereaved on seeds 1-24, under the 100 floor. The fresh seeds happened to clear it (171), but the declared verdict is the main stage's, and it says the protocol under-separates: even under scarcity, leaders rarely die away from their whole crowd. Both stages are reported; neither is promoted over the other.
+* **D2: the additivity null is refuted, sign replicated, magnitude unsettled**: leader-mode bereaved starvation excess +0.172 vs partner-mode +0.327 (gap -15.5 points, outside the declared 5), replication +0.076 vs +0.307 (gap -23.1). Crowd grief is sub-additive at face value: a mourner in a congregation starves at a quarter to half the rate of a mourner in a pair. No desired direction was declared. Caveats, named plainly: the leader arm is thin (5 and 13 neglect deaths), and the two bereaved cohorts are selected by different geometry, so the magnitude is not promoted.
+* **The unregistered observation worth more than either verdict**: baseline starvation among the never-bereaved is 0.000 in all four arms of both stages. In an arena of scarcity, agents who kept their bond fed themselves without exception, thousands of them; every single starvation death in this world was a mourner's. Post hoc, flagged as such.
+* **Candidate explanation for D2, post hoc and untested**: the model contains no solace mechanism, so the gap must be geometric. Leader-mode bereaved are by construction the dispersed foragers, standing at the food when the news has no distance to travel; partner-mode bereaved lived beside their dead. Mourning at the death site may be deadlier than mourning at the granary. Declared follow-up: condition neglect on distance-to-food at the moment of loss.
+* The distant golden freezes the leader arm (seed 42).
