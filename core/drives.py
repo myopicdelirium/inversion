@@ -15,17 +15,24 @@ DRIVE_NAMES = ("energy", "safety", "rest", "bond")
 ENERGY, SAFETY, REST, BOND = 0, 1, 2, 3
 
 
-def compute_urgencies(arrays, config, danger_at_agent, dist_home):
+def compute_urgencies(arrays, config, danger_at_agent, dist_home,
+                      target_peril=None):
     """Per agent: hunger urgency is how empty the stomach is, safety
     urgency is the local danger level, rest urgency is the fatigue
-    level, bond urgency is separation distress: attachment level times
-    how far from home. Instant, continuous, no branches."""
+    level, bond urgency is separation distress plus care for the
+    living target's peril (Amendment 5): attachment level times how
+    far from home and how endangered they are. Instant, continuous,
+    no branches; an absent target has no location and so no peril."""
     arrays.urgency[:, ENERGY] = 1.0 - arrays.energy
     arrays.urgency[:, SAFETY] = danger_at_agent
     arrays.urgency[:, REST] = arrays.fatigue
-    arrays.urgency[:, BOND] = arrays.bond * (
-        1.0 - np.exp(-dist_home / config.r_bond)
-    )
+    separation = 1.0 - np.exp(-dist_home / config.r_bond)
+    if target_peril is None:
+        arrays.urgency[:, BOND] = arrays.bond * separation
+    else:
+        arrays.urgency[:, BOND] = arrays.bond * np.clip(
+            separation + config.care * target_peril, 0.0, 1.0
+        )
 
 
 def update_weights(arrays, config, dt=1.0):
@@ -67,8 +74,9 @@ def init_timescales(arrays, config, z_safety=None, z_bond=None):
         )
 
 
-def init_drive_state(arrays, config, danger_at_agent, dist_home):
+def init_drive_state(arrays, config, danger_at_agent, dist_home,
+                     target_peril=None):
     """Per agent: at spawn, weights start exactly at the current
     urgencies; there is no initial gap to relax."""
-    compute_urgencies(arrays, config, danger_at_agent, dist_home)
+    compute_urgencies(arrays, config, danger_at_agent, dist_home, target_peril)
     arrays.weights[:] = arrays.urgency

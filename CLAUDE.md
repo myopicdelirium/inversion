@@ -69,6 +69,15 @@ Amendment 1's myopia clause ("action selection never anticipates its own reversi
 * No branch on predicted death, anywhere. Predicted harm enters action value only continuously, as integrated exposure along the predicted path. `core/action.py` may not reference integrity at all (static tripwire); the felt price of a path is its accumulated danger, not a death predicate.
 * The horizon is declared, never modified at runtime, swept as an axis. Sacrifice under foresight, if it occurs, must remain the ordinary argmax of weight times predicted consequence, with no term that exists to produce it.
 
+### Amendment 5 (2026-07-24): the other in the ledger
+
+Until now no agent's valuation has ever counted another's condition; every price and every relief was self-denominated, and phase 13 proved the consequence: the up-front wager cannot exist in a ledger that contains no stake but one's own. This amendment permits exactly two additions, both default-zero and bit-inert:
+
+* **The care term.** Bond urgency becomes `u_bond = b * clip(separation + care * peril_of_target, 0, 1)`, where `peril_of_target` is the world's danger field at the living bond target's location: physics seen at a place, never a mind read. `care` is declared in config, default 0, one scalar for all agents (spread as a later axis). A dead or absent target has no location and contributes zero: care needs a living beloved; grief remains pure separation, unchanged.
+* **Assistance physics.** An agent within a declared radius of its gripped partner lends them speed: the partner's effective snare is scaled by `1 - help_strength`. World physics, symmetric, in `core/world.py`, never reading drive state (the standing chokepoint applies).
+* The existing tripwires already fence this amendment and are reaffirmed: the update law still names no drive; `core/action.py` still may not reference integrity, so any priced expectation of helping is denominated in peril (danger), never in the target's health or death; no branch on any agent's mortality state anywhere in drives or action code.
+* Forbidden: care terms conditioned on who the target is, on the target's mortality state discretely, or on outcomes; assistance that reads bond or weight state; any coefficient modified at runtime.
+
 ## Hard rules
 
 ### Golden runs

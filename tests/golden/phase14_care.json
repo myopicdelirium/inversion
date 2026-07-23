@@ -1,0 +1,26 @@
+{
+  "description": "the other in the ledger: care 1, help 1; most of the trapped are freed at once by the partner already beside them",
+  "seed": 42,
+  "ticks": 3250,
+  "config_hash": "8dfae05b692189d1a97d445f9c9620ff6ce593c3ec3bd7ae85d749016485deca",
+  "sha256": "82c86f350888dc94d2a44a38ab3059253492c5f6dde50a99551436a1cbca6d8e",
+  "array_sha256": {
+    "x": "79582bb6321d0a384e92bc5ccc235768fa8969198e6d8d298728daa0defb8c7c",
+    "y": "fd577f6938ed5fcec7d7c5ad2d81d40cd46e7278d190a9a9fef3032187e34182",
+    "energy": "bb25d93ad61ddccb75c49bf4dde221b53a619980bd255d5d52a1accabbddf049",
+    "integrity": "561de0b871652f2cd6dde49f1c1d0b8faba1116bd8f337067be8c9feec69ae2b",
+    "fatigue": "71bd1a86f380464669c726611d080e80a82f10b97ba5ae66eefaf45f42e4cd53",
+    "weights": "a49b64445e20747c7c24b28292bf8d004946c08ead53a152dadf5d9b002b0447",
+    "urgency": "cbd8eb6a3edf20009d1c39a230071a13a6db1743b137d316d125322227d44b9d",
+    "bond": "b2533822e20f4cba3e0b7d7a383c2f676adb405b9dc8ad8aef30f72872a55423",
+    "alive": "c16f73719bded6a33e2326dd611b406ed724c7e7c335d552ebfff097aad97fae"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "8dfae05b692189d1a97d445f9c9620ff6ce593c3ec3bd7ae85d749016485deca",
+    "git_sha": "863e9e0a4189fe4ef7190d6f18ea84b587fc29f4",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T15:34:21+00:00"
+  }
+}

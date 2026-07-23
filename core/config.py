@@ -56,6 +56,12 @@ class Config:
     bond_grow: float = 0.002
     bond_decay: float = 0.0002
     r_bond: float = 25.0
+    # The other in the ledger (phase 14, Amendment 5). All default 0,
+    # bit-inert: care prices the living bond target's peril into bond
+    # urgency; assistance lends a gripped partner speed at close range.
+    care: float = 0.0
+    r_help: float = 2.0
+    help_strength: float = 0.0
     # Storm (phase 3): experimental apparatus, a hazard aimed at a nest.
     # Disabled by default; enabling it changes nothing before onset.
     storm_nest: int = -1

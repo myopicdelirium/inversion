@@ -15,7 +15,7 @@ SEEK_FOOD, FLEE, REST_ACT, WANDER, RETURN_HOME = 0, 1, 2, 3, 4
 
 def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
                    food_dir=None, away_dir=None, target_dir=None,
-                   danger_scale=None, grip_info=None):
+                   danger_scale=None, grip_info=None, partner_peril=None):
     """Per agent: value each action as the weight-weighted sum of
     expected urgency reductions, then take the argmax; ties resolve by
     the frozen action order.
@@ -30,7 +30,7 @@ def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
     if config.prospect_horizon > 0:
         return _select_farsighted(arrays, config, danger_at_agent, dist_food,
                                   dist_home, food_dir, away_dir, target_dir,
-                                  danger_scale, grip_info)
+                                  danger_scale, grip_info, partner_peril)
     n = arrays.alive.shape[0]
     # Per agent: tired bodies move slower.
     v_eff = config.speed * (1.0 - arrays.fatigue / 2.0)
@@ -59,6 +59,13 @@ def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
     ev[:, BOND, RETURN_HOME] = arrays.bond * np.exp(-dist_home / config.r_bond) * (
         np.exp(v_eff / config.r_bond) - 1.0
     )
+    if config.care > 0.0 and config.help_strength > 0.0 and partner_peril is not None:
+        # Amendment 5, the declared folk expectation: being there ends
+        # their peril, in proportion to helping power, discounted by
+        # travel like every other prize.
+        ev[:, BOND, RETURN_HOME] += (config.care * partner_peril
+                                     * config.help_strength
+                                     / (1.0 + dist_home / v_eff))
 
     # Per agent: V(a) = sum over drives of weight * expected reduction.
     values = np.einsum("nd,nda->na", arrays.weights, ev)
@@ -126,7 +133,7 @@ def _geom_moving(level, factor, steps):
 
 def _select_farsighted(arrays, config, danger, dist_food, dist_target,
                        food_dir, away_dir, target_dir, danger_scale,
-                       grip_info=None):
+                       grip_info=None, partner_peril=None):
     """The h-tick rollout. Every term is an integral of the same
     physics the myopic table already knew; nothing here reads body
     integrity, and predicted harm enters only as accumulated danger
@@ -233,6 +240,14 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
     ev[:, BOND, RETURN_HOME] = arrays.bond * (
         approach_relief + settled * u_now
     )
+    if config.care > 0.0 and config.help_strength > 0.0 and partner_peril is not None:
+        # Amendment 5: the priced expectation that arriving ends the
+        # living target's peril, proportional to helping power, for
+        # every tick after true (grip-stretched) arrival.
+        ev[:, BOND, RETURN_HOME] += (config.care * partner_peril
+                                     * config.help_strength
+                                     * np.maximum(0.0, h - np.where(
+                                         np.isfinite(arrive), arrive, np.inf)))
 
     values = np.einsum("nd,nda->na", arrays.weights, ev)
     return np.argmax(values, axis=1)

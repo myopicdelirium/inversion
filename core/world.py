@@ -200,14 +200,42 @@ def apply_bond(arrays, config, dist_target):
 def storm_grip(arrays, world, config, damage_intensity):
     """Per agent: movement speed factor under the snaring storm. One
     outside the storm or with the snare off; inside, the storm grips
-    exactly as hard as it burns."""
+    exactly as hard as it burns. Assistance (Amendment 5): a living
+    partner within r_help lends speed, scaling the effective snare by
+    1 - help_strength. Symmetric world physics; reads no drive state."""
     n = arrays.x.shape[0]
     if config.storm_snare <= 0.0 or damage_intensity <= 0.0:
         return np.ones(n)
     sdx = _torus_delta(arrays.x - world.storm_x, config.world_size)
     sdy = _torus_delta(arrays.y - world.storm_y, config.world_size)
     inside = np.hypot(sdx, sdy) < config.storm_radius
-    return np.where(inside, 1.0 - config.storm_snare * damage_intensity, 1.0)
+    snare = np.full(n, config.storm_snare)
+    if config.help_strength > 0.0:
+        p = arrays.partner
+        has = p >= 0
+        pidx = np.where(has, p, 0)
+        pdx = _torus_delta(arrays.x[pidx] - arrays.x, config.world_size)
+        pdy = _torus_delta(arrays.y[pidx] - arrays.y, config.world_size)
+        near = has & arrays.alive & arrays.alive[pidx] & (
+            np.hypot(pdx, pdy) <= config.r_help)
+        snare = np.where(near, snare * (1.0 - config.help_strength), snare)
+    return np.where(inside, 1.0 - snare * damage_intensity, 1.0)
+
+
+def peril_at(xs, ys, world, config, hazards_active, storm_intensity):
+    """The danger field evaluated at arbitrary points: what the world
+    would feel like standing there. Used for the care percept."""
+    m = xs.shape[0]
+    level = np.zeros(m)
+    if world.hazard_x.shape[0] > 0 and hazards_active:
+        dx = _torus_delta(xs[:, None] - world.hazard_x[None, :], config.world_size)
+        dy = _torus_delta(ys[:, None] - world.hazard_y[None, :], config.world_size)
+        level = np.exp(-np.hypot(dx, dy).min(axis=1) / config.r_hazard)
+    if storm_intensity > 0.0:
+        sd = np.hypot(_torus_delta(xs - world.storm_x, config.world_size),
+                      _torus_delta(ys - world.storm_y, config.world_size))
+        level = np.maximum(level, storm_intensity * np.exp(-sd / config.storm_radius))
+    return level
 
 
 def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,

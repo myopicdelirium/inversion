@@ -26,6 +26,7 @@ from .world import (
     perceive_food,
     perceive_home,
     perceive_partner,
+    peril_at,
     spawn_world,
     storm_grip,
     update_world,
@@ -110,7 +111,8 @@ class Model:
             self._storm_intensity(),
         )
         dist_target, _, _ = self._bond_distances()
-        init_drive_state(self.arrays, config, danger, dist_target)
+        peril0 = self._target_peril(self._hazards_active(), self._storm_intensity())
+        init_drive_state(self.arrays, config, danger, dist_target, peril0)
 
     def _hazards_active(self) -> bool:
         return self.tick >= self.config.hazard_onset
@@ -169,6 +171,21 @@ class Model:
         return {"intensity": self._storm_damage_intensity(self._storm_intensity()),
                 "food_center_dist": food_cd, "target_center_dist": tgt_cd}
 
+    def _target_peril(self, active, storm):
+        """The danger field at the living bond target's location; zero
+        for places and absent targets (care needs a living beloved)."""
+        cfg = self.config
+        if cfg.bond_target != "partner":
+            return np.zeros(cfg.n_agents)
+        p = self.arrays.partner
+        has = p >= 0
+        pidx = np.where(has, p, 0)
+        present = has & self.arrays.alive[pidx]
+        px = np.where(present, self.arrays.x[pidx], 0.0)
+        py = np.where(present, self.arrays.y[pidx], 0.0)
+        level = peril_at(px, py, self.world, cfg, active, storm)
+        return np.where(present, level, 0.0)
+
     def step(self):
         """One tick, in the order fixed by the spec: perceive,
         urgencies, weights, select, move, eat, damage and deaths,
@@ -186,13 +203,14 @@ class Model:
         if cfg.prospect_sees_grip and cfg.prospect_horizon > 0 \
                 and cfg.storm_nest >= 0 and cfg.storm_snare > 0.0:
             grip_info = self._grip_percepts(food_ids)
-        compute_urgencies(self.arrays, cfg, danger, dist_target)
+        peril = self._target_peril(active, storm)
+        compute_urgencies(self.arrays, cfg, danger, dist_target, peril)
         update_weights(self.arrays, cfg)
         actions = select_actions(
             self.arrays, cfg, danger, dist_food, dist_target,
             food_dir=(food_dx, food_dy), away_dir=(away_dx, away_dy),
             target_dir=(target_dx, target_dy), danger_scale=danger_scale,
-            grip_info=grip_info,
+            grip_info=grip_info, partner_peril=peril,
         )
 
         # Per agent: two draws per tick from the agent's own stream,
