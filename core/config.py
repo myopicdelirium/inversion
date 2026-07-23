@@ -59,6 +59,10 @@ class Config:
     # only once the ramp completes. Distinguishes advance warning from
     # gradual arrival of harm.
     storm_ramp_harmless: bool = False
+    # The snare (phase 8): grip strength in [0, 1]. Inside the storm,
+    # movement speed is scaled by 1 - snare * damage_intensity: danger
+    # that can hold what it is killing. 0 = no grip, bit-inert.
+    storm_snare: float = 0.0
     # Drive time constants, in ticks. Declared once, never reassigned.
     tau_energy: float = 20.0
     tau_safety: float = 12.0

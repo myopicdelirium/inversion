@@ -27,6 +27,7 @@ from .world import (
     perceive_home,
     perceive_partner,
     spawn_world,
+    storm_grip,
     update_world,
 )
 
@@ -167,10 +168,12 @@ class Model:
         redraw_p = self._draw_block[:, self._draw_cursor]
         redraw_angle = self._draw_block[:, self._draw_cursor + 1]
         self._draw_cursor += 2
+        grip = storm_grip(self.arrays, self.world, cfg,
+                          self._storm_damage_intensity(storm))
         apply_actions(
             self.arrays, cfg, actions,
             (food_dx, food_dy), (away_dx, away_dy), (target_dx, target_dy),
-            (redraw_p, redraw_angle),
+            (redraw_p, redraw_angle), grip,
         )
         # Eating and bond accumulation use post-move positions.
         dist_after, _, _, food_id_after = perceive_food(self.arrays, self.world, cfg)

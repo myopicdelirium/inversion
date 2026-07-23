@@ -2,7 +2,7 @@
   "description": "null cell: fully bonded, 1600-tick harmless warning ramp; mortality at control level",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "715ec86e6ab67dcccd1bc57815d72f04fed7b452652aed9099fcc4e2aa401d33",
+  "config_hash": "4f41a0473c6a753df24242bd4452f49bb4003a345f48f442b8cc40e288269e4e",
   "sha256": "a29ec6e43706481194a68f0cbef652e8bac254c40c2907842a975a0af9c43eff",
   "array_sha256": {
     "x": "eca0178a549b9d8ba7f54d3d37b63bca6980b0f4a97c7b872492a4e3571a235f",

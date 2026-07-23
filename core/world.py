@@ -193,16 +193,31 @@ def apply_bond(arrays, config, dist_target):
     arrays.bond[apart] -= config.bond_decay * arrays.bond[apart]
 
 
-def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir, heading_draws):
+def storm_grip(arrays, world, config, damage_intensity):
+    """Per agent: movement speed factor under the snaring storm. One
+    outside the storm or with the snare off; inside, the storm grips
+    exactly as hard as it burns."""
+    n = arrays.x.shape[0]
+    if config.storm_snare <= 0.0 or damage_intensity <= 0.0:
+        return np.ones(n)
+    sdx = _torus_delta(arrays.x - world.storm_x, config.world_size)
+    sdy = _torus_delta(arrays.y - world.storm_y, config.world_size)
+    inside = np.hypot(sdx, sdy) < config.storm_radius
+    return np.where(inside, 1.0 - config.storm_snare * damage_intensity, 1.0)
+
+
+def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,
+                  heading_draws, speed_scale):
     """Per agent: redraw the wander heading with probability 0.05, then
-    move one tick in the chosen action's direction at fatigue-scaled
-    speed. Resting agents do not move. Movement costs energy and builds
-    fatigue; resting sheds fatigue; everyone pays the basal burn."""
+    move one tick in the chosen action's direction at fatigue-scaled,
+    grip-scaled speed. Resting agents do not move. Movement costs
+    energy and builds fatigue; resting sheds fatigue; everyone pays
+    the basal burn."""
     redraw_p, redraw_angle = heading_draws
     new_heading = redraw_p < 0.05
     arrays.heading[new_heading] = redraw_angle[new_heading] * 2.0 * np.pi
 
-    v_eff = config.speed * (1.0 - arrays.fatigue / 2.0)
+    v_eff = config.speed * (1.0 - arrays.fatigue / 2.0) * speed_scale
     head_dx, head_dy = np.cos(arrays.heading), np.sin(arrays.heading)
     food_dx, food_dy = food_dir
     away_dx, away_dy = away_dir

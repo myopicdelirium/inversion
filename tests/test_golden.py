@@ -108,6 +108,22 @@ def test_phase7_attention_golden():
     )
 
 
+def test_phase8_mire_golden():
+    """The mire: danger that holds what it is killing."""
+    spec = json.loads((GOLDEN / "phase8_mire.json").read_text())
+    cfg = replace(
+        Config(), bond_target="partner", n_agents=400, n_hazard=0,
+        storm_nest=0, storm_onset=2000, storm_ramp=1,
+        storm_snare=0.95, storm_damage=0.01, bond_init=0.8,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 8 mire golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

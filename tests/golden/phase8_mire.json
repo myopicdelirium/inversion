@@ -1,0 +1,26 @@
+{
+  "description": "the mire: grip 0.95, slow burn; rescuers enter after held partners",
+  "seed": 42,
+  "ticks": 3250,
+  "config_hash": "7369f2be0e93469a22010a6d82f02cc0617e8f41d1406f53b173c15eefdf0ac0",
+  "sha256": "a80797ccdaeea771bb732e56e54c0049d50c62e499fe424e761e22946832919b",
+  "array_sha256": {
+    "x": "ebc953260762d9af20816d7dda036c9630c73358044c13cacf876fc4f864151d",
+    "y": "be185cd5699fcc0adc550544f720dbd43cc3ed9f8104e05a8f45ac3d69631056",
+    "energy": "a2e13c55526af798f52c21f2de40833a92185b649caf1462dbf8acdd88b75237",
+    "integrity": "c7b4a9f920ed6d463d65ca87b6c4d30332506b16f4d6972bec370b97e8883533",
+    "fatigue": "b92cd37cfa5a36550b24cbe6dcdd9ee232e4b3e7b6f515d82ec7927170d87dfc",
+    "weights": "577d6110b5aa9352c44e9cf15ffb4b5596c1bdb42e3ca386f0a21f017f2969a4",
+    "urgency": "ca2108818a0a64bb1dbeb2e703c4666740624a0153ce23afab0b9b972228e9e1",
+    "bond": "5b1391a0c4d63a7b748f99201cda5b1b46de16b277f987e5c38818274dc07ebc",
+    "alive": "467bd637246e4ef1ccc105d0e96c2c21d37ad06893bf76d34c65632be5ab7a66"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "7369f2be0e93469a22010a6d82f02cc0617e8f41d1406f53b173c15eefdf0ac0",
+    "git_sha": "d515194be6f1a085be0513aff82f0171323b9d97",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T08:32:24+00:00"
+  }
+}
