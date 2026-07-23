@@ -28,6 +28,7 @@ RESULTS = ROOT / "results"
 
 LEAD = {"bond_target": "leader", "n_leaders": 10, "n_agents": 400,
         "n_hazard": 0, "storm_nest": 0, "storm_onset": 2000, "storm_ramp": 1}
+MIRE_LEAD = {**LEAD, "storm_snare": 0.95, "storm_damage": 0.01}
 PHASE7_BASELINE = 0.141
 
 
@@ -48,9 +49,10 @@ def congregation(bond_init, seed):
     return float(np.mean(samples))
 
 
-def storm_cell(kappa, seed):
+def storm_cell(kappa, seed, mire=False):
     ticks_total = 3500 if kappa > 0 else 3000
-    cfg = replace(Config(), **LEAD, bond_init=0.8, attention_sharpness=kappa)
+    arena = MIRE_LEAD if mire else LEAD
+    cfg = replace(Config(), **arena, bond_init=0.8, attention_sharpness=kappa)
     traj = run(cfg, seed=seed, ticks=ticks_total)
     m0 = Model(cfg, seed)
     p = m0.arrays.partner
@@ -99,14 +101,14 @@ def _cell(args):
     if kind == "cong":
         return {"kind": "cong", "bond_init": args[1], "seed": args[2],
                 "mean_dist": congregation(args[1], args[2])}
-    return {"kind": "storm", **storm_cell(args[1], args[2])}
+    return {"kind": "storm", **storm_cell(args[1], args[2], mire=args[3])}
 
 
-def run_stage(seeds, out_path, with_l1):
+def run_stage(seeds, out_path, with_l1, mire=False):
     jobs = []
     if with_l1:
         jobs += [("cong", b, s) for b in (0.8, 0.0) for s in range(1, 6)]
-    jobs += [("storm", k, s) for k in (0.0, 2.0) for s in seeds]
+    jobs += [("storm", k, s, mire) for k in (0.0, 2.0) for s in seeds]
     with ProcessPoolExecutor(max_workers=6) as pool:
         rows = list(pool.map(_cell, jobs))
 
@@ -152,7 +154,14 @@ def run_stage(seeds, out_path, with_l1):
 
 if __name__ == "__main__":
     RESULTS.mkdir(exist_ok=True)
-    if sys.argv[1] == "main":
+    stage = sys.argv[1]
+    if stage == "main":
         run_stage(range(1, 25), RESULTS / "phase-15-authority.json", with_l1=True)
-    else:
+    elif stage == "replicate":
         run_stage(range(31, 55), RESULTS / "phase-15-replication.json", with_l1=False)
+    elif stage == "mire_main":
+        run_stage(range(1, 25), RESULTS / "phase-15-mire-leader.json",
+                  with_l1=False, mire=True)
+    else:
+        run_stage(range(31, 55), RESULTS / "phase-15-mire-replication.json",
+                  with_l1=False, mire=True)

@@ -18,6 +18,14 @@ The capability deltas name one-to-many bonds as the first missing piece of every
 
 Leader influence on follower knowledge or expectations (belief objects, the next delta), succession after leader death, leaders with their own bonds, follower-follower bonds, any transmission.
 
+## Addendum, pre-registered 2026-07-24 before running: the mire-leader experiment
+
+The declared follow-up, run under this spec. Arena: leader mode as above plus the mire (snare 0.95, burn 0.01), so a caught leader is held dying for about a hundred ticks before its congregation. Declared, same bars as before:
+
+* **M1 (L2 proper)**: follower window-mortality with own leader caught at onset at least 2x the free-leader rate (kappa 0, seeds 1-24, replication 31-54).
+* **M2 (L3 proper, the additivity null)**: at kappa 2, bereaved-follower neglect-death rate within 5 points of the phase 7 partner baseline 0.141. The held leader fixes the power problem: caught leaders now die in view.
+* Measured and reported without a bar: whether follower deaths under a caught leader are entries (the pied piper, en masse) or threshold deaths.
+
 ## Deviations from spec during build
 
 Recorded 2026-07-24. Artifacts: `results/phase-15-authority.json` (seeds 1-24) and `phase-15-replication.json` (fresh seeds 31-54).
@@ -27,3 +35,12 @@ Recorded 2026-07-24. Artifacts: `results/phase-15-authority.json` (seeds 1-24) a
 3. **L3 is VOID for power, not answered**: the same arena barely kills leaders, so bereavement almost never occurs (16 bereaved pooled in the main stage, zero starving; zero bereaved at all in replication). Zero of sixteen against an expected 14.1% is not a confirmed additivity null, and zero-of-zero is no test. The declared comparison to the phase 7 partner baseline could not be performed.
 4. **The mire-leader arena is the declared follow-up for both**: a leader caught by grip 0.95 with slow burn dies over about a hundred ticks in view of thirty-nine bonded followers, generating both the sustained capture L2 needs and the bereavement volume L3 needs. Not run in this phase.
 5. L4 held throughout: the merge landed with every golden contract replay-verified in two processes, and the congregation golden joins the suite through the embedded-config path with no test-file edit at all, the first dividend of the incident's systemic fix.
+
+
+## Mire-leader results, recorded 2026-07-24
+
+Artifacts: `results/phase-15-mire-leader.json` (seeds 1-24), `phase-15-mire-replication.json` (fresh seeds 31-54).
+
+* **M1 PASSES, replicated**: follower mortality with own leader caught is 0.477 vs 0.167 free (ratio 2.9, n 193) and 0.375 vs 0.146 (ratio 2.6, n 312). The single point of failure exists once the leader can be held.
+* **M2 remains void, and the reason is the finding**: at kappa 2, followers of caught leaders died 109 of 112 (main) and 264 of 264 (replication). Bereavement cannot be observed because the congregation stands where the leader stands: capture of the center is capture of the circle, and the circle burns with it, deaf under attention's zero-trap, held by the same grip. Mass grief is unmeasurable at these coordinates not for lack of power but because there are no mourners left. The additivity question requires survivors, which requires the leader to die away from its crowd; a designed distant-death protocol is the declared follow-up, not run.
+* The circle golden freezes the kappa-2 regime (seed 42).
