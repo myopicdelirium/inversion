@@ -2,7 +2,7 @@
   "description": "partner-mode storm: pairs roam together, grief is exact and rare, person-attachment is protective",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "c194f7dff13f6f792585775abcf916f60e19602202943ef051ca450ca4205094",
+  "config_hash": "fa9a09d2e785c13652bf941aa3f01d4e26361c0af0f13bdb8bed4d4c486a294b",
   "sha256": "fae04531b495933d83e4f253a19f96e1030a824ff62d30883282046a7f69f13c",
   "array_sha256": {
     "x": "c740a724d0f3a031c2587b8d20d5b42111fba31b771cb40948a95b77270a7f71",
@@ -47,6 +47,7 @@
     "prospect_sees_grip": false,
     "record_every": 10,
     "bond_target": "partner",
+    "n_leaders": 1,
     "n_nests": 5,
     "r_nest": 3.0,
     "bond_init": 0.8,

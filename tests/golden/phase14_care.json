@@ -2,7 +2,7 @@
   "description": "the other in the ledger: care 1, help 1; most of the trapped are freed at once by the partner already beside them",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "8dfae05b692189d1a97d445f9c9620ff6ce593c3ec3bd7ae85d749016485deca",
+  "config_hash": "a6598c113c26687cfc73ffd9960f73a312d6c1f5ee0b807fb59d08e550252d1f",
   "sha256": "82c86f350888dc94d2a44a38ab3059253492c5f6dde50a99551436a1cbca6d8e",
   "array_sha256": {
     "x": "79582bb6321d0a384e92bc5ccc235768fa8969198e6d8d298728daa0defb8c7c",
@@ -47,6 +47,7 @@
     "prospect_sees_grip": true,
     "record_every": 10,
     "bond_target": "partner",
+    "n_leaders": 1,
     "n_nests": 5,
     "r_nest": 3.0,
     "bond_init": 0.5,

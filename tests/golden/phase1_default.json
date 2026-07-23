@@ -2,7 +2,7 @@
   "description": "phase 1 default-config golden run",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "90253df8b79a82747b29fc7065d4a6d370aecffb5a882a5154c4e8e2d2287bae",
+  "config_hash": "2058905a81c41df65692756461fb5fcb930d37af079b6c84334d0d15d3a1d55c",
   "sha256": "abfb63626062cafbd99fddeb652fb4a1ee094bdaef148585946aab0d0f6498e5",
   "manifest": {
     "seed": 42,
@@ -46,6 +46,7 @@
     "prospect_sees_grip": false,
     "record_every": 10,
     "bond_target": "nest",
+    "n_leaders": 1,
     "n_nests": 0,
     "r_nest": 3.0,
     "bond_init": 0.5,

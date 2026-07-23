@@ -46,10 +46,12 @@ class Config:
     prospect_sees_grip: bool = False
     # Recording
     record_every: int = 10
-    # Nests and attachment (phase 2); bond target type (phase 6):
-    # "nest" bonds to the birth nest, "partner" bonds to another agent,
-    # who moves and can die.
+    # Nests and attachment (phase 2); bond target type (phase 6, 15):
+    # "nest" bonds to the birth nest, "partner" bonds to another agent
+    # who moves and can die, "leader" points many agents at one:
+    # authority as topology (phase 15), no new mechanism.
     bond_target: str = "nest"
+    n_leaders: int = 1
     n_nests: int = 5
     r_nest: float = 3.0
     bond_init: float = 0.5

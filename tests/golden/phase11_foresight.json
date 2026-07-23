@@ -2,7 +2,7 @@
   "description": "foresight defeats the slow cook: the boiling frog was a disease of myopia; farsighted place-lovers evacuate the ramp",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "2318924bb8899899b83fb94813785c22956c67b694b6f6bd31d2b8a16b5df271",
+  "config_hash": "bfc0fec226319984de2b6ebc17b0e1eedc0c4a6de5107f626606deea13a4c9da",
   "sha256": "1e72966bf241d1acb932486af608217a5913eeaea68d6b48ea9a5cdeef0a1de1",
   "array_sha256": {
     "x": "cc9afca4af6716cb3d48265f04398f2beda5555da00c7a375cf5813ce3a5f49a",
@@ -47,6 +47,7 @@
     "prospect_sees_grip": false,
     "record_every": 10,
     "bond_target": "nest",
+    "n_leaders": 1,
     "n_nests": 5,
     "r_nest": 3.0,
     "bond_init": 1.0,

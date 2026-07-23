@@ -2,7 +2,7 @@
   "description": "the threshold vigil: full sight refuses the mire and the bond refuses the leaving; pull-group deaths become starvation at the rim",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "186bac9fb52ba4727e5c2b5250e82cb081a8899b5ef7102560bb06e6a529df68",
+  "config_hash": "0b7544ce7052ef12ee4f5b3e37a08075c18447cb6ff2deeb6da7b385ea5653a5",
   "sha256": "b7997d4645ff15a969c7ebc4f7b575509255b4e73f387df830eec922873a0890",
   "array_sha256": {
     "x": "ba5fa6a5dcd5563ab0ce378760d9d3e3a4214952458a892d72d03633e8376982",
@@ -47,6 +47,7 @@
     "prospect_sees_grip": true,
     "record_every": 10,
     "bond_target": "partner",
+    "n_leaders": 1,
     "n_nests": 5,
     "r_nest": 3.0,
     "bond_init": 0.5,
