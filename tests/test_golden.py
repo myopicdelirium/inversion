@@ -124,6 +124,22 @@ def test_phase8_mire_golden():
     )
 
 
+def test_phase9_peacetime_collapse_golden():
+    """Deep place-attachment plus extreme sharpness starves its
+    carriers at home before any threat exists."""
+    spec = json.loads((GOLDEN / "phase9_peacetime_collapse.json").read_text())
+    cfg = replace(
+        Config(), n_hazard=0, storm_nest=0, storm_onset=2000,
+        storm_ramp=400, bond_init=1.0, attention_sharpness=1.5,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 9 peacetime-collapse golden hash changed: the dynamics "
+        "changed. Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()
