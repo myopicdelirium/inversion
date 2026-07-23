@@ -1,0 +1,50 @@
+{
+  "declared_before_running": {
+    "R1": "kappa 1 floor 0.05 everyday, seeds 11-15: survival >= 0.45",
+    "R2": "kappa 1.5 floor 0.05 place arena, seeds 11-15: alive at onset >= 140/200 every seed",
+    "R3": "kappa 2 bond 0.8, seeds 11-16: floor 0.01 excess >= +0.08 with baseline <= 0.02; floor 0.05 excess <= +0.03"
+  },
+  "R1": {
+    "per_seed": [
+      0.69,
+      0.555,
+      0.71,
+      0.645,
+      0.545
+    ],
+    "mean": 0.629
+  },
+  "R2": {
+    "alive_at_onset": [
+      154,
+      187,
+      169,
+      189,
+      143
+    ]
+  },
+  "R3": {
+    "0.01": {
+      "neglect": "93/659",
+      "rate": 0.1411229135053111,
+      "baseline": "23/135",
+      "baseline_rate": 0.17037037037037037,
+      "excess": -0.02924745686505928
+    },
+    "0.05": {
+      "neglect": "61/715",
+      "rate": 0.08531468531468532,
+      "baseline": "93/764",
+      "baseline_rate": 0.12172774869109948,
+      "excess": -0.03641306337641416
+    }
+  },
+  "manifest": {
+    "seed": 0,
+    "config_hash": "63d88c08725bcf9de0f324e038374ae7d6d18d42a728e4c5bf47b505f3809f16",
+    "git_sha": "fdd53992e4314c94ca5b7d3d7920cb145173e362",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T09:51:53+00:00"
+  }
+}
