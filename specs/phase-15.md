@@ -20,4 +20,10 @@ Leader influence on follower knowledge or expectations (belief objects, the next
 
 ## Deviations from spec during build
 
-(To be filled at end of implementation session.)
+Recorded 2026-07-24. Artifacts: `results/phase-15-authority.json` (seeds 1-24) and `phase-15-replication.json` (fresh seeds 31-54).
+
+1. **The structural claim held trivially and L1 passes**: authority required zero mechanism, only wiring, and congregation emerges at ratio 4.7 (followers at mean distance 6.48 from their leader versus 30.72 unbonded). Note the texture: one-to-many cohesion is looser than pair cohesion (6.5 versus phase 6's 1.2), because thirty-nine followers cannot all occupy the same spot; the congregation has a radius by construction.
+2. **L2 FAILS as declared, weakly and consistently**: follower mortality with a caught leader is 1.3x the free-leader rate on both seed sets (0.031 vs 0.024; 0.038 vs 0.030), against a declared 2x. The arena is the reason: a plain sudden storm without the snare holds a caught leader for only about fifteen ticks, too briefly for the congregation's fate to couple to it. A weak coupling exists and replicates in direction; the strong test requires a held leader.
+3. **L3 is VOID for power, not answered**: the same arena barely kills leaders, so bereavement almost never occurs (16 bereaved pooled in the main stage, zero starving; zero bereaved at all in replication). Zero of sixteen against an expected 14.1% is not a confirmed additivity null, and zero-of-zero is no test. The declared comparison to the phase 7 partner baseline could not be performed.
+4. **The mire-leader arena is the declared follow-up for both**: a leader caught by grip 0.95 with slow burn dies over about a hundred ticks in view of thirty-nine bonded followers, generating both the sustained capture L2 needs and the bereavement volume L3 needs. Not run in this phase.
+5. L4 held throughout: the merge landed with every golden contract replay-verified in two processes, and the congregation golden joins the suite through the embedded-config path with no test-file edit at all, the first dividend of the incident's systemic fix.
