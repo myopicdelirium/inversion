@@ -86,6 +86,18 @@ class Model:
                 jitter = config.bond_init_spread * (2.0 * gen.random() - 1.0)
                 self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
         init_timescales(self.arrays, config, z_safety, z_bond)
+        if config.bond_target == "leader":
+            # Authority as topology (phase 15): agents 0..n_leaders-1
+            # are unbonded leaders; every other agent's bond points at
+            # leader (i mod n_leaders). One-sided by design; every law
+            # downstream is unchanged.
+            if not 0 < config.n_leaders < config.n_agents:
+                raise ValueError("bond_target 'leader' requires "
+                                 "0 < n_leaders < n_agents")
+            idx = np.arange(config.n_agents)
+            self.arrays.partner[:] = np.where(
+                idx < config.n_leaders, -1, idx % config.n_leaders)
+            self.arrays.bond[self.arrays.partner < 0] = 0.0
         if config.bond_target == "partner":
             if config.n_nests <= 0:
                 raise ValueError("bond_target 'partner' requires n_nests > 0")
@@ -136,7 +148,7 @@ class Model:
     def _bond_distances(self):
         """Distance and direction to whatever this world's bond target
         is: the birth nest, or the living partner."""
-        if self.config.bond_target == "partner":
+        if self.config.bond_target in ("partner", "leader"):
             return perceive_partner(self.arrays, self.config)
         return perceive_home(self.arrays, self.config)
 
@@ -156,7 +168,7 @@ class Model:
         fy = np.where(ok, self.world.food_y[np.maximum(food_ids, 0)], np.inf)
         food_cd = np.where(ok, center_dist(np.where(ok, fx, 0.0),
                                            np.where(ok, fy, 0.0)), np.inf)
-        if cfg.bond_target == "partner":
+        if cfg.bond_target in ("partner", "leader"):
             p = self.arrays.partner
             has = p >= 0
             pidx = np.where(has, p, 0)
@@ -175,7 +187,7 @@ class Model:
         """The danger field at the living bond target's location; zero
         for places and absent targets (care needs a living beloved)."""
         cfg = self.config
-        if cfg.bond_target != "partner":
+        if cfg.bond_target not in ("partner", "leader"):
             return np.zeros(cfg.n_agents)
         p = self.arrays.partner
         has = p >= 0
