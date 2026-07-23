@@ -1,0 +1,26 @@
+{
+  "description": "partner-mode storm: pairs roam together, grief is exact and rare, person-attachment is protective",
+  "seed": 42,
+  "ticks": 3000,
+  "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+  "sha256": "fae04531b495933d83e4f253a19f96e1030a824ff62d30883282046a7f69f13c",
+  "array_sha256": {
+    "x": "c740a724d0f3a031c2587b8d20d5b42111fba31b771cb40948a95b77270a7f71",
+    "y": "babfb78d83062f3ff42249f12d303171b955f576c3d49f7be9f92bfec7419adb",
+    "energy": "9f5f5865a62ecc4a0e0d76760125d9d79ab55510e92823c4c5ec846beb9317fd",
+    "integrity": "92e83df625fccbdfc4811a173fcc797f654c0f0ac2bb0326e9800945b9db4409",
+    "fatigue": "9a73973ca4517c60a612d1cd7b3b0217c4bc9fc8e52981db0a4a8272c931deae",
+    "weights": "ec6a762d70057db38d37e84051d6a5f5646bbceef397c8fa2d4a0c04221dbdac",
+    "urgency": "6a6909c32f31dac17044c05c27455e99bafc4343ea11c00f5c17f166d9954c3a",
+    "bond": "f91181eb0d468dcf96aca9baec299d898dc16b090313447b33fec4bc533d0305",
+    "alive": "2e6689e26c6303a16150196013a84df9b5d27e82401ec089ff210bcf92cab6a4"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+    "git_sha": "c80ea72fa4191b1c721c08b6dc1d29f9e635a8cd",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T08:01:42+00:00"
+  }
+}

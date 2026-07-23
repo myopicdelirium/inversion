@@ -77,6 +77,21 @@ def test_phase4_heterogeneous_golden():
     )
 
 
+def test_phase6_partner_golden():
+    """Pairs roam together; grief is the phase 2 formula at infinity."""
+    spec = json.loads((GOLDEN / "phase6_partner.json").read_text())
+    cfg = replace(
+        Config(), bond_target="partner", n_agents=400, n_hazard=0,
+        storm_nest=0, storm_onset=2000, storm_ramp=1, bond_init=0.8,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 6 partner golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

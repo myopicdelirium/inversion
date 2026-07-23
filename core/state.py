@@ -21,6 +21,7 @@ class AgentArrays:
     bond: np.ndarray       # (n,) attachment level in [0, 1]
     home_x: np.ndarray     # (n,) home nest position; inf when homeless
     home_y: np.ndarray
+    partner: np.ndarray    # (n,) index of the bonded agent; -1 = none
     weights: np.ndarray    # (n, n_drives) lagged drive weights
     urgency: np.ndarray    # (n, n_drives) instant urgencies
     tau: np.ndarray        # (n, n_drives) per-agent time constants,
@@ -43,6 +44,7 @@ def allocate(n: int, init_energy: float) -> AgentArrays:
         bond=np.zeros(n),
         home_x=np.full(n, np.inf),
         home_y=np.full(n, np.inf),
+        partner=np.full(n, -1, dtype=np.int64),
         weights=np.zeros((n, d)),
         urgency=np.zeros((n, d)),
         tau=np.zeros((n, d)),

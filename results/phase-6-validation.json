@@ -1,0 +1,287 @@
+{
+  "spec": "specs/phase-6.md",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "157f20fbde801e04fd58d6b5609b360e1fc1a9c0f426f1b73f25189d9408ed76",
+    "git_sha": "c80ea72fa4191b1c721c08b6dc1d29f9e635a8cd",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T08:01:21+00:00"
+  },
+  "criterion_1_preservation": "all golden trajectory hashes verified unchanged in nest mode before commit; config hashes refreshed for the bond_target field",
+  "criterion_2_cohesion": {
+    "0.0": {
+      "per_seed": [
+        30.106796636440293,
+        33.231215723381354,
+        29.926034225484408,
+        32.253706260250574,
+        31.624230468738297
+      ],
+      "mean": 31.428396662858983
+    },
+    "0.8": {
+      "per_seed": [
+        1.1799370354952063,
+        1.1523057049953156,
+        1.2109169479615614,
+        1.2130473037438803,
+        1.3666206718439198
+      ],
+      "mean": 1.2245655328079768
+    },
+    "ratio": 25.66493651898926,
+    "passed": true
+  },
+  "criterion_3_grief_identities": {
+    "seeds": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "config_hash": "980c7e72c3b4e0897ec793af15b58d2fabbbda9b9a452e76ad420f52875eb528",
+    "bereaved_agents": 26,
+    "max_abs_u_minus_b": 0.0,
+    "max_decay_residual": 5.551115123125783e-17,
+    "mourning_curve": {
+      "ticks_since_loss": [
+        0,
+        40,
+        80,
+        120,
+        160,
+        200,
+        240,
+        280,
+        320,
+        360,
+        400,
+        440,
+        480,
+        520,
+        560,
+        600,
+        640,
+        680,
+        720,
+        760,
+        800,
+        840,
+        880,
+        920,
+        960
+      ],
+      "mean_distress": [
+        0.9783238599448686,
+        0.9701233153892789,
+        0.9623925201767092,
+        0.9545880092906848,
+        0.9477529892633705,
+        0.9401507392952132,
+        0.9326587919116778,
+        0.9248785914412947,
+        0.9178608154868495,
+        0.9105464938066993,
+        0.9032904590702098,
+        0.8959580605974463,
+        0.8890751811503746,
+        0.8826932321687632,
+        0.8752209853612214,
+        0.8670452735760883,
+        0.8601358947953573,
+        0.8541287117814824,
+        0.8473222635174192,
+        0.8407550378386869,
+        0.8346012414976265,
+        0.8279504052793615,
+        0.8210638666078408,
+        0.8154032826977841,
+        0.8089054326882066
+      ]
+    },
+    "passed": true
+  },
+  "criterion_4_pull": {
+    "runs": {
+      "0.8": [
+        {
+          "seed": 1,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.015,
+          "pairs": 200,
+          "p_both_die": 0.01,
+          "p_independent": 0.000225
+        },
+        {
+          "seed": 2,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0025,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 3,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 1,
+          "n_safe": 398,
+          "mortality_partner_in_storm": 0.0,
+          "mortality_partner_safe": 0.002512562814070352,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 4,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0025,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 5,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.015,
+          "pairs": 200,
+          "p_both_die": 0.005,
+          "p_independent": 0.0002
+        },
+        {
+          "seed": 6,
+          "config_hash": "d7678327c11dbc8ae5950d8ec37fd8c39175284e41ce927470460cc2f78f4df7",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.005,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        }
+      ],
+      "0.0": [
+        {
+          "seed": 1,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 2,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 3,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 4,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 5,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        },
+        {
+          "seed": 6,
+          "config_hash": "bb62a683faa3ca7669c662878f0598e5b287339ebf9259e468189e6095d8a718",
+          "n_pull": 0,
+          "n_safe": 400,
+          "mortality_partner_in_storm": null,
+          "mortality_partner_safe": 0.0,
+          "pairs": 200,
+          "p_both_die": 0.0,
+          "p_independent": 0.0
+        }
+      ]
+    },
+    "pooled_bond08": {
+      "partner_in_storm": 0.0,
+      "partner_safe": 0.007089241034195163
+    },
+    "pooled_bond00": {
+      "partner_in_storm": 0.0,
+      "partner_safe": 0.0
+    },
+    "ratio_bond08": 0.0,
+    "ratio_bond00": 0.0,
+    "passed": false,
+    "protective_contrast": {
+      "nest": {
+        "per_seed": [
+          0.17435897435897435,
+          0.04568527918781726,
+          0.07769423558897243,
+          0.0625,
+          0.095,
+          0.0678391959798995
+        ],
+        "pooled": 0.08717961418594393
+      },
+      "partner": {
+        "per_seed": [
+          0.015,
+          0.0025,
+          0.005,
+          0.0025,
+          0.015,
+          0.005
+        ],
+        "pooled": 0.007499999999999999
+      }
+    }
+  },
+  "criterion_5_shared_fate": {
+    "seeds_with_positive_pair_correlation": 2,
+    "passed": false
+  },
+  "passed": false
+}

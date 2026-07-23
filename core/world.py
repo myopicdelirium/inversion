@@ -158,15 +158,39 @@ def perceive_home(arrays, config):
     return np.where(has_home, d, np.inf), dir_x, dir_y
 
 
-def apply_bond(arrays, config, dist_home):
-    """Per agent with a home: attachment grows while at the nest and
-    fades while away. Both updates are contractions within [0, 1], so
-    no clipping is needed and the declared rates hold exactly."""
-    has_home = np.isfinite(dist_home)
-    at_home = arrays.alive & has_home & (dist_home < config.r_nest)
-    away = arrays.alive & has_home & ~(dist_home < config.r_nest)
-    arrays.bond[at_home] += config.bond_grow * (1.0 - arrays.bond[at_home])
-    arrays.bond[away] -= config.bond_decay * arrays.bond[away]
+def perceive_partner(arrays, config):
+    """Per agent: distance and unit direction to its living partner.
+    An absent partner (none assigned, or no longer alive) is at
+    infinite distance with zero direction: absence is total. The world
+    states facts; drives read them. The agent has no death percept; it
+    knows absence, not death."""
+    has = arrays.partner >= 0
+    idx = np.where(has, arrays.partner, 0)
+    present = has & arrays.alive[idx]
+    # Substitute the agent's own position for absent partners so the
+    # torus arithmetic stays finite, then mask the results.
+    px = np.where(present, arrays.x[idx], arrays.x)
+    py = np.where(present, arrays.y[idx], arrays.y)
+    dx = _torus_delta(px - arrays.x, config.world_size)
+    dy = _torus_delta(py - arrays.y, config.world_size)
+    d = np.hypot(dx, dy)
+    safe = np.maximum(d, 1e-12)
+    dir_x = np.where(present, dx / safe, 0.0)
+    dir_y = np.where(present, dy / safe, 0.0)
+    return np.where(present, d, np.inf), dir_x, dir_y
+
+
+def apply_bond(arrays, config, dist_target):
+    """Per agent: attachment grows while close to the bond target and
+    fades while apart, including in bereavement, where the target is
+    at infinite distance forever: that permanent fading is the
+    mourning clock. Unbonded agents carry bond 0, and zero decays to
+    itself exactly, so this is inert for them. Both updates are
+    contractions within [0, 1]: no clipping, declared rates exact."""
+    close = arrays.alive & (dist_target < config.r_nest)
+    apart = arrays.alive & ~(dist_target < config.r_nest)
+    arrays.bond[close] += config.bond_grow * (1.0 - arrays.bond[close])
+    arrays.bond[apart] -= config.bond_decay * arrays.bond[apart]
 
 
 def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir, heading_draws):

@@ -37,7 +37,10 @@ class Config:
     wander_gain: float = 0.004
     # Recording
     record_every: int = 10
-    # Nests and attachment (phase 2)
+    # Nests and attachment (phase 2); bond target type (phase 6):
+    # "nest" bonds to the birth nest, "partner" bonds to another agent,
+    # who moves and can die.
+    bond_target: str = "nest"
     n_nests: int = 5
     r_nest: float = 3.0
     bond_init: float = 0.5

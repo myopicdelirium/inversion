@@ -25,6 +25,7 @@ from .world import (
     perceive_danger,
     perceive_food,
     perceive_home,
+    perceive_partner,
     spawn_world,
     update_world,
 )
@@ -83,6 +84,23 @@ class Model:
                 jitter = config.bond_init_spread * (2.0 * gen.random() - 1.0)
                 self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
         init_timescales(self.arrays, config, z_safety, z_bond)
+        if config.bond_target == "partner":
+            if config.n_nests <= 0:
+                raise ValueError("bond_target 'partner' requires n_nests > 0")
+            # Per agent: pair with the same-nest neighbour one block
+            # away; partners share a birth nest and spawn adjacent.
+            # Deterministic, no draws consumed. One-sided pairs at the
+            # tail are broken; unpaired agents carry no bond, exactly
+            # like homeless agents in phase 2.
+            idx = np.arange(config.n_agents)
+            block = idx // config.n_nests
+            cand = np.where(block % 2 == 0, idx + config.n_nests,
+                            idx - config.n_nests)
+            valid = (cand >= 0) & (cand < config.n_agents)
+            proposed = np.where(valid, cand, -1)
+            mutual = (proposed >= 0) & (proposed[np.where(proposed >= 0, proposed, 0)] == idx)
+            self.arrays.partner[:] = np.where(mutual, proposed, -1)
+            self.arrays.bond[self.arrays.partner < 0] = 0.0
         self._draw_block = None
         self._draw_cursor = 0
         self.tick = 0
@@ -90,8 +108,8 @@ class Model:
             self.arrays, self.world, config, self._hazards_active(),
             self._storm_intensity(),
         )
-        dist_home, _, _ = perceive_home(self.arrays, config)
-        init_drive_state(self.arrays, config, danger, dist_home)
+        dist_target, _, _ = self._bond_distances()
+        init_drive_state(self.arrays, config, danger, dist_target)
 
     def _hazards_active(self) -> bool:
         return self.tick >= self.config.hazard_onset
@@ -112,6 +130,13 @@ class Model:
             return 0.0
         return signal
 
+    def _bond_distances(self):
+        """Distance and direction to whatever this world's bond target
+        is: the birth nest, or the living partner."""
+        if self.config.bond_target == "partner":
+            return perceive_partner(self.arrays, self.config)
+        return perceive_home(self.arrays, self.config)
+
     def step(self):
         """One tick, in the order fixed by the spec: perceive,
         urgencies, weights, select, move, eat, damage and deaths,
@@ -123,11 +148,11 @@ class Model:
             self.arrays, self.world, cfg, active, storm
         )
         dist_food, food_dx, food_dy, _ = perceive_food(self.arrays, self.world, cfg)
-        dist_home, home_dx, home_dy = perceive_home(self.arrays, cfg)
+        dist_target, target_dx, target_dy = self._bond_distances()
 
-        compute_urgencies(self.arrays, cfg, danger, dist_home)
+        compute_urgencies(self.arrays, cfg, danger, dist_target)
         update_weights(self.arrays, cfg)
-        actions = select_actions(self.arrays, cfg, danger, dist_food, dist_home)
+        actions = select_actions(self.arrays, cfg, danger, dist_food, dist_target)
 
         # Per agent: two draws per tick from the agent's own stream,
         # consumed by every agent every tick regardless of action, so
@@ -144,14 +169,14 @@ class Model:
         self._draw_cursor += 2
         apply_actions(
             self.arrays, cfg, actions,
-            (food_dx, food_dy), (away_dx, away_dy), (home_dx, home_dy),
+            (food_dx, food_dy), (away_dx, away_dy), (target_dx, target_dy),
             (redraw_p, redraw_angle),
         )
         # Eating and bond accumulation use post-move positions.
         dist_after, _, _, food_id_after = perceive_food(self.arrays, self.world, cfg)
         apply_eating(self.arrays, self.world, cfg, dist_after, food_id_after)
-        dist_home_after, _, _ = perceive_home(self.arrays, cfg)
-        apply_bond(self.arrays, cfg, dist_home_after)
+        dist_target_after, _, _ = self._bond_distances()
+        apply_bond(self.arrays, cfg, dist_target_after)
         apply_damage_and_deaths(
             self.arrays, self.world, cfg, active,
             self._storm_damage_intensity(storm),
