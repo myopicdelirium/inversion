@@ -157,6 +157,21 @@ def test_phase10_faint_whisper_golden():
     )
 
 
+def test_phase11_foresight_golden():
+    """Farsighted place-lovers evacuate the slow cook."""
+    spec = json.loads((GOLDEN / "phase11_foresight.json").read_text())
+    cfg = replace(
+        Config(), n_hazard=0, storm_nest=0, storm_onset=2000,
+        storm_ramp=400, bond_init=1.0, prospect_horizon=60,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 11 foresight golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

@@ -1,0 +1,26 @@
+{
+  "description": "foresight defeats the slow cook: the boiling frog was a disease of myopia; farsighted place-lovers evacuate the ramp",
+  "seed": 42,
+  "ticks": 3000,
+  "config_hash": "461dd367e0579bd24ed58d18eedd7b59aae0d75e4a20f867e16a51f43d701a38",
+  "sha256": "1e72966bf241d1acb932486af608217a5913eeaea68d6b48ea9a5cdeef0a1de1",
+  "array_sha256": {
+    "x": "cc9afca4af6716cb3d48265f04398f2beda5555da00c7a375cf5813ce3a5f49a",
+    "y": "f705627d7981931346eb38cd300c55cd86dc745d64b48e3d847c16886b5d09cd",
+    "energy": "4b703f9a40bc1ad722df151fab08039f3badd313f88f22c20f181c277fe9bbde",
+    "integrity": "a11beba5d7aa31b4e34dc6f66a30702e9f566c262fb98f4bd2e6e372c42d61a9",
+    "fatigue": "1b7206b9c4cd1bcb64a0853271d8c0646b9fd25fe05df0df373e44dd9b61f568",
+    "weights": "ff38d2784aa9254ffba312010ab6163dff5879e7b1c353539477d6972ac5414e",
+    "urgency": "276d92f713cd827ee3ac5bbae1a91e33d9fa3373526962254952345a5a5231da",
+    "bond": "9887d7b27b412f20b8526a234ac05e5d0d26d5681e8d9f0cbfeb5706bd712047",
+    "alive": "77759138cb100ff179a45972fc099a75b5b959b86d222b67be298bb3445dc075"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "461dd367e0579bd24ed58d18eedd7b59aae0d75e4a20f867e16a51f43d701a38",
+    "git_sha": "f328fbd05b45d4c228f04d334a487332dfe2b5f5",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T10:34:08+00:00"
+  }
+}

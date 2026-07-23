@@ -105,7 +105,7 @@ class Model:
         self._draw_block = None
         self._draw_cursor = 0
         self.tick = 0
-        danger, _, _ = perceive_danger(
+        danger, _, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active(),
             self._storm_intensity(),
         )
@@ -145,7 +145,7 @@ class Model:
         cfg = self.config
         active = self._hazards_active()
         storm = self._storm_intensity()
-        danger, away_dx, away_dy = perceive_danger(
+        danger, away_dx, away_dy, danger_scale = perceive_danger(
             self.arrays, self.world, cfg, active, storm
         )
         dist_food, food_dx, food_dy, _ = perceive_food(self.arrays, self.world, cfg)
@@ -153,7 +153,11 @@ class Model:
 
         compute_urgencies(self.arrays, cfg, danger, dist_target)
         update_weights(self.arrays, cfg)
-        actions = select_actions(self.arrays, cfg, danger, dist_food, dist_target)
+        actions = select_actions(
+            self.arrays, cfg, danger, dist_food, dist_target,
+            food_dir=(food_dx, food_dy), away_dir=(away_dx, away_dy),
+            target_dir=(target_dx, target_dy), danger_scale=danger_scale,
+        )
 
         # Per agent: two draws per tick from the agent's own stream,
         # consumed by every agent every tick regardless of action, so

@@ -35,6 +35,11 @@ class Config:
     init_energy: float = 0.8
     # Action
     wander_gain: float = 0.004
+    # Farsight (phase 11, CLAUDE.md Amendment 4): action values
+    # integrate predicted world consequences over this many ticks,
+    # under frozen current weights. 0 = the phase 1 closed forms,
+    # bit for bit.
+    prospect_horizon: int = 0
     # Recording
     record_every: int = 10
     # Nests and attachment (phase 2); bond target type (phase 6):

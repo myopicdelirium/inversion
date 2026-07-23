@@ -81,6 +81,9 @@ def perceive_danger(arrays, world, config, hazards_active, storm_intensity=0.0):
     level = np.zeros(n)
     away_dx = np.zeros(n)
     away_dy = np.zeros(n)
+    # The length scale of whichever source dominates, for the
+    # forecaster (phase 11): how fast danger falls off with distance.
+    scale = np.full(n, config.r_hazard)
     if world.hazard_x.shape[0] > 0 and hazards_active:
         dx = _torus_delta(arrays.x[:, None] - world.hazard_x[None, :], config.world_size)
         dy = _torus_delta(arrays.y[:, None] - world.hazard_y[None, :], config.world_size)
@@ -105,8 +108,9 @@ def perceive_danger(arrays, world, config, hazards_active, storm_intensity=0.0):
         storm_wins = s_level > level
         away_dx = np.where(storm_wins, sdx / safe, away_dx)
         away_dy = np.where(storm_wins, sdy / safe, away_dy)
+        scale = np.where(storm_wins, config.storm_radius, scale)
         level = np.maximum(level, s_level)
-    return level, away_dx, away_dy
+    return level, away_dx, away_dy, scale
 
 
 def perceive_food(arrays, world, config):

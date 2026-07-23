@@ -203,6 +203,27 @@ def test_update_law_names_no_drive():
         raise AssertionError("update_weights not found in core/drives.py")
 
 
+def test_action_never_references_integrity():
+    """Amendment 4: no branch on predicted death, anywhere. The felt
+    price of a path is its integrated danger exposure, never a death
+    predicate, so core/action.py may not reference integrity at all.
+    Written before the prospection mechanism."""
+    tree = ast.parse((CORE / "action.py").read_text())
+    for node in ast.walk(tree):
+        names = []
+        if isinstance(node, ast.Name):
+            names.append(node.id)
+        elif isinstance(node, ast.Attribute):
+            names.append(node.attr)
+        elif isinstance(node, ast.arg):
+            names.append(node.arg)
+        for name in names:
+            assert "integrity" not in _tokens(name), (
+                f"action.py references '{name}': action valuation may "
+                f"not see integrity (Amendment 4)"
+            )
+
+
 def test_timescales_immutable_at_runtime():
     """Per-agent time constants drawn at spawn never change, even under
     a storm with every spread nonzero (Amendment 2)."""
