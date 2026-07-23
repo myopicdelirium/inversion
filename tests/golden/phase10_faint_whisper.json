@@ -1,0 +1,26 @@
+{
+  "description": "the faint whisper: floor 0.01, kappa 2; grief still starves its deepest carriers even without the absolute zero-trap",
+  "seed": 42,
+  "ticks": 3500,
+  "config_hash": "f5186500b1ad68c84e50159b5e2db29b9bc85d2a5d6a2006636053fb3ebe283a",
+  "sha256": "47619b24c4100cee5742bffc675162c655af7cd1f1ddb3b3abb06bfa63e8c7b8",
+  "array_sha256": {
+    "x": "2e29bc0d03ddcd252c1f1fb803b9ad092c9d70add0bc2077a2743c48c8dfe20e",
+    "y": "50a19e3e986d4e6d7ce864fdbc46001f304e093c298ae53ee18d5cd73bd975f6",
+    "energy": "72d02253b239ee0bc62e553e962449f505f52009b761c904b735626e08a6e02e",
+    "integrity": "f1e3dd597019731ac6936bbc0cfe85b960b07eb4386dcc7290b8c5b2abf00d3c",
+    "fatigue": "159f6967b3d24351f9400456666bab9d431d335133f508e8031b6e4e7c818c41",
+    "weights": "88252f0339c9460d6330c6d352436cb6e78348432cffcac2ef603208d8cd9838",
+    "urgency": "b67f7f66688753364111ad0a31a9b55349a7904ec07e7243d3a318b0e25e0369",
+    "bond": "70f5fc47a010c3c72d7db9e8c5b60f08bbfcc87cc57342c068b03de0cb8af0f9",
+    "alive": "2e2db35a4753b383d1be625f64e7be6f60c831277fb6c09fdfd206082a1aa370"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "f5186500b1ad68c84e50159b5e2db29b9bc85d2a5d6a2006636053fb3ebe283a",
+    "git_sha": "1d31bdb81d64faa23a1be596a26e2ede04d3fc7c",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T09:42:50+00:00"
+  }
+}

@@ -58,6 +58,17 @@ The update law gains an attention factor: each drive's urgency is *heard* in pro
 * Raw urgencies remain the recorded truth. The heard urgency is reconstructible exactly from recorded weights and urgencies, and the transition identity extends to it: every weight transition must satisfy the attended law to machine precision.
 * Forbidden: attention terms conditioned on mortality, threat, damage, or commitment state. Attention reads weights and nothing else.
 
+**Addendum (2026-07-23), the whisper floor.** The heard ratio is clamped below: `heard_d = u_d * max(w_d / max_e w_e, attention_floor) ** kappa`. The floor is declared, default 0, one scalar for all drives (a per-drive floor violates the names-no-drive rule). At floor 0 the law is the zero-trap exactly: a never-felt drive is unhearable forever. That regime is preserved as the boundary of the axis, not deleted; the floor is swept like every other timescale. Phase 9's discovery (peacetime collapse, the seed-identical fear-deaf) lives at floor 0 and must remain reproducible there.
+
+### Amendment 4 (2026-07-23): farsighted in consequences, myopic in values
+
+Amendment 1's myopia clause ("action selection never anticipates its own reversion") protects the timing-failure mechanism. It is now split into what it was protecting and what it accidentally forbade:
+
+* **Still forbidden, permanently**: predicting one's own future weights, urgencies-as-motivations, or reversion. The agent may never reason about what it will want.
+* **Now permitted, under declaration**: action values may integrate predicted WORLD consequences over a declared horizon (`prospect_horizon`, default 0 = the phase 1 closed forms, bit for bit). The prediction uses the agent's declared physics: straight-line kinematics, known static fields, no other agents' future actions (agents predict physics, never minds), evaluated entirely under the agent's CURRENT weights, frozen during evaluation.
+* No branch on predicted death, anywhere. Predicted harm enters action value only continuously, as integrated exposure along the predicted path. `core/action.py` may not reference integrity at all (static tripwire); the felt price of a path is its accumulated danger, not a death predicate.
+* The horizon is declared, never modified at runtime, swept as an axis. Sacrifice under foresight, if it occurs, must remain the ordinary argmax of weight times predicted consequence, with no term that exists to produce it.
+
 ## Hard rules
 
 ### Golden runs

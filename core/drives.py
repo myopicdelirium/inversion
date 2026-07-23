@@ -39,9 +39,11 @@ def update_weights(arrays, config, dt=1.0):
     live = arrays.alive
     current = arrays.weights[live]
     loudest = np.maximum(current.max(axis=1, keepdims=True), 1e-12)
-    heard = arrays.urgency[live] * (
-        current / loudest
-    ) ** config.attention_sharpness
+    # The whisper floor (Amendment 3 addendum): no drive's hearing
+    # falls below the declared floor. At floor 0 this clamp is inert
+    # and the zero-trap regime holds exactly.
+    ratio = np.maximum(current / loudest, config.attention_floor)
+    heard = arrays.urgency[live] * ratio ** config.attention_sharpness
     arrays.weights[live] = current + (dt / arrays.tau[live]) * (heard - current)
 
 

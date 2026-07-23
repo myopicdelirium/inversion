@@ -140,6 +140,23 @@ def test_phase9_peacetime_collapse_golden():
     )
 
 
+def test_phase10_faint_whisper_golden():
+    """Grief still starves its deepest carriers at floor 0.01: the
+    origin case does not require the absolute zero-trap."""
+    spec = json.loads((GOLDEN / "phase10_faint_whisper.json").read_text())
+    cfg = replace(
+        Config(), bond_target="partner", n_agents=400, n_hazard=0,
+        storm_nest=0, storm_onset=2000, storm_ramp=1, bond_init=0.8,
+        attention_sharpness=2.0, attention_floor=0.01,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 10 faint-whisper golden hash changed: the dynamics "
+        "changed. Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

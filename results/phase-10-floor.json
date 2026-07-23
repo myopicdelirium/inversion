@@ -1,0 +1,92 @@
+{
+  "spec": "specs/phase-10.md",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "63d88c08725bcf9de0f324e038374ae7d6d18d42a728e4c5bf47b505f3809f16",
+    "git_sha": "1d31bdb81d64faa23a1be596a26e2ede04d3fc7c",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T09:40:11+00:00"
+  },
+  "F1_fear_acquirable": {
+    "floor0_reference": 0.108,
+    "floor005": 0.587,
+    "per_seed": [
+      0.635,
+      0.55,
+      0.485,
+      0.66,
+      0.605
+    ],
+    "passed": true
+  },
+  "F2_collapse_cured": {
+    "alive_at_onset_per_seed": [
+      153,
+      164,
+      190,
+      188,
+      181
+    ],
+    "floor0_reference": "0-1 of 200",
+    "passed": true
+  },
+  "F3_origin_case_survives": {
+    "bereaved": 779,
+    "neglect_deaths": 75,
+    "neglect_rate": 0.0962772785622593,
+    "baseline_rate": 0.125,
+    "passed": false
+  },
+  "F4_smooth_axis": {
+    "boundary": {
+      "0.0": 0.9920000000000002,
+      "0.5": 0.924,
+      "1.0": 0.587,
+      "1.5": 0.44700000000000006,
+      "2.0": 0.0
+    },
+    "passed": true
+  },
+  "passed": false,
+  "F3_boundary_probe": {
+    "label": "measurement along the declared floor axis after F3 failed as declared at floor 0.05",
+    "kappa": 2.0,
+    "bond_init": 0.8,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "cells": {
+      "0.005": {
+        "neglect": "92/656",
+        "neglect_rate": 0.14,
+        "baseline_rate": 0.0,
+        "excess": 0.14
+      },
+      "0.01": {
+        "neglect": "94/646",
+        "neglect_rate": 0.146,
+        "baseline_rate": 0.0,
+        "excess": 0.146
+      },
+      "0.02": {
+        "neglect": "95/683",
+        "neglect_rate": 0.139,
+        "baseline_rate": 0.081,
+        "excess": 0.058
+      },
+      "0.05": {
+        "neglect": "75/779",
+        "neglect_rate": 0.096,
+        "baseline_rate": 0.125,
+        "excess": -0.029
+      }
+    },
+    "finding": "grief-specific starvation requires a floor at or below about 0.01; by 0.02 hypervigilance starvation appears in the baseline; by 0.05 the origin case is abolished"
+  }
+}

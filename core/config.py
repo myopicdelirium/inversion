@@ -71,6 +71,10 @@ class Config:
     # Bounded attention (phase 7, CLAUDE.md Amendment 3). At 0 every
     # drive is fully heard and the law is phase 1's bit for bit.
     attention_sharpness: float = 0.0
+    # The whisper floor (phase 10, Amendment 3 addendum): the heard
+    # ratio is clamped below by this. At 0 the zero-trap regime of
+    # phase 9 holds exactly: a never-felt drive stays unhearable.
+    attention_floor: float = 0.0
     # Population spreads (phase 4, CLAUDE.md Amendment 2). Drawn once
     # per agent at spawn; zero means every agent carries the declared
     # value exactly and no draw is consumed.
