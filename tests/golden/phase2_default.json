@@ -2,7 +2,7 @@
   "description": "phase 2 default-config golden run (nests present, bond_init 0.5)",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "9398e45d665e972c5cd5f3ab761b0780075d259a8b147df959e43076937efe83",
+  "config_hash": "8918f9b89c167363188f296bdd9a82c316415bf7a18b984364c1c344c6e03b54",
   "sha256": "5f703728c597d2c190a25b3c3c07e47defc1c06318739c8d2221c7d825c7124c",
   "array_sha256": {
     "x": "f94cfb405de45b401166e1ae5bc0cfcd1c9cbb6a4112d58ece58bc9e42ea3ebb",

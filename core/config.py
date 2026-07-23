@@ -40,6 +40,10 @@ class Config:
     # under frozen current weights. 0 = the phase 1 closed forms,
     # bit for bit.
     prospect_horizon: int = 0
+    # Full sight (phase 13): when true, the farsighted rollout prices
+    # the storm's grip at destinations. What an agent knows about the
+    # world is itself an axis. False is bit-inert.
+    prospect_sees_grip: bool = False
     # Recording
     record_every: int = 10
     # Nests and attachment (phase 2); bond target type (phase 6):

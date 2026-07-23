@@ -1,0 +1,26 @@
+{
+  "description": "the threshold vigil: full sight refuses the mire and the bond refuses the leaving; pull-group deaths become starvation at the rim",
+  "seed": 42,
+  "ticks": 3250,
+  "config_hash": "7be2f537eaa544e16617a0b54654928f708ba99d49dd4d24a6dca883c352ff23",
+  "sha256": "b7997d4645ff15a969c7ebc4f7b575509255b4e73f387df830eec922873a0890",
+  "array_sha256": {
+    "x": "ba5fa6a5dcd5563ab0ce378760d9d3e3a4214952458a892d72d03633e8376982",
+    "y": "a4e53109f3184dd4b7de5355d7ea0bec1c9a3f4c576bd066533f73fbe9c04ad0",
+    "energy": "e79ebab9916233dcb1996eae16fa7bddf4824db3a78101340ec185a4246985d9",
+    "integrity": "16a86f6399d8caea50fa59ecffb5970d17e6584955ed6ae4f8da154c841b9e51",
+    "fatigue": "e93ea2167abdd89d779cd023e8e2b535914a8a00379305847e1ba412dde652f5",
+    "weights": "4c72babfc8a9b39b3a0858bd53a7fc2a6a4689a8a1169ab39f1c14c4078b67e6",
+    "urgency": "81a961f093fb1c1298aa926bf9b19cc738c9a394939a51ff52cdfd0bf9d1b4a1",
+    "bond": "9ec4bc511a01f7a86f33b8c2282a55d47137632c4f5431baada6d3eeb015aec1",
+    "alive": "87c0082e652e8245cf011e62365c262660d7ad67c3f2bdb94cafb428b1bd1b51"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "7be2f537eaa544e16617a0b54654928f708ba99d49dd4d24a6dca883c352ff23",
+    "git_sha": "ac8d70d3380fd454028276adea5ed68a099b4a8e",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T15:11:58+00:00"
+  }
+}

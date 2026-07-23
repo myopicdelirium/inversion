@@ -191,6 +191,23 @@ def test_phase12_anecdote_golden():
     )
 
 
+def test_phase13_threshold_golden():
+    """Full sight refuses the mire; the bond refuses the leaving."""
+    spec = json.loads((GOLDEN / "phase13_threshold.json").read_text())
+    cfg = replace(
+        Config(), bond_target="partner", n_agents=400, n_hazard=0,
+        storm_nest=0, storm_onset=2000, storm_ramp=1,
+        storm_snare=0.95, storm_damage=0.01, tau_safety=48.0,
+        prospect_horizon=60, prospect_sees_grip=True,
+    )
+    assert cfg.config_hash() == spec["config_hash"]
+    traj = run(cfg, seed=spec["seed"], ticks=spec["ticks"])
+    assert golden_hash(traj) == spec["sha256"], (
+        "phase 13 threshold golden hash changed: the dynamics changed. "
+        "Report and stop (CLAUDE.md)."
+    )
+
+
 def test_phase2_default_golden():
     spec = json.loads((GOLDEN / "phase2_default.json").read_text())
     cfg = Config()

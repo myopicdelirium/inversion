@@ -138,6 +138,37 @@ class Model:
             return perceive_partner(self.arrays, self.config)
         return perceive_home(self.arrays, self.config)
 
+    def _grip_percepts(self, food_ids):
+        """Full sight (phase 13): storm-center distances of the current
+        food target and bond target, for grip-aware pricing."""
+        cfg = self.config
+        n = cfg.n_agents
+
+        def center_dist(xs, ys):
+            dx = (xs - self.world.storm_x + cfg.world_size / 2.0) % cfg.world_size - cfg.world_size / 2.0
+            dy = (ys - self.world.storm_y + cfg.world_size / 2.0) % cfg.world_size - cfg.world_size / 2.0
+            return np.hypot(dx, dy)
+
+        ok = food_ids >= 0
+        fx = np.where(ok, self.world.food_x[np.maximum(food_ids, 0)], np.inf)
+        fy = np.where(ok, self.world.food_y[np.maximum(food_ids, 0)], np.inf)
+        food_cd = np.where(ok, center_dist(np.where(ok, fx, 0.0),
+                                           np.where(ok, fy, 0.0)), np.inf)
+        if cfg.bond_target == "partner":
+            p = self.arrays.partner
+            has = p >= 0
+            pidx = np.where(has, p, 0)
+            present = has & self.arrays.alive[pidx]
+            tx = np.where(present, self.arrays.x[pidx], 0.0)
+            ty = np.where(present, self.arrays.y[pidx], 0.0)
+            tgt_cd = np.where(present, center_dist(tx, ty), np.inf)
+        else:
+            hh = np.isfinite(self.arrays.home_x)
+            tgt_cd = np.where(hh, center_dist(np.where(hh, self.arrays.home_x, 0.0),
+                                              np.where(hh, self.arrays.home_y, 0.0)), np.inf)
+        return {"intensity": self._storm_damage_intensity(self._storm_intensity()),
+                "food_center_dist": food_cd, "target_center_dist": tgt_cd}
+
     def step(self):
         """One tick, in the order fixed by the spec: perceive,
         urgencies, weights, select, move, eat, damage and deaths,
@@ -148,15 +179,20 @@ class Model:
         danger, away_dx, away_dy, danger_scale = perceive_danger(
             self.arrays, self.world, cfg, active, storm
         )
-        dist_food, food_dx, food_dy, _ = perceive_food(self.arrays, self.world, cfg)
+        dist_food, food_dx, food_dy, food_ids = perceive_food(self.arrays, self.world, cfg)
         dist_target, target_dx, target_dy = self._bond_distances()
 
+        grip_info = None
+        if cfg.prospect_sees_grip and cfg.prospect_horizon > 0 \
+                and cfg.storm_nest >= 0 and cfg.storm_snare > 0.0:
+            grip_info = self._grip_percepts(food_ids)
         compute_urgencies(self.arrays, cfg, danger, dist_target)
         update_weights(self.arrays, cfg)
         actions = select_actions(
             self.arrays, cfg, danger, dist_food, dist_target,
             food_dir=(food_dx, food_dy), away_dir=(away_dx, away_dy),
             target_dir=(target_dx, target_dy), danger_scale=danger_scale,
+            grip_info=grip_info,
         )
 
         # Per agent: two draws per tick from the agent's own stream,
