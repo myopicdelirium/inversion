@@ -1,0 +1,804 @@
+{
+  "declared_before_running": {
+    "boundary": "fresh seeds 11-15; expect monotone non-increasing survival in kappa, below 0.3 by kappa 1",
+    "grief": "fresh seeds 11-16; expect 0 neglect deaths at kappa 0, neglect rate >= 0.05 at kappa 2, baseline starvation <= 0.01",
+    "tunnel": "fresh seeds 11-15; expect integrity-death ratio kappa2/kappa0 >= 3"
+  },
+  "boundary": {
+    "0.0": {
+      "per_seed": [
+        0.91,
+        0.975,
+        1.0,
+        0.995,
+        0.975
+      ],
+      "mean": 0.9709999999999999
+    },
+    "0.25": {
+      "per_seed": [
+        0.7,
+        0.745,
+        0.83,
+        0.86,
+        0.61
+      ],
+      "mean": 0.7489999999999999
+    },
+    "0.5": {
+      "per_seed": [
+        0.66,
+        0.655,
+        0.82,
+        0.62,
+        0.53
+      ],
+      "mean": 0.657
+    },
+    "0.75": {
+      "per_seed": [
+        0.355,
+        0.51,
+        0.675,
+        0.355,
+        0.285
+      ],
+      "mean": 0.43600000000000005
+    },
+    "1.0": {
+      "per_seed": [
+        0.15,
+        0.155,
+        0.405,
+        0.09,
+        0.08
+      ],
+      "mean": 0.176
+    },
+    "1.25": {
+      "per_seed": [
+        0.005,
+        0.025,
+        0.145,
+        0.0,
+        0.0
+      ],
+      "mean": 0.034999999999999996
+    },
+    "1.5": {
+      "per_seed": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0
+    },
+    "2.0": {
+      "per_seed": [
+        0.0,
+        0.0,
+        0.0,
+        0.005,
+        0.0
+      ],
+      "mean": 0.001
+    }
+  },
+  "grief": [
+    {
+      "kappa": 0.0,
+      "bond_init": 0.4,
+      "bereaved": 27,
+      "neglect_deaths": 0,
+      "neglect_rate": 0.0,
+      "baseline_rate": 0.002540220152413209,
+      "runs": [
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 11,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 3,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 395,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 12,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 5,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 386,
+          "baseline_starvation_deaths": 3
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 13,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 4,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 396,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 14,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 4,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 396,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 15,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 7,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 393,
+          "baseline_starvation_deaths": 1
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.4,
+          "seed": 16,
+          "config_hash": "e2268460a857ef2d65577f4a10f136ad9599338d4eafcfe187b74b497dcb8923",
+          "bereaved": 4,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 396,
+          "baseline_starvation_deaths": 2
+        }
+      ]
+    },
+    {
+      "kappa": 0.0,
+      "bond_init": 0.8,
+      "bereaved": 26,
+      "neglect_deaths": 0,
+      "neglect_rate": 0.0,
+      "baseline_rate": 0.003391267486222976,
+      "runs": [
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 11,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 3,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 395,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 12,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 5,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 392,
+          "baseline_starvation_deaths": 1
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 13,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 5,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 393,
+          "baseline_starvation_deaths": 2
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 14,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 6,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 386,
+          "baseline_starvation_deaths": 4
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 15,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 4,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 396,
+          "baseline_starvation_deaths": 1
+        },
+        {
+          "kappa": 0.0,
+          "bond_init": 0.8,
+          "seed": 16,
+          "config_hash": "d079cf7062f77651c46a16b5c99f6d4bfbd5aba820444b0f399bff1ad196563c",
+          "bereaved": 3,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 397,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 0.5,
+      "bond_init": 0.4,
+      "bereaved": 0,
+      "neglect_deaths": 0,
+      "neglect_rate": 0.0,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 11,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 12,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 246,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 13,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 72,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 14,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 15,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.4,
+          "seed": 16,
+          "config_hash": "92b8fb0b6591668151c3a540263d5f9450121210653743e10b7ff79319ddc263",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 10,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 0.5,
+      "bond_init": 0.8,
+      "bereaved": 0,
+      "neglect_deaths": 0,
+      "neglect_rate": 0.0,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 11,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 158,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 12,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 13,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 20,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 14,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 50,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 15,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 130,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 0.5,
+          "bond_init": 0.8,
+          "seed": 16,
+          "config_hash": "ac2e7e76a7f6887b9e6897be3a5406139278e1da826c5de757df463c4a9e1758",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 1.0,
+      "bond_init": 0.4,
+      "bereaved": 2,
+      "neglect_deaths": 1,
+      "neglect_rate": 0.5,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 11,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 126,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 12,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 1,
+          "bereaved_neglect_deaths": 1,
+          "baseline_agents": 232,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 13,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 14,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 15,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 1,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.4,
+          "seed": 16,
+          "config_hash": "d312e9f73112c6c914c97d964367b20aff006b4484919677c02624ed0a56daf6",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 126,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 1.0,
+      "bond_init": 0.8,
+      "bereaved": 5,
+      "neglect_deaths": 0,
+      "neglect_rate": 0.0,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 11,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 74,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 12,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 13,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 14,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 2,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 200,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 15,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 0,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 122,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.0,
+          "bond_init": 0.8,
+          "seed": 16,
+          "config_hash": "e73906077a74bc6a8d4163f6c42547093d3cf984330f0c0f6c6daa4100a4f00b",
+          "bereaved": 3,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 1.5,
+      "bond_init": 0.4,
+      "bereaved": 361,
+      "neglect_deaths": 20,
+      "neglect_rate": 0.055401662049861494,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 11,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 77,
+          "bereaved_neglect_deaths": 7,
+          "baseline_agents": 62,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 12,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 37,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 320,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 13,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 68,
+          "bereaved_neglect_deaths": 1,
+          "baseline_agents": 200,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 14,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 45,
+          "bereaved_neglect_deaths": 0,
+          "baseline_agents": 80,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 15,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 75,
+          "bereaved_neglect_deaths": 5,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.4,
+          "seed": 16,
+          "config_hash": "80076578526930f26640ef7016346841717dd245666df07e021b637dbba7f2a3",
+          "bereaved": 59,
+          "bereaved_neglect_deaths": 7,
+          "baseline_agents": 90,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 1.5,
+      "bond_init": 0.8,
+      "bereaved": 380,
+      "neglect_deaths": 20,
+      "neglect_rate": 0.05263157894736842,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 11,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 77,
+          "bereaved_neglect_deaths": 5,
+          "baseline_agents": 220,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 12,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 52,
+          "bereaved_neglect_deaths": 1,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 13,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 52,
+          "bereaved_neglect_deaths": 2,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 14,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 56,
+          "bereaved_neglect_deaths": 1,
+          "baseline_agents": 122,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 15,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 76,
+          "bereaved_neglect_deaths": 8,
+          "baseline_agents": 12,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 1.5,
+          "bond_init": 0.8,
+          "seed": 16,
+          "config_hash": "acbf3f569834f29cdd289da7e1cd729413c1e9ea8ebcd7797fa473568defc963",
+          "bereaved": 67,
+          "bereaved_neglect_deaths": 3,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 2.0,
+      "bond_init": 0.4,
+      "bereaved": 559,
+      "neglect_deaths": 59,
+      "neglect_rate": 0.10554561717352415,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 11,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 113,
+          "bereaved_neglect_deaths": 7,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 12,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 86,
+          "bereaved_neglect_deaths": 12,
+          "baseline_agents": 149,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 13,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 95,
+          "bereaved_neglect_deaths": 7,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 14,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 81,
+          "bereaved_neglect_deaths": 10,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 15,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 97,
+          "bereaved_neglect_deaths": 10,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.4,
+          "seed": 16,
+          "config_hash": "decffcadb0e2ec812da82344792ddcf03a747e4e42a8b5bdc7a60c5ae371a890",
+          "bereaved": 87,
+          "bereaved_neglect_deaths": 13,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    },
+    {
+      "kappa": 2.0,
+      "bond_init": 0.8,
+      "bereaved": 622,
+      "neglect_deaths": 52,
+      "neglect_rate": 0.08360128617363344,
+      "baseline_rate": 0.0,
+      "runs": [
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 11,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 103,
+          "bereaved_neglect_deaths": 8,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 12,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 87,
+          "bereaved_neglect_deaths": 4,
+          "baseline_agents": 144,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 13,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 113,
+          "bereaved_neglect_deaths": 9,
+          "baseline_agents": 52,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 14,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 87,
+          "bereaved_neglect_deaths": 11,
+          "baseline_agents": 0,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 15,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 116,
+          "bereaved_neglect_deaths": 8,
+          "baseline_agents": 55,
+          "baseline_starvation_deaths": 0
+        },
+        {
+          "kappa": 2.0,
+          "bond_init": 0.8,
+          "seed": 16,
+          "config_hash": "b3f4ba3f1e3b9a9b03a89dd500d71217483e36334c49feaef9f1f1a9d0631423",
+          "bereaved": 116,
+          "bereaved_neglect_deaths": 12,
+          "baseline_agents": 10,
+          "baseline_starvation_deaths": 0
+        }
+      ]
+    }
+  ],
+  "tunnel": {
+    "0.0": 0.031,
+    "2.0": 0.517,
+    "ratio": 16.67741935483871
+  },
+  "manifest": {
+    "seed": 0,
+    "config_hash": "6c875662b39a380d7c12118dff51dd7fe8187294ac26f669c3b325559a374df9",
+    "git_sha": "cb7669ef54bdfb8babecbfd9d67c8959574e5a7e",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T09:02:42+00:00"
+  }
+}
