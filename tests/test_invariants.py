@@ -183,6 +183,26 @@ def test_tau_written_only_at_declaration_or_init():
             )
 
 
+def test_update_law_names_no_drive():
+    """Amendment 3: the update law (attention included) is drive
+    agnostic. The function that moves weights may not reference any
+    drive-index identifier; whatever dominance suppresses, it
+    suppresses uniformly. Written before the attention mechanism."""
+    tree = ast.parse((CORE / "drives.py").read_text())
+    drive_ids = {"ENERGY", "SAFETY", "REST", "BOND"}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.FunctionDef) and node.name == "update_weights":
+            used = _identifiers(node)
+            bad = used & drive_ids
+            assert not bad, (
+                f"update_weights references drive identifiers {bad}; "
+                f"the law may not name a drive (Amendment 3)"
+            )
+            break
+    else:
+        raise AssertionError("update_weights not found in core/drives.py")
+
+
 def test_timescales_immutable_at_runtime():
     """Per-agent time constants drawn at spawn never change, even under
     a storm with every spread nonzero (Amendment 2)."""

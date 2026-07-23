@@ -30,13 +30,19 @@ def compute_urgencies(arrays, config, danger_at_agent, dist_home):
 
 def update_weights(arrays, config, dt=1.0):
     """Per agent, per drive: the weight moves a fraction dt/tau of the
-    way from where it is toward the current urgency, on that agent's
-    own clock. This one line is the entire inertia mechanism; every
-    drive obeys it and nothing bypasses it."""
+    way from where it is toward the HEARD urgency, on that agent's own
+    clock. Attention is finite (Amendment 3): each drive is heard in
+    proportion to its weight relative to the loudest weight, raised to
+    the declared sharpness. At sharpness 0 the factor is exactly one
+    and this is phase 1's law bit for bit. The law names no drive:
+    whatever dominates, dominates uniformly."""
     live = arrays.alive
-    arrays.weights[live] += (
-        dt / arrays.tau[live]
-    ) * (arrays.urgency[live] - arrays.weights[live])
+    current = arrays.weights[live]
+    loudest = np.maximum(current.max(axis=1, keepdims=True), 1e-12)
+    heard = arrays.urgency[live] * (
+        current / loudest
+    ) ** config.attention_sharpness
+    arrays.weights[live] = current + (dt / arrays.tau[live]) * (heard - current)
 
 
 def init_timescales(arrays, config, z_safety=None, z_bond=None):

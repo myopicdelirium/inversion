@@ -1,0 +1,26 @@
+{
+  "description": "attention grief: kappa 2 partner-mode storm; the bereaved can starve in mourning",
+  "seed": 42,
+  "ticks": 3500,
+  "config_hash": "6d4c10ca57d20235186953981f031507ee55382b8aaed09322ad1bb7f095f365",
+  "sha256": "6b86bcace82de89f73288f6f33d916293b08a01348242b3067a0129f558dbcab",
+  "array_sha256": {
+    "x": "a9df811d34b2b5624ec324f7bf95e226957a098f8522e78b36fe193094d40432",
+    "y": "12b0dd511075d59a32818e0bf98fd83719f06db9aba866214a329a1c46188d2c",
+    "energy": "81d4af5d87341670953f4ac7d543f70e796725e727236cc57e508039f0561932",
+    "integrity": "395b1ac358c3d509662b9b7c1d4b2493fb75973041d8554a6f21b75f66ba2d0d",
+    "fatigue": "7bc1a36f46ee165243735db81f8175d7ac5b2478926b24552c24a25ff6cf5a0b",
+    "weights": "34e5b0142ebebc5e07599d52ec22c475fee749eb70fb50d4132844947052144e",
+    "urgency": "7328654e8d01bafd07deda895159f8d41a1e5008eb3698d9316bc7dc4ebec17d",
+    "bond": "082deba40569dcff0af0b05290cdeed6fe4951d96938fbe5cce1e17647e238ad",
+    "alive": "beb2eb68fbe98d250a3c8240d96218dcccc3994e8d0f57042d79957fb9dddc23"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "6d4c10ca57d20235186953981f031507ee55382b8aaed09322ad1bb7f095f365",
+    "git_sha": "8feb4765a72f7434a4f17d21164470d319c5c7f1",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-23T08:18:16+00:00"
+  }
+}

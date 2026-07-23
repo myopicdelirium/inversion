@@ -64,6 +64,9 @@ class Config:
     tau_safety: float = 12.0
     tau_rest: float = 30.0
     tau_bond: float = 60.0
+    # Bounded attention (phase 7, CLAUDE.md Amendment 3). At 0 every
+    # drive is fully heard and the law is phase 1's bit for bit.
+    attention_sharpness: float = 0.0
     # Population spreads (phase 4, CLAUDE.md Amendment 2). Drawn once
     # per agent at spawn; zero means every agent carries the declared
     # value exactly and no draw is consumed.

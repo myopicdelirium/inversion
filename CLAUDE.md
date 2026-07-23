@@ -48,6 +48,16 @@ Amendment 1 forbids reading or modifying a time constant "based on circumstance,
 * Spread parameters default to zero. At zero, every agent carries the declared value exactly and all prior goldens are bit-identical.
 * Enforcement: `tests/test_invariants.py` allows time-constant writes only in `core/config.py` (declaration) and init functions of `core/drives.py` (the one sanctioned draw site), and asserts at runtime that per-agent time constants never change over a run.
 
+### Amendment 3 (2026-07-23): bounded attention, one law, no names
+
+The update law gains an attention factor: each drive's urgency is *heard* in proportion to `(w_d / max_e w_e) ** kappa`, where `kappa` is `attention_sharpness`, declared in config, default 0, at which the factor is exactly 1 and the law is phase 1's bit for bit. Rules:
+
+* **The attention law names no drive.** Static analysis forbids drive-index constants inside `update_weights`. Whatever dominance suppresses, it suppresses uniformly: a starving agent is deaf to danger exactly as a grieving one is deaf to hunger. Any per-drive sharpness, gate, floor, or exemption violates the Prime Invariant.
+* `kappa` is declared, never modified at runtime, and swept as a phase-diagram axis like every timescale.
+* Attention scales heard urgency only. It may not touch time constants (Amendment 1 stands in full).
+* Raw urgencies remain the recorded truth. The heard urgency is reconstructible exactly from recorded weights and urgencies, and the transition identity extends to it: every weight transition must satisfy the attended law to machine precision.
+* Forbidden: attention terms conditioned on mortality, threat, damage, or commitment state. Attention reads weights and nothing else.
+
 ## Hard rules
 
 ### Golden runs
