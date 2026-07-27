@@ -105,6 +105,16 @@ class Config:
     # one law; testimony enters u_safety as evidence in drives.py.
     r_social: float = 0.0
     tau_cred: float = 24.0
+    # The world you know (phase 17): sight and the memory of places.
+    # r_sight 0 means unlimited, the shipped omniscience, bit-inert.
+    # When positive, agents see food only within their own radius
+    # (personal, via r_sight_spread, lognormal, drawn once at birth),
+    # remember up to memory_slots sites they have actually seen, and
+    # forget by calendar (memory_horizon) or by disappointment.
+    r_sight: float = 0.0
+    r_sight_spread: float = 0.0
+    memory_slots: int = 8
+    memory_horizon: int = 600
     alarm_threshold: float = 0.6
     verify_window: int = 30
     verify_level: float = 0.1

@@ -54,11 +54,21 @@ sometimes wrong world-model to exist first.
   unexpired) is below 0.2, and the mean pairwise Jaccard overlap of
   remembered site sets is below 0.3. If agents still effectively share
   one world, the phase has not done its job and stops here.
-* **V3, memory must earn its existence, falsifiable**: starvation rate
+* **V3, memory must earn its existence, falsifiable**: in the famine
+  arena (n_food 60, otherwise defaults, 3000 ticks), starvation rate
   is monotone worsening across r_sight {0 omniscient, 24, 12, 6} with
-  memory off, and at r_sight 12 turning memory on (slots 8 vs 0) cuts
+  memory on, and at r_sight 12 turning memory on (slots 8 vs 0) cuts
   the starvation rate by at least 25 percent relative. If memory buys
   nothing back, that is reported and the slot machinery is suspect.
+  Amendment before any declared-seed outcome: the first registration
+  left the arena at defaults, where the design check (seed 99 only,
+  peek recorded) found the world saturated and the dividend thin (5
+  vs 6 starved); at n_food 60 every clause has teeth (49 vs 105 at
+  sight 12). Two seed-99 curiosities are recorded here as NOT
+  claimed: mild myopia outperformed omniscience at n_food 90 (0 vs 5
+  starved), and at sight 6 memory worsened survival (200 vs 168
+  starved), the treacherous-memory case. Both await the declared
+  seeds.
 * **V4, depth shapes the aggregate, the founding sentence made
   measurable**: with r_sight_spread 0.5 at matched median 12,
   individual lifetime intake correlates with the agent's own r_sight

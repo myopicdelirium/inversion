@@ -142,7 +142,14 @@ def perceive_food(arrays, world, config):
     dy = _torus_delta(fy[nearest] - arrays.y, size)
     d_near = np.hypot(dx, dy)
     safe = np.maximum(d_near, 1e-12)
-    return d_near, dx / safe, dy / safe, active_ids[nearest]
+    # Sight (phase 17): the nearest food beyond the agent's own radius
+    # does not exist for it. At the shipped default every radius is
+    # infinite and this mask never fires: bit-inert.
+    unseen = d_near > arrays.r_sight
+    return (np.where(unseen, np.inf, d_near),
+            np.where(unseen, 0.0, dx / safe),
+            np.where(unseen, 0.0, dy / safe),
+            np.where(unseen, -1, active_ids[nearest]))
 
 
 def perceive_home(arrays, config):

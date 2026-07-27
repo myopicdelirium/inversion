@@ -26,6 +26,8 @@ class AgentArrays:
     urgency: np.ndarray    # (n, n_drives) instant urgencies
     tau: np.ndarray        # (n, n_drives) per-agent time constants,
                            # written once at spawn (CLAUDE.md Amendment 2)
+    r_sight: np.ndarray    # (n,) personal sight radius, written once at
+                           # spawn (phase 17); inf = unlimited
 
 
 def allocate(n: int, init_energy: float) -> AgentArrays:
@@ -48,4 +50,5 @@ def allocate(n: int, init_energy: float) -> AgentArrays:
         weights=np.zeros((n, d)),
         urgency=np.zeros((n, d)),
         tau=np.zeros((n, d)),
+        r_sight=np.full(n, np.inf),
     )

@@ -8,6 +8,7 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
+from .memory import make_memory, memory_step
 from .social import make_social, social_step
 from .config import Config
 from .drives import (
@@ -65,6 +66,8 @@ class Model:
         # all-zero spreads reproduce prior phases bit for bit.
         z_safety = np.zeros(config.n_agents) if config.tau_safety_spread > 0 else None
         z_bond = np.zeros(config.n_agents) if config.tau_bond_spread > 0 else None
+        z_sight = (np.zeros(config.n_agents)
+                   if config.r_sight > 0 and config.r_sight_spread > 0 else None)
         for i, gen in enumerate(self.agent_rngs):
             if config.n_nests > 0:
                 nest = i % config.n_nests
@@ -86,7 +89,21 @@ class Model:
             if config.bond_init_spread > 0 and config.n_nests > 0:
                 jitter = config.bond_init_spread * (2.0 * gen.random() - 1.0)
                 self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
+            if z_sight is not None:
+                z_sight[i] = gen.standard_normal()
         init_timescales(self.arrays, config, z_safety, z_bond)
+        # Sight (phase 17): personal radii, written once, inf when the
+        # axis is off (the shipped omniscience).
+        if config.r_sight > 0:
+            if config.r_sight <= config.r_eat:
+                raise ValueError("r_sight must exceed r_eat when sight "
+                                 "is finite, or agents cannot see what "
+                                 "they eat")
+            if z_sight is not None:
+                self.arrays.r_sight[:] = config.r_sight * np.exp(
+                    config.r_sight_spread * z_sight)
+            else:
+                self.arrays.r_sight[:] = config.r_sight
         if config.bond_target == "leader":
             # Authority as topology (phase 15): agents 0..n_leaders-1
             # are unbonded leaders; every other agent's bond points at
@@ -122,6 +139,12 @@ class Model:
         # The social organ (phase 16): absent at r_social 0, bit-inert.
         self.social = (make_social(config.n_agents, config)
                        if config.r_social > 0 else None)
+        # The memory of places (phase 17): absent at r_sight 0, and
+        # absent at memory_slots 0 (sighted but memoryless: the V3
+        # control arm).
+        self.memory = (make_memory(config.n_agents, config)
+                       if config.r_sight > 0 and config.memory_slots > 0
+                       else None)
         danger, _, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active(),
             self._storm_intensity(),
@@ -213,6 +236,10 @@ class Model:
             self.arrays, self.world, cfg, active, storm
         )
         dist_food, food_dx, food_dy, food_ids = perceive_food(self.arrays, self.world, cfg)
+        if self.memory is not None:
+            dist_food, food_dx, food_dy, food_ids = memory_step(
+                self.memory, self.arrays, self.world, cfg,
+                dist_food, food_dx, food_dy, food_ids, self.tick)
         dist_target, target_dx, target_dy = self._bond_distances()
 
         grip_info = None
