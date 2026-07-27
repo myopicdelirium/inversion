@@ -56,6 +56,8 @@
     "tau_cred": 24.0,
     "r_sight": 0.0,
     "r_sight_spread": 0.0,
+    "attention_spread": 0.0,
+    "prospect_spread": 0.0,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,
@@ -65,7 +67,7 @@
     "cred_init": 0.5,
     "cred_floor": 0.01
   },
-  "config_hash": "edba6d4890ab647b1df1645244933f20799368283cb0c9a64b21d58bfd53bbbc",
+  "config_hash": "1e4d5a722f6a744133fe6225f9f73ac8257a0fce61e8d74b6798c65a3ae1b1dd",
   "sha256": "6a3bdc7314650dc877fdd780102730816f270526e718acd15602c532e5b5ef76",
   "array_sha256": {
     "x": "35dcbafadd44d6e48fe72007fcc55c579e476cb0e6bb3fc7465368d425289965",

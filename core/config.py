@@ -113,6 +113,11 @@ class Config:
     # forget by calendar (memory_horizon) or by disappointment.
     r_sight: float = 0.0
     r_sight_spread: float = 0.0
+    # The shapes of minds (phase 18): personal attention sharpness and
+    # foresight depth, lognormal around the declared medians, drawn
+    # once at birth. Zero spreads are bit-inert.
+    attention_spread: float = 0.0
+    prospect_spread: float = 0.0
     memory_slots: int = 8
     memory_horizon: int = 600
     alarm_threshold: float = 0.6

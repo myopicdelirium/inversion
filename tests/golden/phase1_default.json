@@ -2,7 +2,7 @@
   "description": "phase 1 default-config golden run",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "f9f13b48997e32a66dedea89b2978dd3f9f990be6bd401c09aab1ec6a79b221b",
+  "config_hash": "4009701b529ff43cd56de8d30ab496e21523b59afb25b1e5bc226fa98131dffc",
   "sha256": "abfb63626062cafbd99fddeb652fb4a1ee094bdaef148585946aab0d0f6498e5",
   "manifest": {
     "seed": 42,
@@ -76,6 +76,8 @@
     "tau_cred": 24.0,
     "r_sight": 0.0,
     "r_sight_spread": 0.0,
+    "attention_spread": 0.0,
+    "prospect_spread": 0.0,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,

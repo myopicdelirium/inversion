@@ -80,9 +80,10 @@ def _geom_relief(level, factor, h, cap=None):
     tail, all closed form. cap None means the motion never ends."""
     factor = np.clip(factor, 0.0, None)
     if cap is None:
-        steps = np.full(np.shape(level), float(h))
+        steps = np.zeros(np.shape(level)) + np.asarray(h, dtype=float)
     else:
-        steps = np.minimum(np.where(np.isfinite(cap), cap, float(h)), float(h))
+        hf = np.zeros(np.shape(level)) + np.asarray(h, dtype=float)
+        steps = np.minimum(np.where(np.isfinite(cap), cap, hf), hf)
     near_one = np.isclose(factor, 1.0)
     safe = np.where(near_one, 0.5, factor)
     with np.errstate(over="ignore", invalid="ignore"):
@@ -90,6 +91,14 @@ def _geom_relief(level, factor, h, cap=None):
         at_cap = factor ** steps
     series = np.where(near_one, steps, series)
     at_cap = np.where(near_one, 1.0, at_cap)
+    # Personal horizons (phase 18) can push factor**steps past float
+    # range when the priced path points toward the source. The true
+    # value is an enormous penalty, so overflow clamps to the largest
+    # finite one instead of poisoning the table with nan via
+    # 0 * inf at h == steps (phase 18 review, confirmed major).
+    big = np.finfo(float).max
+    series = np.where(np.isfinite(series), series, big)
+    at_cap = np.where(np.isfinite(at_cap), at_cap, big)
     moving_part = level * (steps - series)
     held_part = (h - steps) * level * (1.0 - at_cap)
     return moving_part + held_part
@@ -100,7 +109,7 @@ def _ramp_relief(rate, saturation, h):
     tick until it saturates at `saturation`, then holding:
     sum_{t=1..h} min(rate*t, saturation), closed form."""
     t_sat = np.ceil(saturation / np.maximum(rate, 1e-12))
-    steps = np.minimum(t_sat, float(h))
+    steps = np.minimum(t_sat, np.asarray(h, dtype=float))
     return rate * steps * (steps + 1) / 2.0 + (h - steps) * np.minimum(
         rate * steps, saturation
     )
@@ -128,6 +137,7 @@ def _geom_moving(level, factor, steps):
     with np.errstate(over="ignore", invalid="ignore"):
         series = safe * (1.0 - safe ** steps) / (1.0 - safe)
     series = np.where(near_one, steps, series)
+    series = np.where(np.isfinite(series), series, np.finfo(float).max)
     return level * (steps - series)
 
 
@@ -139,7 +149,10 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
     integrity, and predicted harm enters only as accumulated danger
     exposure along the predicted path."""
     n = arrays.alive.shape[0]
-    h = config.prospect_horizon
+    # Personal foresight (phase 18): every closed form below prices
+    # with the agent's own depth. Uniform arrays reproduce the scalar
+    # arithmetic bit for bit.
+    h = arrays.horizon
     v_eff = config.speed * (1.0 - arrays.fatigue / 2.0)
     tri = h * (h + 1) / 2.0  # sum of t for t=1..h; the ramp integral
 
@@ -157,7 +170,7 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
             dist_food, grip_info["food_center_dist"], v_eff, config,
             grip_info["intensity"])
     ticks_fed = np.maximum(0.0, h - travel + 1.0)
-    tc = np.minimum(travel, float(h))
+    tc = np.minimum(travel, np.asarray(h, dtype=float))
     move_cost_seek = np.where(travel >= h, tri,
                               tc * (tc + 1) / 2.0 + tc * (h - tc))
     ev[:, ENERGY, SEEK_FOOD] = config.gain_eat * ticks_fed - config.move_burn * move_cost_seek
@@ -194,11 +207,11 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
             -grip_info["target_center_dist"] / config.storm_radius)
         ev[:, SAFETY, SEEK_FOOD] = _geom_moving(
             danger, np.exp(-v_eff * proj_seek / scale),
-            np.minimum(food_outside_ticks, float(h))
+            np.minimum(food_outside_ticks, np.asarray(h, dtype=float))
         ) + np.maximum(0.0, h - food_outside_ticks) * (danger - danger_food_tgt)
         ev[:, SAFETY, RETURN_HOME] = _geom_moving(
             danger, np.exp(-v_eff * proj_ret / scale),
-            np.minimum(ret_outside, float(h))
+            np.minimum(ret_outside, np.asarray(h, dtype=float))
         ) + np.maximum(0.0, h - ret_outside) * (danger - danger_bond_tgt)
         arrive_tgt = ret_total
     else:

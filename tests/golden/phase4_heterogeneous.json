@@ -2,7 +2,7 @@
   "description": "heterogeneous flagship: sudden storm, all three spreads nonzero; individuals differ, the law does not",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "e4994d67bbb516658fc4ceb9b135626217ed224d94bca3776a279710dbfbddaf",
+  "config_hash": "3288666e79f0d4193f14095e56ed37a4a612046b8ec5aa3bc6aeebafdfa2e084",
   "sha256": "7b30daa3a03285417358ecd807868e90666781658315e760f664ef97c9d7a2ea",
   "array_sha256": {
     "x": "8cc84e827e159f5a4a0130d8f6240b1ad2a8602c2076d649e652b25e6aa71750",
@@ -77,6 +77,8 @@
     "tau_cred": 24.0,
     "r_sight": 0.0,
     "r_sight_spread": 0.0,
+    "attention_spread": 0.0,
+    "prospect_spread": 0.0,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,

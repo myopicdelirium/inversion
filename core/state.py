@@ -28,6 +28,10 @@ class AgentArrays:
                            # written once at spawn (CLAUDE.md Amendment 2)
     r_sight: np.ndarray    # (n,) personal sight radius, written once at
                            # spawn (phase 17); inf = unlimited
+    kappa: np.ndarray      # (n,) personal attention sharpness, written
+                           # once at spawn (phase 18)
+    horizon: np.ndarray    # (n,) personal foresight depth, written once
+                           # at spawn (phase 18)
 
 
 def allocate(n: int, init_energy: float) -> AgentArrays:
@@ -51,4 +55,6 @@ def allocate(n: int, init_energy: float) -> AgentArrays:
         urgency=np.zeros((n, d)),
         tau=np.zeros((n, d)),
         r_sight=np.full(n, np.inf),
+        kappa=np.zeros(n),
+        horizon=np.zeros(n),
     )

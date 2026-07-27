@@ -59,7 +59,7 @@ def update_weights(arrays, config, dt=1.0):
     # falls below the declared floor. At floor 0 this clamp is inert
     # and the zero-trap regime holds exactly.
     ratio = np.maximum(current / loudest, config.attention_floor)
-    heard = arrays.urgency[live] * ratio ** config.attention_sharpness
+    heard = arrays.urgency[live] * ratio ** arrays.kappa[live, None]
     arrays.weights[live] = current + (dt / arrays.tau[live]) * (heard - current)
 
 

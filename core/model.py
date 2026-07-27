@@ -68,6 +68,11 @@ class Model:
         z_bond = np.zeros(config.n_agents) if config.tau_bond_spread > 0 else None
         z_sight = (np.zeros(config.n_agents)
                    if config.r_sight > 0 and config.r_sight_spread > 0 else None)
+        z_kappa = (np.zeros(config.n_agents)
+                   if config.attention_spread > 0 else None)
+        z_horizon = (np.zeros(config.n_agents)
+                     if config.prospect_horizon > 0
+                     and config.prospect_spread > 0 else None)
         for i, gen in enumerate(self.agent_rngs):
             if config.n_nests > 0:
                 nest = i % config.n_nests
@@ -91,6 +96,10 @@ class Model:
                 self.arrays.bond[i] = min(max(config.bond_init + jitter, 0.0), 1.0)
             if z_sight is not None:
                 z_sight[i] = gen.standard_normal()
+            if z_kappa is not None:
+                z_kappa[i] = gen.standard_normal()
+            if z_horizon is not None:
+                z_horizon[i] = gen.standard_normal()
         init_timescales(self.arrays, config, z_safety, z_bond)
         # Sight (phase 17): personal radii, written once, inf when the
         # axis is off (the shipped omniscience).
@@ -104,6 +113,17 @@ class Model:
                     config.r_sight_spread * z_sight)
             else:
                 self.arrays.r_sight[:] = config.r_sight
+        # The shapes of minds (phase 18): written once, here, never
+        # again (tests/test_trait_invariants.py).
+        self.arrays.kappa[:] = config.attention_sharpness
+        if z_kappa is not None:
+            self.arrays.kappa[:] = config.attention_sharpness * np.exp(
+                config.attention_spread * z_kappa)
+        self.arrays.horizon[:] = float(config.prospect_horizon)
+        if z_horizon is not None:
+            self.arrays.horizon[:] = np.maximum(1.0, np.round(
+                config.prospect_horizon * np.exp(
+                    config.prospect_spread * z_horizon)))
         if config.bond_target == "leader":
             # Authority as topology (phase 15): agents 0..n_leaders-1
             # are unbonded leaders; every other agent's bond points at
