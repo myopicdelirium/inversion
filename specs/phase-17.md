@@ -88,6 +88,41 @@ finding; nothing already published changes meaning. Sight and memory
 are opt-in axes until a future phase declares a sighted default, which
 would be a constitutional event with its own golden refresh.
 
+## Results, recorded 2026-07-27
+
+Artifacts: `results/phase-17-private-world.json` (seeds 1-24),
+`phase-17-private-world-replication.json` (fresh seeds 31-54). Judged
+exactly as declared:
+
+* **V2 PASSED, replicated, decisively**: mean knownness 0.020 and
+  0.023 against a bar of 0.2; mean pairwise Jaccard of remembered
+  worlds 0.033 and 0.037 against a bar of 0.3. Each agent knows about
+  a fiftieth of the world's food and shares almost none of that
+  knowledge with anyone standing next to it. The private world exists.
+* **V3 FAILED as declared on the main seeds, passed on fresh seeds,
+  and the failure is the information**: the monotone clause broke at
+  the top of the curve because sight 24 starved LESS than omniscience
+  on the declared seeds (0.070 vs 0.077), then more by a hair on fresh
+  seeds (0.093 vs 0.091). Post hoc, flagged: the top of the curve is
+  flat, omniscience buys nothing over sight 24 in this arena, and a
+  strict monotone bar cannot survive a tie. The rest of the curve is
+  steep and replicated (0.35/0.375 at sight 12, 0.989/0.992 at sight
+  6), and the memory dividend clause replicated cleanly: memory cut
+  memoryless starvation at sight 12 by 39.1 and 39.2 percent against
+  a 25 percent bar. Memory earned its existence twice; the registered
+  wording failed once, and stands failed.
+* **V4 split, direction stable**: the depth clause replicated
+  decisively, Spearman rho between an agent's own sight radius and
+  its lifetime intake 0.650 and 0.634 against a bar of 0.3. The
+  society clause passed the declared seeds (+5.9 points) and missed
+  on fresh seeds (+4.4 against a bar of 5), with the sign identical
+  both times: the unequal society starves MORE at matched median
+  (0.409 vs 0.350, then 0.418 vs 0.375). Recorded as: correlation
+  established, aggregate effect directionally consistent and
+  magnitude unsettled. Not promoted to the findings ledger.
+* The seed-99 treacherous-memory curiosity (memory worsening survival
+  at sight 6) was not part of this protocol and remains untested.
+
 ## Deviations
 
 (recorded as they occur)
