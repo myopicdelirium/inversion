@@ -76,6 +76,43 @@ phase 15 measurement code paths. Nothing in this phase adds a drive,
 a decision rule, or a social channel: it only lets minds differ in
 two dimensions they already possessed.
 
+## Results, recorded 2026-07-27
+
+Artifacts: `results/phase-18-minds.json` (seeds 1-24),
+`phase-18-minds-replication.json` (fresh seeds 31-54). Judged exactly
+as declared, and both refutation clauses fire at the volume they were
+promised:
+
+* **T2 FAILED, replicated**: Spearman rho between a mourner's own
+  kappa and starving after loss is 0.171 (2205 bereaved) and 0.162
+  (2316) against the declared +0.3. The direction is right and the
+  replication is tight, but the effect is weak: grief mortality in
+  this model is a property of worlds far more than of minds. Post
+  hoc, flagged: a threshold reading fits, since the lethal capture
+  may saturate above kappa around 1.5 and the lognormal spread at
+  median 2 puts most of the population past the step, where further
+  sharpness cannot matter. Mapping the step is a declared follow-up,
+  not run.
+* **T3 FAILED, replicated, wrong sign**: rho between personal horizon
+  and dying in the mire window is +0.075 (9577 at onset) and +0.073
+  (9582) against the declared -0.3. Not weak: zero. Within a sighted
+  population at median 60, seeing further protects no one; what
+  abolished inversion in phase 11 was having the farsighted
+  architecture at all. Seeing at all matters, seeing further does
+  not. The rollout arithmetic saturates with depth, and now the
+  population data says the agents do too.
+* **T4, measured, no bar as declared**: grief-arena mixed-vs-uniform
+  gap +2.8 then -1.7 points (sign flip, null); mire gap +3.2 then
+  +5.2 points (the mixed-foresight society died more, sign
+  consistent, suggestive only, not promoted).
+* The sentence the phase earns, and it is a refusal: we built
+  personal minds expecting individual depth to become destiny, and
+  the model answered that in these storms the shared architecture
+  dominates and cognitive variation is nearly irrelevant to who is
+  taken. Emergence here is structural, not dispositional. That is
+  the fifth consecutive designer story this model has refused, and
+  it is reported at the promised volume.
+
 ## Deviations
 
 * **Adversarial review, 2026-07-27, four findings confirmed, all
