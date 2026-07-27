@@ -16,15 +16,24 @@ ENERGY, SAFETY, REST, BOND = 0, 1, 2, 3
 
 
 def compute_urgencies(arrays, config, danger_at_agent, dist_home,
-                      target_peril=None):
+                      target_peril=None, social_danger=None):
     """Per agent: hunger urgency is how empty the stomach is, safety
     urgency is the local danger level, rest urgency is the fatigue
     level, bond urgency is separation distress plus care for the
     living target's peril (Amendment 5): attachment level times how
     far from home and how endangered they are. Instant, continuous,
-    no branches; an absent target has no location and so no peril."""
+    no branches; an absent target has no location and so no peril.
+    Testimony (phase 16) enters safety as evidence: danger heard from
+    a credible neighbor competes with danger seen, and the loudest
+    wins. The percept is computed in social.py; only this file writes
+    the urgency."""
     arrays.urgency[:, ENERGY] = 1.0 - arrays.energy
-    arrays.urgency[:, SAFETY] = danger_at_agent
+    if social_danger is None:
+        arrays.urgency[:, SAFETY] = danger_at_agent
+    else:
+        arrays.urgency[:, SAFETY] = np.maximum(
+            danger_at_agent, config.testimony * social_danger
+        )
     arrays.urgency[:, REST] = arrays.fatigue
     separation = 1.0 - np.exp(-dist_home / config.r_bond)
     if target_peril is None:

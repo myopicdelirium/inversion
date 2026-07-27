@@ -8,6 +8,7 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
+from .social import make_social, social_step
 from .config import Config
 from .drives import (
     compute_urgencies,
@@ -118,6 +119,9 @@ class Model:
         self._draw_block = None
         self._draw_cursor = 0
         self.tick = 0
+        # The social organ (phase 16): absent at r_social 0, bit-inert.
+        self.social = (make_social(config.n_agents, config)
+                       if config.r_social > 0 else None)
         danger, _, _, _ = perceive_danger(
             self.arrays, self.world, config, self._hazards_active(),
             self._storm_intensity(),
@@ -216,7 +220,12 @@ class Model:
                 and cfg.storm_nest >= 0 and cfg.storm_snare > 0.0:
             grip_info = self._grip_percepts(food_ids)
         peril = self._target_peril(active, storm)
-        compute_urgencies(self.arrays, cfg, danger, dist_target, peril)
+        social_danger = None
+        if self.social is not None:
+            social_danger = social_step(self.social, self.arrays, cfg,
+                                        danger, self.tick)
+        compute_urgencies(self.arrays, cfg, danger, dist_target, peril,
+                          social_danger=social_danger)
         update_weights(self.arrays, cfg)
         actions = select_actions(
             self.arrays, cfg, danger, dist_food, dist_target,

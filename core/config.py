@@ -98,6 +98,19 @@ class Config:
     tau_safety_spread: float = 0.0
     tau_bond_spread: float = 0.0
     bond_init_spread: float = 0.0
+    # The social organ (phase 16): honest displays, earned credence,
+    # testimony. r_social 0 means the organ is absent: no state, no
+    # arithmetic, bit-inert. Displays are the previous tick's safety
+    # urgency; credence moves only at window close by the integrated
+    # one law; testimony enters u_safety as evidence in drives.py.
+    r_social: float = 0.0
+    tau_cred: float = 24.0
+    alarm_threshold: float = 0.6
+    verify_window: int = 30
+    verify_level: float = 0.1
+    testimony: float = 0.0
+    cred_init: float = 0.5
+    cred_floor: float = 0.01
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across

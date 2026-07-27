@@ -2,7 +2,7 @@
   "description": "peacetime collapse: bond 1.0, kappa 1.5, no hazards, no storm damage ever reaches anyone because 199-200 of 200 starve at home before onset; deep place-attachment plus extreme sharpness kills in peacetime. Frozen as the specimen of that regime.",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "e8dc1ddda01d525154beb6c1d74d199d8d4b09b3df799ffdeafff2fad9a8524c",
+  "config_hash": "31a489d52797557083e6b788804da1a5bdeb326f59448f9e013ffb4714cc2be5",
   "sha256": "c06c426bbb2f2bff8a9323e6eca74287c5f8f9cea1f3a6162576683bcf0c5ae3",
   "array_sha256": {
     "x": "2aa6dc19ac08f6795de5bb006b87fe5fa8936b90dd22034ae83982d35b9cbbc1",
@@ -72,6 +72,14 @@
     "attention_floor": 0.0,
     "tau_safety_spread": 0.0,
     "tau_bond_spread": 0.0,
-    "bond_init_spread": 0.0
+    "bond_init_spread": 0.0,
+    "r_social": 0.0,
+    "tau_cred": 24.0,
+    "alarm_threshold": 0.6,
+    "verify_window": 30,
+    "verify_level": 0.1,
+    "testimony": 0.0,
+    "cred_init": 0.5,
+    "cred_floor": 0.01
   }
 }

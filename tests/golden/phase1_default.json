@@ -2,7 +2,7 @@
   "description": "phase 1 default-config golden run",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "2058905a81c41df65692756461fb5fcb930d37af079b6c84334d0d15d3a1d55c",
+  "config_hash": "9ea88204b8dbf7612d92119403eef6dc42481521de8c6f6eed7dde562aeace0e",
   "sha256": "abfb63626062cafbd99fddeb652fb4a1ee094bdaef148585946aab0d0f6498e5",
   "manifest": {
     "seed": 42,
@@ -71,7 +71,15 @@
     "attention_floor": 0.0,
     "tau_safety_spread": 0.0,
     "tau_bond_spread": 0.0,
-    "bond_init_spread": 0.0
+    "bond_init_spread": 0.0,
+    "r_social": 0.0,
+    "tau_cred": 24.0,
+    "alarm_threshold": 0.6,
+    "verify_window": 30,
+    "verify_level": 0.1,
+    "testimony": 0.0,
+    "cred_init": 0.5,
+    "cred_floor": 0.01
   },
   "note": "combined hash superseded in phase 2 (array shape change, see specs). The binding contract is array_sha256 on the behavioural arrays under this config: the phase-1-equivalent world, n_nests 0."
 }

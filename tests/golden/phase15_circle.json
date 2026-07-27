@@ -51,9 +51,17 @@
     "attention_floor": 0.0,
     "tau_safety_spread": 0.0,
     "tau_bond_spread": 0.0,
-    "bond_init_spread": 0.0
+    "bond_init_spread": 0.0,
+    "r_social": 0.0,
+    "tau_cred": 24.0,
+    "alarm_threshold": 0.6,
+    "verify_window": 30,
+    "verify_level": 0.1,
+    "testimony": 0.0,
+    "cred_init": 0.5,
+    "cred_floor": 0.01
   },
-  "config_hash": "d83bf9608d70576d44fae45d57f9440a434f5ad32d38f984c87f73d4cebc40fd",
+  "config_hash": "936a921eac5103800997294793307869e5af517abc77ab0f2f3a3f091309aed9",
   "sha256": "0baaada9a8c38c886b26b2edd02d03b06507f9e59472989f5a740a4b9ef88cb4",
   "array_sha256": {
     "x": "cafaef455874a8ef7ba7eb30d4c8596ca5f542e3dc27148c077aea2f85e04186",
