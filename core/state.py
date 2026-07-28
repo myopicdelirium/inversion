@@ -32,6 +32,8 @@ class AgentArrays:
                            # once at spawn (phase 18)
     horizon: np.ndarray    # (n,) personal foresight depth, written once
                            # at spawn (phase 18)
+    wonder_span: np.ndarray  # (n,) personal boredom clock, written once
+                             # at spawn (phase 21 third guard)
 
 
 def allocate(n: int, init_energy: float) -> AgentArrays:
@@ -57,4 +59,5 @@ def allocate(n: int, init_energy: float) -> AgentArrays:
         r_sight=np.full(n, np.inf),
         kappa=np.zeros(n),
         horizon=np.zeros(n),
+        wonder_span=np.zeros(n),
     )

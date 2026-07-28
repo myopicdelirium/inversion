@@ -54,7 +54,7 @@ def test_traits_written_only_at_spawn():
     version of this scan could not see because it exempted model.py
     wholesale and the runtime check stopped at tick 50."""
     lo, hi = _init_span(CORE / "model.py", "Model", "__init__")
-    for attr in ("kappa", "horizon"):
+    for attr in ("kappa", "horizon", "wonder_span"):
         for path in sorted(CORE.glob("*.py")):
             hits = _writes_attr(path, attr)
             if path.name == "state.py":
@@ -98,11 +98,14 @@ def test_traits_immutable_at_runtime():
     """Fifty live ticks change neither trait by a single bit."""
     from dataclasses import replace
     cfg = replace(Config(), attention_sharpness=2.0, attention_spread=0.5,
-                  prospect_horizon=20, prospect_spread=0.5)
+                  prospect_horizon=20, prospect_spread=0.5,
+                  r_sight=12.0, wonder_horizon=100, wonder_spread=1.0)
     m = Model(cfg, seed=11)
     k0 = m.arrays.kappa.copy()
     h0 = m.arrays.horizon.copy()
+    s0 = m.arrays.wonder_span.copy()
     for _ in range(50):
         m.step()
     assert np.array_equal(m.arrays.kappa, k0)
     assert np.array_equal(m.arrays.horizon, h0)
+    assert np.array_equal(m.arrays.wonder_span, s0)

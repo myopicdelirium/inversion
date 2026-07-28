@@ -2,7 +2,7 @@
   "description": "the mire: grip 0.95, slow burn; rescuers enter after held partners",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "00f530749ba652d4adc6d7a73a7edc3625eaa7d868cabc7f4046a490810d6852",
+  "config_hash": "67ed40c21c126239857a8bcb9629e8c4515b01c4a897f412e189718a2785c03c",
   "sha256": "b2a6439a3d61b674a75b10f2fd37b0386dd8647d85a0e359ea86eb662c6bae41",
   "array_sha256": {
     "x": "ebc953260762d9af20816d7dda036c9630c73358044c13cacf876fc4f864151d",
@@ -82,6 +82,7 @@
     "tau_wonder": 45.0,
     "wonder_horizon": 0,
     "wonder_relief": 0.01,
+    "wonder_spread": 0.0,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,

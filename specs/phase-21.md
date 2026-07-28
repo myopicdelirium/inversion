@@ -249,3 +249,49 @@ The standing sentence: the pull of elsewhere is now a established
 causal force in this architecture, and the individual pilgrim stays
 in the artifacts, twice measured, twice refused, awaiting a world
 that contains anyone who could have stayed home.
+
+## Addendum, pre-registered 2026-07-29 before running: the third guard, a world with homebodies
+
+G2 diagnosed why two guards failed: at one shared horizon, boredom is
+ambient and no innocent subpopulation exists. The third design gives
+the population genuine contrast through the corpus's own convention,
+heterogeneity as initialization (Amendment 2, exactly as r_sight and
+kappa entered): a personal boredom clock.
+
+* **Mechanism, declared**: wonder_spread 0.0 default, bit-inert. When
+  positive and wonder is on, wonder_span_i = max(1, round(
+  wonder_horizon times exp(spread times z))), z standard normal from
+  the agent's own stream, drawn once at spawn after the phase 18
+  draws, written once, tripwired like every trait. Staleness divides
+  by the agent's own span in memory.py; nothing else changes. Uniform
+  spans reproduce the scalar arithmetic bit for bit (ritual).
+* **H1, inertness ritual, kill switch**: all goldens replay
+  behaviorally bit-identical at spread 0, configs refreshed, suite
+  green.
+* **H2, the contrast exists, manipulation check**: in the guard arena
+  with wonder_spread 1.0 at median 100, the top-to-bottom tercile
+  ratio of mean w_wonder at onset is at least 3. If personal clocks
+  fail to differentiate lived pressure, the design died and says so.
+* **H3, THE GUARD, the gate, same bar as always**: bottom
+  w_wonder-at-onset tercile entry rate within 1.5x of the off arm,
+  both seed stages. Q2's twice-measured pilgrims are re-judged if and
+  only if H3 holds on BOTH stages: no razor-pass arithmetic this
+  time, the replication requirement is written into the gate itself.
+* **H4, the gradient, reported without bar**, with median wonder_span
+  per tercile so the trait's reach into behavior is visible.
+* Seeds 1-24 declared, fresh 31-54, design checks on 96-99 only,
+  peeks recorded. The bar has now survived three designs unmoved.
+
+### Third-guard build record, 2026-07-29
+
+H1 passed: all 22 goldens replayed bit-identical at wonder_spread 0,
+configs refreshed under the ritual. The span flatten-trick switch and
+the scalar-revert mutation both verified red. Trait tripwires extended
+(spawn-only by AST span, runtime immutability, chokepoint scans).
+Process decision, recorded for honesty: no adversarial panel for this
+delta, by judgment: the change surface is one divisor and one
+spawn-order draw, both covered by the bit-inertness ritual, the
+flatten switch, and the mutation audit, and the panel budget is
+reserved for the protocol's verdicts. The streak of tiny-change
+surprises in phases 16 through 21 is acknowledged; any anomaly in the
+H verdicts triggers retroactive review before anything is claimed.

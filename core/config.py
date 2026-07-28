@@ -125,6 +125,9 @@ class Config:
     tau_wonder: float = 45.0
     wonder_horizon: int = 0
     wonder_relief: float = 0.01
+    # The personal boredom clock (phase 21 third guard): lognormal
+    # spread on wonder_horizon, drawn once at birth. 0 is bit-inert.
+    wonder_spread: float = 0.0
     memory_slots: int = 8
     memory_horizon: int = 600
     alarm_threshold: float = 0.6

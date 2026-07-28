@@ -170,8 +170,10 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
     # wonder_horizon 0 means the drive is off and no percept exists.
     staleness = None
     if config.wonder_horizon > 0:
+        # Each agent's own boredom clock (phase 21 third guard);
+        # uniform spans are the scalar arithmetic bit for bit.
         staleness = np.clip((tick - memory.mem_last_novel)
-                            / config.wonder_horizon, 0.0, 1.0)
+                            / arrays.wonder_span, 0.0, 1.0)
     return out_d, out_dx, out_dy, food_ids, staleness
 
 

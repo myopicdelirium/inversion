@@ -110,6 +110,7 @@ def test_novelty_clock_and_staleness():
     off = memory_step(mem, arrays, world, cfg, *_blind_percept(), 0)
     assert off[4] is None, "wonder_horizon 0 must yield no percept"
     cfg = replace(cfg, wonder_horizon=400)
+    arrays.wonder_span[:] = cfg.wonder_horizon
     *_, s0 = memory_step(mem, arrays, world, cfg,
                          np.array([5.0]), np.array([1.0]), np.array([0.0]),
                          np.array([0]), 0)
@@ -144,6 +145,7 @@ def test_familiarity_is_not_discovery():
     the lifetime visited grid, not the working slots."""
     cfg, arrays, world, mem = _harness()
     cfg = replace(cfg, wonder_horizon=400)
+    arrays.wonder_span[:] = cfg.wonder_horizon
     # Learn the place at tick 0.
     memory_step(mem, arrays, world, cfg,
                 np.array([5.0]), np.array([1.0]), np.array([0.0]),
@@ -201,6 +203,7 @@ def test_occupancy_is_discovery():
     novelty is occupancy)."""
     cfg, arrays, world, mem = _harness()
     cfg = replace(cfg, wonder_horizon=400)
+    arrays.wonder_span[:] = cfg.wonder_horizon
     world.food_timer[:] = 5
     memory_step(mem, arrays, world, cfg, *_blind_percept(), 0)
     assert mem.mem_last_novel[0] == 0
@@ -225,6 +228,7 @@ def test_truncated_cell_centers_stay_inside_their_cells():
                   memory_slots=3, wonder_horizon=100)
     arrays = allocate(1, cfg.init_energy)
     arrays.r_sight[:] = cfg.r_sight
+    arrays.wonder_span[:] = cfg.wonder_horizon
     mem = make_memory(1, cfg)
     mem.mem_visited[:] = True
     mem.mem_visited[0, 2, 2] = False  # only the truncated corner unknown

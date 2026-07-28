@@ -73,6 +73,9 @@ class Model:
         z_horizon = (np.zeros(config.n_agents)
                      if config.prospect_horizon > 0
                      and config.prospect_spread > 0 else None)
+        z_span = (np.zeros(config.n_agents)
+                  if config.wonder_horizon > 0
+                  and config.wonder_spread > 0 else None)
         for i, gen in enumerate(self.agent_rngs):
             if config.n_nests > 0:
                 nest = i % config.n_nests
@@ -100,6 +103,8 @@ class Model:
                 z_kappa[i] = gen.standard_normal()
             if z_horizon is not None:
                 z_horizon[i] = gen.standard_normal()
+            if z_span is not None:
+                z_span[i] = gen.standard_normal()
         init_timescales(self.arrays, config, z_safety, z_bond)
         # Sight (phase 17): personal radii, written once, inf when the
         # axis is off (the shipped omniscience).
@@ -124,6 +129,11 @@ class Model:
             self.arrays.horizon[:] = np.maximum(1.0, np.round(
                 config.prospect_horizon * np.exp(
                     config.prospect_spread * z_horizon)))
+        self.arrays.wonder_span[:] = float(config.wonder_horizon)
+        if z_span is not None:
+            self.arrays.wonder_span[:] = np.maximum(1.0, np.round(
+                config.wonder_horizon * np.exp(
+                    config.wonder_spread * z_span)))
         if config.bond_target == "leader":
             # Authority as topology (phase 15): agents 0..n_leaders-1
             # are unbonded leaders; every other agent's bond points at

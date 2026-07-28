@@ -61,6 +61,7 @@
     "tau_wonder": 45.0,
     "wonder_horizon": 0,
     "wonder_relief": 0.01,
+    "wonder_spread": 0.0,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,
@@ -70,7 +71,7 @@
     "cred_init": 0.5,
     "cred_floor": 0.01
   },
-  "config_hash": "358795da5b1d017eb67f8ac14652a0e47dd867da3d6230099e9fd41095f6f0ee",
+  "config_hash": "0ecf578c416b657800c37affe9ab6dc6124ee257c1da859a26c2df67bc39184c",
   "sha256": "a60650a01c2779a397a6039d8371b4e9fb14f59d7edb8cf6f8c7ba79c95a8e87",
   "array_sha256": {
     "x": "fd93b46689174eaa0f28e89ca801f774c6e4f114daa46524d63bd889fb997019",

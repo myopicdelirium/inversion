@@ -92,3 +92,24 @@ def test_boredom_prices_the_quest_deterministically():
         "a bored agent with elsewhere in reach did not quest: the "
         "SEEK_NOVEL pricing row is dead (phase 21 kill switch)"
     )
+
+
+def test_wonder_span_is_load_bearing():
+    """The personal boredom clock must reach behavior: same seed, one
+    model's spans flattened post-spawn, trajectories must diverge
+    (the phase 18 flatten trick). If memory.py still divides by the
+    config scalar, they collapse into equality."""
+    cfg = replace(Config(), r_sight=12.0, memory_slots=8, n_agents=40,
+                  n_food=60, wonder_horizon=100, wonder_spread=1.0,
+                  wonder_relief=0.1, record_every=1)
+    a = Model(cfg, seed=13)
+    b = Model(cfg, seed=13)
+    b.arrays.wonder_span[:] = float(cfg.wonder_horizon)
+    for _ in range(600):
+        a.step()
+        b.step()
+    assert not (np.array_equal(a.arrays.x, b.arrays.x)
+                and np.array_equal(a.arrays.energy, b.arrays.energy)), (
+        "flattening the boredom clocks changed nothing: wonder_span "
+        "is not load bearing (third-guard kill switch)"
+    )
