@@ -144,3 +144,60 @@ promised:
   (all 19 goldens bit-inert). Standing lesson, adopted: mutation
   audits get an isolated worktree next time; one writer per
   repository is the incident-doc rule and reviews are not exempt.
+
+
+## Addendum, pre-registered 2026-07-27 before running: mapping the step
+
+T2's post hoc reading claims grief's lethality saturates above a
+kappa threshold near 1.5, which would explain a weak within-population
+gradient in a spread that lives past the step. A threshold is
+testable: put one population astride it. Arena: the T2 grief
+coordinates with attention_sharpness median 1.0 and attention_spread
+0.8, spanning roughly kappa 0.25 to 4 inside single worlds. Declared
+bins for bereaved agents by own kappa: [0, 0.5), [0.5, 1), [1, 1.5),
+[1.5, 2), [2, 3), [3, inf). Declared before running:
+
+* **K1, the step exists, falsifiable**: pooled neglect rate among
+  bereaved with kappa at least 1.5 is at least 5x the pooled rate
+  below kappa 1, and the [1, 1.5) bin lies between the two pooled
+  rates. If the dose-response is flat or linear instead, the
+  threshold reading dies and T2's weakness stands unexplained.
+* **K2, the profile, reported without bar**: the full six-bin neglect
+  profile, both stages, for the record and the figure.
+* **K3, saturation above the step, equivalence form**: among bereaved
+  with kappa at least 2 (validity floor: at least 300 pooled),
+  absolute Spearman rho between kappa and starving is at most 0.1.
+  This is the claim that variation above the step does not matter,
+  stated as its own bar rather than assumed.
+* Seeds 1-24 declared, fresh seeds 31-54 replication before
+  packaging. No mechanism, no config axis, no golden: protocol only.
+
+
+## Step-mapping results, recorded 2026-07-27
+
+Artifacts: `results/phase-18-step.json` (seeds 1-24),
+`phase-18-step-replication.json` (fresh seeds 31-54). Judged exactly
+as declared:
+
+* **K1 PASSED, replicated, and the step is sharper than the bar**:
+  below kappa 1, zero starved bereaved in 600 (main) and zero in 646
+  (replication); the [1, 1.5) bin sits between at 0.008 and 0.004;
+  at or above 1.5 the rate is 0.078 and 0.091. The 5x bar is passed
+  degenerately because the low side is exactly zero. Grief has a
+  threshold of attention: below a knee between kappa 1 and 1.5, loss
+  does not kill, anywhere, at any point in 1246 pooled bereavements.
+* **K2, the profile, both stages**: 0.000, 0.000, 0.008, 0.082,
+  0.097, 0.057 and 0.000, 0.000, 0.004, 0.062, 0.133, 0.081 across
+  the declared bins. A step at the knee, roughly flat beyond it.
+* **K3 VOID by its own validity floor**: 159 and 157 bereaved above
+  kappa 2 against the declared 300. The rho values observed (-0.030,
+  -0.115) lean toward saturation but are not judged; the claim stays
+  unproven. A re-registration with more seeds or a wider spread is
+  the declared route if saturation ever needs proving.
+* This resolves T2 retroactively: at median 2 spread 0.5, nearly the
+  whole population stood past the knee, where variation cannot
+  matter. The storms sort worlds because almost every mind in those
+  worlds was already on the mortal side of the threshold. The knee's
+  location, between 1 and 1.5, is a measurable constant of the
+  architecture and belongs beside tau and the whisper floor in the
+  constants ledger.
