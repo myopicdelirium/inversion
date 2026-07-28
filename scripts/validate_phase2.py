@@ -98,6 +98,19 @@ def weight_identity():
         gap = u[1:, :, i] - w[:-1, :, i]
         live = alive[1:]
         residual = np.abs(dw[live] - gap[live] / tau)
+        if not np.any(gap[live]):
+            # An inert drive (wonder in a memoryless world, phase 19)
+            # never moves: the identity holds trivially and the tau
+            # regression is 0/0. Residual is still enforced.
+            rec = {"declared_tau": tau, "regressed_tau": None,
+                   "inert": True,
+                   "max_abs_residual": float(residual.max()),
+                   "transitions_checked": int(live.sum())}
+            ok = ok and rec["max_abs_residual"] < 1e-9
+            out["per_drive"][name] = rec
+            print(f"  identity {name:7s}: inert (never moved), max "
+                  f"residual {rec['max_abs_residual']:.2e}")
+            continue
         tau_hat = float(np.sum(gap[live] ** 2) / np.sum(gap[live] * dw[live]))
         rec = {"declared_tau": tau, "regressed_tau": tau_hat,
                "max_abs_residual": float(residual.max()),

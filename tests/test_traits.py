@@ -33,8 +33,8 @@ def test_personal_kappa_is_the_law_exactly():
     arrays.alive[:] = True
     arrays.tau[:] = 20.0
     arrays.kappa[:] = [0.5, 3.0]
-    arrays.urgency[:] = [0.6, 0.3, 0.2, 0.1]
-    arrays.weights[:] = [0.5, 0.25, 0.15, 0.05]
+    arrays.urgency[:] = [0.6, 0.3, 0.2, 0.1, 0.0]
+    arrays.weights[:] = [0.5, 0.25, 0.15, 0.05, 0.0]
     w_before = arrays.weights.copy()
 
     update_weights(arrays, cfg)

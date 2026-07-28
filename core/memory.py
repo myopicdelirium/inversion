@@ -26,14 +26,31 @@ class PlaceMemory:
     mem_x: np.ndarray     # (n, slots) remembered site positions
     mem_y: np.ndarray
     mem_seen: np.ndarray  # (n, slots) tick last seen true; -1 = empty
+    mem_last_novel: np.ndarray  # (n,) tick a NEW place last entered
+                                # memory; staleness feeds wonder
+                                # (Amendment 6)
+    mem_visited: np.ndarray     # (n, g, g) lifetime visited-cell grid:
+                                # novelty is judged against everywhere
+                                # the agent has EVER known, not its
+                                # working slots (phase 19 review fix:
+                                # familiarity is not discovery)
+
+
+def _grid_size(config):
+    # Cell edge is one eating diameter: two sites in the same cell are
+    # the same place for novelty purposes.
+    return max(1, int(np.ceil(config.world_size / (2.0 * config.r_eat))))
 
 
 def make_memory(n, config):
     k = config.memory_slots
+    g = _grid_size(config)
     return PlaceMemory(
         mem_x=np.zeros((n, k)),
         mem_y=np.zeros((n, k)),
         mem_seen=np.full((n, k), -1, dtype=np.int64),
+        mem_last_novel=np.zeros(n, dtype=np.int64),
+        mem_visited=np.zeros((n, g, g), dtype=bool),
     )
 
 
@@ -105,6 +122,20 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
             memory.mem_x[r2, c2] = sx[ins]
             memory.mem_y[r2, c2] = sy[ins]
             memory.mem_seen[r2, c2] = tick
+            # Novelty is a lifetime judgment (phase 19 review fix): an
+            # insertion resets wonder's clock only if the agent has
+            # never known this cell of the world. Re-learning a place
+            # it forgot, or shuttling among more familiar sites than
+            # it has slots, is not discovery.
+            g = memory.mem_visited.shape[1]
+            cell = 2.0 * config.r_eat
+            cx = np.minimum((sx[ins] % config.world_size) // cell,
+                            g - 1).astype(np.int64)
+            cy = np.minimum((sy[ins] % config.world_size) // cell,
+                            g - 1).astype(np.int64)
+            fresh = ~memory.mem_visited[r2, cx, cy]
+            memory.mem_visited[r2, cx, cy] = True
+            memory.mem_last_novel[r2[fresh]] = tick
         valid = memory.mem_seen >= 0
 
     # The composite percept: seen beats remembered beats nothing.
@@ -120,4 +151,11 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
     out_d = np.where(seen_now, dist_food, np.where(has_mem, md, np.inf))
     out_dx = np.where(seen_now, food_dx, np.where(has_mem, mdx, 0.0))
     out_dy = np.where(seen_now, food_dy, np.where(has_mem, mdy, 0.0))
-    return out_d, out_dx, out_dy, food_ids
+    # Staleness of the private world in [0, 1]: how long since
+    # anything new, over the declared horizon (Amendment 6).
+    # wonder_horizon 0 means the drive is off and no percept exists.
+    staleness = None
+    if config.wonder_horizon > 0:
+        staleness = np.clip((tick - memory.mem_last_novel)
+                            / config.wonder_horizon, 0.0, 1.0)
+    return out_d, out_dx, out_dy, food_ids, staleness

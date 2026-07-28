@@ -24,6 +24,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 
 from core.config import Config  # noqa: E402
 from core.manifest import build_manifest  # noqa: E402
+from core.drives import DRIVE_NAMES  # noqa: E402
 from core.model import Model  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -48,7 +49,7 @@ def attention_cell(mode, seed):
     pidx = np.where(has, p, 0)
 
     loss_tick = np.full(n, -1, dtype=np.int64)
-    loss_w = np.full((n, 4), np.nan)
+    loss_w = np.full((n, len(DRIVE_NAMES)), np.nan)
     death_tick = np.full(n, -1, dtype=np.int64)
     death_energy = np.full(n, np.nan)
     prev_alive = m.arrays.alive.copy()

@@ -97,6 +97,23 @@ Golden hashes are computed over arrays rounded to 8 decimal places, not raw floa
 * Parallelism across runs only. Never within a run's state updates.
 * Every run writes `manifest.json`: seed, config hash, git SHA, package versions, timestamp.
 
+### Amendment 6: wonder (phase 19)
+
+The agent has a fifth drive, wonder, and it is the first want about
+the inner map rather than the body. Its urgency is the staleness of
+the private world: ticks since a genuinely new place last entered the
+memory of places, over a declared horizon. Staleness is computed in
+core/memory.py and enters core/drives.py as a percept, exactly like
+testimony; only drives.py writes the urgency. Wandering relieves
+wonder at a declared rate in both pricing tables. In any world
+without sight and memory the drive is structurally inert: nothing is
+ever novel, the urgency is never nonzero, the weight stays zero
+forever, and every pre-amendment finding keeps its meaning. It also
+enters inert by declaration, wonder_horizon 0 by default, like every
+capability since care: a sighted world must opt into being able to
+be bored. The one
+law gains a row, never a clause.
+
 ### State layout
 
 Agent state lives in structure-of-arrays (`numpy`), not object-per-agent. Agent logic is written as readable functions over array slices. This is not premature optimisation: Phase 5 requires thousands of runs at 10k+ agents, and object-per-agent makes that infeasible. Do not refactor to OOP agents.

@@ -2,8 +2,8 @@
   "description": "phase 1 default-config golden run",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "4009701b529ff43cd56de8d30ab496e21523b59afb25b1e5bc226fa98131dffc",
-  "sha256": "abfb63626062cafbd99fddeb652fb4a1ee094bdaef148585946aab0d0f6498e5",
+  "config_hash": "cbf709a74352bc8311fff21bfc897ef14dc319c1e4d85e0aff7f59693e1d234f",
+  "sha256": "fc981b5e8d35699c0a32c3955d642201e00194383cd9bf602739000fdc5b6785",
   "manifest": {
     "seed": 42,
     "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
@@ -18,8 +18,9 @@
     "energy": "9cddea217319828a0b323b967461bbdb39a66416402d421d5005faa6343e20b5",
     "integrity": "829c5cc959540207a404937f0549e28618ee629de533d131bfeffa513eaf485a",
     "fatigue": "7ad640eec2b96a2781eee6486cc446d1132e412c7259e11e4d7e0e35353c6e4e",
-    "weights": "3a85b219447fe7f2650a4b7e092cae7e794a71f254790af48020a355a7e35505",
-    "urgency": "5bce9401e663fb183efa0753ebc977bc36b57365a56bd791796547c08e80f399",
+    "weights": "0a0120a9f2f9f160eb45b07ad04435b9e970bc8a0c408cd729071b4c3a2e3f9c",
+    "urgency": "101cbd336c5fe115f217329f8b5f9d105574c18263b8f7eaf704d5c391841b3f",
+    "bond": "8091dc419e70fb3815f354a66dbc5a7c5c1c73883ecb7dcdd659a8deea7b26d3",
     "alive": "ad47923d89f9eec83e70fd9a392d01f7ba46093ac080f75932ddb9233aae2859"
   },
   "config": {
@@ -78,6 +79,9 @@
     "r_sight_spread": 0.0,
     "attention_spread": 0.0,
     "prospect_spread": 0.0,
+    "tau_wonder": 45.0,
+    "wonder_horizon": 0,
+    "wonder_relief": 0.01,
     "memory_slots": 8,
     "memory_horizon": 600,
     "alarm_threshold": 0.6,

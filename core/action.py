@@ -7,7 +7,7 @@ terms.
 
 import numpy as np
 
-from .drives import BOND, ENERGY, REST, SAFETY
+from .drives import BOND, ENERGY, REST, SAFETY, WONDER
 
 ACTION_NAMES = ("seek_food", "flee", "rest", "wander", "return_home")
 SEEK_FOOD, FLEE, REST_ACT, WANDER, RETURN_HOME = 0, 1, 2, 3, 4
@@ -38,7 +38,9 @@ def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
     # (infinite when no food is active anywhere).
     travel = dist_food / v_eff
 
-    ev = np.zeros((n, 4, 5))
+    ev = np.zeros((n, 5, 5))
+    # Wandering is how a stale world gets new places (Amendment 6).
+    ev[:, WONDER, WANDER] = config.wonder_relief
     # Food's value is its per-tick gain attenuated by travel time;
     # every moving action pays the movement burn.
     ev[:, ENERGY, SEEK_FOOD] = config.gain_eat / (1.0 + travel) - config.move_burn
@@ -160,7 +162,9 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
                  and grip_info["intensity"] > 0.0
                  and config.storm_snare > 0.0)
 
-    ev = np.zeros((n, 4, 5))
+    ev = np.zeros((n, 5, 5))
+    # Wandering accrues novelty for as long as it is held (Amendment 6).
+    ev[:, WONDER, WANDER] = config.wonder_relief * h
 
     # Energy. Seeking: pay movement until predicted arrival, then the
     # bite's relief persists for the remaining ticks.

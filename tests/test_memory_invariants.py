@@ -17,7 +17,7 @@ def _attr_refs(path, attrs):
             if isinstance(n, ast.Attribute) and n.attr in attrs]
 
 
-MEM_ATTRS = ("mem_x", "mem_y", "mem_seen")
+MEM_ATTRS = ("mem_x", "mem_y", "mem_seen", "mem_last_novel", "mem_visited")
 
 
 def test_only_memory_touches_memory():

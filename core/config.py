@@ -118,6 +118,13 @@ class Config:
     # once at birth. Zero spreads are bit-inert.
     attention_spread: float = 0.0
     prospect_spread: float = 0.0
+    # Wonder (phase 19, Amendment 6): the fifth drive. wonder_horizon
+    # 0 means the drive is off, the corpus's inert-by-default
+    # convention; and in any world without sight and memory it is
+    # structurally inert regardless, because nothing is ever novel.
+    tau_wonder: float = 45.0
+    wonder_horizon: int = 0
+    wonder_relief: float = 0.01
     memory_slots: int = 8
     memory_horizon: int = 600
     alarm_threshold: float = 0.6

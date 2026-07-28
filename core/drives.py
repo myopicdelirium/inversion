@@ -11,12 +11,13 @@ themselves, via the uniform lag. Nothing else, ever.
 
 import numpy as np
 
-DRIVE_NAMES = ("energy", "safety", "rest", "bond")
-ENERGY, SAFETY, REST, BOND = 0, 1, 2, 3
+DRIVE_NAMES = ("energy", "safety", "rest", "bond", "wonder")
+ENERGY, SAFETY, REST, BOND, WONDER = 0, 1, 2, 3, 4
 
 
 def compute_urgencies(arrays, config, danger_at_agent, dist_home,
-                      target_peril=None, social_danger=None):
+                      target_peril=None, social_danger=None,
+                      staleness=None):
     """Per agent: hunger urgency is how empty the stomach is, safety
     urgency is the local danger level, rest urgency is the fatigue
     level, bond urgency is separation distress plus care for the
@@ -35,6 +36,10 @@ def compute_urgencies(arrays, config, danger_at_agent, dist_home,
             danger_at_agent, config.testimony * social_danger
         )
     arrays.urgency[:, REST] = arrays.fatigue
+    # Wonder (Amendment 6): the staleness of the private world, a
+    # percept from the memory of places. None means no such world
+    # exists and the drive is structurally inert.
+    arrays.urgency[:, WONDER] = 0.0 if staleness is None else staleness
     separation = 1.0 - np.exp(-dist_home / config.r_bond)
     if target_peril is None:
         arrays.urgency[:, BOND] = arrays.bond * separation
@@ -73,6 +78,7 @@ def init_timescales(arrays, config, z_safety=None, z_bond=None):
     arrays.tau[:, SAFETY] = config.tau_safety
     arrays.tau[:, REST] = config.tau_rest
     arrays.tau[:, BOND] = config.tau_bond
+    arrays.tau[:, WONDER] = config.tau_wonder
     if z_safety is not None:
         arrays.tau[:, SAFETY] = config.tau_safety * np.exp(
             config.tau_safety_spread * z_safety

@@ -1,5 +1,5 @@
 {
-  "description": "the world you know: sighted, remembering agents in the famine arena; capability golden, no finding",
+  "description": "wonder: the fifth drive live in a sighted famine world; capability golden, no finding",
   "seed": 42,
   "ticks": 3000,
   "config": {
@@ -59,7 +59,7 @@
     "attention_spread": 0.0,
     "prospect_spread": 0.0,
     "tau_wonder": 45.0,
-    "wonder_horizon": 0,
+    "wonder_horizon": 400,
     "wonder_relief": 0.01,
     "memory_slots": 8,
     "memory_horizon": 600,
@@ -70,25 +70,25 @@
     "cred_init": 0.5,
     "cred_floor": 0.01
   },
-  "config_hash": "2300e49c44e97d73e17d18258f503fa59a4f8d02d3cb55499f42f11f60095206",
-  "sha256": "e2e18d4419f48f0c8e34f9364fc2cc1ef80749f1185f981d2b1ee60ed9a82a7f",
+  "config_hash": "17527ec7b91a92bb22445578ee3c4247e459556346c2a0a9ad8060f786c8e61d",
+  "sha256": "a803f98ba115a002e361370ce9da6686a7664bbdfab994e4846d86a10ab4171e",
   "array_sha256": {
-    "x": "11f8a9cdc0232ab44a456e5e74160b4d32858697a834f1df8067609e40029037",
-    "y": "34d899ca38bf43f418fb639d0079cfcbfcf8035e8404bbd52d837b2db4a54caf",
-    "energy": "9de3d016bcfea2584039b7de53d06b4bd14f3a1930edd00988954190d680631e",
-    "integrity": "499616dbe72bdb30d40cdba58932831db66ccfe9f7647265d0055ff6823ed7f3",
-    "fatigue": "c3f2b58ca07637e4620f56e204e62f18345f149dded56683d5e8944f57a8a42a",
-    "weights": "ec2374934e5f1887a47cd8dc8f3def0596e5e215b10531bfc4dc4f4005f4970b",
-    "urgency": "65caa022e6299f655ae59a17d73b21219880413681c2bffde2476340d3b525ef",
-    "bond": "5021414505c365599b9a7be895871a666b170bc7ce1f1037da9fb2e440d7d993",
-    "alive": "3f9d1ed98da1281071e57f38f5ac5a22c3a591b42fc33bec021c86bb5a7eb140"
+    "x": "06902f4eb5dfe33c88605ecc0270308667f988dc74f1c15236b580367d45c2f3",
+    "y": "d28d1094c1d06c990084d7ce6d48fed26187a6946b980806a7c38f58f818330d",
+    "energy": "1ae36c0995f67a96203e7b207cac2b63502e586aa73a183790c6f742cbf526b3",
+    "integrity": "9049bda9dcdb9e2d7bac341dc8430619757f75d27bf1f391ce023d884fe51f6c",
+    "fatigue": "5268b12055158bccdb1c85710d7ae3c4bdf84b2cc720509fb2a18409b8412c3a",
+    "weights": "18113872482b85d7d711ef5b62ddbe13ab2034263c50c04e422f6793e31a0723",
+    "urgency": "2164c49a3b8d18dc4f824e98fafa56aa744dd0b6407f1ab2f59e91ab543042ec",
+    "bond": "e68e1e7d68a98c1078487ff64ed08c0782acf8e8f107fb70b29d10b0dd565903",
+    "alive": "efd14bab5521c301438cafc970262a768d86182f3e515645002bfe45c8bed17d"
   },
   "manifest": {
     "seed": 42,
-    "config_hash": "211153231c5916fbfa9eb41841e973e75cd8f0491d54b3262d9c5003aba74f10",
-    "git_sha": "c4b81c9c1c37a90ec838a80a8a8e25beef83db68",
+    "config_hash": "17527ec7b91a92bb22445578ee3c4247e459556346c2a0a9ad8060f786c8e61d",
+    "git_sha": "14c5de16ab57af77603cfef36ad7bcdb49cd78a2",
     "python": "3.11.13",
     "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-27T17:37:21+00:00"
+    "timestamp_utc": "2026-07-28T18:03:30+00:00"
   }
 }

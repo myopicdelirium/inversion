@@ -256,8 +256,9 @@ class Model:
             self.arrays, self.world, cfg, active, storm
         )
         dist_food, food_dx, food_dy, food_ids = perceive_food(self.arrays, self.world, cfg)
+        staleness = None
         if self.memory is not None:
-            dist_food, food_dx, food_dy, food_ids = memory_step(
+            dist_food, food_dx, food_dy, food_ids, staleness = memory_step(
                 self.memory, self.arrays, self.world, cfg,
                 dist_food, food_dx, food_dy, food_ids, self.tick)
         dist_target, target_dx, target_dy = self._bond_distances()
@@ -272,7 +273,7 @@ class Model:
             social_danger = social_step(self.social, self.arrays, cfg,
                                         danger, self.tick)
         compute_urgencies(self.arrays, cfg, danger, dist_target, peril,
-                          social_danger=social_danger)
+                          social_danger=social_danger, staleness=staleness)
         update_weights(self.arrays, cfg)
         actions = select_actions(
             self.arrays, cfg, danger, dist_food, dist_target,
