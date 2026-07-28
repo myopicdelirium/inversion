@@ -82,6 +82,42 @@ cannot rule at the threshold in this architecture at any tested
 coordinate, and the reserved question closes with a null at full
 volume rather than staying open indefinitely.
 
+## Results, recorded 2026-07-28: the guard fired, the phase stops rather than claims
+
+Artifacts: `results/phase-21-quest.json` (seeds 1-24),
+`phase-21-quest-replication.json` (fresh seeds 31-54). Judged exactly
+as declared, in the declared order of authority:
+
+* **Q3 FAILED, both stages, and it is the kill switch**: the bottom
+  onset-staleness tercile entered at 0.705 and 0.699 against an
+  off-arm rate of 0.441 and 0.440, ratio 1.6 against the declared
+  1.5 bar, and above the loud arm's own average of 0.685. By the
+  registration's words: the excess is machinery and not longing, and
+  the phase stops rather than claims.
+* **Q2 passed its bar and is NOT promoted**: 1176 and 1320 pooled
+  wonder-ruled non-local crossings (bar 50; off arm exactly 0 both
+  stages), pilgrim mortality 0.469 and 0.472. These numbers are
+  reported because they were measured and are withheld from the
+  findings ledger because their guard failed. 2496 apparent pilgrims
+  and 1175 apparent inversions by staleness sit in the artifacts,
+  unclaimed, until a guard they survive exists.
+* **Q4, the dose ladder**: off 0.441/0.440, quiet 0.469/0.443, loud
+  0.685/0.688.
+* **Post hoc, flagged, the confound the guard exposed in itself**:
+  under continuous questing, staleness at one instant is a bad proxy
+  for boredom as a disposition, because the most exploration-active
+  agents keep resetting their own clocks and therefore look calm at
+  onset while standing at the frontier. Low staleness conflates the
+  never-bored homebody with the just-satisfied quester. The declared
+  follow-up, not run: re-register the guard on integrated pre-onset
+  staleness (the time-average over the settling epoch), a
+  disposition measure the quest cannot zero out, with the same 1.5x
+  bar and Q2 re-judged only if that guard holds.
+* The sentence the phase earns: the corpus's most wanted number
+  arrived at fifty times its bar, twice, and the ledger's own
+  machinery refused it. That refusal is worth more to the program
+  than the claim would have been.
+
 ## Deviations
 
 * **Pre-review mutation audit, recorded**: dead myopic quest pricing
