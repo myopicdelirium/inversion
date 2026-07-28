@@ -155,3 +155,97 @@ as declared, in the declared order of authority:
   alive-gated. The dominance finder returned zero findings: the
   strict-dominance argument for wonder-off worlds held under attack,
   including degenerate states.
+
+
+## Addendum, pre-registered 2026-07-29 before running: the second guard
+
+The first guard's proxy failed its own purpose: instantaneous
+staleness cannot distinguish the never-bored from the just-satisfied
+quester, because active explorers reset their own clocks. The honest
+disposition measure already exists in the organ: w_wonder at onset,
+the tau-discounted integral of lived staleness, the pressure the
+drive actually exerts. And one proxy swap is not enough to close the
+question, so this addendum also registers the surgical arm the first
+design lacked. Declared before running:
+
+* **G1, the guard, re-registered on the organ's own integral**: in
+  the loud arm, the entry rate of the bottom tercile of w_wonder at
+  onset stays within 1.5x of the off-arm rate. Same bar as Q3, new
+  proxy, nothing else moved. Q2's 2496 unclaimed pilgrims are
+  re-judged if and only if G1 holds.
+* **G2, the gradient, reported without bar**: entry rate by
+  w_wonder-at-onset tercile, both stages. Longing should grade;
+  machinery should not.
+* **G3, the geometry confound made visible, reported without bar**:
+  median distance to the storm rim at onset, per tercile. If the
+  low-pressure tercile simply starts nearer the frontier, the
+  confound is exposed and quantified rather than argued about.
+* **G4, the amputation arm, falsifiable**: a fourth arm identical to
+  loud until the tick of onset, at which point wonder's pricing is
+  amputated (relief set to zero by the instrument; histories, weights,
+  and positions untouched; no RNG consumed by the cut). If the loud
+  arm's entry excess over off survives amputation, it was accumulated
+  geometry, not live longing; if it collapses, the pull was the drive
+  itself, alive at the moment of choosing. Bar: amputation must
+  remove at least half of the loud-minus-off entry excess for the
+  pull to be judged live. G4 informs interpretation either way and
+  does not gate Q2; only G1 gates Q2.
+* Seeds 1-24 declared, fresh seeds 31-54 replication before
+  packaging. The off and loud arms are byte-identical reruns of the
+  phase 21 protocol cells (config hashes verified against stored
+  rows before launch); only the measurement and the fourth arm are
+  new.
+
+## Second-guard results, recorded 2026-07-29: the pull is real, the pilgrim remains unclaimed
+
+Artifacts: `results/phase-21-guard.json` (seeds 1-24),
+`phase-21-guard-replication.json` (fresh seeds 31-54). Config hashes
+of the off and loud arms verified against the stored phase 21 rows
+before launch. Judged exactly as declared:
+
+* **G1 SPLIT AND THEREFORE FAILED**: low-pressure-tercile entry 0.6612
+  against a bar of 1.5 x 0.4413 = 0.6620 on the declared seeds, a
+  pass by eight ten-thousandths, then 0.6844 against 0.6602 on fresh
+  seeds, a failure. The corpus's own precedent governs (the refused
+  G2 pass of the grief-geometry phase): a razor pass that fails
+  replication gates nothing. Q2's pilgrims, now 2496 measured twice,
+  REMAIN UNCLAIMED.
+* **G4 PASSED, replicated, and it is the finding**: amputating
+  wonder's pricing at the tick of onset, histories and weights and
+  positions untouched, removed 121 and 118 percent of the loud-over-
+  off entry excess: the amputated arm (0.3895, 0.3968) fell BELOW the
+  off arm (0.4413, 0.4401). The pull of elsewhere is entirely live
+  longing at the moment of choosing, zero accumulated geometry. This
+  is promotable and promoted: LIVE WONDER PRICING CAUSES THE ENTRY
+  EXCESS, at about 24 points of entry rate, established by surgical
+  removal, both seed stages.
+* **G3, no confound**: median rim distance at onset is flat across
+  disposition terciles (24.7/26.1/25.7 and 24.1/26.2/24.9): the
+  low-pressure agents do NOT start nearer the frontier. The phase 20
+  geometry suspicion is refuted by measurement.
+* **G2, the explanation of the guard's own failures**: the entry
+  gradient across disposition terciles is nearly flat (0.661/0.677/
+  0.718 and 0.684/0.685/0.693). At horizon 100 in this arena,
+  boredom is ambient: staleness cycles fast enough that even the
+  bottom tercile carries operative pressure, so no subpopulation can
+  play the innocent control. The guard is not failing because the
+  drive is fake (G4 proves it live); it fails because this world
+  contains no genuinely un-bored agents to protect.
+* **Post hoc, flagged, unclaimed**: the amputation UNDERSHOOT
+  (removed more than 100 percent): agents with questing histories
+  and dead pricing entered LESS than never-wondering agents. The
+  traveled are harder to lure; candidate mechanisms (their maps
+  already contain the storm sector; their food memories pull
+  elsewhere) are for a future registration.
+* **Declared follow-up, the third guard, a different population
+  rather than a different bar**: the trait-panel machinery (phase
+  18) makes wonder_horizon personal; a spread population contains
+  genuinely un-bored agents by construction. The guard re-registers
+  there, same 1.5x bar, and the pilgrims are re-judged only if it
+  holds. Every guard iteration has moved the design and never the
+  bar, and this entry records the same promise for the third.
+
+The standing sentence: the pull of elsewhere is now a established
+causal force in this architecture, and the individual pilgrim stays
+in the artifacts, twice measured, twice refused, awaiting a world
+that contains anyone who could have stayed home.
