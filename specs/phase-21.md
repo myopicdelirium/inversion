@@ -295,3 +295,41 @@ flatten switch, and the mutation audit, and the panel budget is
 reserved for the protocol's verdicts. The streak of tiny-change
 surprises in phases 16 through 21 is acknowledged; any anomaly in the
 H verdicts triggers retroactive review before anything is claimed.
+
+## Third-guard results, recorded 2026-07-29: the gate holds, the pilgrim is claimed
+
+Artifacts: `results/phase-21-guard3.json` (seeds 1-24),
+`phase-21-guard3-replication.json` (fresh seeds 31-54). Judged
+exactly as declared:
+
+* **H2 PASSED, replicated**: mean w_wonder at onset, bottom tercile
+  0.134 and 0.140 against top tercile 0.636 and 0.643, contrast
+  ratios 4.7 and 4.6 against the declared 3. The personal clocks
+  genuinely differentiate lived pressure.
+* **H3, THE GUARD, PASSED BOTH STAGES with real margins**: bottom
+  tercile entry 0.6274 against the 0.6620 bar, then 0.6302 against
+  0.6602. The bar survived three designs unmoved, and the gate that
+  had replication written into itself is the one that held.
+* **H4, the gradient the second guard lacked**: entry rates 0.627,
+  0.658, 0.729 and 0.630, 0.685, 0.695 across pressure terciles,
+  monotone both stages, with median spans running opposite (152,
+  107, 67 and 147, 106, 70). The restless enter most; the content
+  least. Longing grades.
+* **THE CLAIM, promoted to the findings ledger under the
+  registration's exact wording**: INVERSION BY STALENESS EXISTS. In
+  the spread arena, 971 and 1018 non-local agents crossed into the
+  mire with energy above 0.7 and wonder as their loudest drive
+  weight at the tick of crossing, and 567 and 576 of them died in
+  the grip (mortality 0.584 and 0.566). Q2's original 2496
+  uniform-arena pilgrims stand re-judged and claimable per the gate;
+  the spread arena is the cleaner citation and carries the claim.
+  Behind it: the amputation proof that the pull is live longing (121
+  and 118 percent of the excess removed surgically), the disposition
+  gradient that longing grades, and the homebody control inside its
+  declared tolerance. Three guards, two refusals, one claim.
+* Honest residue, stated: even the content tercile enters at 0.63
+  against 0.44 without the drive, within the declared 1.5x but
+  elevated: at relief 0.1 the pull reaches everyone to some degree,
+  and the claim is that it reaches the bored MORE, monotonically,
+  which is what the registration demanded and what three designs
+  finally measured cleanly.
