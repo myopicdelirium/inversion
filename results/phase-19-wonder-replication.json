@@ -1,0 +1,1017 @@
+{
+  "spec": "specs/phase-19.md",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "91700db4f882085f56255091bcd0c6294ff1bed57e0b62c7bb2ce1cf06fd96d9",
+    "git_sha": "80028a4ab3eaeef9e8e610eaa0e9b13d0e9c279c",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-28T18:05:57+00:00"
+  },
+  "seeds": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "rows": [
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 31,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28100,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 32,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28863,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 33,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29254,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 34,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28930,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 35,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29058,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 36,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29839,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 37,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28543,
+      "deaths": 2,
+      "starved": 2
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 38,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28388,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 39,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28497,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 40,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28918,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 41,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 27866,
+      "deaths": 11,
+      "starved": 11
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 42,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29404,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 43,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 27831,
+      "deaths": 5,
+      "starved": 5
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 44,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29111,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 45,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 27794,
+      "deaths": 6,
+      "starved": 6
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 46,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28977,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 47,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29615,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 48,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28176,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 49,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29416,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 50,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29080,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 51,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28885,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 52,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 28518,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 53,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29977,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 400,
+      "seed": 54,
+      "config_hash": "f6eb4248ef8308ea970c2919d596d0da205e3bd5d444a1c787d6783c76fa8727",
+      "n": 200,
+      "discoveries": 29515,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 31,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27266,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 32,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28540,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 33,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27452,
+      "deaths": 8,
+      "starved": 8
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 34,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27975,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 35,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28054,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 36,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27171,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 37,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27697,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 38,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28466,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 39,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28531,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 40,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28470,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 41,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 26093,
+      "deaths": 12,
+      "starved": 12
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 42,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27870,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 43,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 26803,
+      "deaths": 6,
+      "starved": 6
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 44,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27961,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 45,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27079,
+      "deaths": 7,
+      "starved": 7
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 46,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27499,
+      "deaths": 18,
+      "starved": 18
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 47,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28302,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 48,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28182,
+      "deaths": 3,
+      "starved": 3
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 49,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28140,
+      "deaths": 2,
+      "starved": 2
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 50,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28394,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 51,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27942,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 52,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 27667,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 53,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28075,
+      "deaths": 2,
+      "starved": 2
+    },
+    {
+      "kind": "calm",
+      "horizon": 0,
+      "seed": 54,
+      "config_hash": "f69bc38973175235362f8f7aac67ad2d2ffae3991d0acd161ecb55a97cac9909",
+      "n": 200,
+      "discoveries": 28221,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 31,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29870,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 32,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29258,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 33,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 27226,
+      "deaths": 5,
+      "starved": 5
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 34,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29197,
+      "deaths": 8,
+      "starved": 7
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 35,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29041,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 36,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28009,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 37,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 27841,
+      "deaths": 11,
+      "starved": 9
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 38,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 27779,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 39,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28702,
+      "deaths": 2,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 40,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29069,
+      "deaths": 3,
+      "starved": 3
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 41,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28278,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 42,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 31920,
+      "deaths": 3,
+      "starved": 2
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 43,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28465,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 44,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 31278,
+      "deaths": 10,
+      "starved": 4
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 45,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 30179,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 46,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28980,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 47,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 29131,
+      "deaths": 2,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 48,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28886,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 49,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 28117,
+      "deaths": 1,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 50,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 30098,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 51,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 31996,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 52,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 30093,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 53,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 27794,
+      "deaths": 1,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 400,
+      "seed": 54,
+      "config_hash": "97227c8a6f269a60003d6f9d67c46dcd7ccb84d2f28b8b22eda7136803e9a0b8",
+      "n": 200,
+      "discoveries": 27478,
+      "deaths": 7,
+      "starved": 5
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 31,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28297,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 32,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27321,
+      "deaths": 5,
+      "starved": 5
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 33,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26902,
+      "deaths": 2,
+      "starved": 2
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 34,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27976,
+      "deaths": 7,
+      "starved": 7
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 35,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28591,
+      "deaths": 1,
+      "starved": 1
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 36,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 25673,
+      "deaths": 13,
+      "starved": 12
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 37,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26896,
+      "deaths": 4,
+      "starved": 4
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 38,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26564,
+      "deaths": 2,
+      "starved": 2
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 39,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27486,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 40,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28267,
+      "deaths": 4,
+      "starved": 2
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 41,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26908,
+      "deaths": 9,
+      "starved": 9
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 42,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 29340,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 43,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27215,
+      "deaths": 3,
+      "starved": 2
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 44,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28996,
+      "deaths": 17,
+      "starved": 12
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 45,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 30519,
+      "deaths": 1,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 46,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27294,
+      "deaths": 5,
+      "starved": 5
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 47,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26067,
+      "deaths": 9,
+      "starved": 5
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 48,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 29988,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 49,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28296,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 50,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 28363,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 51,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 29278,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 52,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 26993,
+      "deaths": 6,
+      "starved": 6
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 53,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27706,
+      "deaths": 0,
+      "starved": 0
+    },
+    {
+      "kind": "hazard",
+      "horizon": 0,
+      "seed": 54,
+      "config_hash": "7c805bcb067c6885b2f4e947a2340d2cff6a7e4c661b8e41ad6a6eaea1fc48e9",
+      "n": 200,
+      "discoveries": 27531,
+      "deaths": 0,
+      "starved": 0
+    }
+  ],
+  "N2": {
+    "discoveries_on": 692555,
+    "discoveries_off": 667850,
+    "ratio": 1.0369918394849142,
+    "passed": false
+  },
+  "N3": {
+    "deaths": {
+      "on": 0.013541666666666667,
+      "off": 0.018541666666666668,
+      "gap_points": -0.5
+    },
+    "starved": {
+      "on": 0.01,
+      "off": 0.015625,
+      "gap_points": -0.5625
+    }
+  }
+}

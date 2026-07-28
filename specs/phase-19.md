@@ -69,6 +69,36 @@ stopped being enough) is a hypothesis for a FUTURE registered
 protocol, not this one; N2 and N3 only establish that the drive is
 alive and what it costs.
 
+## Results, recorded 2026-07-28
+
+Artifacts: `results/phase-19-wonder.json` (seeds 1-24),
+`phase-19-wonder-replication.json` (fresh seeds 31-54). Judged exactly
+as declared:
+
+* **N2 FAILED, replicated, exactly as the recorded seed-97 peek
+  warned**: genuine discoveries with wonder on were 689,638 against
+  664,422 off (ratio 1.04) and 692,555 against 667,850 (1.04), far
+  under the declared 1.25. The registered sentence stands: at relief
+  0.01 the constant is nearly dead as a mover of discovery. Post hoc,
+  flagged: the +3.8 and +3.7 percent direction is real and tightly
+  replicated at enormous n; the drive is alive but quiet. Whether a
+  louder relief earns its keep is a future registered calibration,
+  not a knob to turn now.
+* **N3, measured without bar as declared, sign consistent
+  everywhere**: with hazards restored, the bored died LESS. Mortality
+  0.019 with wonder on against 0.031 off (gap -1.2 points), then
+  0.014 against 0.019 (-0.5); starvation 0.014 against 0.025 (-1.1),
+  then 0.010 against 0.016 (-0.6). Four measurements, one sign:
+  curiosity at a whisper kept agents alive, plausibly because even
+  four percent more dispersal finds food and leaves crowded hazard
+  neighborhoods. Suggestive, consistent, not promoted: the arena was
+  not designed to explain it.
+* The sentence the phase earns: the fifth drive exists, obeys the one
+  law, discovers four percent more of the world, and dies less doing
+  it. Its power to invert a life, the explorer who leaves safety
+  because the known world stopped being enough, remains the reserved
+  question, now with a working organ to ask it of.
+
 ## Deviations
 
 * **N1a's first run failed, and the failure was a design error worth
