@@ -9,7 +9,8 @@ from dataclasses import dataclass
 import numpy as np
 from scipy.spatial import cKDTree
 
-from .action import FLEE, REST_ACT, RETURN_HOME, SEEK_FOOD, WANDER
+from .action import (FLEE, REST_ACT, RETURN_HOME, SEEK_FOOD, SEEK_NOVEL,
+                     WANDER)
 
 
 @dataclass
@@ -246,7 +247,7 @@ def peril_at(xs, ys, world, config, hazards_active, storm_intensity):
 
 
 def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,
-                  heading_draws, speed_scale):
+                  heading_draws, speed_scale, novel_dir=None):
     """Per agent: redraw the wander heading with probability 0.05, then
     move one tick in the chosen action's direction at fatigue-scaled,
     grip-scaled speed. Resting agents do not move. Movement costs
@@ -273,17 +274,26 @@ def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,
     no_home = (home_dx == 0.0) & (home_dy == 0.0)
     home_dx = np.where(no_home, head_dx, home_dx)
     home_dy = np.where(no_home, head_dy, home_dy)
+    # The quest (Amendment 7): toward the nearest unknown cell; with a
+    # complete world the quester falls back to its heading.
+    if novel_dir is None:
+        nov_dx, nov_dy = head_dx, head_dy
+    else:
+        ndx, ndy = novel_dir
+        no_nov = (ndx == 0.0) & (ndy == 0.0)
+        nov_dx = np.where(no_nov, head_dx, ndx)
+        nov_dy = np.where(no_nov, head_dy, ndy)
 
     dir_x = np.select(
         [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
-         actions == RETURN_HOME],
-        [food_dx, away_dx, head_dx, home_dx],
+         actions == RETURN_HOME, actions == SEEK_NOVEL],
+        [food_dx, away_dx, head_dx, home_dx, nov_dx],
         default=0.0,
     )
     dir_y = np.select(
         [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
-         actions == RETURN_HOME],
-        [food_dy, away_dy, head_dy, home_dy],
+         actions == RETURN_HOME, actions == SEEK_NOVEL],
+        [food_dy, away_dy, head_dy, home_dy, nov_dy],
         default=0.0,
     )
     moving = arrays.alive & (actions != REST_ACT)

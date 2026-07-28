@@ -65,6 +65,20 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
     """One tick of the memory organ, fed the sighted food percept.
     Returns the composite percept: the seen food if any, else the
     freshest remembered site, else nothing."""
+    # Novelty is occupancy (Amendment 7): standing in a cell makes it
+    # known, and first knowings reset wonder's clock. Insertion
+    # marking below is subsumed but kept: seeing food in a distant
+    # new cell is also a first knowing.
+    n = arrays.alive.size
+    g = memory.mem_visited.shape[1]
+    cell = 2.0 * config.r_eat
+    ax = np.minimum((arrays.x % config.world_size) // cell, g - 1).astype(np.int64)
+    ay = np.minimum((arrays.y % config.world_size) // cell, g - 1).astype(np.int64)
+    rows_all = np.arange(n)
+    first = arrays.alive & ~memory.mem_visited[rows_all, ax, ay]
+    if first.any():
+        memory.mem_visited[rows_all[first], ax[first], ay[first]] = True
+        memory.mem_last_novel[first] = tick
     valid = memory.mem_seen >= 0
 
     # Forgetting by calendar.
@@ -159,3 +173,34 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
         staleness = np.clip((tick - memory.mem_last_novel)
                             / config.wonder_horizon, 0.0, 1.0)
     return out_d, out_dx, out_dy, food_ids, staleness
+
+
+def novel_percept(memory, arrays, config):
+    """Per agent: distance and unit direction to the nearest cell of
+    the world it has never known; infinite distance and zero direction
+    when its world is complete (and for the dead, who quest nowhere).
+    Computed here so the action layer never learns why a cell is
+    unknown (Amendment 7). Cell centers are the true midpoints of the
+    possibly-truncated cells, so a target always lies inside the cell
+    it names (phase 21 review: the phantom-center defect at world
+    sizes that do not divide by the cell edge)."""
+    n = arrays.alive.size
+    g = memory.mem_visited.shape[1]
+    cell = 2.0 * config.r_eat
+    lo = np.arange(g) * cell
+    hi = np.minimum(lo + cell, config.world_size)
+    centers = (lo + hi) / 2.0
+    dxm = _torus_delta(centers[None, :] - arrays.x[:, None], config.world_size)
+    dym = _torus_delta(centers[None, :] - arrays.y[:, None], config.world_size)
+    d2 = dxm[:, :, None] ** 2 + dym[:, None, :] ** 2
+    d2 = np.where(memory.mem_visited, np.inf, d2)
+    flat = d2.reshape(n, -1)
+    idx = flat.argmin(axis=1)
+    best = flat[rows_ := np.arange(n), idx]
+    ix, iy = idx // g, idx % g
+    nd = np.sqrt(best)
+    none = ~np.isfinite(nd) | ~arrays.alive
+    safe = np.maximum(np.where(none, 1.0, nd), 1e-12)
+    ndx = np.where(none, 0.0, dxm[rows_, ix] / safe)
+    ndy = np.where(none, 0.0, dym[rows_, iy] / safe)
+    return np.where(none, np.inf, nd), ndx, ndy

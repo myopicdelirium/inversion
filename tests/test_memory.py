@@ -127,7 +127,10 @@ def test_novelty_clock_and_staleness():
                          np.array([0]), 20)
     assert mem.mem_last_novel[0] == 20 and s2[0] == 0.0
     # Far past the horizon with nothing new: staleness saturates at 1.
-    arrays.x[0] = 50.0
+    # The agent stays in its KNOWN home cell: walking into a fresh
+    # cell would itself be discovery under occupancy semantics
+    # (Amendment 7), which test_familiarity_is_not_discovery covers.
+    world.food_x[:] = 5.0
     world.food_timer[:] = 5
     *_, s3 = memory_step(mem, arrays, world, cfg, *_blind_percept(),
                          20 + 2 * cfg.wonder_horizon)
@@ -146,14 +149,14 @@ def test_familiarity_is_not_discovery():
                 np.array([5.0]), np.array([1.0]), np.array([0.0]),
                 np.array([0]), 0)
     assert mem.mem_last_novel[0] == 0
-    # Forget it by calendar (agent far away), then re-sight the SAME
-    # place: an insertion happens, the clock must not move.
-    arrays.x[0] = 50.0
+    # Forget it (disappointment: the empty place is in sight, and the
+    # agent never leaves its known cell, so no occupancy novelty can
+    # contaminate the clock), then re-sight the SAME place: an
+    # insertion happens, the clock must not move.
     world.food_timer[:] = 5
     memory_step(mem, arrays, world, cfg, *_blind_percept(),
                 cfg.memory_horizon + 1)
     assert mem.mem_seen[0, 0] == -1, "precondition: forgotten"
-    arrays.x[0] = 0.0
     world.food_timer[:] = 0
     *_, s = memory_step(mem, arrays, world, cfg,
                         np.array([5.0]), np.array([1.0]), np.array([0.0]),
@@ -172,3 +175,68 @@ def test_familiarity_is_not_discovery():
                 np.array([2.0]), np.array([1.0]), np.array([0.0]),
                 np.array([0]), t2)
     assert mem.mem_last_novel[0] == t2
+
+
+def test_novel_percept_points_at_the_unknown():
+    """The quest's percept (Amendment 7): nearest never-known cell,
+    unit direction; infinite when the agent's world is complete."""
+    from core.memory import novel_percept
+    cfg, arrays, world, mem = _harness()
+    # Nothing known yet except what this call marks: the percept from
+    # a fresh grid points at the agent's own neighborhood first, so
+    # mark a few cells by stepping, then ask.
+    memory_step(mem, arrays, world, cfg, *_blind_percept(), 0)
+    nd, ndx, ndy = novel_percept(mem, arrays, cfg)
+    assert np.isfinite(nd[0]) and nd[0] > 0.0
+    assert np.isclose(np.hypot(ndx[0], ndy[0]), 1.0)
+    # A completed world: no elsewhere remains.
+    mem.mem_visited[:] = True
+    nd, ndx, ndy = novel_percept(mem, arrays, cfg)
+    assert np.isinf(nd[0]) and ndx[0] == 0.0 and ndy[0] == 0.0
+
+
+def test_occupancy_is_discovery():
+    """Standing in a never-known cell resets wonder's clock even with
+    nothing to see there; standing there again does not (Amendment 7:
+    novelty is occupancy)."""
+    cfg, arrays, world, mem = _harness()
+    cfg = replace(cfg, wonder_horizon=400)
+    world.food_timer[:] = 5
+    memory_step(mem, arrays, world, cfg, *_blind_percept(), 0)
+    assert mem.mem_last_novel[0] == 0
+    arrays.x[0] = 30.0  # a fresh cell, nothing there but ground
+    *_, s = memory_step(mem, arrays, world, cfg, *_blind_percept(), 50)
+    assert mem.mem_last_novel[0] == 50, (
+        "walking somewhere new was not discovery (Amendment 7)"
+    )
+    assert s[0] == 0.0
+    *_, s2 = memory_step(mem, arrays, world, cfg, *_blind_percept(), 60)
+    assert mem.mem_last_novel[0] == 50, "the second visit is not novel"
+
+
+def test_truncated_cell_centers_stay_inside_their_cells():
+    """Phase 21 review, confirmed major: at world sizes that do not
+    divide by the cell edge, the last cell's nominal center could wrap
+    across the torus into cell 0's territory, a phantom target that
+    occupancy could never extinguish. Centers are now true midpoints
+    of the possibly-truncated cells."""
+    from core.memory import make_memory, novel_percept
+    cfg = replace(Config(), world_size=13.0, r_eat=3.0, r_sight=12.0,
+                  memory_slots=3, wonder_horizon=100)
+    arrays = allocate(1, cfg.init_energy)
+    arrays.r_sight[:] = cfg.r_sight
+    mem = make_memory(1, cfg)
+    mem.mem_visited[:] = True
+    mem.mem_visited[0, 2, 2] = False  # only the truncated corner unknown
+    arrays.x[0] = arrays.y[0] = 12.5  # standing inside it
+    world = SimpleNamespace(food_x=np.array([5.0]), food_y=np.array([0.0]),
+                            food_timer=np.full(1, 5, dtype=np.int64))
+    nd, ndx, ndy = novel_percept(mem, arrays, cfg)
+    assert np.isfinite(nd[0]) and nd[0] < 1.0, (
+        "the truncated cell's center left its own cell (phantom target)"
+    )
+    memory_step(mem, arrays, world, cfg, *_blind_percept(), 0)
+    nd2, _, _ = novel_percept(mem, arrays, cfg)
+    assert np.isinf(nd2[0]), (
+        "standing in the last unknown cell did not extinguish it"
+    )

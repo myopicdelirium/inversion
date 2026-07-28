@@ -1,5 +1,5 @@
 {
-  "description": "wonder: the fifth drive live in a sighted famine world; capability golden, no finding",
+  "description": "wonder: the fifth drive live in a sighted famine world; capability golden refreshed under Amendment 7 (occupancy novelty, the quest replacing priced serendipity), justification in specs/phase-21.md Q1",
   "seed": 42,
   "ticks": 3000,
   "config": {
@@ -71,17 +71,17 @@
     "cred_floor": 0.01
   },
   "config_hash": "17527ec7b91a92bb22445578ee3c4247e459556346c2a0a9ad8060f786c8e61d",
-  "sha256": "a803f98ba115a002e361370ce9da6686a7664bbdfab994e4846d86a10ab4171e",
+  "sha256": "258a89b166d8548aecc4bc0fbd4600559ff3dcaf8495d4ccafb411f912651d1f",
   "array_sha256": {
-    "x": "06902f4eb5dfe33c88605ecc0270308667f988dc74f1c15236b580367d45c2f3",
-    "y": "d28d1094c1d06c990084d7ce6d48fed26187a6946b980806a7c38f58f818330d",
-    "energy": "1ae36c0995f67a96203e7b207cac2b63502e586aa73a183790c6f742cbf526b3",
-    "integrity": "9049bda9dcdb9e2d7bac341dc8430619757f75d27bf1f391ce023d884fe51f6c",
-    "fatigue": "5268b12055158bccdb1c85710d7ae3c4bdf84b2cc720509fb2a18409b8412c3a",
-    "weights": "18113872482b85d7d711ef5b62ddbe13ab2034263c50c04e422f6793e31a0723",
-    "urgency": "2164c49a3b8d18dc4f824e98fafa56aa744dd0b6407f1ab2f59e91ab543042ec",
-    "bond": "e68e1e7d68a98c1078487ff64ed08c0782acf8e8f107fb70b29d10b0dd565903",
-    "alive": "efd14bab5521c301438cafc970262a768d86182f3e515645002bfe45c8bed17d"
+    "x": "38f6c0ffed930c55c28efa198f14e658250ed8a862997f41b1dc049d90b7bc8c",
+    "y": "dad4f770fe839d44ab72485d7ff69233232ea30a1be4cbcd6024ab5bf7bcffe3",
+    "energy": "f7442de7482a45a19127976395c8add37b9ac498fec644a7c8ae2da81ee1b70f",
+    "integrity": "6f46c2473525e308ad09d3874b096b9f33c0a9e3efe74ca8cee75625ac2fe7eb",
+    "fatigue": "211bd3e61639ff1dd722716d0628a5f4b99b6c709a68537294434470eba2f39e",
+    "weights": "02aa4d2798eda71ad01f12563fc8f0b673d95f0faf6df9aec3be1861975028dd",
+    "urgency": "ac2c2c96a0806ae2552216da3b69a7a2a9d485d0a78aebe0f57e88da3efd96b6",
+    "bond": "462de3b383c3b0b32a1b0d49dfdee537b54362b1d4509df8a6e00fa024da3e2b",
+    "alive": "45ec605486ca6b67818dcdc2bfa180b1c97b1b391303da5ad28884a9be13531b"
   },
   "manifest": {
     "seed": 42,

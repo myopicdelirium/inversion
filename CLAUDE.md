@@ -114,6 +114,26 @@ capability since care: a sighted world must opt into being able to
 be bored. The one
 law gains a row, never a clause.
 
+### Amendment 7: the quest (phase 21)
+
+Seeking the unknown is an action, SEEK_NOVEL, priced like every other
+seeking: the wonder relief waits at the nearest never-known cell,
+distance-discounted in the myopic table and rolled forward in the
+farsighted one, with movement costing what movement costs. Novelty is
+occupancy: a cell of the world becomes known the first time the agent
+stands in it or sees food in it, and wonder's clock resets only on
+such first knowings (the lifetime grid of Amendment 6, upgraded from
+food-sighting to presence). The percept, distance and direction to
+the nearest unknown cell, is computed in core/memory.py like every
+other memory percept; the action layer prices it and may never know
+why a cell is unknown. Phase 20 stands as the reason this exists:
+undirected wander cannot carry a pilgrimage, and the corpus does not
+get to claim inversion by staleness until the agent can genuinely
+seek elsewhere and still chooses it over safety. In any world where
+wonder is off or memory absent, SEEK_NOVEL is structurally dominated
+(it pays every cost of wandering and collects no prize) and is never
+selected: inertness by arithmetic, tested as such.
+
 ### State layout
 
 Agent state lives in structure-of-arrays (`numpy`), not object-per-agent. Agent logic is written as readable functions over array slices. This is not premature optimisation: Phase 5 requires thousands of runs at 10k+ agents, and object-per-agent makes that infeasible. Do not refactor to OOP agents.

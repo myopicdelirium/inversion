@@ -70,15 +70,13 @@ def test_wonder_structurally_inert_without_memory():
     assert m.memory is None
 
 
-def test_boredom_prices_wandering_deterministically():
+def test_boredom_prices_the_quest_deterministically():
     """A mind whose wonder weight dominates, with nothing to eat, no
-    one to flee, and no reason to rest, must choose WANDER in the
-    myopic table. Kills the pricing row: with it dead, resting wins.
-    Replaces a one-seed directional test that tied at default relief
-    (seed 97, 4475 vs 4483 discoveries: recorded as a design peek in
-    specs/phase-19.md; direction belongs to the registered N2)."""
-    from core.action import WANDER as ACT_WANDER
-    from core.action import select_actions
+    one to flee, no reason to rest, and an unknown cell within reach,
+    must choose SEEK_NOVEL (Amendment 7: the quest replaced wander's
+    serendipity in the table, which this test's predecessor priced).
+    Kills the pricing row: with it dead, nothing beats resting still."""
+    from core.action import SEEK_NOVEL, select_actions
 
     cfg = Config()
     arrays = allocate(1, cfg.init_energy)
@@ -88,8 +86,9 @@ def test_boredom_prices_wandering_deterministically():
     inf = np.full(1, np.inf)
     act = select_actions(arrays, cfg, zero, inf, inf,
                          food_dir=(zero, zero), away_dir=(zero, zero),
-                         target_dir=(zero, zero), danger_scale=np.ones(1))
-    assert act[0] == ACT_WANDER, (
-        "a bored, safe, fed, rested agent did not wander: the wonder "
-        "pricing row is dead (phase 19 kill switch)"
+                         target_dir=(zero, zero), danger_scale=np.ones(1),
+                         novel=(np.full(1, 8.0), np.ones(1), np.zeros(1)))
+    assert act[0] == SEEK_NOVEL, (
+        "a bored agent with elsewhere in reach did not quest: the "
+        "SEEK_NOVEL pricing row is dead (phase 21 kill switch)"
     )

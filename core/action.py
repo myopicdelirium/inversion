@@ -11,11 +11,14 @@ from .drives import BOND, ENERGY, REST, SAFETY, WONDER
 
 ACTION_NAMES = ("seek_food", "flee", "rest", "wander", "return_home")
 SEEK_FOOD, FLEE, REST_ACT, WANDER, RETURN_HOME = 0, 1, 2, 3, 4
+# The quest (phase 21, Amendment 7): seeking the nearest unknown cell.
+SEEK_NOVEL = 5
 
 
 def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
                    food_dir=None, away_dir=None, target_dir=None,
-                   danger_scale=None, grip_info=None, partner_peril=None):
+                   danger_scale=None, grip_info=None, partner_peril=None,
+                   novel=None):
     """Per agent: value each action as the weight-weighted sum of
     expected urgency reductions, then take the argmax; ties resolve by
     the frozen action order.
@@ -30,7 +33,8 @@ def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
     if config.prospect_horizon > 0:
         return _select_farsighted(arrays, config, danger_at_agent, dist_food,
                                   dist_home, food_dir, away_dir, target_dir,
-                                  danger_scale, grip_info, partner_peril)
+                                  danger_scale, grip_info, partner_peril,
+                                  novel=novel)
     n = arrays.alive.shape[0]
     # Per agent: tired bodies move slower.
     v_eff = config.speed * (1.0 - arrays.fatigue / 2.0)
@@ -38,9 +42,16 @@ def select_actions(arrays, config, danger_at_agent, dist_food, dist_home,
     # (infinite when no food is active anywhere).
     travel = dist_food / v_eff
 
-    ev = np.zeros((n, 5, 5))
-    # Wandering is how a stale world gets new places (Amendment 6).
-    ev[:, WONDER, WANDER] = config.wonder_relief
+    ev = np.zeros((n, 5, 6))
+    # The quest (Amendment 7): the prize of elsewhere waits at the
+    # nearest unknown cell, distance-discounted like food. Wander's
+    # serendipity is no longer priced: relief is per novelty event,
+    # and the agent does not count on luck it cannot estimate.
+    ev[:, ENERGY, SEEK_NOVEL] = -config.move_burn
+    ev[:, REST, SEEK_NOVEL] = -config.fatigue_rate
+    if novel is not None:
+        travel_nov = novel[0] / v_eff
+        ev[:, WONDER, SEEK_NOVEL] = config.wonder_relief / (1.0 + travel_nov)
     # Food's value is its per-tick gain attenuated by travel time;
     # every moving action pays the movement burn.
     ev[:, ENERGY, SEEK_FOOD] = config.gain_eat / (1.0 + travel) - config.move_burn
@@ -145,7 +156,7 @@ def _geom_moving(level, factor, steps):
 
 def _select_farsighted(arrays, config, danger, dist_food, dist_target,
                        food_dir, away_dir, target_dir, danger_scale,
-                       grip_info=None, partner_peril=None):
+                       grip_info=None, partner_peril=None, novel=None):
     """The h-tick rollout. Every term is an integral of the same
     physics the myopic table already knew; nothing here reads body
     integrity, and predicted harm enters only as accumulated danger
@@ -162,9 +173,23 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
                  and grip_info["intensity"] > 0.0
                  and config.storm_snare > 0.0)
 
-    ev = np.zeros((n, 5, 5))
-    # Wandering accrues novelty for as long as it is held (Amendment 6).
-    ev[:, WONDER, WANDER] = config.wonder_relief * h
+    ev = np.zeros((n, 5, 6))
+    # The quest (Amendment 7): travel, then the prize of elsewhere
+    # held for the remaining horizon, like food. Path danger is
+    # priced with the plain geometric form; grip refinement at the
+    # destination is declared out of scope this phase. Movement burns
+    # only until arrival (the phase 11 arrival-cap lesson, recaught by
+    # the phase 21 review in this row).
+    if novel is not None:
+        nd, ndx, ndy = novel
+        travel_nov = np.ceil(nd / v_eff)
+        tn = np.minimum(travel_nov, np.asarray(h, dtype=float))
+        ev[:, ENERGY, SEEK_NOVEL] = -config.move_burn * np.where(
+            travel_nov >= h, tri, tn * (tn + 1) / 2.0 + tn * (h - tn))
+        ev[:, WONDER, SEEK_NOVEL] = config.wonder_relief * np.maximum(
+            0.0, h - travel_nov + 1.0)
+    else:
+        ev[:, ENERGY, SEEK_NOVEL] = -config.move_burn * tri
 
     # Energy. Seeking: pay movement until predicted arrival, then the
     # bite's relief persists for the remaining ticks.
@@ -223,11 +248,15 @@ def _select_farsighted(arrays, config, danger, dist_food, dist_target,
             danger, np.exp(-v_eff * proj_seek / scale), h, cap=travel)
         ev[:, SAFETY, RETURN_HOME] = _geom_relief(
             danger, np.exp(-v_eff * proj_ret / scale), h, cap=arrive_tgt)
+    if novel is not None:
+        proj_nov = ndx * away_dx + ndy * away_dy
+        ev[:, SAFETY, SEEK_NOVEL] = _geom_relief(
+            danger, np.exp(-v_eff * proj_nov / scale), h, cap=travel_nov)
 
     # Rest: fatigue floors at zero and saturates at one; both bounds
     # are respected in the integrals.
     move_fatigue = _ramp_relief(config.fatigue_rate, 1.0 - arrays.fatigue, h)
-    for act in (SEEK_FOOD, FLEE, WANDER, RETURN_HOME):
+    for act in (SEEK_FOOD, FLEE, WANDER, RETURN_HOME, SEEK_NOVEL):
         ev[:, REST, act] = -move_fatigue
     ev[:, REST, REST_ACT] = _ramp_relief(config.rest_rate, arrays.fatigue, h)
 

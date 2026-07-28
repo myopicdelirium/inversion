@@ -8,7 +8,7 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
-from .memory import make_memory, memory_step
+from .memory import make_memory, memory_step, novel_percept
 from .social import make_social, social_step
 from .config import Config
 from .drives import (
@@ -275,11 +275,14 @@ class Model:
         compute_urgencies(self.arrays, cfg, danger, dist_target, peril,
                           social_danger=social_danger, staleness=staleness)
         update_weights(self.arrays, cfg)
+        novel = None
+        if self.memory is not None and cfg.wonder_horizon > 0:
+            novel = novel_percept(self.memory, self.arrays, cfg)
         actions = select_actions(
             self.arrays, cfg, danger, dist_food, dist_target,
             food_dir=(food_dx, food_dy), away_dir=(away_dx, away_dy),
             target_dir=(target_dx, target_dy), danger_scale=danger_scale,
-            grip_info=grip_info, partner_peril=peril,
+            grip_info=grip_info, partner_peril=peril, novel=novel,
         )
 
         # Per agent: two draws per tick from the agent's own stream,
@@ -301,6 +304,7 @@ class Model:
             self.arrays, cfg, actions,
             (food_dx, food_dy), (away_dx, away_dy), (target_dx, target_dy),
             (redraw_p, redraw_angle), grip,
+            novel_dir=None if novel is None else (novel[1], novel[2]),
         )
         # Eating and bond accumulation use post-move positions.
         dist_after, _, _, food_id_after = perceive_food(self.arrays, self.world, cfg)
