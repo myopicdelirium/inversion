@@ -91,3 +91,31 @@ def social_step(social, arrays, config, danger, tick):
         0.0,
     )
     return heard.max(axis=1)
+
+
+def eligible_tellers(social, arrays, config):
+    """The told place (Amendment 8): who may tell whom. A boolean
+    (listener, teller) mask: within r_social, both alive, credence at
+    least tell_threshold, never oneself. memory.py receives this as a
+    value and never sees credence itself."""
+    dx = _torus_delta(arrays.x[None, :] - arrays.x[:, None],
+                      config.world_size)
+    dy = _torus_delta(arrays.y[None, :] - arrays.y[:, None],
+                      config.world_size)
+    in_range = np.hypot(dx, dy) <= config.r_social
+    np.fill_diagonal(in_range, False)
+    return (in_range & arrays.alive[:, None] & arrays.alive[None, :]
+            & (social.credence >= config.tell_threshold))
+
+
+def apply_belief_feedback(social, events, config):
+    """Settlement events from the memory of places, applied through
+    the one credence law at the window-close gain: a rumor that fed
+    scores its teller 1, a rumor that died against the listener's own
+    eyes scores 0. social.py remains the sole writer of credence."""
+    if not events:
+        return
+    gain = 1.0 - np.exp(-config.verify_window / config.tau_cred)
+    for li, tj, score in events:
+        c = social.credence[li, tj]
+        social.credence[li, tj] = c + gain * (score - c)

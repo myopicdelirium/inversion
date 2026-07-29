@@ -134,6 +134,25 @@ wonder is off or memory absent, SEEK_NOVEL is structurally dominated
 (it pays every cost of wandering and collects no prize) and is never
 selected: inertness by arithmetic, tested as such.
 
+### Amendment 8: the told place (phase 22)
+
+Knowledge can now be social. When a teller with a fresh remembered
+food site stands within social range of a listener who does not know
+that place, the site may enter the listener's memory of places as a
+TOLD memory: tagged with its teller's identity, carrying secondhand
+freshness, accepted only when the listener's earned credence in the
+teller clears the declared threshold. Told memories live and die by
+the listener's own feet: eating at a told place scores its teller up
+through the one credence law, and disappointment there scores the
+teller down, so gossip builds and spends reputation exactly as
+alarms do. All falseness is honest: nobody in this model can lie,
+and every wrong rumor is only staleness wearing a friend's voice.
+Chokepoints hold by value passing: social.py alone writes credence
+and computes what may be told; memory.py alone writes the place
+arrays and receives tellings as percepts; feedback flows back as
+events, not writes. The intake is gated by tell_places, default
+off, bit-inert, like every capability since care.
+
 ### The default-world decision (recorded 2026-07-29)
 
 The omniscient, memoryless, wonder-less default is the PERMANENT

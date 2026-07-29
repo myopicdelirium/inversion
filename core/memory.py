@@ -13,7 +13,7 @@ action layer exactly as a seen food would be: ignorance changes what
 the agent knows, never how it wants. No RNG anywhere in this file.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import numpy as np
 from scipy.spatial import cKDTree
@@ -34,6 +34,12 @@ class PlaceMemory:
                                 # the agent has EVER known, not its
                                 # working slots (phase 19 review fix:
                                 # familiarity is not discovery)
+    mem_told: np.ndarray        # (n, slots) True = secondhand slot
+                                # (Amendment 8)
+    mem_source: np.ndarray      # (n, slots) teller index; -1 = own
+    pending: list = field(default_factory=list)  # settlement events
+                                # (listener, teller, score) awaiting
+                                # social.py's law
 
 
 def _grid_size(config):
@@ -51,6 +57,8 @@ def make_memory(n, config):
         mem_seen=np.full((n, k), -1, dtype=np.int64),
         mem_last_novel=np.zeros(n, dtype=np.int64),
         mem_visited=np.zeros((n, g, g), dtype=bool),
+        mem_told=np.zeros((n, k), dtype=bool),
+        mem_source=np.full((n, k), -1, dtype=np.int64),
     )
 
 
@@ -84,6 +92,8 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
     # Forgetting by calendar.
     expired = valid & (tick - memory.mem_seen > config.memory_horizon)
     memory.mem_seen[expired] = -1
+    memory.mem_told[expired] = False
+    memory.mem_source[expired] = -1
     valid &= ~expired
 
     # Forgetting by disappointment: a remembered site the agent can
@@ -105,7 +115,17 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
             else:
                 empty = np.ones(int(visible_site.sum()), dtype=bool)
             rows, cols = np.nonzero(visible_site)
-            memory.mem_seen[rows[empty], cols[empty]] = -1
+            er, ec = rows[empty], cols[empty]
+            # A told place seen empty settles its teller at 0
+            # (Amendment 8): the rumor died against the listener's
+            # own eyes, and the reputation pays.
+            told_hit = memory.mem_told[er, ec]
+            for li, tj in zip(er[told_hit],
+                              memory.mem_source[er, ec][told_hit]):
+                memory.pending.append((int(li), int(tj), 0.0))
+            memory.mem_seen[er, ec] = -1
+            memory.mem_told[er, ec] = False
+            memory.mem_source[er, ec] = -1
             valid = memory.mem_seen >= 0
 
     # Remembering: the nearest seen food refreshes its slot or takes
@@ -122,9 +142,16 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
                           np.hypot(ddx, ddy), np.inf)
         match = slot_d.min(axis=1) <= config.r_eat
         mcol = slot_d.argmin(axis=1)
-        # Refresh matched slots.
+        # Refresh matched slots. A told slot matched by the
+        # listener's own eyes settles its teller at 1 and converts to
+        # owned (Amendment 8): the rumor was true.
         r = idx[match]
         c = mcol[match]
+        conf = memory.mem_told[r, c]
+        for li, tj in zip(r[conf], memory.mem_source[r, c][conf]):
+            memory.pending.append((int(li), int(tj), 1.0))
+        memory.mem_told[r, c] = False
+        memory.mem_source[r, c] = -1
         memory.mem_x[r, c] = sx[match]
         memory.mem_y[r, c] = sy[match]
         memory.mem_seen[r, c] = tick
@@ -136,6 +163,8 @@ def memory_step(memory, arrays, world, config, dist_food, food_dx,
             memory.mem_x[r2, c2] = sx[ins]
             memory.mem_y[r2, c2] = sy[ins]
             memory.mem_seen[r2, c2] = tick
+            memory.mem_told[r2, c2] = False
+            memory.mem_source[r2, c2] = -1
             # Novelty is a lifetime judgment (phase 19 review fix): an
             # insertion resets wonder's clock only if the agent has
             # never known this cell of the world. Re-learning a place
@@ -206,3 +235,56 @@ def novel_percept(memory, arrays, config):
     ndx = np.where(none, 0.0, dxm[rows_, ix] / safe)
     ndy = np.where(none, 0.0, dym[rows_, iy] / safe)
     return np.where(none, np.inf, nd), ndx, ndy
+
+
+def take_events(memory):
+    """Drain the settlement events for social.py's law. The only
+    reader; memory keeps no trust ledger and social keeps no slots."""
+    ev = memory.pending
+    memory.pending = []
+    return ev
+
+
+def hear_places(memory, arrays, config, eligible, tick):
+    """The told place (Amendment 8): one telling per listener per
+    tick. Among eligible tellers (a boolean mask from social.py,
+    computed against its own ledger and tell_threshold), the
+    freshest remembered site the listener does not already hold
+    enters the listener's slots as secondhand: teller's coordinates,
+    TELLER'S last-seen tick as freshness, told flag and source set.
+    Hearing is not discovery: no visited-cell marking, no clock
+    reset. Deterministic, no RNG."""
+    n = arrays.alive.size
+    valid = memory.mem_seen >= 0
+    # Each teller's freshest valid slot.
+    best_col = np.where(valid, memory.mem_seen, -1).argmax(axis=1)
+    rows = np.arange(n)
+    t_seen = np.where(valid[rows, best_col],
+                      memory.mem_seen[rows, best_col], -1)
+    t_x = memory.mem_x[rows, best_col]
+    t_y = memory.mem_y[rows, best_col]
+    # Best teller per listener: freshest wins, ties to lowest index.
+    offer = np.where(eligible & arrays.alive[None, :]
+                     & (t_seen[None, :] >= 0), t_seen[None, :], -1)
+    best_j = offer.argmax(axis=1)
+    best_seen = offer[rows, best_j]
+    has = arrays.alive & (best_seen >= 0)
+    if not has.any():
+        return
+    li = np.flatnonzero(has)
+    tj = best_j[li]
+    cx, cy = t_x[tj], t_y[tj]
+    # The listener must not already hold the place.
+    ddx = _torus_delta(memory.mem_x[li] - cx[:, None], config.world_size)
+    ddy = _torus_delta(memory.mem_y[li] - cy[:, None], config.world_size)
+    slot_d = np.where(valid[li], np.hypot(ddx, ddy), np.inf)
+    new = slot_d.min(axis=1) > config.r_eat
+    li, tj, cx, cy = li[new], tj[new], cx[new], cy[new]
+    if li.size == 0:
+        return
+    c2 = memory.mem_seen[li].argmin(axis=1)
+    memory.mem_x[li, c2] = cx
+    memory.mem_y[li, c2] = cy
+    memory.mem_seen[li, c2] = t_seen[tj]
+    memory.mem_told[li, c2] = True
+    memory.mem_source[li, c2] = tj

@@ -2,7 +2,7 @@
   "description": "the threshold vigil: full sight refuses the mire and the bond refuses the leaving; pull-group deaths become starvation at the rim",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+  "config_hash": "9619c5bf2be4975f557c32cd196d0e69a29a18a04e736f481b10742d684c4205",
   "sha256": "a60f2b761a5cf54ccf29e9e6eda805378241ce6b99da5d4219aae074c76ae0ca",
   "array_sha256": {
     "x": "ba5fa6a5dcd5563ab0ce378760d9d3e3a4214952458a892d72d03633e8376982",
@@ -90,6 +90,8 @@
     "verify_level": 0.1,
     "testimony": 0.0,
     "cred_init": 0.5,
-    "cred_floor": 0.01
+    "cred_floor": 0.01,
+    "tell_places": false,
+    "tell_threshold": 0.5
   }
 }

@@ -8,8 +8,10 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
-from .memory import make_memory, memory_step, novel_percept
-from .social import make_social, social_step
+from .memory import (hear_places, make_memory, memory_step, novel_percept,
+                     take_events)
+from .social import (apply_belief_feedback, eligible_tellers, make_social,
+                     social_step)
 from .config import Config
 from .drives import (
     compute_urgencies,
@@ -282,6 +284,17 @@ class Model:
         if self.social is not None:
             social_danger = social_step(self.social, self.arrays, cfg,
                                         danger, self.tick)
+        # The told place (Amendment 8): one telling per listener per
+        # tick, then the settlements this tick's perception produced
+        # flow back through the credence law.
+        if (cfg.tell_places and self.social is not None
+                and self.memory is not None):
+            eligible = eligible_tellers(self.social, self.arrays, cfg)
+            hear_places(self.memory, self.arrays, cfg, eligible, self.tick)
+        if self.memory is not None:
+            events = take_events(self.memory)
+            if events and self.social is not None:
+                apply_belief_feedback(self.social, events, cfg)
         compute_urgencies(self.arrays, cfg, danger, dist_target, peril,
                           social_danger=social_danger, staleness=staleness)
         update_weights(self.arrays, cfg)

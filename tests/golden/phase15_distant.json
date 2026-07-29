@@ -69,9 +69,11 @@
     "verify_level": 0.1,
     "testimony": 0.0,
     "cred_init": 0.5,
-    "cred_floor": 0.01
+    "cred_floor": 0.01,
+    "tell_places": false,
+    "tell_threshold": 0.5
   },
-  "config_hash": "07a207c0b4ccb1720504161afec38fd9098b9124cc1293256a98698c4deb4431",
+  "config_hash": "f18ba49af1754d7d3bdbf501df4ca1788a0507dcbba9bac60c64e5551bf9532d",
   "sha256": "8eefee4da856f40ac5dda596de0a8ffeb854341c2e968a729726758f889bae9a",
   "array_sha256": {
     "x": "508df8d712a0bacc6bfffdb11cc695766edee42a30244dfc9ec99ccec3815869",

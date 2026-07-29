@@ -1,5 +1,5 @@
 {
-  "description": "wonder: the fifth drive live in a sighted famine world; capability golden refreshed under Amendment 7 (occupancy novelty, the quest replacing priced serendipity), justification in specs/phase-21.md Q1",
+  "description": "the told place: socially settable knowledge live in a sighted social famine world; capability golden, no finding",
   "seed": 42,
   "ticks": 3000,
   "config": {
@@ -52,14 +52,14 @@
     "tau_safety_spread": 0.0,
     "tau_bond_spread": 0.0,
     "bond_init_spread": 0.0,
-    "r_social": 0.0,
+    "r_social": 8.0,
     "tau_cred": 24.0,
     "r_sight": 12.0,
     "r_sight_spread": 0.0,
     "attention_spread": 0.0,
     "prospect_spread": 0.0,
     "tau_wonder": 45.0,
-    "wonder_horizon": 400,
+    "wonder_horizon": 0,
     "wonder_relief": 0.01,
     "wonder_spread": 0.0,
     "memory_slots": 8,
@@ -70,28 +70,28 @@
     "testimony": 0.0,
     "cred_init": 0.5,
     "cred_floor": 0.01,
-    "tell_places": false,
+    "tell_places": true,
     "tell_threshold": 0.5
   },
-  "config_hash": "dd4b6a8b01583514bb25a8b2888c934a9214ef05929348f6f4e0e3db7a57bd64",
-  "sha256": "258a89b166d8548aecc4bc0fbd4600559ff3dcaf8495d4ccafb411f912651d1f",
+  "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+  "sha256": "8a7a3d37d9d18dd5bcb4d0fadc987989ee42e39819d769ec641b315307b7ee3e",
   "array_sha256": {
-    "x": "38f6c0ffed930c55c28efa198f14e658250ed8a862997f41b1dc049d90b7bc8c",
-    "y": "dad4f770fe839d44ab72485d7ff69233232ea30a1be4cbcd6024ab5bf7bcffe3",
-    "energy": "f7442de7482a45a19127976395c8add37b9ac498fec644a7c8ae2da81ee1b70f",
-    "integrity": "6f46c2473525e308ad09d3874b096b9f33c0a9e3efe74ca8cee75625ac2fe7eb",
-    "fatigue": "211bd3e61639ff1dd722716d0628a5f4b99b6c709a68537294434470eba2f39e",
-    "weights": "02aa4d2798eda71ad01f12563fc8f0b673d95f0faf6df9aec3be1861975028dd",
-    "urgency": "ac2c2c96a0806ae2552216da3b69a7a2a9d485d0a78aebe0f57e88da3efd96b6",
-    "bond": "462de3b383c3b0b32a1b0d49dfdee537b54362b1d4509df8a6e00fa024da3e2b",
-    "alive": "45ec605486ca6b67818dcdc2bfa180b1c97b1b391303da5ad28884a9be13531b"
+    "x": "71d0e58fb09381d46d63117c151f23f88444f3bdb3d938c9dd194cc1e9b3ea24",
+    "y": "9db7a425cf7ff28ed3498b48343373c1c50840dce4b94428341dc6ec5ee5b893",
+    "energy": "dd97cd1acb55ab16bbd40bfa5b7136e7d1189a323583473fe876385ca5f44d9a",
+    "integrity": "d5e78d9b5343434ff0c65fbb8d07fa4d22f06497f48e7602b00dd476a5b34aa7",
+    "fatigue": "a1926026643eb556eba1f23c1a0f8b5bd303cadd348cddd98c51487b5147d5e7",
+    "weights": "f41a41e1a5559dced4502e484b212389b31c081ed63646b7b58d3a28eeb850e5",
+    "urgency": "d6ff809cc568f2b3fe5a2ab7e59d3dbde05ea5ec0ac9a036d8808b1702373029",
+    "bond": "121bb26178b8044635ac9b06c73fbe7014e0a5afa519f8d29e369971d9a5713c",
+    "alive": "346e18019ea592cad41f8c4e966dfff2c21154972d7a5ab176fd46abd258e992"
   },
   "manifest": {
     "seed": 42,
-    "config_hash": "17527ec7b91a92bb22445578ee3c4247e459556346c2a0a9ad8060f786c8e61d",
-    "git_sha": "14c5de16ab57af77603cfef36ad7bcdb49cd78a2",
+    "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+    "git_sha": "66767d6fc2b218f73b2c1a51b5f728454d6572d7",
     "python": "3.11.13",
     "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-28T18:03:30+00:00"
+    "timestamp_utc": "2026-07-29T09:09:36+00:00"
   }
 }

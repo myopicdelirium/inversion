@@ -2,7 +2,7 @@
   "description": "attention grief: kappa 2 partner-mode storm; the bereaved can starve in mourning",
   "seed": 42,
   "ticks": 3500,
-  "config_hash": "4708407830eb65d2fc789141df9b2656e12941a39a79d7e3b14f59ca4e3e5949",
+  "config_hash": "a977fdc9d8d76a86686f6e5ec26cf1f8e77c550d0c84c77cffdc91d932dc907c",
   "sha256": "58ec990f3fc1f6907d574292a1cc9e6a5ef9552037facb37ed5e33285d02e48d",
   "array_sha256": {
     "x": "a9df811d34b2b5624ec324f7bf95e226957a098f8522e78b36fe193094d40432",
@@ -90,6 +90,8 @@
     "verify_level": 0.1,
     "testimony": 0.0,
     "cred_init": 0.5,
-    "cred_floor": 0.01
+    "cred_floor": 0.01,
+    "tell_places": false,
+    "tell_threshold": 0.5
   }
 }

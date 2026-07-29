@@ -136,6 +136,11 @@ class Config:
     testimony: float = 0.0
     cred_init: float = 0.5
     cred_floor: float = 0.01
+    # The told place (phase 22, Amendment 8): socially settable
+    # knowledge. False is bit-inert; the intake also requires the
+    # social organ, sight, and memory to exist at all.
+    tell_places: bool = False
+    tell_threshold: float = 0.5
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across
