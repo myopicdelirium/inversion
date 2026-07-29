@@ -158,6 +158,11 @@ class Config:
     birth_threshold: float = 0.0
     birth_cost: float = 0.4
     birth_mutation: float = 0.1
+    # The storm season (phase 24 addendum): the storm recurs every
+    # storm_season ticks, holding storm_length ticks per arrival.
+    # 0 is off, bit-inert.
+    storm_season: int = 0
+    storm_length: int = 120
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across

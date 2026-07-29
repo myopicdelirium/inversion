@@ -82,9 +82,11 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   },
-  "config_hash": "1f49d5479c7f1d9eb7ded4a15c1bcc9ccf449bee09b19cf162381b3ad4e947e0",
+  "config_hash": "8dbb06425fe3f8460a128348a93b647c366b0dc4be57ff5d9483202213a23625",
   "sha256": "71a09ed4cc1f6da63e178d297aaf9f0277fbfa5a82458f669f0dad723d871ddd",
   "array_sha256": {
     "x": "71af3dfc8f0decc6e8e4048d582d220b788b9b8d304179c3811feb63e6275923",

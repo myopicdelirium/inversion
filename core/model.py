@@ -213,12 +213,21 @@ class Model:
 
     def _storm_intensity(self) -> float:
         """Pure function of the tick: 0 before onset, then a linear
-        ramp to 1 over storm_ramp ticks (ramp 1 = a step)."""
+        ramp to 1 over storm_ramp ticks (ramp 1 = a step). With a
+        storm season (phase 24 addendum), the same profile recurs
+        every storm_season ticks and holds storm_length ticks per
+        arrival before dying back to zero: at season 0 the arithmetic
+        below reduces to the single storm bit for bit."""
         cfg = self.config
         if cfg.storm_nest < 0 or self.tick < cfg.storm_onset:
             return 0.0
+        since = self.tick - cfg.storm_onset
+        if cfg.storm_season > 0:
+            since = since % cfg.storm_season
+            if since >= cfg.storm_length:
+                return 0.0
         ramp = max(cfg.storm_ramp, 1)
-        return min(1.0, (self.tick - cfg.storm_onset + 1) / ramp)
+        return min(1.0, (since + 1) / ramp)
 
     def _storm_damage_intensity(self, signal: float) -> float:
         """With a harmless ramp, the signal carries no damage until the

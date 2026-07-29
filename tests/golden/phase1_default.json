@@ -2,7 +2,7 @@
   "description": "phase 1 default-config golden run",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "1e8aef04cc681f8d8ff7a470502267c8215343aac13152998099d693c785bc0c",
+  "config_hash": "5ed03bef897c11e424ef8fd5f1a18ed197d1c4c5c885a5685275de4605f72561",
   "sha256": "fc981b5e8d35699c0a32c3955d642201e00194383cd9bf602739000fdc5b6785",
   "manifest": {
     "seed": 42,
@@ -103,7 +103,9 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   },
   "note": "combined hash superseded in phase 2 (array shape change, see specs). The binding contract is array_sha256 on the behavioural arrays under this config: the phase-1-equivalent world, n_nests 0."
 }

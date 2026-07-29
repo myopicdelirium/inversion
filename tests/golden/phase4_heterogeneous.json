@@ -2,7 +2,7 @@
   "description": "heterogeneous flagship: sudden storm, all three spreads nonzero; individuals differ, the law does not",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "cf0a51f1849d724309371a1d7d0b33e4a894eec5461e31bd6efbfebe198a9778",
+  "config_hash": "4d7d3fd9b3b4f4537cf812e8f3f27d73e0ce57f84552555c7b9c5521e65d0397",
   "sha256": "9d0d4df81e10308d859cf1528e4262fbab9f7e4aa9e084c7f9069df05a2120dc",
   "array_sha256": {
     "x": "8cc84e827e159f5a4a0130d8f6240b1ad2a8602c2076d649e652b25e6aa71750",
@@ -103,6 +103,8 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   }
 }

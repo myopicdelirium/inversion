@@ -2,7 +2,7 @@
   "description": "phase 2 default-config golden run (nests present, bond_init 0.5)",
   "seed": 42,
   "ticks": 2000,
-  "config_hash": "7aec89164ffacfe81382520621c16356b671f198b2bfcbe761c0122c33cda57f",
+  "config_hash": "8cbf0de218a70d66313c5d9d3cdf01f9f11b6a05cf1aa1e5c148cdadada57d92",
   "sha256": "1411c14725ca4a96ac38469e81ae8ad43f2d4e3b1fb56a20496177abd1e23ecf",
   "array_sha256": {
     "x": "f94cfb405de45b401166e1ae5bc0cfcd1c9cbb6a4112d58ece58bc9e42ea3ebb",
@@ -104,6 +104,8 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   }
 }

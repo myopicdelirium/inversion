@@ -160,3 +160,35 @@ the panel, per the sequencing promise:
 * The capability roadmap completes with this phase: the corpus can
   now sustain societies whose minds are heritable, and the first
   thing the generational ledger recorded is a refusal.
+
+## Addendum, pre-registered 2026-07-29 before running: the storm season
+
+G4's refutation named its own missing ingredient: recurring sudden
+tau-selective mortality. Phase 5 measured the gradient (sudden-storm
+mortality 0.14 to 0.78 across tau_safety 3 to 48: slow fear dies);
+the season brings that mortality back on a clock over a birthing
+population. One mechanism: storm_season 0 default (off, bit-inert);
+when positive, the storm recurs every storm_season ticks (intensity
+is the single-storm profile of (tick - onset) mod season, active
+from onset onward), storm duration bounded by storm_length ticks of
+full intensity before dying back to zero until the next arrival.
+Declared before running:
+
+* **S1, inertness ritual, kill switch**: all goldens replay
+  behaviorally bit-identical; configs refreshed; suite green.
+* **S2, the season kills selectively, manipulation check**: pooled
+  across storms and seeds 1-24, the mean tau_safety of agents dying
+  inside storm windows exceeds the concurrent survivors' mean by at
+  least 10 percent. The phase 5 gradient must be present in this
+  arena, or the season cannot breed anything and stops here.
+* **S3, the breeding claim, G4's bar in the declared harsher
+  arena**: over 8000 ticks of seasonal storms (season 800, length
+  120, sudden onset, damage 0.05) on a birthing population with
+  heritable fear clocks (tau_safety_spread 0.5, births 0.9/0.4,
+  n_food 90), the final living population's mean tau_safety is at
+  least 10 percent below the initial: the same unmoved bar, the
+  arena the refutation itself prescribed.
+* Fresh seeds 31-54 replication before packaging. Panel decision,
+  recorded: no panel for this one-modulo delta; the ritual, a
+  deterministic switch, and the S2 gate carry it, per the
+  third-guard precedent.

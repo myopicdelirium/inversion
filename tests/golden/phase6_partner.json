@@ -2,7 +2,7 @@
   "description": "partner-mode storm: pairs roam together, grief is exact and rare, person-attachment is protective",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "a891e1e76910785fcd198231412e39e51692033c72a3e2052a5b6d58910d383b",
+  "config_hash": "d0445ec1332699d732d16c360518d9d7997dca6ca8d6fe7e0d27a9777cb97358",
   "sha256": "fab9df1d4b2205a2c2b1a67aedf4267a1d883cff088939d9e8b3b0664462b462",
   "array_sha256": {
     "x": "c740a724d0f3a031c2587b8d20d5b42111fba31b771cb40948a95b77270a7f71",
@@ -103,6 +103,8 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   }
 }

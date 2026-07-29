@@ -2,7 +2,7 @@
   "description": "the threshold vigil: full sight refuses the mire and the bond refuses the leaving; pull-group deaths become starvation at the rim",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "99adcf153f07c0da90415e04bfca340f16a5aa4259cb07214993a5fb56eef998",
+  "config_hash": "63fe88d268e8412f1050bb0469332f678da11a0e97f1d74422955d9c7aec2d5e",
   "sha256": "a60f2b761a5cf54ccf29e9e6eda805378241ce6b99da5d4219aae074c76ae0ca",
   "array_sha256": {
     "x": "ba5fa6a5dcd5563ab0ce378760d9d3e3a4214952458a892d72d03633e8376982",
@@ -103,6 +103,8 @@
     "prophecy_grace": 50,
     "birth_threshold": 0.0,
     "birth_cost": 0.4,
-    "birth_mutation": 0.1
+    "birth_mutation": 0.1,
+    "storm_season": 0,
+    "storm_length": 120
   }
 }
