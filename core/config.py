@@ -64,6 +64,11 @@ class Config:
     care: float = 0.0
     r_help: float = 2.0
     help_strength: float = 0.0
+    # Through the eyes (phase 25, Amendment 5 addendum): when true,
+    # the care percept passes through the witness's own sight: the
+    # target's peril is felt only within the agent's personal sight
+    # radius. False is the shipped telepathic percept, bit for bit.
+    empathy_sighted: bool = False
     # Storm (phase 3): experimental apparatus, a hazard aimed at a nest.
     # Disabled by default; enabling it changes nothing before onset.
     storm_nest: int = -1

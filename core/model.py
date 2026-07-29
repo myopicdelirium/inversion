@@ -205,7 +205,8 @@ class Model:
             self._storm_intensity(),
         )
         dist_target, _, _ = self._bond_distances()
-        peril0 = self._target_peril(self._hazards_active(), self._storm_intensity())
+        peril0 = self._target_peril(self._hazards_active(),
+                                    self._storm_intensity(), dist_target)
         init_drive_state(self.arrays, config, danger, dist_target, peril0)
 
     def _hazards_active(self) -> bool:
@@ -274,9 +275,13 @@ class Model:
         return {"intensity": self._storm_damage_intensity(self._storm_intensity()),
                 "food_center_dist": food_cd, "target_center_dist": tgt_cd}
 
-    def _target_peril(self, active, storm):
+    def _target_peril(self, active, storm, dist_target):
         """The danger field at the living bond target's location; zero
-        for places and absent targets (care needs a living beloved)."""
+        for places and absent targets (care needs a living beloved).
+        Through the eyes (phase 25, Amendment 5 addendum): when
+        empathy_sighted, the peril is felt only while the target is
+        within the witness's own sight radius; an infinite eye sees
+        everything and the gate is vacuous."""
         cfg = self.config
         if cfg.bond_target not in ("partner", "leader"):
             return np.zeros(cfg.n_agents)
@@ -287,7 +292,10 @@ class Model:
         px = np.where(present, self.arrays.x[pidx], 0.0)
         py = np.where(present, self.arrays.y[pidx], 0.0)
         level = peril_at(px, py, self.world, cfg, active, storm)
-        return np.where(present, level, 0.0)
+        per = np.where(present, level, 0.0)
+        if cfg.empathy_sighted:
+            per = np.where(dist_target <= self.arrays.r_sight, per, 0.0)
+        return per
 
     def step(self):
         """One tick, in the order fixed by the spec: perceive,
@@ -321,7 +329,7 @@ class Model:
         if cfg.prospect_sees_grip and cfg.prospect_horizon > 0 \
                 and cfg.storm_nest >= 0 and cfg.storm_snare > 0.0:
             grip_info = self._grip_percepts(food_ids)
-        peril = self._target_peril(active, storm)
+        peril = self._target_peril(active, storm, dist_target)
         social_danger = None
         if self.social is not None:
             social_danger = social_step(self.social, self.arrays, cfg,

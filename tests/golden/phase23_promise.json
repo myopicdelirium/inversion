@@ -36,6 +36,7 @@
     "care": 0.0,
     "r_help": 2.0,
     "help_strength": 0.0,
+    "empathy_sighted": false,
     "storm_nest": -1,
     "storm_onset": 2000,
     "storm_ramp": 1,
@@ -86,7 +87,7 @@
     "storm_season": 0,
     "storm_length": 120
   },
-  "config_hash": "8dbb06425fe3f8460a128348a93b647c366b0dc4be57ff5d9483202213a23625",
+  "config_hash": "a6b1723d46c9f1636509a60a5326d9a562126b324ca28de42c6d25c6922fd926",
   "sha256": "71a09ed4cc1f6da63e178d297aaf9f0277fbfa5a82458f669f0dad723d871ddd",
   "array_sha256": {
     "x": "71af3dfc8f0decc6e8e4048d582d220b788b9b8d304179c3811feb63e6275923",

@@ -2,7 +2,7 @@
   "description": "flagship collision cell: sudden storm on the nest, bond 1.0; the inversion regime",
   "seed": 42,
   "ticks": 3000,
-  "config_hash": "c24a7bada45d4bfeca41846d937c707ccebc14a1ea848a517fdf74f65377a6a6",
+  "config_hash": "7393a3c927ff051fe6d72d7846283080fcf32e4235aadab8632c389fdeab3889",
   "sha256": "987689738c1760f7d604906ac15330c1c7e4a2cbac4cbd02ed137c3160fdc35f",
   "array_sha256": {
     "x": "0baf88c74e04f4d3fb6b2023552af481ea9ebe5e9655f0f2774a7b7884eb057e",
@@ -57,6 +57,7 @@
     "care": 0.0,
     "r_help": 2.0,
     "help_strength": 0.0,
+    "empathy_sighted": false,
     "storm_nest": 0,
     "storm_onset": 2000,
     "storm_ramp": 1,

@@ -78,6 +78,8 @@ Until now no agent's valuation has ever counted another's condition; every price
 * The existing tripwires already fence this amendment and are reaffirmed: the update law still names no drive; `core/action.py` still may not reference integrity, so any priced expectation of helping is denominated in peril (danger), never in the target's health or death; no branch on any agent's mortality state anywhere in drives or action code.
 * Forbidden: care terms conditioned on who the target is, on the target's mortality state discretely, or on outcomes; assistance that reads bond or weight state; any coefficient modified at runtime.
 
+**Addendum (2026-07-29, phase 25): through the eyes.** `empathy_sighted` (default False, bit-inert) gates the care percept on the witness's own personal sight radius: the living target's peril is felt only while the target is in sight. "Physics seen at a place" becomes literal. The mask lives at the percept source (`Model._target_peril`) so every consumer reads the same gated percept; all of this amendment's fences and forbiddances apply to the gated percept unchanged.
+
 ## Hard rules
 
 ### Golden runs

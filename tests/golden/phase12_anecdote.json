@@ -2,7 +2,7 @@
   "description": "the corner where clear-eyed deaths occur as individuals but never as a regime: slow fear, devoted attention, short sight",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "4cb232614ba7003374c7af6e1376218a8fe15dc031df15c102672a17defd72d0",
+  "config_hash": "e13a45e7be3d55ea428f3eb3f179cbe4e09b92b00650eeb7144d2eedeae34f94",
   "sha256": "c8b26dcf2d1b2eef4b968518bb021cf037d32adb1eecb2400d3e8906b6f9afdd",
   "array_sha256": {
     "x": "1c2aab0aa01b663cb998a3cb9be5c43432f3eaa90307cad777c80db3d0f5f6f4",
@@ -57,6 +57,7 @@
     "care": 0.0,
     "r_help": 2.0,
     "help_strength": 0.0,
+    "empathy_sighted": false,
     "storm_nest": 0,
     "storm_onset": 2000,
     "storm_ramp": 1,

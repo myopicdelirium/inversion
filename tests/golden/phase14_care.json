@@ -2,7 +2,7 @@
   "description": "the other in the ledger: care 1, help 1; most of the trapped are freed at once by the partner already beside them",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "9a3b47c9baccf7b372f66599baccb43385e5bb4b33943c6387963de1104268ce",
+  "config_hash": "80c4903e87ec8a4d7e8478f165001f755351aed98aaa9e8e92180f4cfca25cb6",
   "sha256": "23c886630109cc507c682d7b984daf68b84371aa4656690119cf276d74f7e5c2",
   "array_sha256": {
     "x": "79582bb6321d0a384e92bc5ccc235768fa8969198e6d8d298728daa0defb8c7c",
@@ -57,6 +57,7 @@
     "care": 1.0,
     "r_help": 2.0,
     "help_strength": 1.0,
+    "empathy_sighted": false,
     "storm_nest": 0,
     "storm_onset": 2000,
     "storm_ramp": 1,

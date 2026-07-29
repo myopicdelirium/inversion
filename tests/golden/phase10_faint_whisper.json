@@ -2,7 +2,7 @@
   "description": "the faint whisper: floor 0.01, kappa 2; grief still starves its deepest carriers even without the absolute zero-trap",
   "seed": 42,
   "ticks": 3500,
-  "config_hash": "cfef2f34e7767316629b69d57359f436451502bbba703df367ba9329cc7dc20a",
+  "config_hash": "24d62b69712ed76a537ba755e082e8a51c507f54fdd15b229f320a8c0be2ad63",
   "sha256": "29ac8de39f0e64ef92cebc3bf1c39932f4f53bdd74acd1441461ef7e648c1807",
   "array_sha256": {
     "x": "2e29bc0d03ddcd252c1f1fb803b9ad092c9d70add0bc2077a2743c48c8dfe20e",
@@ -57,6 +57,7 @@
     "care": 0.0,
     "r_help": 2.0,
     "help_strength": 0.0,
+    "empathy_sighted": false,
     "storm_nest": 0,
     "storm_onset": 2000,
     "storm_ramp": 1,
