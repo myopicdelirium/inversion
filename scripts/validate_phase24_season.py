@@ -28,10 +28,10 @@ from core.model import Model  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 
-ARENA = {"n_food": 90, "tau_safety_spread": 0.5,
-         "birth_threshold": 0.9, "birth_cost": 0.4,
+ARENA = {"n_food": 90, "tau_safety_spread": 0.5, "n_hazard": 0,
+         "birth_threshold": 0.9, "birth_cost": 0.4, "bond_init": 1.0,
          "storm_nest": 0, "storm_onset": 800, "storm_ramp": 1,
-         "storm_season": 800, "storm_length": 120,
+         "storm_season": 800, "storm_length": 400,
          "storm_damage": 0.05}
 TICKS = 8000
 
@@ -46,7 +46,11 @@ def cell(seed):
     for _ in range(TICKS):
         m.step()
         if m._storm_intensity() > 0.0:
-            died = prev_alive & ~m.arrays.alive
+            # A death is an alive-flip OR a trait change on a
+            # previously living slot: same-tick rebirth hides the
+            # flip (the phase's twice-earned lesson).
+            died = (prev_alive & ~m.arrays.alive) | (
+                prev_alive & (m.arrays.tau[:, 1] != prev_tau))
             if died.any():
                 dead_tau.extend(float(v) for v in prev_tau[died])
                 alive_now = m.arrays.alive

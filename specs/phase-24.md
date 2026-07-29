@@ -192,3 +192,64 @@ Declared before running:
   recorded: no panel for this one-modulo delta; the ritual, a
   deterministic switch, and the S2 gate carry it, per the
   third-guard precedent.
+
+
+### Season run 1 and the re-registration, recorded 2026-07-29
+
+Run 1: S2 stopped the addendum with zero recorded storm deaths, and
+the diagnosis is two errors, both mine, recorded in full. First, the
+arena omitted the killing regime's own coordinates: phase 3 and 5's
+storm mortality lived at bond 1.0 (the pull that cycles agents back
+into the storm) in a hazardless world (cold fear, so the lag can
+kill), with exposure long enough for return-cycling: my arena had
+default bond, default hazards, and a 120-tick pulse everyone
+outruns. Second, and worse for being the SAME lesson twice in one
+phase: the death detector watched alive-flips, which same-tick
+rebirth makes blind: the corrected seed-96 check found 23 storm
+deaths where the blind one saw zero, with the dead carrying slower
+clocks than the living (14.16 against 13.19). The phase's most
+repeated sentence, earned twice: in a world with same-tick rebirth,
+the absence of visible death is not the absence of death.
+
+Run 2, re-registered, same bars: arena corrected to the killing
+regime's own coordinates (bond_init 1.0, n_hazard 0, storm_length
+400, otherwise unchanged), detectors corrected (a death is an
+alive-flip OR a trait change on a previously living slot). S2's
+1.10 gate and S3's -10 percent bar stand exactly as first declared.
+
+### Season results, recorded 2026-07-29: selection is real and fecundity outruns it
+
+Artifacts: `results/phase-24-season.json` (seeds 1-24),
+`phase-24-season-replication.json` (fresh seeds 31-54). Judged
+exactly as declared, on the corrected arena and detectors:
+
+* **S2 PASSED, replicated**: agents dying inside storm windows
+  carried mean fear clocks of 15.28 and 15.65 against their
+  surviving contemporaries' 13.05 and 12.97, ratios 1.17 and 1.21
+  against the 1.10 bar, over 1025 and 998 storm deaths. Phase 5's
+  gradient is alive and generational: the storm kills the slow of
+  fear, exactly as the one-generation autopsy said.
+* **S3 FAILED, replicated, with the direction right and the
+  magnitude a third of the bar**: mean tau_safety fell -3.5 and -6.2
+  percent against the demanded -10, with populations at the full
+  4800 at the end of every run.
+* **The finding this pair earns, and it is the corpus's first
+  population-genetic result: FECUNDITY OUTRUNS SELECTION.** The
+  storm is selective (S2, decisively, twice), heredity is nearly
+  perfect (G3, rho 0.97), and ten seasons of selective killing still
+  move the population mean by a third of what the bar demanded,
+  because every cradle the storm opens is refilled within a tick by
+  whichever well-fed survivor stands lowest in the index, quick of
+  fear or slow. Death selects; birth does not. The vessel's
+  same-tick backfill is not a modelling artifact here but the
+  mechanism itself: a population that refills faster than it is
+  culled cannot be steered by culling alone.
+* Declared follow-up, not run: selection needs a reproductive
+  channel, not just a mortality one. The registered route is
+  differential fecundity (birth eligibility or cost tied to lived
+  state, so the quick-feared breed more, not merely die less), which
+  is an amendment-level mechanism decision and is deliberately not
+  built to rescue a failed bar.
+* The refusal count stands at seven consecutive designer stories
+  refused, and this one refused a bar the model had itself
+  prescribed one addendum earlier.
