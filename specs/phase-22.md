@@ -213,3 +213,76 @@ declared:
   own instruments. The channel is real, the deaths are real, the
   reputation pricing is real, and the killer is still at large in
   the artifacts.
+
+## Addendum, pre-registered 2026-07-29 before running: the travel ledger
+
+The wild-goose candidate stands flagged: rumors lengthen supply
+lines. The ledger convicts or acquits it by billing every meal with
+the distance walked to earn it, on byte-identical reruns of the B2
+cells (config hashes verified before launch). A meal's origin is
+told when it is eaten within an eating radius of a recently
+confirmed told site (told slots convert to owned at first sight, so
+the instrument shadows conversions for the approach); the metric is
+the full distance walked since the previous meal, declared as such:
+it bills the whole journey to the meal that ended it. Declared
+before running:
+
+* **T1, the conviction, falsifiable**: pooled mean distance-per-meal
+  for told-origin meals at least 1.5x that of own-origin meals,
+  seeds 1-24, replication 31-54. Rumor meals must actually cost the
+  longer walk.
+* **T2, the economy-wide link, falsifiable**: the telling arm's mean
+  distance-per-meal across ALL meals at least 1.15x the off arm's,
+  both stages. The whole society's supply lines must lengthen, not
+  just the rumor-followers'.
+* **T3, throughput, reported without bar**: meals per thousand
+  agent-ticks and mean meal interval, both arms, for the record.
+* Verdict rule, declared: T1 and T2 holding on both stages promote
+  distance from flagged to established and close the case; either
+  failing leaves the tragedy open with a third suspect eliminated,
+  recorded at full volume.
+
+## Travel-ledger results, recorded 2026-07-29: the third suspect walks, the hunt pauses
+
+Artifacts: `results/phase-22-travel.json` (seeds 1-24),
+`phase-22-travel-replication.json` (fresh seeds 31-54). Judged
+exactly as declared:
+
+* **T1 FAILED both stages**: told-origin meals cost 58.4 and 60.3
+  distance per meal against own-origin 55.8 and 55.5, ratios 1.05
+  and 1.09 against the 1.5 bar. Rumor meals are barely more
+  expensive than sight meals.
+* **T2 FAILED both stages**: economy-wide distance per meal 55.9
+  against 55.0 and 55.8 against 55.1, ratios 1.02 and 1.01 against
+  1.15. The supply lines did not lengthen. The wild-goose economy is
+  acquitted.
+* **T3, no bar, and it moves the mystery**: telling societies ate
+  8.0 and 7.1 meals per thousand agent-ticks against the silent
+  worlds' 10.8 and 10.6, a 26 to 33 percent throughput collapse at
+  identical cost per meal and near-identical completed meal gaps (78
+  against 76, 80 against 75 ticks). Instrument caveat, attached by
+  its own author: the declared denominator counts dead agents'
+  ticks, so part of the throughput gap restates the mortality it
+  was meant to explain; per-living-tick throughput was not measured
+  and is not claimed.
+* **The hunt pauses by the ledger's own precedent** (the mediator
+  hunt of the crowd-grief phase): three registered instruments have
+  now eliminated three suspects: crowding (inverted, telling
+  disperses), the told-meal premium, and the economy-wide supply
+  line. The tragedy of the told commons stands measured, replicated,
+  and three times unexplained, and a fourth instrument fished from
+  the same pond risks the forking paths the registry exists to
+  prevent.
+* **The standing candidate, flagged post hoc for a future
+  registration, not run**: the crowded mind. Telling generated
+  369,698 secondhand slot creations against 815,887 own, meaning
+  roughly a third of all working-memory turnover under telling was
+  rumor, each insertion evicting an owned local memory from the
+  eight slots. The rumor may crowd the mind, not the field:
+  displacing the reliable local map that silent foragers live by.
+  Its instrument, when registered, is slot-composition accounting
+  and an intake variant that fills only empty slots.
+* The case file, complete: an honest channel that feeds individuals,
+  prices its tellers correctly, kills its societies, and has now
+  survived three declared attempts at explanation. Filed open, at
+  full volume, beside crowd grief's sub-additivity.
