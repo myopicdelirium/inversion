@@ -8,11 +8,14 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
+from .birth import apply_births
 from .memory import (has_believers, hear_places, make_memory, memory_step,
                      novel_percept, promise_percept, promise_step,
                      take_events)
+from .memory import reset_agent as reset_memory_agent
 from .social import (apply_belief_feedback, eligible_tellers, make_social,
                      social_step)
+from .social import reset_agent as reset_social_agent
 from .config import Config
 from .drives import (
     compute_urgencies,
@@ -20,7 +23,7 @@ from .drives import (
     init_timescales,
     update_weights,
 )
-from .rng import spawn_streams
+from .rng import spawn_birth_streams, spawn_streams
 from .state import allocate
 from .world import (
     apply_actions,
@@ -56,6 +59,10 @@ class Model:
         self.config = config
         self.seed = seed
         self.world_rng, self.agent_rngs = spawn_streams(seed, config.n_agents)
+        # Birth (Amendment 10): dedicated per-slot streams, consumed
+        # only on rebirth; the tick-stream discipline is untouched.
+        self.birth_rngs = (spawn_birth_streams(seed, config.n_agents)
+                           if config.birth_threshold > 0.0 else None)
         self.arrays = allocate(config.n_agents, config.init_energy)
         self.world = spawn_world(config, self.world_rng)
         # Per agent: spawn position and initial heading come from the
@@ -374,6 +381,14 @@ class Model:
             self.arrays, self.world, cfg, active,
             self._storm_damage_intensity(storm),
         )
+        # Birth (Amendment 10): dead slots become cradles; each child
+        # gets a fresh mind from the owning organs.
+        if self.birth_rngs is not None:
+            for _, child in apply_births(self.arrays, cfg, self.birth_rngs):
+                if self.memory is not None:
+                    reset_memory_agent(self.memory, child)
+                if self.social is not None:
+                    reset_social_agent(self.social, child, cfg)
         update_world(self.world, cfg, self.world_rng)
         self.tick += 1
         return actions

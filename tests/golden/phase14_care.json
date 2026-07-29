@@ -2,7 +2,7 @@
   "description": "the other in the ledger: care 1, help 1; most of the trapped are freed at once by the partner already beside them",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "dac042651025d3c4042a52929df23c31809452d06c8a385f4e3447fc1a84cfad",
+  "config_hash": "38f9349064c7cb52cd1d38ad6f86d3cb868e2bceb3141e0e98e915eb02059225",
   "sha256": "23c886630109cc507c682d7b984daf68b84371aa4656690119cf276d74f7e5c2",
   "array_sha256": {
     "x": "79582bb6321d0a384e92bc5ccc235768fa8969198e6d8d298728daa0defb8c7c",
@@ -100,6 +100,9 @@
     "prophecy_seeds": 5,
     "prophecy_true": false,
     "prophecy_burst": 20,
-    "prophecy_grace": 50
+    "prophecy_grace": 50,
+    "birth_threshold": 0.0,
+    "birth_cost": 0.4,
+    "birth_mutation": 0.1
   }
 }

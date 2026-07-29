@@ -1,32 +1,11 @@
 {
-  "description": "phase 1 default-config golden run",
+  "description": "birth: a self-sustaining population inheriting its clocks under mutation; capability golden, no finding",
   "seed": 42,
-  "ticks": 2000,
-  "config_hash": "1e8aef04cc681f8d8ff7a470502267c8215343aac13152998099d693c785bc0c",
-  "sha256": "fc981b5e8d35699c0a32c3955d642201e00194383cd9bf602739000fdc5b6785",
-  "manifest": {
-    "seed": 42,
-    "config_hash": "6a55cc309a23059f695bdf0104607d74280bbe6364bfe6cd1d1195dd5a117b2c",
-    "git_sha": "02c535b371220d671a47cb1cf97e3469decc8593",
-    "python": "3.11.13",
-    "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-22T21:12:49+00:00"
-  },
-  "array_sha256": {
-    "x": "d2a18beaa0f34db5ceeb0f19c14274aeaf25d0b5bf115bf73fe7eb053b666ecf",
-    "y": "e39be612b79030b39cee8152f0b93ae40370047c39676b6e0ea00f12b5de5677",
-    "energy": "9cddea217319828a0b323b967461bbdb39a66416402d421d5005faa6343e20b5",
-    "integrity": "829c5cc959540207a404937f0549e28618ee629de533d131bfeffa513eaf485a",
-    "fatigue": "7ad640eec2b96a2781eee6486cc446d1132e412c7259e11e4d7e0e35353c6e4e",
-    "weights": "0a0120a9f2f9f160eb45b07ad04435b9e970bc8a0c408cd729071b4c3a2e3f9c",
-    "urgency": "101cbd336c5fe115f217329f8b5f9d105574c18263b8f7eaf704d5c391841b3f",
-    "bond": "8091dc419e70fb3815f354a66dbc5a7c5c1c73883ecb7dcdd659a8deea7b26d3",
-    "alive": "ad47923d89f9eec83e70fd9a392d01f7ba46093ac080f75932ddb9233aae2859"
-  },
+  "ticks": 3000,
   "config": {
     "world_size": 100.0,
     "n_agents": 200,
-    "n_food": 150,
+    "n_food": 90,
     "r_eat": 2.0,
     "gain_eat": 0.3,
     "food_respawn": 10,
@@ -48,7 +27,7 @@
     "record_every": 10,
     "bond_target": "nest",
     "n_leaders": 1,
-    "n_nests": 0,
+    "n_nests": 5,
     "r_nest": 3.0,
     "bond_init": 0.5,
     "bond_grow": 0.002,
@@ -70,7 +49,7 @@
     "tau_bond": 60.0,
     "attention_sharpness": 0.0,
     "attention_floor": 0.0,
-    "tau_safety_spread": 0.0,
+    "tau_safety_spread": 0.5,
     "tau_bond_spread": 0.0,
     "bond_init_spread": 0.0,
     "r_social": 0.0,
@@ -101,9 +80,29 @@
     "prophecy_true": false,
     "prophecy_burst": 20,
     "prophecy_grace": 50,
-    "birth_threshold": 0.0,
+    "birth_threshold": 0.9,
     "birth_cost": 0.4,
     "birth_mutation": 0.1
   },
-  "note": "combined hash superseded in phase 2 (array shape change, see specs). The binding contract is array_sha256 on the behavioural arrays under this config: the phase-1-equivalent world, n_nests 0."
+  "config_hash": "7bd9900ccd7a64ecaf5d52c3f5126d02d0286ffa63e8e40669e7148bf6aedc1d",
+  "sha256": "969ae103b293cd1c59f0b557bf420c264ea7f1fb5731d1d367e36b075d923b4e",
+  "array_sha256": {
+    "x": "22c555cb419d2f1d3a73e7cd938008d25a2bf488e43f6bfdb687b04481a346bb",
+    "y": "dc800976df441b4e0b55734003554a87a88d8a1fca11f593283298e4d54c4a14",
+    "energy": "9ad0482f51513d67dbd7b8513efbcc1791eb41d69487e55148cc3eb8b59899a4",
+    "integrity": "e6d8904996daefd0d1c185f01e64342025e16e2eb7c5ba00bbd09313e7357deb",
+    "fatigue": "154c63f140a9d68eae3a45579fae283b34ce9123f8e0b1763d0f79d1b67e4f63",
+    "weights": "d029f2097deb5793333fed511d146027bdef6a0734b380d6b6a484c874b61560",
+    "urgency": "8a790ecc58487ffd2c0f24411d9f50854331a78feddfa70c931ee8898f103297",
+    "bond": "331eb52bb9269261d99c1ac85f69906b94d3858ed1611350b17018d6c6d33a6d",
+    "alive": "77759138cb100ff179a45972fc099a75b5b959b86d222b67be298bb3445dc075"
+  },
+  "manifest": {
+    "seed": 42,
+    "config_hash": "7bd9900ccd7a64ecaf5d52c3f5126d02d0286ffa63e8e40669e7148bf6aedc1d",
+    "git_sha": "97b395443e7abc10ff4895bca07029bf5ce250e0",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-29T14:44:16+00:00"
+  }
 }

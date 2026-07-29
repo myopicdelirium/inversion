@@ -57,7 +57,10 @@ def test_traits_written_only_at_spawn():
     for attr in ("kappa", "horizon", "wonder_span"):
         for path in sorted(CORE.glob("*.py")):
             hits = _writes_attr(path, attr)
-            if path.name == "state.py":
+            if path.name in ("state.py", "birth.py"):
+                # birth.py is the third sanctioned writer (Amendment
+                # 10): traits are written at birth, and birth now
+                # happens more than once.
                 continue
             if path.name == "model.py":
                 bad = [ln for ln in hits if not lo <= ln <= hi]

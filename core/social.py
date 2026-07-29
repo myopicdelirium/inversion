@@ -119,3 +119,13 @@ def apply_belief_feedback(social, events, config):
     for li, tj, score in events:
         c = social.credence[li, tj]
         social.credence[li, tj] = c + gain * (score - c)
+
+
+def reset_agent(social, idx, config):
+    """A clean ledger for a reborn slot (Amendment 10): initial
+    credence in both directions, no open windows."""
+    social.credence[idx, :] = config.cred_init
+    social.credence[:, idx] = config.cred_init
+    social.window_open[idx, :] = -1
+    social.window_open[:, idx] = -1
+    social.last_peril[idx] = -1

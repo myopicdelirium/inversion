@@ -172,7 +172,12 @@ def test_tau_written_only_at_declaration_or_init():
         if path.name == "drives.py":
             for node in ast.walk(tree):
                 if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) \
-                        and node.name.startswith("init"):
+                        and (node.name.startswith("init")
+                             or node.name == "inherit_drive_state"):
+                    # inherit_drive_state is the birth-time tau writer
+                    # (Amendment 10, recorded): a child's clocks are
+                    # written once, at its birth, in drives.py, exactly
+                    # as the first generation's were at spawn.
                     for stmt in ast.walk(node):
                         allowed.add(id(stmt))
         for target_tokens, _value, assign in _assignments(tree):

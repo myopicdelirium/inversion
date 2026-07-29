@@ -79,9 +79,12 @@
     "prophecy_seeds": 5,
     "prophecy_true": false,
     "prophecy_burst": 20,
-    "prophecy_grace": 50
+    "prophecy_grace": 50,
+    "birth_threshold": 0.0,
+    "birth_cost": 0.4,
+    "birth_mutation": 0.1
   },
-  "config_hash": "8d0e70e399821dfc205e382624d85396cff29dcb592c87b24e2397b153c3e1e6",
+  "config_hash": "b73495dfd5d14286144c6d9d2e1827d75b713a9f8fa37156f1b47c4dae2a8265",
   "sha256": "d535a3faa20d73044e0406c6ea7cca5bb41b8cc30d3c453660b65835413df3ba",
   "array_sha256": {
     "x": "35dcbafadd44d6e48fe72007fcc55c579e476cb0e6bb3fc7465368d425289965",

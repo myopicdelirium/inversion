@@ -391,3 +391,23 @@ def has_believers(memory):
     chokepoint scan stays airtight (no prom_ reference leaves this
     file)."""
     return bool(memory.prom_active.any())
+
+
+def reset_agent(memory, idx):
+    """A fresh mind for a reborn slot (Amendment 10): no places, no
+    lifetime map, no faith, no spent faith, clock born now. And the
+    dead stay dead: every told slot sourced from the former occupant
+    converts to owned, and every believer whose mouth it was keeps
+    the faith with no one left to bill, so nothing ever credits or
+    blames a child for its predecessor's words."""
+    memory.mem_seen[idx] = -1
+    memory.mem_told[idx] = False
+    memory.mem_source[idx] = -1
+    memory.mem_visited[idx] = False
+    memory.prom_active[idx] = False
+    memory.prom_from[idx] = -1
+    memory.prom_settled[idx] = False
+    stale = memory.mem_source == idx
+    memory.mem_told[stale] = False
+    memory.mem_source[stale] = -1
+    memory.prom_from[memory.prom_from == idx] = -1

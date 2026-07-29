@@ -173,6 +173,28 @@ or faith: whoever starves beside the promised field was only ever
 pricing a future they were told about by someone they had learned
 to trust.
 
+### Amendment 10: birth (phase 24)
+
+Populations can now sustain themselves. A living agent whose energy
+clears the birth threshold may spend the birth cost of its own body
+to fill a DEAD slot with a child: the structure-of-arrays population
+is a fixed vessel and birth is slot rebirth, lowest-index parent to
+lowest-index empty slot, deterministic. The child is born at its
+parent's side, holding its parent's home, and inherits every
+personal trait: the drive clocks, attention sharpness, foresight
+depth, sight radius, and boredom span, each multiplied by a
+lognormal mutation drawn from the slot's own dedicated birth stream
+(spawned at init, consumed only on rebirth, so tick-stream
+discipline is untouched and replays are exact). The child's mind is
+fresh: empty memory, no faith, a clean ledger at initial credence in
+both directions, weights and urgencies from zero. The trait
+write-site rule extends by recorded amendment: traits are written at
+birth, and birth now happens more than once, so the sanctioned
+writers are state allocation, Model init, and the birth function,
+nothing else, still AST-enforced. No rule names fitness or
+selection: whatever proliferates was only ever what the world failed
+to kill.
+
 ### The default-world decision (recorded 2026-07-29)
 
 The omniscient, memoryless, wonder-less default is the PERMANENT

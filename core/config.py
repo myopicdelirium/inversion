@@ -153,6 +153,11 @@ class Config:
     prophecy_true: bool = False
     prophecy_burst: int = 20
     prophecy_grace: int = 50
+    # Birth (phase 24, Amendment 10): slot rebirth with trait
+    # inheritance. threshold 0.0 is off, bit-inert.
+    birth_threshold: float = 0.0
+    birth_cost: float = 0.4
+    birth_mutation: float = 0.1
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across

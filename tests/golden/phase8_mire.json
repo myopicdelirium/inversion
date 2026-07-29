@@ -2,7 +2,7 @@
   "description": "the mire: grip 0.95, slow burn; rescuers enter after held partners",
   "seed": 42,
   "ticks": 3250,
-  "config_hash": "92be771e0c47ef4656845395ca40dbc34501ac0293bfd8cf508352a8d440f07e",
+  "config_hash": "67227849983559c9d4463209bc2a9f89ced63a7b92bad5b2e448be6e0478f47a",
   "sha256": "b2a6439a3d61b674a75b10f2fd37b0386dd8647d85a0e359ea86eb662c6bae41",
   "array_sha256": {
     "x": "ebc953260762d9af20816d7dda036c9630c73358044c13cacf876fc4f864151d",
@@ -100,6 +100,9 @@
     "prophecy_seeds": 5,
     "prophecy_true": false,
     "prophecy_burst": 20,
-    "prophecy_grace": 50
+    "prophecy_grace": 50,
+    "birth_threshold": 0.0,
+    "birth_cost": 0.4,
+    "birth_mutation": 0.1
   }
 }

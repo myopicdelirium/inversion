@@ -95,3 +95,14 @@ def init_drive_state(arrays, config, danger_at_agent, dist_home,
     urgencies; there is no initial gap to relax."""
     compute_urgencies(arrays, config, danger_at_agent, dist_home, target_peril)
     arrays.weights[:] = arrays.urgency
+
+
+def inherit_drive_state(arrays, child, tau_mutated):
+    """Birth (Amendment 10): the child's clocks are its parent's under
+    mutation (mutation computed by the caller from the slot's birth
+    stream; this file does not draw), and its weights and urgencies
+    start from zero. The chokepoint holds: drive state is written
+    here and nowhere else."""
+    arrays.tau[child] = tau_mutated
+    arrays.weights[child] = 0.0
+    arrays.urgency[child] = 0.0
