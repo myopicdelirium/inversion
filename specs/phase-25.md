@@ -312,6 +312,76 @@ Declared limitation, recorded not fixed: post-step sampling cannot
 see a one-tick storm transit (about one per four cells, undercounts
 only, arm-symmetric).
 
+## Results, recorded 2026-07-29: the rung is passed, and the echo is real
+
+Artifacts: `results/phase-25-escape.json` (seeds 1-48),
+`phase-25-escape-replication.json` (fresh seeds 109-156), measured by
+the panel-corrected instrument, judged after the panel per the
+registered sequencing. Every claim replicated.
+
+* **R1 PASSED**: 25 goldens behaviorally bit-identical before the
+  config refresh; the kill switch kills where it must bite and is
+  vacuous under an infinite eye; suite green at 99.
+* **R2 PASSED, both stages**: max residual exactly 0.0 against the
+  independent reconstruction (production physics, the gate rebuilt
+  from raw arrays, never the function under test).
+* **R3 PASSED, both stages**: witnesses 2296/2208/1529 (T/S/N), then
+  2211/2331/1557, floors 150; leavers 111/108/530, then 101/111/577,
+  floors 60 in S and N.
+* **R4 PASSED, both stages, the care-glue check**: witness leave
+  rate N 34.7 vs T 4.8 percent (+29.8 points, bar +10); replication
+  N 37.1 vs T 4.6 (+32.5). Care holds witnesses beside the gripped
+  at seven times the numb baseline's grip. The descriptive absentee
+  counts say the same thing from the other side: 3/7/407, then
+  3/5/472 (T/S/N): care all but empties the category of the beloved
+  gripped unseen.
+* **R5 PASSED, both stages: the rung is passed at Batson's own
+  test.** Abandonment among witnesses, S minus T: +0.6 points in
+  both stages (S 1.1 vs T 0.6; S 1.3 vs T 0.8 percent), against a
+  pass bar of +5 and a refuse bar of +15. Agents whose compassion
+  genuinely switches off when they walk beyond sight (the escape is
+  real and relieving, R2) do not walk away more than agents whose
+  compassion follows them everywhere. In this arena, staying is not
+  the jail of present distress: E2, the aversive-arousal account of
+  helping, is dead here. Numb abandonment runs 15.2 and 16.5
+  percent: an order of magnitude above either care arm.
+* **R6 PASSED, both stages: the return.** Leaver return, S minus N:
+  +20.6 points (76.9 vs 56.2 percent) and +16.6 (72.1 vs 55.5), bar
+  +10. Beyond sight the S leaver's felt state is exactly the numb
+  leaver's (R2's identity: pure separation), yet it turns around for
+  the gripped beloved far more often. The excess is carried by the
+  lagged weight alone: the echo of witnessed suffering, the one
+  law's own memory trace. No rule prices it, no rule says remember;
+  the lag is the fidelity. The full ordering is T 88.3/83.2 above S
+  76.9/72.1 above N 56.2/55.5: telepathy above echo above
+  separation, exactly the informational gradient the arms built.
+* **R7, the cost ledger, measured**: witnesses die at 44 to 51
+  percent in every arm (the mire's edge is a killing floor), and the
+  care arms pay MORE: witness mortality T 48.4/47.1 and S 50.6/48.2
+  vs N 44.3/46.3 percent. What the payment buys: gripped extraction
+  T 47.0/47.3 and S 44.6/46.4 vs N 38.2/36.6 percent; gripped
+  mortality T 51.0/51.3 and S 54.3/52.2 vs N 59.5/60.5. Care
+  transfers survival from the witness to the gripped. Helping is
+  costly here, and the cost is paid overwhelmingly by those who
+  stay.
+* **The instrument lesson, recorded beside phase 24's**: the voided
+  first run had R6 FAILING with an inverted sign, entirely by
+  instrument defect: corpses counted as deserters and foreclosed
+  episodes counted as returns. A false refutation of the phase's
+  most delicate claim was one unread panel report away from the
+  record. The dead cannot desert; the instrument must know it.
+
+**What is claimed, and what is not.** Sufficiency language only: in
+this arena, with this agent, escapable compassion produces no extra
+abandonment (rung 2 passed, E2 killed), and concern demonstrably
+outlives its stimulus through the lag law's echo (the return). Not
+claimed: true altruism, selflessness, or any motive beyond the
+agent's own ledger; the desire remains owned, its object remains the
+other, which is Butler's point and the most this architecture can
+say. Rung 3 stays declared unrunnable (no organ holds the unseen
+other), rung 4 stays thrice-refused, and rung 5, the birth of care,
+is the arc's registered destination.
+
 ## Non-goals
 
 The remembered beloved (rung 3's organ), heritable care, differential
