@@ -108,3 +108,44 @@ claims here are population-level.
   tripwire fired on this phase's own comments for containing the
   ledger's name; the prose was reworded rather than the scan
   weakened.
+
+
+## Results, recorded 2026-07-29: the tragedy of the told commons
+
+Artifacts: `results/phase-22-told.json` (seeds 1-24),
+`phase-22-told-replication.json` (fresh seeds 31-54). Judged exactly
+as declared, and two of three registered stories were refused with
+inverted signs:
+
+* **B2 FAILED both stages, sign inverted, and the refusal is the
+  finding**: the channel fed individuals beyond any doubt, 80,021
+  and 65,696 true settlements against a floor of 500, and the
+  telling worlds still starved MORE: 0.474 against 0.350, then 0.533
+  against 0.375, the rumor network costing 12.4 and 15.9 points of
+  survival. Honest, accurate, well-meant word of mouth raised famine
+  mortality by a third, replicated.
+* **B3 FAILED both stages, sign inverted**: told slots disappointed
+  at 0.496 and 0.499 against owned slots' 0.667 and 0.655. Hearsay
+  is FRESHER than memory. Post hoc, flagged: what gets told is each
+  teller's freshest slot, so transmission curates, while private
+  memory carries its whole stale tail. The channel transmits the
+  best of every mind and still kills the crowd that listens.
+* **B4 PASSED both stages, promoted**: mean credence toward tellers
+  whose tips settled true, 0.333 and 0.344, against 0.103 and 0.104
+  toward the stale-voiced: gaps 0.230 and 0.240 against the 0.15
+  bar, built purely from lived settlements. Gossip prices its
+  sources.
+* **The post hoc mechanism, flagged, unclaimed, and the next
+  registration's target**: synchronization. Rumors concentrate
+  foragers onto the same few freshest patches; the patch pays
+  whoever arrives first and burns everyone else's travel; ignorant
+  populations spread out and harvest the commons asynchronously.
+  If that is the mechanism, telling should measurably concentrate
+  the population (co-arrival rates, pairwise distances), which is a
+  declared follow-up, not run. Whatever the mechanism, the measured
+  fact stands at full volume: in this arena, a society of honest
+  tellers starves faster than a society of the ignorant, while its
+  reputation system works exactly as designed.
+* The sentence the phase earns, and the Xhosa road just got darker:
+  no false prophecy is needed to starve a society on words. Synchrony
+  alone can do it, with every single rumor true.
