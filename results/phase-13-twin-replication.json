@@ -1,0 +1,4109 @@
+{
+  "spec": "specs/phase-13.md severed-twin addendum",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "14b24b2ff71ca332b86c429672e5547242993ea46f5b49fb020fffaf338a8248",
+    "git_sha": "6d808c0c3e1121e88444c0fd0372c9c4dc53fad6",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-29T03:13:33+00:00"
+  },
+  "seeds": [
+    241,
+    242,
+    243,
+    244,
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268,
+    269,
+    270,
+    271,
+    272,
+    273,
+    274,
+    275,
+    276,
+    277,
+    278,
+    279,
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287,
+    288,
+    289,
+    290,
+    291,
+    292,
+    293,
+    294,
+    295,
+    296,
+    297,
+    298,
+    299,
+    300,
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308,
+    309,
+    310,
+    311,
+    312,
+    313,
+    314,
+    315,
+    316,
+    317,
+    318,
+    319,
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    344,
+    345,
+    346,
+    347,
+    348,
+    349,
+    350,
+    351,
+    352,
+    353,
+    354,
+    355,
+    356,
+    357,
+    358,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    367,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378,
+    379,
+    380,
+    381,
+    382,
+    383,
+    384,
+    385,
+    386,
+    387,
+    388,
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    397,
+    398,
+    399,
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407,
+    408,
+    409,
+    410,
+    411,
+    412,
+    413,
+    414,
+    415,
+    416,
+    417,
+    418,
+    419,
+    420,
+    421,
+    422,
+    423,
+    424,
+    425,
+    426,
+    427,
+    428,
+    429,
+    430,
+    431,
+    432,
+    433,
+    434,
+    435,
+    436,
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    448,
+    449,
+    450,
+    451,
+    452,
+    453,
+    454,
+    455,
+    456,
+    457,
+    458,
+    459,
+    460,
+    461,
+    462,
+    463,
+    464,
+    465,
+    466,
+    467,
+    468,
+    469,
+    470,
+    471,
+    472,
+    473,
+    474,
+    475,
+    476,
+    477,
+    478,
+    479,
+    480
+  ],
+  "rows": [
+    {
+      "arm": "kept",
+      "seed": 241,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 242,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 243,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 244,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 6,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 245,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 246,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 247,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 248,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 249,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 250,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 251,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 252,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 253,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 254,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 255,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 256,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 257,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 258,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 259,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 260,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 261,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 262,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 263,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 264,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 265,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 266,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 267,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 268,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 269,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 270,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 271,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 272,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 273,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 274,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 275,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 276,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 277,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 278,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 279,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 280,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 281,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 282,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 283,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 284,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 285,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 286,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 287,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 288,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 289,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 290,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 291,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 292,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 293,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 294,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 295,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 296,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 297,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "kept",
+      "seed": 298,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 299,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 300,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 301,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 302,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 303,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 304,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 305,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 306,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 307,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 308,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 309,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 310,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 311,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 312,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 313,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 314,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 315,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 316,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 317,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 318,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 319,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 320,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 321,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 322,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "kept",
+      "seed": 323,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 324,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 325,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 326,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 327,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 328,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 329,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 330,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 331,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 332,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 333,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 334,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 335,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 336,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 337,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 338,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 339,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 340,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 341,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "kept",
+      "seed": 342,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 343,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 344,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 345,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 346,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 347,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 348,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 349,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 350,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 351,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 352,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 353,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 354,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 355,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 356,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 357,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 358,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 359,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 360,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 361,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 362,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 363,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "kept",
+      "seed": 364,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 365,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 366,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 367,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 368,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 369,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 370,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 371,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 372,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 373,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 374,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 375,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 376,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 377,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 378,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 379,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 380,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 381,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 382,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 383,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 384,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 385,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 386,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 387,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 388,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 389,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 390,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 391,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 392,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 393,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 394,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 395,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 396,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 397,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 398,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 399,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 400,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 401,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 402,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 403,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 404,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 405,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 406,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 407,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 408,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 409,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 410,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 411,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 412,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 413,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 414,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 415,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 416,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 417,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 418,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 4,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 419,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 420,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 421,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 422,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 423,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 424,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 425,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 426,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 427,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 428,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 429,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 430,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 431,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 432,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 433,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 434,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 435,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 436,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 437,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 438,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 439,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 440,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 441,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 442,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 443,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 444,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 445,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 446,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 447,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 448,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 449,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 450,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 4,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 451,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 452,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 453,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 454,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 455,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "kept",
+      "seed": 456,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 457,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 458,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 459,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 460,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 461,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 462,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 463,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 464,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 465,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 466,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 467,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 468,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 469,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 470,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 471,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 472,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "kept",
+      "seed": 473,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 474,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 475,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 476,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "kept",
+      "seed": 477,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 478,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 479,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "kept",
+      "seed": 480,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 241,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 242,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 243,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 244,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 6,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 245,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 246,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 247,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 248,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 249,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 250,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 251,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 252,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 253,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 254,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 255,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 256,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 257,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 258,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 259,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 260,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 261,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 262,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 263,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 264,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 265,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 266,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 267,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 268,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 269,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 270,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 271,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 272,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 273,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 274,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 275,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 276,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 277,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 278,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 279,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 280,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 281,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 282,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 283,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 284,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 285,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 286,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 287,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 288,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 289,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 290,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 291,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 292,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 293,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 294,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 295,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 296,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 297,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 298,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 299,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 300,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 301,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 302,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 303,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 304,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 305,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 306,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 307,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 308,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 309,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 310,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 311,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 312,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 313,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 314,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 315,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 316,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 317,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 318,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 319,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 320,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 321,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 322,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 323,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 324,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 325,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 326,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 327,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 328,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 329,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 330,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 331,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 332,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 333,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 334,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 335,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 336,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 337,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 338,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 339,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 340,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 341,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "severed",
+      "seed": 342,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 343,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 344,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 345,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 346,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 347,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 348,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 349,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 350,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 351,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 352,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 353,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 354,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 355,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 356,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 357,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 358,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 359,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 360,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 361,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 362,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 363,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "severed",
+      "seed": 364,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 365,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 366,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 367,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 368,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 369,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 370,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "severed",
+      "seed": 371,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 372,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 373,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 374,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 375,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 376,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 377,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 378,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 379,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 380,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 381,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 382,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 383,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 384,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 385,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 5,
+      "vigil_dead": 4,
+      "vigil_starved": 4
+    },
+    {
+      "arm": "severed",
+      "seed": 386,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 387,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 388,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 389,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 390,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 391,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 392,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 393,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 394,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 395,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 396,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 397,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 398,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 399,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 400,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 401,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 402,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 403,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 404,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 405,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 406,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 407,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 408,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 409,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 410,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 411,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 412,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 413,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 414,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 415,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 416,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 417,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 418,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 4,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "severed",
+      "seed": 419,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 420,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 421,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 422,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 3,
+      "vigil_starved": 3
+    },
+    {
+      "arm": "severed",
+      "seed": 423,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 424,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 425,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 426,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 427,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 428,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 429,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 430,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 431,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 432,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 433,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 434,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 435,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 436,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 437,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 438,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 439,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 440,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 441,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 442,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 443,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 444,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 445,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 446,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 447,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 448,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 449,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 450,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 4,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 451,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 452,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 453,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 454,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 455,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 456,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 457,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 458,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 459,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 460,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 461,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 462,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 463,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 464,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 465,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 466,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 467,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 468,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 469,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 470,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 471,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 472,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 3,
+      "vigil_dead": 2,
+      "vigil_starved": 2
+    },
+    {
+      "arm": "severed",
+      "seed": 473,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 474,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 475,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 476,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 477,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 2,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 478,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 0,
+      "vigil_dead": 0,
+      "vigil_starved": 0
+    },
+    {
+      "arm": "severed",
+      "seed": 479,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    },
+    {
+      "arm": "severed",
+      "seed": 480,
+      "config_hash": "a9b025b41b78211f2290ba2dff941c9a111c037330c162c0c6db60dda4b8834f",
+      "n_vigil": 1,
+      "vigil_dead": 1,
+      "vigil_starved": 1
+    }
+  ],
+  "V1": {
+    "n_vigil": 232,
+    "passed": true
+  },
+  "V2": {
+    "starved_kept": 0.44396551724137934,
+    "starved_severed": 0.47413793103448276,
+    "excess_points": -3.0172413793103425,
+    "passed": false
+  },
+  "V3": {
+    "dead_kept": 0.4482758620689655,
+    "dead_severed": 0.47413793103448276
+  }
+}

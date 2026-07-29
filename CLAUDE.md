@@ -134,6 +134,18 @@ wonder is off or memory absent, SEEK_NOVEL is structurally dominated
 (it pays every cost of wandering and collects no prize) and is never
 selected: inertness by arithmetic, tested as such.
 
+### The default-world decision (recorded 2026-07-29)
+
+The omniscient, memoryless, wonder-less default is the PERMANENT
+reference frame of the golden chain. It will not be flipped to a
+sighted default: doing so would regenerate every golden rather than
+refresh them, severing the bit-identity lineage that reaches back to
+phase 1, and buying nothing, because experiments opt into sight,
+memory, wonder, and the quest per registered spec, arena by arena.
+The default world is the control the corpus measures itself against;
+the sighted world is where its societies now live. Both sentences
+are permanent.
+
 ### State layout
 
 Agent state lives in structure-of-arrays (`numpy`), not object-per-agent. Agent logic is written as readable functions over array slices. This is not premature optimisation: Phase 5 requires thousands of runs at 10k+ agents, and object-per-agent makes that infeasible. Do not refactor to OOP agents.
