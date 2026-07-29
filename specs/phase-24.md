@@ -94,3 +94,69 @@ mortality patterns, not individual drama.
   the sharpest risk class (stale cross-references into reborn slots)
   was already swept in-house; any confirmed finding triggers a fix
   commit before any G verdict is judged.
+
+
+### Protocol run 1, recorded 2026-07-29: the instrument was blind to its subject
+
+G2 reported zero births beside a birth-arm population held at the
+full 4800 through a famine that killed a third of the birthless twin
+(ratios 1.56 and 1.69 against the 1.2 bar): a contradiction that
+diagnoses itself. Births backfill cradles in the SAME step as
+deaths, so no between-tick alive snapshot ever shows the vacancy,
+and the counter watching alive-flips saw nothing. G2 and G3 are VOID
+by instrument blindness, mine, recorded; G4's measurement is real
+(mean tau_safety -0.9 and -1.6 percent against the -10 bar) and is
+held unjudged until the corrected instrument reruns everything
+together. The corrected detector: a birth is a trait change, which
+happens nowhere else by the write-site tripwires themselves: the
+tripwire architecture doubles as the instrument's ground truth. Same
+registration, same bars, corrected eyes.
+
+### Panel results and fixes, recorded 2026-07-29
+
+Ten agents, zero stalls: four clean verifications banked (energy
+conservation exact to the float, pairing correct in both mismatch
+directions, agent streams untouched by the birth-stream spawn,
+ProcessPool replay bit-identical) and four minors. Fixed: the
+novelty clock now resets at birth (behaviorally inert, the panel
+itself proved the stale value was overwritten before any read, so
+the protocol runs stand valid; the contract's letter is honored),
+and a validity guard rejects configs where the threshold cannot
+cover the cost (registered arenas unaffected). Declared rather than
+changed: the child is born mid-stride, facing where its parent
+faced, a correlation the wander redraw dissolves within tens of
+ticks: adopted semantics, since redrawing the heading would consume
+a birth-stream draw and invalidate the completed protocol for a
+cosmetic gain. The no-cooldown fountain was confirmed to be exactly
+what the spec registered, bounded in practice by energy recovery at
+about one birth per two ticks.
+
+## Results, recorded 2026-07-29: the loop lives, the channel carries, the world does not yet breed
+
+Artifacts: `results/phase-24-birth.json` (seeds 1-24),
+`phase-24-birth-replication.json` (fresh seeds 31-54), measured by
+the corrected instrument (births are trait changes; the first
+instrument's blindness is recorded above). Judged as declared, after
+the panel, per the sequencing promise:
+
+* **G2 PASSED, replicated**: 1031 and 1079 births against a floor of
+  500; birth-arm populations held at the full 4800 through famines
+  that cut the birthless twins to 3079 and 2839 (ratios 1.56 and
+  1.69 against 1.2). The same-tick backfill that blinded the first
+  instrument is the mechanism's signature: cradles refill before any
+  snapshot can see the vacancy.
+* **G3 PASSED, replicated**: parent-child rho on the fear clock
+  0.978 and 0.970 against a bar of 0.8, over 471 and 660 attributed
+  births through the exact position-kinship proxy. Inheritance is
+  near-perfect transmission under a lognormal blur.
+* **G4 FAILED, replicated, and the refutation clause fires at its
+  promised volume**: mean tau_safety moved -0.9 and -1.6 percent
+  against the demanded -10. At these coordinates selection is
+  decorative: ambient drifting hazards at a population held at cap
+  kill too few and too indiscriminately to write phase 5's autopsy
+  into the generations. Slow fear died under sudden storms; a world
+  that breeds quick fear needs recurring sudden mortality with a
+  tau-selective signature, a future registration, not run.
+* The capability roadmap completes with this phase: the corpus can
+  now sustain societies whose minds are heritable, and the first
+  thing the generational ledger recorded is a refusal.

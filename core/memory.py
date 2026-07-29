@@ -393,7 +393,7 @@ def has_believers(memory):
     return bool(memory.prom_active.any())
 
 
-def reset_agent(memory, idx):
+def reset_agent(memory, idx, tick=0):
     """A fresh mind for a reborn slot (Amendment 10): no places, no
     lifetime map, no faith, no spent faith, clock born now. And the
     dead stay dead: every told slot sourced from the former occupant
@@ -407,6 +407,7 @@ def reset_agent(memory, idx):
     memory.prom_active[idx] = False
     memory.prom_from[idx] = -1
     memory.prom_settled[idx] = False
+    memory.mem_last_novel[idx] = tick
     stale = memory.mem_source == idx
     memory.mem_told[stale] = False
     memory.mem_source[stale] = -1

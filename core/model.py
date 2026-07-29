@@ -174,6 +174,10 @@ class Model:
             mutual = (proposed >= 0) & (proposed[np.where(proposed >= 0, proposed, 0)] == idx)
             self.arrays.partner[:] = np.where(mutual, proposed, -1)
             self.arrays.bond[self.arrays.partner < 0] = 0.0
+        if (config.birth_threshold > 0.0
+                and config.birth_threshold < config.birth_cost):
+            raise ValueError("birth_threshold must cover birth_cost, or "
+                             "parents survive a tick at negative energy")
         self._draw_block = None
         self._draw_cursor = 0
         self.tick = 0
@@ -386,7 +390,7 @@ class Model:
         if self.birth_rngs is not None:
             for _, child in apply_births(self.arrays, cfg, self.birth_rngs):
                 if self.memory is not None:
-                    reset_memory_agent(self.memory, child)
+                    reset_memory_agent(self.memory, child, self.tick)
                 if self.social is not None:
                     reset_social_agent(self.social, child, cfg)
         update_world(self.world, cfg, self.world_rng)
