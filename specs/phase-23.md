@@ -133,3 +133,51 @@ the matched controls are drawn within-arm.
   any run length, and the settle-then-eat sequencing at the hour is
   sound. The blind-to-the-mind tripwire fired once more on this
   phase's own comment naming the ledger; reworded, scan untouched.
+
+
+## Results, recorded 2026-07-29: the faithful who came paid; the prophets did not
+
+Artifacts: `results/phase-23-promise.json` (seeds 1-24),
+`phase-23-promise-replication.json` (fresh seeds 31-54). Judged
+exactly as declared, with one instrument defect owned in print:
+
+* **X2 PASSED, replicated**: the prophecy reached 0.714 and 0.667 of
+  the world by the hour against a bar of 0.5, on earned credence
+  alone, mouth to mouth from five seeds.
+* **X3 FAILED, replicated**: site occupancy in the vigil window ran
+  1.2x the no-prophecy arm against a bar of 5. The vigil exists as a
+  cohort and does not dominate the site: roughly six keepers per
+  world of two hundred, swamped by ordinary nest traffic. The
+  registered bar overestimated how visible faith would be from
+  orbit; the cohort accounting below is where it shows.
+* **X4, the Xhosa number**: the existence clause PASSED, 145 and 141
+  pooled vigil-keepers against a bar of 50. The never-believer
+  excess is VOID by an instrument defect that is mine: never
+  believing is death-selected (dying early is the surest way to
+  never be told), so that control starved at 1.000 in every arm and
+  matches nothing; recorded, not used. The REGISTERED pairing
+  carries the result, and it is clean because the dormant-burst
+  design made the arms stream-identical until the hour: the same
+  keepers, same seeds, same minds, starved at 0.124 and 0.064 when
+  the promise broke against 0.014 and 0.014 when it was kept. The
+  price of the unkept promise, among the faithful who came, is +11.0
+  and +5.0 points of starvation, replicated in sign, on identical
+  worlds that differed only in whether the story was true.
+* **X5 FAILED, replicated, and the failure is the darkest line in
+  the phase**: mouth credence moved -0.006 and -0.004 against a
+  demanded drop of 0.15: the prophets went essentially unpunished.
+  Post hoc, flagged: settlement requires witness, only the ~145 who
+  kept the vigil ever saw the emptiness, and the mouths of the
+  stay-at-home faithful were never billed. In this architecture an
+  unkept prophecy is nearly free to spread, because most believers
+  never go and look. The declared follow-up, not run: the
+  partial-spread arena (tighter credence gates) where the
+  never-believer control is constructible and the witness fraction
+  varies.
+* The sentence the phase earns, and the dossier road now has its
+  cornerstone: a society of honest minds caught a story on earned
+  trust, a rememberable few walked to the promised field and starved
+  beside it at eight times the rate of their twins in the world
+  where the story was true, and the voices that spread it lost
+  nothing, because faith unexamined cannot be billed. No rule in the
+  code names any of this.
