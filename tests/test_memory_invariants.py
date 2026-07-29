@@ -18,7 +18,8 @@ def _attr_refs(path, attrs):
 
 
 MEM_ATTRS = ("mem_x", "mem_y", "mem_seen", "mem_last_novel", "mem_visited",
-             "mem_told", "mem_source")
+             "mem_told", "mem_source", "prom_active", "prom_from",
+             "prom_settled")
 
 
 def test_only_memory_touches_memory():

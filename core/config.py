@@ -141,6 +141,18 @@ class Config:
     # social organ, sight, and memory to exist at all.
     tell_places: bool = False
     tell_threshold: float = 0.5
+    # The promised place (phase 23, Amendment 9): the prophecy as
+    # apparatus, the storm's informational twin. tick -1 is off,
+    # bit-inert; the mechanism also requires telling, social, sight,
+    # and memory to exist at all.
+    prophecy_tick: int = -1
+    prophecy_nest: int = 0
+    prophecy_size: float = 0.3
+    prophecy_seed_tick: int = 500
+    prophecy_seeds: int = 5
+    prophecy_true: bool = False
+    prophecy_burst: int = 20
+    prophecy_grace: int = 50
 
     def config_hash(self) -> str:
         # Canonical JSON with sorted keys, so the hash is stable across

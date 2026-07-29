@@ -37,6 +37,11 @@ class PlaceMemory:
     mem_told: np.ndarray        # (n, slots) True = secondhand slot
                                 # (Amendment 8)
     mem_source: np.ndarray      # (n, slots) teller index; -1 = own
+    prom_active: np.ndarray     # (n,) holds the promise (Amendment 9)
+    prom_from: np.ndarray       # (n,) the mouth it came from; -1 none
+    prom_settled: np.ndarray    # (n,) faith already spent: one faith
+                                # per prophecy (phase 23 review fix:
+                                # the reputation pump)
     pending: list = field(default_factory=list)  # settlement events
                                 # (listener, teller, score) awaiting
                                 # social.py's law
@@ -59,6 +64,9 @@ def make_memory(n, config):
         mem_visited=np.zeros((n, g, g), dtype=bool),
         mem_told=np.zeros((n, k), dtype=bool),
         mem_source=np.full((n, k), -1, dtype=np.int64),
+        prom_active=np.zeros(n, dtype=bool),
+        prom_from=np.full(n, -1, dtype=np.int64),
+        prom_settled=np.zeros(n, dtype=bool),
     )
 
 
@@ -288,3 +296,98 @@ def hear_places(memory, arrays, config, eligible, tick):
     memory.mem_seen[li, c2] = t_seen[tj]
     memory.mem_told[li, c2] = True
     memory.mem_source[li, c2] = tj
+
+
+def promise_step(memory, arrays, world, config, eligible, site_x, site_y,
+                 tick):
+    """The promised place (Amendment 9). Seeding at the declared tick
+    into the lowest-indexed living mouths; spread on the telling
+    channel (a listener with no promise accepts from the
+    lowest-indexed eligible believer); settlement against the
+    listener's own eyes at the site, TRUE through the burst being
+    seen, FALSE at expiry in sight of emptiness. Faith is sticky.
+    Deterministic, no RNG; events flow out on the pending list."""
+    n = arrays.alive.size
+    if tick == config.prophecy_seed_tick:
+        alive_idx = np.flatnonzero(arrays.alive)[:config.prophecy_seeds]
+        memory.prom_active[alive_idx] = True
+        memory.prom_from[alive_idx] = -1  # the apparatus has no name
+    if not memory.prom_active.any():
+        return
+    # Spread: eligible mask restricted to believing tellers; first
+    # (lowest-indexed) believer per listener tells. Spent faith is
+    # immune: one faith per prophecy (review fix: the pump).
+    if eligible is not None:
+        offer = eligible & memory.prom_active[None, :]
+        can_hear = (arrays.alive & ~memory.prom_active
+                    & ~memory.prom_settled & offer.any(axis=1))
+        if can_hear.any():
+            teller = offer.argmax(axis=1)
+            li = np.flatnonzero(can_hear)
+            memory.prom_active[li] = True
+            memory.prom_from[li] = teller[li]
+    # Settlement, from the hour to the grace edge. TRUE settles only
+    # against food the believer's own eyes could hold (review fix:
+    # faith settled on scenery): active food standing within the ring
+    # of the site while the believer has the site in sight. A kept
+    # promise a believer arrives too late to witness settles 0 at the
+    # grace edge like any emptiness: the listener's evidence governs.
+    if config.prophecy_tick <= tick <= config.prophecy_tick + config.prophecy_grace:
+        d_site = np.hypot(
+            _torus_delta(arrays.x - site_x, config.world_size),
+            _torus_delta(arrays.y - site_y, config.world_size))
+        looking = memory.prom_active & arrays.alive & (
+            d_site <= arrays.r_sight)
+        active = world.food_timer == 0
+        feast = False
+        if active.any():
+            fd = np.hypot(
+                _torus_delta(world.food_x[active] - site_x,
+                             config.world_size),
+                _torus_delta(world.food_y[active] - site_y,
+                             config.world_size))
+            feast = bool((fd <= 3.0 + config.r_eat).any())
+        if looking.any() and feast:
+            for i in np.flatnonzero(looking):
+                if memory.prom_from[i] >= 0:
+                    memory.pending.append(
+                        (int(i), int(memory.prom_from[i]), 1.0))
+            memory.prom_active[looking] = False
+            memory.prom_from[looking] = -1
+            memory.prom_settled[looking] = True
+        elif tick == config.prophecy_tick + config.prophecy_grace and looking.any():
+            for i in np.flatnonzero(looking):
+                if memory.prom_from[i] >= 0:
+                    memory.pending.append(
+                        (int(i), int(memory.prom_from[i]), 0.0))
+            memory.prom_settled[looking] = True
+    if tick == config.prophecy_tick + config.prophecy_grace:
+        memory.prom_settled[memory.prom_active] = True
+        memory.prom_active[:] = False
+        memory.prom_from[:] = -1
+
+
+def promise_percept(memory, arrays, config, site_x, site_y):
+    """Distance and unit direction to the promised site, for believers
+    only; infinity and zero for everyone else."""
+    dx = _torus_delta(np.full(arrays.alive.size, site_x) - arrays.x,
+                      config.world_size)
+    dy = _torus_delta(np.full(arrays.alive.size, site_y) - arrays.y,
+                      config.world_size)
+    d = np.hypot(dx, dy)
+    safe = np.maximum(d, 1e-12)
+    believer = memory.prom_active & arrays.alive
+    # Arrival radius (review fix: the oscillating vigil): within one
+    # step of the site the direction is zero and the believer WAITS,
+    # stationary, instead of bouncing across the point forever.
+    arrived = d <= 1.0
+    return (np.where(believer, d, np.inf),
+            np.where(believer & ~arrived, dx / safe, 0.0),
+            np.where(believer & ~arrived, dy / safe, 0.0))
+
+
+def has_believers(memory):
+    """True when any promise is held; the model asks here so the
+    chokepoint scan stays airtight (no prom_ reference leaves this
+    file)."""
+    return bool(memory.prom_active.any())

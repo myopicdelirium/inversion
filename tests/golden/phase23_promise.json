@@ -1,5 +1,5 @@
 {
-  "description": "the world you know: sighted, remembering agents in the famine arena; capability golden, no finding",
+  "description": "the promised place: a false prophecy live in a farsighted telling world; capability golden, no finding",
   "seed": 42,
   "ticks": 3000,
   "config": {
@@ -9,7 +9,7 @@
     "r_eat": 2.0,
     "gain_eat": 0.3,
     "food_respawn": 10,
-    "n_hazard": 3,
+    "n_hazard": 0,
     "r_hazard": 8.0,
     "damage_rate": 0.02,
     "regen_rate": 0.001,
@@ -22,7 +22,7 @@
     "speed": 1.0,
     "init_energy": 0.8,
     "wander_gain": 0.004,
-    "prospect_horizon": 0,
+    "prospect_horizon": 60,
     "prospect_sees_grip": false,
     "record_every": 10,
     "bond_target": "nest",
@@ -52,7 +52,7 @@
     "tau_safety_spread": 0.0,
     "tau_bond_spread": 0.0,
     "bond_init_spread": 0.0,
-    "r_social": 0.0,
+    "r_social": 8.0,
     "tau_cred": 24.0,
     "r_sight": 12.0,
     "r_sight_spread": 0.0,
@@ -70,9 +70,9 @@
     "testimony": 0.0,
     "cred_init": 0.5,
     "cred_floor": 0.01,
-    "tell_places": false,
+    "tell_places": true,
     "tell_threshold": 0.5,
-    "prophecy_tick": -1,
+    "prophecy_tick": 2000,
     "prophecy_nest": 0,
     "prophecy_size": 0.3,
     "prophecy_seed_tick": 500,
@@ -81,25 +81,25 @@
     "prophecy_burst": 20,
     "prophecy_grace": 50
   },
-  "config_hash": "eeb7b414c3ad962ae906415479dae27c75276beababd56a9e0bcc7a8efab7314",
-  "sha256": "e2e18d4419f48f0c8e34f9364fc2cc1ef80749f1185f981d2b1ee60ed9a82a7f",
+  "config_hash": "94def7d41832597bf74cf37e415d175098936b787f25eca6294988887200e714",
+  "sha256": "71a09ed4cc1f6da63e178d297aaf9f0277fbfa5a82458f669f0dad723d871ddd",
   "array_sha256": {
-    "x": "11f8a9cdc0232ab44a456e5e74160b4d32858697a834f1df8067609e40029037",
-    "y": "34d899ca38bf43f418fb639d0079cfcbfcf8035e8404bbd52d837b2db4a54caf",
-    "energy": "9de3d016bcfea2584039b7de53d06b4bd14f3a1930edd00988954190d680631e",
-    "integrity": "499616dbe72bdb30d40cdba58932831db66ccfe9f7647265d0055ff6823ed7f3",
-    "fatigue": "c3f2b58ca07637e4620f56e204e62f18345f149dded56683d5e8944f57a8a42a",
-    "weights": "ec2374934e5f1887a47cd8dc8f3def0596e5e215b10531bfc4dc4f4005f4970b",
-    "urgency": "65caa022e6299f655ae59a17d73b21219880413681c2bffde2476340d3b525ef",
-    "bond": "5021414505c365599b9a7be895871a666b170bc7ce1f1037da9fb2e440d7d993",
-    "alive": "3f9d1ed98da1281071e57f38f5ac5a22c3a591b42fc33bec021c86bb5a7eb140"
+    "x": "71af3dfc8f0decc6e8e4048d582d220b788b9b8d304179c3811feb63e6275923",
+    "y": "99ba5af268e1fd75b80522b2c9711a3b402c53fb3f6bcb1a21232dd0699900e2",
+    "energy": "e6f631bd42f2ee408c95d939bb421742902f23916eeca6d1e941817fbedc68aa",
+    "integrity": "317472350e74f975428e2f205d1c0a71d1f1217c3e9de83b550e09c624fbd9ed",
+    "fatigue": "d5e579c782ae99ee02f7b95b64cf4d252816a811781644ee8f5467bb0cac8d6f",
+    "weights": "f7104547cdfc6de8a3c730e4a82222bf2fa4b4143a366b04bbbbc4c293f540a8",
+    "urgency": "2c46f99329c4ae771bc3fcfa0cee19f53ffe43b03529941e58331a8bf63d9379",
+    "bond": "d811e3476bc4ca7cb83a233bb892a17e64402d730092d785fbe22cc2486c9f13",
+    "alive": "7e9b53059dfc17d891e18b262121abff9d2baafbbf2fe2e62d843b1c7ff65847"
   },
   "manifest": {
     "seed": 42,
-    "config_hash": "211153231c5916fbfa9eb41841e973e75cd8f0491d54b3262d9c5003aba74f10",
-    "git_sha": "c4b81c9c1c37a90ec838a80a8a8e25beef83db68",
+    "config_hash": "94def7d41832597bf74cf37e415d175098936b787f25eca6294988887200e714",
+    "git_sha": "4454501bca940b2abc6fda583b0201044c533ebf",
     "python": "3.11.13",
     "numpy": "2.4.6",
-    "timestamp_utc": "2026-07-27T17:37:21+00:00"
+    "timestamp_utc": "2026-07-29T13:30:14+00:00"
   }
 }

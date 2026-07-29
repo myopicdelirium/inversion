@@ -71,9 +71,17 @@
     "cred_init": 0.5,
     "cred_floor": 0.01,
     "tell_places": false,
-    "tell_threshold": 0.5
+    "tell_threshold": 0.5,
+    "prophecy_tick": -1,
+    "prophecy_nest": 0,
+    "prophecy_size": 0.3,
+    "prophecy_seed_tick": 500,
+    "prophecy_seeds": 5,
+    "prophecy_true": false,
+    "prophecy_burst": 20,
+    "prophecy_grace": 50
   },
-  "config_hash": "5403ac1f30bd4d78520c6c91df4510663021f407844016402945cff055d2d667",
+  "config_hash": "792f4a8e9227c364ba6580754e48fb1c19cafbb388a7878c20afd78759f764a6",
   "sha256": "a60650a01c2779a397a6039d8371b4e9fb14f59d7edb8cf6f8c7ba79c95a8e87",
   "array_sha256": {
     "x": "fd93b46689174eaa0f28e89ca801f774c6e4f114daa46524d63bd889fb997019",

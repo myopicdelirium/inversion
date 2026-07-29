@@ -8,7 +8,8 @@ import hashlib
 import numpy as np
 
 from .action import select_actions
-from .memory import (hear_places, make_memory, memory_step, novel_percept,
+from .memory import (has_believers, hear_places, make_memory, memory_step,
+                     novel_percept, promise_percept, promise_step,
                      take_events)
 from .social import (apply_belief_feedback, eligible_tellers, make_social,
                      social_step)
@@ -26,6 +27,7 @@ from .world import (
     apply_bond,
     apply_damage_and_deaths,
     apply_eating,
+    deliver_promise,
     perceive_danger,
     perceive_food,
     perceive_home,
@@ -168,6 +170,16 @@ class Model:
         self._draw_block = None
         self._draw_cursor = 0
         self.tick = 0
+        # The promised place (phase 23): the site is a nest, the
+        # storm's placement convention; resolved once at spawn.
+        self._prom_site = (0.0, 0.0)
+        if config.prophecy_tick >= 0:
+            if config.prophecy_nest >= config.n_nests:
+                raise ValueError("prophecy_nest requires n_nests > "
+                                 f"{config.prophecy_nest}")
+            self._prom_site = (
+                float(self.world.nest_x[config.prophecy_nest]),
+                float(self.world.nest_y[config.prophecy_nest]))
         # The social organ (phase 16): absent at r_social 0, bit-inert.
         self.social = (make_social(config.n_agents, config)
                        if config.r_social > 0 else None)
@@ -262,6 +274,16 @@ class Model:
         urgencies, weights, select, move, eat, damage and deaths,
         world updates."""
         cfg = self.config
+        # The apparatus keeps its word (Amendment 9): delivery wakes
+        # the dormant burst at the foretold hour, true arm only.
+        if (cfg.prophecy_tick >= 0 and cfg.prophecy_true
+                and self.tick == cfg.prophecy_tick
+                and cfg.tell_places and self.social is not None
+                and self.memory is not None):
+            # Delivery is gated on the organs (review fix): the
+            # apparatus keeps its word only in worlds where anyone
+            # could have believed it.
+            deliver_promise(self.world, cfg, *self._prom_site)
         active = self._hazards_active()
         storm = self._storm_intensity()
         danger, away_dx, away_dy, danger_scale = perceive_danger(
@@ -284,13 +306,25 @@ class Model:
         if self.social is not None:
             social_danger = social_step(self.social, self.arrays, cfg,
                                         danger, self.tick)
-        # The told place (Amendment 8): one telling per listener per
-        # tick, then the settlements this tick's perception produced
-        # flow back through the credence law.
-        if (cfg.tell_places and self.social is not None
-                and self.memory is not None):
+        # The told place (Amendment 8) and the promised place
+        # (Amendment 9): one eligibility mask serves both channels,
+        # then the settlements this tick produced flow back through
+        # the credence law.
+        organs = self.social is not None and self.memory is not None
+        eligible = None
+        if organs and cfg.tell_places:
             eligible = eligible_tellers(self.social, self.arrays, cfg)
             hear_places(self.memory, self.arrays, cfg, eligible, self.tick)
+        promise = None
+        if organs and cfg.tell_places and cfg.prophecy_tick >= 0:
+            promise_step(self.memory, self.arrays, self.world, cfg,
+                         eligible, self._prom_site[0],
+                         self._prom_site[1], self.tick)
+            if has_believers(self.memory):
+                pd, pdx, pdy = promise_percept(
+                    self.memory, self.arrays, cfg, *self._prom_site)
+                promise = (pd, pdx, pdy,
+                           max(0, cfg.prophecy_tick - self.tick))
         if self.memory is not None:
             events = take_events(self.memory)
             if events and self.social is not None:
@@ -306,6 +340,7 @@ class Model:
             food_dir=(food_dx, food_dy), away_dir=(away_dx, away_dy),
             target_dir=(target_dx, target_dy), danger_scale=danger_scale,
             grip_info=grip_info, partner_peril=peril, novel=novel,
+            promise=promise,
         )
 
         # Per agent: two draws per tick from the agent's own stream,
@@ -328,6 +363,7 @@ class Model:
             (food_dx, food_dy), (away_dx, away_dy), (target_dx, target_dy),
             (redraw_p, redraw_angle), grip,
             novel_dir=None if novel is None else (novel[1], novel[2]),
+            promise_dir=None if promise is None else (promise[1], promise[2]),
         )
         # Eating and bond accumulation use post-move positions.
         dist_after, _, _, food_id_after = perceive_food(self.arrays, self.world, cfg)

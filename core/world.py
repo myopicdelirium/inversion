@@ -10,7 +10,7 @@ import numpy as np
 from scipy.spatial import cKDTree
 
 from .action import (FLEE, REST_ACT, RETURN_HOME, SEEK_FOOD, SEEK_NOVEL,
-                     WANDER)
+                     SEEK_PROMISE, WANDER)
 
 
 @dataclass
@@ -29,6 +29,13 @@ class World:
 def spawn_world(config, world_rng):
     food_x = world_rng.random(config.n_food) * config.world_size
     food_y = world_rng.random(config.n_food) * config.world_size
+    # The promised place (Amendment 9): burst items exist dormant from
+    # spawn in BOTH prophecy arms (huge timer, no draws consumed), so
+    # true and false arms are stream-identical until the hour.
+    n_burst = config.prophecy_burst if config.prophecy_tick >= 0 else 0
+    if n_burst > 0:
+        food_x = np.concatenate([food_x, np.zeros(n_burst)])
+        food_y = np.concatenate([food_y, np.zeros(n_burst)])
     hazard_x = world_rng.random(config.n_hazard) * config.world_size
     hazard_y = world_rng.random(config.n_hazard) * config.world_size
     # Nests are drawn after food and hazards; with n_nests = 0 the
@@ -57,7 +64,10 @@ def spawn_world(config, world_rng):
     return World(
         food_x=food_x,
         food_y=food_y,
-        food_timer=np.zeros(config.n_food, dtype=np.int64),
+        food_timer=np.concatenate([
+            np.zeros(config.n_food, dtype=np.int64),
+            np.full(n_burst, np.int64(10 ** 9)),
+        ]),
         hazard_x=hazard_x,
         hazard_y=hazard_y,
         nest_x=nest_x,
@@ -247,7 +257,8 @@ def peril_at(xs, ys, world, config, hazards_active, storm_intensity):
 
 
 def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,
-                  heading_draws, speed_scale, novel_dir=None):
+                  heading_draws, speed_scale, novel_dir=None,
+                  promise_dir=None):
     """Per agent: redraw the wander heading with probability 0.05, then
     move one tick in the chosen action's direction at fatigue-scaled,
     grip-scaled speed. Resting agents do not move. Movement costs
@@ -283,20 +294,33 @@ def apply_actions(arrays, config, actions, food_dir, away_dir, home_dir,
         no_nov = (ndx == 0.0) & (ndy == 0.0)
         nov_dx = np.where(no_nov, head_dx, ndx)
         nov_dy = np.where(no_nov, head_dy, ndy)
+    # The promised place (Amendment 9): a believer within the arrival
+    # radius (zero direction) WAITS: stationary, off the moving mask,
+    # paying only the basal burn (review fixes: the oscillating vigil
+    # and the wait billed as movement).
+    if promise_dir is None:
+        prom_dx, prom_dy = head_dx, head_dy
+        prom_wait = np.zeros(arrays.alive.shape[0], dtype=bool)
+    else:
+        prom_dx, prom_dy = promise_dir
+        prom_wait = ((actions == SEEK_PROMISE)
+                     & (prom_dx == 0.0) & (prom_dy == 0.0))
 
     dir_x = np.select(
         [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
-         actions == RETURN_HOME, actions == SEEK_NOVEL],
-        [food_dx, away_dx, head_dx, home_dx, nov_dx],
+         actions == RETURN_HOME, actions == SEEK_NOVEL,
+         actions == SEEK_PROMISE],
+        [food_dx, away_dx, head_dx, home_dx, nov_dx, prom_dx],
         default=0.0,
     )
     dir_y = np.select(
         [actions == SEEK_FOOD, actions == FLEE, actions == WANDER,
-         actions == RETURN_HOME, actions == SEEK_NOVEL],
-        [food_dy, away_dy, head_dy, home_dy, nov_dy],
+         actions == RETURN_HOME, actions == SEEK_NOVEL,
+         actions == SEEK_PROMISE],
+        [food_dy, away_dy, head_dy, home_dy, nov_dy, prom_dy],
         default=0.0,
     )
-    moving = arrays.alive & (actions != REST_ACT)
+    moving = arrays.alive & (actions != REST_ACT) & ~prom_wait
     arrays.x[moving] = (arrays.x[moving] + v_eff[moving] * dir_x[moving]) % config.world_size
     arrays.y[moving] = (arrays.y[moving] + v_eff[moving] * dir_y[moving]) % config.world_size
 
@@ -365,3 +389,17 @@ def update_world(world, config, world_rng):
     if k > 0:
         world.food_x[respawning] = world_rng.random(k) * config.world_size
         world.food_y[respawning] = world_rng.random(k) * config.world_size
+
+
+def deliver_promise(world, config, site_x, site_y):
+    """The apparatus keeps its word (Amendment 9): the dormant burst
+    items wake on a declared ring around the promised site. RNG-free;
+    the false arm simply never calls this."""
+    n_burst = config.prophecy_burst
+    if n_burst <= 0:
+        return
+    k = np.arange(n_burst)
+    ang = 2.0 * np.pi * k / n_burst
+    world.food_x[-n_burst:] = (site_x + 3.0 * np.cos(ang)) % config.world_size
+    world.food_y[-n_burst:] = (site_y + 3.0 * np.sin(ang)) % config.world_size
+    world.food_timer[-n_burst:] = 0

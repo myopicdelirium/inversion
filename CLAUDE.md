@@ -153,6 +153,26 @@ arrays and receives tellings as percepts; feedback flows back as
 events, not writes. The intake is gated by tell_places, default
 off, bit-inert, like every capability since care.
 
+### Amendment 9: the promised place (phase 23)
+
+A belief can now be about the future. The promise, a place where
+abundance is foretold to arrive at a stated hour, enters the world
+only as declared apparatus, the informational twin of the storm: the
+experimenter seeds it into a few mouths, and everything after is
+emergent. It spreads on the existing telling channel, credence-gated
+mouth to mouth; each agent holds at most one active promise, and
+faith is sticky, held until settled. It is priced like everything
+else: the myopic table sees nothing until the hour arrives, so only
+foresight can wait for a prophecy, and the farsighted rollout prices
+the journey, the empty-handed wait, and the feast from the foretold
+hour, against hunger's meantime. When the hour comes the apparatus
+either delivers or does not, and an unkept promise settles every
+believer's teller at zero through the one credence law, cascading
+back along the chain it spread by. No rule names sacrifice, waiting,
+or faith: whoever starves beside the promised field was only ever
+pricing a future they were told about by someone they had learned
+to trust.
+
 ### The default-world decision (recorded 2026-07-29)
 
 The omniscient, memoryless, wonder-less default is the PERMANENT
