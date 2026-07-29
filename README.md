@@ -18,3 +18,12 @@ Inversion is never scripted. Survival is the base attractor; drives respond to b
 uv sync
 uv run pytest
 ```
+
+## Licensing
+
+Two licenses, by content type:
+
+- Code (`core/`, `scripts/`, `tests/`, `conftest.py`) is licensed under the Apache License 2.0. See `LICENSE`.
+- Specs, documentation, and results data (`specs/`, `docs/`, `results/`, `CLAUDE.md`, this file) are licensed under Creative Commons Attribution 4.0 International. See `LICENSE-CC-BY-4.0`.
+
+If you rerun a protocol or reuse the data, cite the repository; `CITATION.cff` carries the reference. Every registered protocol in `specs/` names its rerun command and its committed artifact so replication needs nothing beyond this repository.

@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or its published protocols and data, please cite it as below."
+title: "inversion"
+abstract: "A population-scale agent-based model in which agents develop commitments that can, under discoverable conditions, outrank their own survival. Pre-registered protocols, committed artifacts, and golden-run determinism for replication."
+authors:
+  - family-names: "Tinio"
+    given-names: "Felix"
+repository-code: "https://github.com/myopicdelirium/inversion"
+license: Apache-2.0
+date-released: "2026-07-29"
+version: "0.1.0"

@@ -2,6 +2,7 @@
 name = "inversion"
 version = "0.1.0"
 description = "Population-scale agent-based model of emergent preference inversion"
+license = "Apache-2.0"
 requires-python = ">=3.11"
 dependencies = [
     "numpy>=1.26",
