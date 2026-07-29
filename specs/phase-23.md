@@ -181,3 +181,95 @@ exactly as declared, with one instrument defect owned in print:
   where the story was true, and the voices that spread it lost
   nothing, because faith unexamined cannot be billed. No rule in the
   code names any of this.
+
+## Addendum, pre-registered 2026-07-29 before running: the reckoning at partial spread
+
+X4's control was death-selected and X5's bill was diluted across
+every acquaintance; this addendum fixes both instruments without
+touching a bar's meaning. Design checks (seed 96 only, peeks
+recorded): credence thresholds are a cliff, not a dial (0.5 spreads
+to 71 percent, 0.55 to nobody, because credence mostly decays from
+its initial value), so the partial-spread knob is TIME: seeding at
+tick 1500/1700/1850 yielded 35/29/15 percent belief with 5/17/44
+surviving never-believers. The registered arena seeds at tick 1700,
+hour 2000, otherwise the X-arena verbatim. Declared before running:
+
+* **P1, arena validity, kill switch**: pooled believed-by-hour
+  fraction within [0.10, 0.40], and at least 100 pooled
+  never-believers alive at the hour. Partial by construction, or the
+  addendum stops.
+* **P2, the corrected Xhosa excess**: at least 30 pooled
+  vigil-keepers (existence), with their starvation compared against
+  never-believers ALIVE AT THE HOUR (survivorship-matched at last),
+  excess reported unbarred; the true-arm pair reported beside it as
+  before.
+* **P3, the prophet pays, at the pairs that settled**: among promise
+  pairs whose listener stood within sight of the site at the grace
+  edge (the witnesses), credence drops at least 0.15 from its
+  hour-eve level, pooled, both stages. The unwitnessed pairs'
+  credence is reported beside it without bar: the Festinger contrast
+  made a measurement.
+* Fresh seeds 31-54 replication before packaging.
+
+### Partial-spread run 1 and the replacement stage, recorded 2026-07-29
+
+Run 1: P1 voided the MAIN stage on its own gate, believed 0.408
+against the [0.10, 0.40] window, a razor miss of the ceiling
+(sampling noise around a true fraction near 0.38); replication passed
+at 0.354 with 517 surviving never-believers. P2 and P3 main-stage
+numbers are reported in the artifact and NOT judged. Where valid
+(replication): P2 held, 124 keepers starving at 0.065 against
+surviving never-believers at 0.010 (+5.5 points), true-arm keepers
+at control levels (0.008 vs 0.012): the entire excess is the broken
+promise. P3 failed in BOTH stages regardless of validity (witness
+drop 0.084 and 0.037 against 0.15) and stands FAILED with no further
+bites: post hoc, flagged: the witnesses do get billed at 2.5x the
+unwitnessed, but 950 ticks of continued honest gossip partially
+repay the mouths. The prophet pays, then earns it back: reputational
+damage from unkept prophecy is transient while the mouth keeps
+giving good ordinary tips.
+
+The replacement stage, registered now: seeds 61-84, fresh and
+disjoint, identical arena and bars, replacing the stage that voided
+itself. Only P1 and P2 are judged on it; P3's verdict is already
+sealed by two failed stages and does not get a third look.
+
+### Partial-spread close, recorded 2026-07-29: one valid stage, uniform sign, no claim
+
+The replacement stage also failed P1 (believed 0.434 against the
+0.40 ceiling; 532 surviving never-believers). Three stages ran:
+0.408, 0.354, 0.434 believed: the arena's true spread fraction sits
+at the window's ceiling and the declared gate is satisfiable only by
+sampling luck. One stage in three was valid. No fourth stage runs:
+that would be seed-shopping, and the gate exists precisely to stop
+this addendum from claiming on an arena it cannot reliably
+constitute.
+
+* **P1: FAILED overall.** The window was mis-calibrated against the
+  arena's sampling variance; the design-check peek (0.29 at seed 96)
+  sat lower than the seed-pool truth (~0.40). Recorded as the
+  author's calibration error.
+* **P2, the corrected Xhosa excess: single-valid-stage, uniform
+  sign, NOT promoted.** On the valid stage: 124 keepers starving at
+  0.065 against surviving never-believers at 0.010 (+5.5 points),
+  true-arm keepers at control (-0.3). The two invalid stages,
+  reported not judged, agree: +6.1 and +9.7 points false-arm excess,
+  +2.5 and -0.2 true-arm. Every run of every stage shows the same
+  shape: the broken promise kills its keepers, the kept one does
+  not. Promotion would require a re-registered arena that passes its
+  own gate; the declared route, not run: seeding at tick 1850, which
+  the design check placed safely inside the window at 0.15.
+* **P3: sealed FAILED across all stages** (witness drops 0.084,
+  0.037, 0.038 against 0.15), with the transient-reputation finding
+  standing as flagged: witnesses bill their mouths at roughly 2 to
+  2.5x the unwitnessed, and continued honest gossip repays the
+  damage within a thousand ticks. The prophet pays, then earns it
+  back.
+
+The phase 23 arc closes here: the belief that commands sacrifice is
+built, guarded, and measured; its cleanest number remains the
+stream-identical pair from the main protocol (keepers starving at
+8x their kept-promise twins), its corrected control shows the same
+shape at every attempt, and its two instrument failures (the
+death-selected control, the diluted bill) are owned in print beside
+the findings they taught.
