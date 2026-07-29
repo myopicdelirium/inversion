@@ -149,3 +149,67 @@ inverted signs:
 * The sentence the phase earns, and the Xhosa road just got darker:
   no false prophecy is needed to starve a society on words. Synchrony
   alone can do it, with every single rumor true.
+
+## Addendum, pre-registered 2026-07-29 before running: the synchronization measurement
+
+B2's inverted sign has a suspected mechanism on file: rumors
+concentrate foragers, and concentration thrashes the commons. This
+addendum measures the concentration directly, on byte-identical
+reruns of the B2 cells (config hashes verified against stored rows
+before launch). Declared before running:
+
+* **C1, the crowd exists, falsifiable**: time-averaged mean distance
+  to the nearest living neighbor is at least 15 percent LOWER in the
+  telling arm than the off arm, pooled seeds 1-24. Telling must
+  physically pull the population together, or the synchronization
+  story dies at its first premise.
+* **C2, the patches are packed, falsifiable**: the fraction of food
+  consumptions with at least one OTHER agent within two eating radii
+  of the site at the consumption tick is at least 1.5x higher under
+  telling. Crowded harvests are the mechanism's signature: the patch
+  pays the first arrival and burns the rest's travel.
+* **C3, the dose link, reported without bar**: per-seed, within the
+  telling arm, the correlation between concentration (C1's metric)
+  and starvation, for the record.
+* Fresh seeds 31-54 replication for C1 and C2 before packaging. If
+  both hold, the mechanism is promoted from flagged to established;
+  if either fails, the told commons' tragedy stands measured but
+  unexplained, filed open beside crowd grief's sub-additivity.
+
+## Synchronization results, recorded 2026-07-29: the story was backwards, the tragedy files open
+
+Artifacts: `results/phase-22-sync.json` (seeds 1-24),
+`phase-22-sync-replication.json` (fresh seeds 31-54), byte-identical
+reruns verified by config hash before launch. Judged exactly as
+declared:
+
+* **C1 FAILED, sign inverted, both stages**: telling DISPERSES the
+  population. Nearest-neighbor distance 1.83 against 1.60 off (14.6
+  percent higher) and 1.95 against 1.66 (17.6 percent higher),
+  against a bar demanding 15 percent LOWER. The crowd premise is not
+  merely unproven, it is backwards.
+* **C2 FAILED, both stages**: crowded consumptions 0.542 against
+  0.510 and 0.533 against 0.511, ratios 1.06 and 1.04 against the
+  1.5 bar. The patches are not packed.
+* **C3, the number that points somewhere new**: per-seed correlation
+  between nearest-neighbor distance and starvation inside the
+  telling arm is +0.79 and +0.68. The most SCATTERED worlds starve
+  most, consistently, both stages.
+* **Verdict, per the registration's words**: the told commons'
+  tragedy stands measured but unexplained, FILED OPEN beside crowd
+  grief's sub-additivity: the ledger's second replicated phenomenon
+  to survive its discoverers' explanation, and this one survived
+  two (the crowd story died here; the honest-channel story died in
+  B2).
+* **The new candidate, post hoc, flagged, unclaimed**: distance.
+  Rumors send agents on longer journeys than their own eyes ever
+  would, stretching supply lines, burning travel per meal, and
+  pulling foragers off reliable local rotations: the wild-goose
+  economy, where every tip is true and every trip is longer. The
+  declared follow-up, not run: the travel ledger, distance traveled
+  per meal for told-site meals against own-site meals, on the same
+  byte-identical cells.
+* Two of this phase's own explanations have now been refused by its
+  own instruments. The channel is real, the deaths are real, the
+  reputation pricing is real, and the killer is still at large in
+  the artifacts.

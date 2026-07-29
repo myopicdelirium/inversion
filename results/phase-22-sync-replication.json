@@ -1,0 +1,534 @@
+{
+  "spec": "specs/phase-22.md synchronization addendum",
+  "manifest": {
+    "seed": 0,
+    "config_hash": "6eb65af1513b8c616cdf276b9dd51b8d4eb05af2e4fb7474c5b622c5eaada1c0",
+    "git_sha": "2618235d9d47c26ad23bc21d1ca3a1f964ced7d0",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "timestamp_utc": "2026-07-29T09:22:50+00:00"
+  },
+  "seeds": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+  ],
+  "rows": [
+    {
+      "telling": true,
+      "seed": 31,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.5994577718739282,
+      "consumptions": 5296,
+      "crowded": 2929,
+      "starved": 97
+    },
+    {
+      "telling": true,
+      "seed": 32,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.9709728457634674,
+      "consumptions": 3186,
+      "crowded": 1417,
+      "starved": 135
+    },
+    {
+      "telling": true,
+      "seed": 33,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.705100592054795,
+      "consumptions": 5853,
+      "crowded": 3171,
+      "starved": 91
+    },
+    {
+      "telling": true,
+      "seed": 34,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 3.916143497157038,
+      "consumptions": 3373,
+      "crowded": 1100,
+      "starved": 155
+    },
+    {
+      "telling": true,
+      "seed": 35,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.485305696577591,
+      "consumptions": 4708,
+      "crowded": 2688,
+      "starved": 98
+    },
+    {
+      "telling": true,
+      "seed": 36,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.490482953519413,
+      "consumptions": 5818,
+      "crowded": 3183,
+      "starved": 76
+    },
+    {
+      "telling": true,
+      "seed": 37,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.5717891308927905,
+      "consumptions": 6047,
+      "crowded": 3279,
+      "starved": 83
+    },
+    {
+      "telling": true,
+      "seed": 38,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.4524951465322862,
+      "consumptions": 6313,
+      "crowded": 3653,
+      "starved": 61
+    },
+    {
+      "telling": true,
+      "seed": 39,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.6179751009628411,
+      "consumptions": 4668,
+      "crowded": 2570,
+      "starved": 115
+    },
+    {
+      "telling": true,
+      "seed": 40,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.4851787283243654,
+      "consumptions": 4228,
+      "crowded": 2271,
+      "starved": 112
+    },
+    {
+      "telling": true,
+      "seed": 41,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.7828784894381102,
+      "consumptions": 5754,
+      "crowded": 3113,
+      "starved": 90
+    },
+    {
+      "telling": true,
+      "seed": 42,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.7176228898780983,
+      "consumptions": 2151,
+      "crowded": 1139,
+      "starved": 149
+    },
+    {
+      "telling": true,
+      "seed": 43,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.7654192564076239,
+      "consumptions": 5707,
+      "crowded": 3087,
+      "starved": 93
+    },
+    {
+      "telling": true,
+      "seed": 44,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.586849634790865,
+      "consumptions": 7415,
+      "crowded": 4094,
+      "starved": 63
+    },
+    {
+      "telling": true,
+      "seed": 45,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 5.002244035767661,
+      "consumptions": 2084,
+      "crowded": 560,
+      "starved": 179
+    },
+    {
+      "telling": true,
+      "seed": 46,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 2.201113985729833,
+      "consumptions": 5137,
+      "crowded": 2447,
+      "starved": 110
+    },
+    {
+      "telling": true,
+      "seed": 47,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.5032248283962035,
+      "consumptions": 6374,
+      "crowded": 3506,
+      "starved": 67
+    },
+    {
+      "telling": true,
+      "seed": 48,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 2.2498189277782257,
+      "consumptions": 4142,
+      "crowded": 2109,
+      "starved": 135
+    },
+    {
+      "telling": true,
+      "seed": 49,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.733411530541471,
+      "consumptions": 4422,
+      "crowded": 2445,
+      "starved": 120
+    },
+    {
+      "telling": true,
+      "seed": 50,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.8435984179637368,
+      "consumptions": 3715,
+      "crowded": 1976,
+      "starved": 131
+    },
+    {
+      "telling": true,
+      "seed": 51,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 2.0626054972420156,
+      "consumptions": 4337,
+      "crowded": 2230,
+      "starved": 131
+    },
+    {
+      "telling": true,
+      "seed": 52,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.7359826141045422,
+      "consumptions": 6873,
+      "crowded": 3879,
+      "starved": 73
+    },
+    {
+      "telling": true,
+      "seed": 53,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.95338657279509,
+      "consumptions": 2521,
+      "crowded": 1334,
+      "starved": 156
+    },
+    {
+      "telling": true,
+      "seed": 54,
+      "config_hash": "e74def049772634a6f09029cffb9826709a15c32e572fa2cdcc1793067edcd2e",
+      "n": 200,
+      "mean_nn": 1.334541478663293,
+      "consumptions": 7324,
+      "crowded": 4397,
+      "starved": 40
+    },
+    {
+      "telling": false,
+      "seed": 31,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.4987270444349379,
+      "consumptions": 7612,
+      "crowded": 4092,
+      "starved": 38
+    },
+    {
+      "telling": false,
+      "seed": 32,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 2.471345994886214,
+      "consumptions": 5219,
+      "crowded": 2122,
+      "starved": 150
+    },
+    {
+      "telling": false,
+      "seed": 33,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6193911377902583,
+      "consumptions": 7483,
+      "crowded": 3910,
+      "starved": 60
+    },
+    {
+      "telling": false,
+      "seed": 34,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6169953323443176,
+      "consumptions": 6832,
+      "crowded": 3351,
+      "starved": 64
+    },
+    {
+      "telling": false,
+      "seed": 35,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6072849761906776,
+      "consumptions": 5859,
+      "crowded": 2805,
+      "starved": 103
+    },
+    {
+      "telling": false,
+      "seed": 36,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.534849398806425,
+      "consumptions": 6550,
+      "crowded": 3376,
+      "starved": 71
+    },
+    {
+      "telling": false,
+      "seed": 37,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.2453932076039345,
+      "consumptions": 6975,
+      "crowded": 3934,
+      "starved": 33
+    },
+    {
+      "telling": false,
+      "seed": 38,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.4182957465820731,
+      "consumptions": 6465,
+      "crowded": 3316,
+      "starved": 70
+    },
+    {
+      "telling": false,
+      "seed": 39,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.5514072809559745,
+      "consumptions": 5488,
+      "crowded": 2611,
+      "starved": 99
+    },
+    {
+      "telling": false,
+      "seed": 40,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 2.0101559262644373,
+      "consumptions": 7395,
+      "crowded": 3610,
+      "starved": 79
+    },
+    {
+      "telling": false,
+      "seed": 41,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6814360512512525,
+      "consumptions": 6675,
+      "crowded": 3418,
+      "starved": 75
+    },
+    {
+      "telling": false,
+      "seed": 42,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 2.248496393743386,
+      "consumptions": 7436,
+      "crowded": 3311,
+      "starved": 93
+    },
+    {
+      "telling": false,
+      "seed": 43,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6901144007209734,
+      "consumptions": 8486,
+      "crowded": 4603,
+      "starved": 46
+    },
+    {
+      "telling": false,
+      "seed": 44,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.3928957714484422,
+      "consumptions": 8257,
+      "crowded": 4877,
+      "starved": 25
+    },
+    {
+      "telling": false,
+      "seed": 45,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6259055660327906,
+      "consumptions": 6816,
+      "crowded": 3480,
+      "starved": 71
+    },
+    {
+      "telling": false,
+      "seed": 46,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.528798668165779,
+      "consumptions": 5796,
+      "crowded": 2857,
+      "starved": 95
+    },
+    {
+      "telling": false,
+      "seed": 47,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.563247292507428,
+      "consumptions": 8770,
+      "crowded": 5030,
+      "starved": 31
+    },
+    {
+      "telling": false,
+      "seed": 48,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 2.1445115292305235,
+      "consumptions": 5279,
+      "crowded": 2281,
+      "starved": 143
+    },
+    {
+      "telling": false,
+      "seed": 49,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.7177899682662006,
+      "consumptions": 5453,
+      "crowded": 2514,
+      "starved": 105
+    },
+    {
+      "telling": false,
+      "seed": 50,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.5462010152463939,
+      "consumptions": 6632,
+      "crowded": 3465,
+      "starved": 64
+    },
+    {
+      "telling": false,
+      "seed": 51,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.6893266479691365,
+      "consumptions": 6384,
+      "crowded": 3041,
+      "starved": 97
+    },
+    {
+      "telling": false,
+      "seed": 52,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.5633452759554038,
+      "consumptions": 8049,
+      "crowded": 4253,
+      "starved": 44
+    },
+    {
+      "telling": false,
+      "seed": 53,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.558411864894838,
+      "consumptions": 5431,
+      "crowded": 2600,
+      "starved": 106
+    },
+    {
+      "telling": false,
+      "seed": 54,
+      "config_hash": "326d2ba23f596b1a2893f7d1e8d4d515b153e3e27a4955e21f411282533dac65",
+      "n": 200,
+      "mean_nn": 1.2374937176351208,
+      "consumptions": 7446,
+      "crowded": 4369,
+      "starved": 36
+    }
+  ],
+  "C1": {
+    "mean_nn_on": 1.948649984298137,
+    "mean_nn_off": 1.656742508705288,
+    "reduction_pct": -17.619362940169193,
+    "passed": false
+  },
+  "C2": {
+    "crowded_rate_on": 0.5328150809733835,
+    "crowded_rate_off": 0.5112539007789272,
+    "ratio": 1.042173135816874,
+    "passed": false
+  },
+  "C3": {
+    "per_seed_corr_nn_starvation": 0.6793748219194395
+  }
+}
