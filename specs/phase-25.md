@@ -209,6 +209,42 @@ seed runs and the amendment recorded here, per the phase 14
 precedent. Declared seeds are touched only by the registered
 protocol.
 
+### Design-confirmation results and the amendment, recorded 2026-07-29, before any declared seed
+
+Seeds 96-99, all arms, cohort counts and survival only, as declared.
+Survival to onset is full (400 of 400, every seed). Median pair
+separation at onset 2.9 to 3.3 with 0 to 1 percent of pairs beyond
+sight: **one body replicates in the wandering world**. The loud quest
+parts partners briefly and near; it does not part them at storm
+scale. And the arms speak before any outcome is measured: the three
+arms are bit-identical until onset (care prices peril, and the
+pre-onset world has none), then witnesses per seed run 44-50 in T,
+45-50 in S, 25-38 in N, absentees 0 in T, 0 in S, 6-14 in N, leavers
+1-6 in T, 1-3 in S, 6-15 in N. Care empties the absentee category:
+the cared-for are never left gripped and unseen, the numb drift away.
+That is itself the channel working, visible at design stage.
+
+Amendments, all before any declared seed runs, none moving a bar on
+data:
+
+* **R4 is replaced** (its registered cohort cannot exist in T): the
+  telepathy check becomes the care-glue check on witnesses. Pooled
+  witness leave rate, N minus T, at least +10 points: care must
+  visibly hold witnesses beside the gripped against the numb
+  baseline, or the arena cannot resolve anything finer and the
+  protocol stops here, recorded.
+* **The absentee cohort is demoted to descriptive**: counts reported
+  per arm, no floor, no bar. Its emptiness under care is reported as
+  the finding above.
+* **R3 floors become**: witnesses at least 150 per arm; leavers at
+  least 60 in S and at least 60 in N (both denominators R6 judges).
+  The absentee floor is struck with its claim.
+* **Seeds are enlarged before running**, to power the thin leaver
+  cohorts honestly: main stage seeds 1-48, replication fresh seeds
+  61-108, disjoint. The originally declared 1-24 and 31-54 are
+  subsumed and superseded by this recorded amendment; no outcome was
+  computed on any declared seed before it.
+
 ## Panel
 
 Compact two-finder panel concurrent with the protocol (phase 24
