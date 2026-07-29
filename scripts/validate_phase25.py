@@ -1,10 +1,11 @@
 """Phase 25: through the eyes. Artifacts:
 
   results/phase-25-escape.json              R2-R7 on seeds 1-48
-  results/phase-25-escape-replication.json  fresh seeds 61-108
+  results/phase-25-escape-replication.json  fresh seeds 109-156
 
-Seed ranges and the R3/R4 forms follow the recorded
-design-confirmation amendment in specs/phase-25.md.
+Seed ranges and the R3/R4 forms follow the recorded amendments in
+specs/phase-25.md (design-confirmation amendment; panel fixes and the
+replication-range excision are the second recorded amendment).
 
 Three arms, same seeds, differing only in the care percept: T
 (telepathic), S (sighted, the escapable distress), N (numb, care 0,
@@ -32,7 +33,7 @@ from core.config import Config  # noqa: E402
 from core.drives import BOND  # noqa: E402
 from core.manifest import build_manifest  # noqa: E402
 from core.model import Model  # noqa: E402
-from core.world import _torus_delta, perceive_partner  # noqa: E402
+from core.world import _torus_delta, peril_at, perceive_partner  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
@@ -61,7 +62,8 @@ def cell(args):
     d0, _, _ = perceive_partner(m.arrays, cfg)
     both = np.isfinite(d0)
     sep_median = float(np.median(d0[both])) if both.any() else None
-    sep_beyond = float((d0[both] > 12.0).mean()) if both.any() else None
+    sep_beyond = (float((d0[both] > cfg.r_sight).mean())
+                  if both.any() else None)
 
     n = cfg.n_agents
     witness = np.zeros(n, bool)
@@ -69,20 +71,32 @@ def cell(args):
     left = np.zeros(n, bool)
     returned_w = np.zeros(n, bool)
     returned_a = np.zeros(n, bool)
+    forec_w = np.zeros(n, bool)
+    forec_a = np.zeros(n, bool)
     grip_ever = np.zeros(n, bool)
-    # R2, the gate identity, probed along the live run itself (S arm):
-    # pre-step state plus the gated percept must reconstruct the bond
-    # urgency the model writes, exactly.
+    # R2, the gate identity, probed along the live run itself (S arm).
+    # The panel proved the first probe was a tautology on the gate
+    # under test, so the reconstruction is now independent: production
+    # physics (peril_at), the panel-fix gate rebuilt from raw arrays,
+    # never Model._target_peril.
     resid = 0.0
     sx, sy = m.world.storm_x, m.world.storm_y
     for _ in range(WINDOW):
         if arm == "S":
             dpre, _, _ = m._bond_distances()
-            per = m._target_peril(m._hazards_active(),
-                                  m._storm_intensity(), dpre)
+            pp = m.arrays.partner
+            phas = pp >= 0
+            ppidx = np.where(phas, pp, 0)
+            present = phas & m.arrays.alive[ppidx]
+            px = np.where(present, m.arrays.x[ppidx], 0.0)
+            py = np.where(present, m.arrays.y[ppidx], 0.0)
+            level = peril_at(px, py, m.world, cfg, m._hazards_active(),
+                             m._storm_intensity())
+            per_ind = np.where(present, level, 0.0)
+            per_ind = np.where(dpre <= m.arrays.r_sight, per_ind, 0.0)
             sep = 1.0 - np.exp(-dpre / cfg.r_bond)
             expected = m.arrays.bond * np.clip(
-                sep + cfg.care * per, 0.0, 1.0)
+                sep + cfg.care * per_ind, 0.0, 1.0)
             pre_alive = m.arrays.alive.copy()
         m.step()
         if arm == "S" and pre_alive.any():
@@ -91,28 +105,38 @@ def cell(args):
                 - expected[pre_alive]).max()))
         dx = _torus_delta(m.arrays.x - sx, cfg.world_size)
         dy = _torus_delta(m.arrays.y - sy, cfg.world_size)
-        inside = np.hypot(dx, dy) < cfg.storm_radius
-        grip_now = m.arrays.alive & inside
+        inside = ((np.hypot(dx, dy) < cfg.storm_radius)
+                  & (m._storm_intensity() > 0.0))
+        alive_u = m.arrays.alive
+        grip_now = alive_u & inside
         grip_ever |= grip_now
         p = m.arrays.partner
         has = p >= 0
         pidx = np.where(has, p, 0)
-        p_grip = has & m.arrays.alive[pidx] & grip_now[pidx]
+        p_grip = has & alive_u[pidx] & grip_now[pidx]
         d, _, _ = perceive_partner(m.arrays, cfg)
         vis = d <= m.arrays.r_sight
-        fresh = m.arrays.alive & ~inside & p_grip & ~witness & ~absentee
+        fresh = alive_u & ~inside & p_grip & ~witness & ~absentee
         witness |= fresh & vis
         absentee |= fresh & ~vis
-        left |= witness & p_grip & ~vis
-        returned_w |= left & p_grip & vis
-        returned_a |= absentee & p_grip & vis
+        # Panel fixes, recorded in the spec: the registered censor
+        # first (a partner that dies or exits the storm while u is
+        # away forecloses return), then the transitions, each
+        # requiring a living u; the dead cannot leave or return, and
+        # entering the storm is not desertion.
+        forec_w |= left & ~returned_w & ~p_grip
+        forec_a |= absentee & ~returned_a & ~p_grip
+        left |= witness & p_grip & ~vis & alive_u & ~inside
+        returned_w |= left & p_grip & vis & alive_u & ~forec_w
+        returned_a |= absentee & p_grip & vis & alive_u & ~forec_a
 
     abandoned = left & ~returned_w
     stayed = witness & ~left
     alive = m.arrays.alive
 
     def _mean(mask, arr):
-        return float(arr[mask].mean()) if mask.any() else None
+        live = mask & alive
+        return float(arr[live].mean()) if live.any() else None
 
     return {"arm": arm, "seed": seed, "config_hash": cfg.config_hash(),
             "alive_onset": alive_onset, "sep_median": sep_median,
@@ -123,6 +147,8 @@ def cell(args):
             "n_returned_w": int(returned_w.sum()),
             "n_abandoned": int(abandoned.sum()),
             "n_returned_a": int(returned_a.sum()),
+            "n_foreclosed_w": int((forec_w & ~returned_w).sum()),
+            "n_foreclosed_a": int((forec_a & ~returned_a).sum()),
             "gate_residual": resid if arm == "S" else None,
             "witness_dead": int((witness & ~alive).sum()),
             "abandoner_energy": _mean(abandoned, m.arrays.energy),
@@ -155,8 +181,9 @@ def run_design(seeds):
               f"{[r['n_witness'] for r in sel]}, absentees "
               f"{[r['n_absentee'] for r in sel]}, leavers "
               f"{[r['n_leavers'] for r in sel]}")
-    print("design-confirmation: cohort counts and survival only, no "
-          "outcome measures computed or shown")
+    print("design-confirmation: cohort counts and survival only; the "
+          "shared cell computes outcome measures but none are shown "
+          "or read here")
 
 
 def run_stage(seeds, out_path):
@@ -164,7 +191,11 @@ def run_stage(seeds, out_path):
     with ProcessPoolExecutor(max_workers=6) as pool:
         rows = list(pool.map(cell, jobs))
     art = {"spec": "specs/phase-25.md",
-           "manifest": build_manifest(seed=0, config=Config()),
+           "manifest": build_manifest(
+               seed=0, config=replace(Config(), **ARENA, **ARMS["T"])),
+           "arm_config_hashes": {
+               a: replace(Config(), **ARENA, **ARMS[a]).config_hash()
+               for a in ARMS},
            "seeds": list(seeds), "rows": rows}
 
     resid = max(r["gate_residual"] for r in rows if r["arm"] == "S")
@@ -199,12 +230,18 @@ def run_stage(seeds, out_path):
           f"vs T {leave['T']:.3f} (S {leave['S']:.3f}); N-T "
           f"{100 * r4_delta:+.1f} pts (bar +10): passed {r4}")
 
+    # The registration's gate: R5 and R6 are judged only when the
+    # floors and the care-glue manipulation check both hold.
+    gates = r3 and r4
+    art["gates_passed"] = bool(gates)
+
     aband = {a: _pool(rows, a, "n_abandoned") / max(wit[a], 1)
              for a in ARMS}
     r5_delta = aband["S"] - aband["T"]
-    r5_verdict = ("E2_confirmed_rung_refused" if r5_delta >= 0.15
-                  else "rung_passed" if r5_delta <= 0.05
-                  else "no_verdict")
+    r5_verdict = (("E2_confirmed_rung_refused" if r5_delta >= 0.15
+                   else "rung_passed" if r5_delta <= 0.05
+                   else "no_verdict") if gates
+                  else "unjudged_gates_failed")
     art["R5"] = {"abandonment": aband, "S_minus_T": r5_delta,
                  "verdict": r5_verdict}
     print(f"R5 escape test: abandonment S {aband['S']:.3f} vs T "
@@ -217,7 +254,9 @@ def run_stage(seeds, out_path):
     r6_delta = ret_w["S"] - ret_w["N"]
     r6 = r6_delta >= 0.10
     art["R6"] = {"leaver_return": ret_w, "S_minus_N": r6_delta,
-                 "passed": bool(r6)}
+                 "foreclosed": {a: _pool(rows, a, "n_foreclosed_w")
+                                for a in ARMS},
+                 "passed": bool(r6) if gates else None}
     print(f"R6 the return: leaver return S {ret_w['S']:.3f} vs N "
           f"{ret_w['N']:.3f} (T {ret_w['T']:.3f}); S-N "
           f"{100 * r6_delta:+.1f} pts (bar +10): passed {r6}")
@@ -254,9 +293,9 @@ if __name__ == "__main__":
     elif stage == "main":
         run_stage(range(1, 49), RESULTS / "phase-25-escape.json")
     elif stage == "replicate":
-        run_stage(range(61, 109),
+        run_stage(range(109, 157),
                   RESULTS / "phase-25-escape-replication.json")
     else:
         run_stage(range(1, 49), RESULTS / "phase-25-escape.json")
-        run_stage(range(61, 109),
+        run_stage(range(109, 157),
                   RESULTS / "phase-25-escape-replication.json")

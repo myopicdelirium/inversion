@@ -253,6 +253,65 @@ init path, absent partners, torus edges), one on the instrument's
 cohort state machine. Any confirmed finding triggers a fix commit
 before any R verdict is judged.
 
+### Panel results, the voided first run, and the second amendment, recorded 2026-07-29
+
+Two finders, zero stalls, both reported in full before any verdict
+was judged. The gate finder confirmed the mechanism clean in all four
+registered classes (sole producer, all consumers gated, torus and
+edge semantics exact, bit-inertness verified by a cross-commit
+module-swap probe on three care worlds the goldens do not cover),
+with one confirmed minor that scopes two of this spec's sentences:
+under prospect_sees_grip the phase 13 grip percept is ungated, so a
+sighted agent still prices the storm's depth at its partner's
+location through the SAFETY channel at unlimited range. That percept
+is identical across all three arms and independent of care and of
+the gate, so no bar or arm comparison is touched, but "seen means
+seen" and "the absentee learns nothing in arm S" hold for the CARE
+channel only, and are so scoped. Telepathic navigation (distance and
+direction to the partner) is likewise ungated: that is the shipped
+bond percept, and it is what makes return possible at all.
+
+The instrument finder confirmed four majors, all mine, all fixed
+before any verdict was judged, and **both protocol stages already
+run are VOID by instrument defect** (their artifacts were
+overwritten by the corrected instrument's reruns; the voided numbers
+survive in git history at commit f0fdd76 and are not quoted here so
+no eye falls on unjudgeable rates):
+
+* Dead witnesses were latched as leavers and abandoners: a witness
+  that died at its post beside the gripped beloved became a
+  "deserter" when the partner later drifted from the corpse.
+  Construct inversion, arm-asymmetric (care arms hold witnesses
+  where the dying is), poisoning R4 and R5. Fixed: every transition
+  now requires a living u.
+* The registered foreclosure censor was never implemented: a partner
+  extracted while u was away and re-gripped later could yield a
+  counted "return" the registration forecloses. Fixed: the censor
+  latches per the registered sentence, and foreclosed counts are
+  reported.
+* The R2 probe was a tautology: it reconstructed the expected
+  urgency THROUGH the gate under test, and the finder proved a
+  deliberately broken gate still passed it. Fixed: the
+  reconstruction is now independent (production physics, the gate
+  rebuilt from raw arrays, never Model._target_peril).
+* The first amendment's replication range 61-108 contained the four
+  design-confirmation seeds 96-99, whose cohort counts were peeked.
+  My registration error. **Second amendment, before any judged
+  verdict: the replication range becomes fresh seeds 109-156**,
+  disjoint from every seed any eye has touched.
+
+Minors, fixed in the same pass: a witness gripped inside the storm
+can no longer be marked a leaver (entering the storm is not
+desertion); R5 through R7 are computed but marked unjudged whenever
+R3 or R4 fails (the registration's "no finer claim is judged", now
+enforced in the artifact itself); the artifact manifest now hashes
+the arena config it actually ran plus per-arm hashes; the cost
+ledger's means are over living agents only; the design-mode wording
+no longer overclaims; the onset separation stat reads cfg.r_sight.
+Declared limitation, recorded not fixed: post-step sampling cannot
+see a one-tick storm transit (about one per four cells, undercounts
+only, arm-symmetric).
+
 ## Non-goals
 
 The remembered beloved (rung 3's organ), heritable care, differential
